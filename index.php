@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-  <h1>THIS IS BLANK... OMG</h1>
 
 <?php /*
   if (have_posts()):
@@ -14,6 +13,5 @@
     echo '<p>No content found</p>';
 
   endif;
-*/
-?>
+*/?>
 <?php get_footer(); ?>

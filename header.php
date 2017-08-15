@@ -8,5 +8,10 @@
     <title>Cambridge Resources</title>
   </head>
 
-  <body <?php body_class();?>>
+  <body>
+    <div class="top-nav">
+      <div class="container">
+        <span>HELLO</span>
+      </div>  <!-- end top-nav container -->
+    </div>  <!-- end top-nav -->
     <div class="container">
