@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p>
+<!-- <p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p> -->
 <?php /*
   if (have_posts()):
   while (have_posts()) : the_post();?>
