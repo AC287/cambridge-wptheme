@@ -4,7 +4,7 @@
 <!-- // Page for sub category. -->
 <?php get_header(); ?>
 
-<div class="wrap">
+<div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -27,7 +27,7 @@
 			// print_r($sub_category1);
 
 			// print_r($main_category);
-			echo "<table>";
+			echo "<table id='product-main-page'>";
 			echo "<td class='cat-bar'>";
 			echo "<h4><a href='products/'>PRODUCT CATEGORIES</a></h4>";
 			foreach($main_category as $main_category) {
@@ -38,25 +38,25 @@
 				// print_r($s1_category[0]->s1);
 				if(!empty($s1_category[0]->s1)){
 					// echo "<div>";
-					echo "<div class='accordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
-					echo "<div class='panel'>";
+					echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
+					echo "<div class='custpanel'>";
 					foreach($s1_category as $s1_category) {
 						$s2_category = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE s1 = '$s1_category->s1';");
 						if(!empty($s2_category[0]->s2)){
-							echo "<div class='accordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
-							echo "<div class='panel'>";
+							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
+							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='accordion no-sub'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='accordion'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
 				}
 				else {
-					echo "<div class='accordion'>".$main_category->m0."</div>";
+					echo "<div class='custaccordion'>".$main_category->m0."</div>";
 				}
 				// echo "<hr/>";
 				// echo "</div>";

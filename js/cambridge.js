@@ -72,12 +72,12 @@ jQuery(document).ready(function($) {
 // --- THIS IS FOR ACCORDION BUTTON SECTION ---
 
 // source: https://codepen.io/brenden/pen/Kwbpyj
-$('.accordion').click(function(e){
+$('.custaccordion').click(function(e){
   var $this = $(this);
   if($this.next().hasClass('show')){
     $this.next().removeClass('show');
     $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
-    $this.next().slideUp(350);
+    $this.next();
   } else {
     // $this.parent().find('.panel').removeClass('show');
     // console.log('Else section. Find parent panel and removeClass show');
@@ -86,7 +86,7 @@ $('.accordion').click(function(e){
     // console.log('Else section. Find parent panel and slideup.');
     $this.next().toggleClass('show');
     $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
-    $this.next().slideToggle(350);
+    $this.next();
   }
 });
 

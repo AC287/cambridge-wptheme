@@ -344,6 +344,11 @@ body {
 }
 
 /* -- Product pages -- */
+
+#product-main-page {
+  width: 100%;
+}
+
 /*
 Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.asp
 */
@@ -359,7 +364,8 @@ Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.
     transition: 0.4s;
     cursor: pointer;
 }*/
-.accordion {
+.custaccordion {
+  font-family: 'Questrial', sans-serif;
   cursor: pointer;
   width: 100%;
   display: block;
@@ -369,7 +375,7 @@ Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.
   padding-bottom: 5px;
   /*padding-right: 5px;*/
 }
-.panel {
+.custpanel {
   /*width: 100%;*/
   margin-left: 10px;
   /*margin-right: 5px;*/
@@ -392,7 +398,7 @@ Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.
   width: 12px;
   height: 12px;
 }
-.accordion:hover {
+.custaccordion:hover {
   background-color: #ddd;
   /*cursor: pointer;*/
 }
@@ -420,7 +426,9 @@ Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.
     transition: max-height 0.2s ease-out;
 }*/
 
-
+#main {
+  padding-bottom: 20px;  
+}
 
 td.cat-bar {
   width: 27%;
@@ -428,6 +436,7 @@ td.cat-bar {
   /*max-height: 100%;*/
 }
 td.cat-bar a {
+  font-family: 'Questrial', sans-serif;
   text-decoration: inherit;
   color: inherit;
 }
@@ -442,11 +451,14 @@ td.prod-display {
 }
 
 .m-title {
+  font-family: 'bignoodletitlingregular';
   background-color: #003DA5;
   /*background-color: #F2F2F2;*/
   color: white;
   font-size: 25px;
+  letter-spacing: 2px;
   padding-left: 20px;
+  padding-top: 10px;
 }
 
 .s1-box-background {
@@ -479,6 +491,7 @@ td.prod-display {
   /*float: right;*/
 }
 .s1-cat {
+  font-family: 'Questrial', sans-serif;
   text-align: center;
   font-size: 15px;
   color: white;
@@ -525,8 +538,10 @@ a.display-extra {
   padding-bottom: 10px;
 }
 .p2-title {
-  font-size: 25px;
-  font-weight: bold;
+  font-family: 'bignoodletitlingregular';
+  letter-spacing: 2px;
+  font-size: 45px;
+  /*font-weight: bold;*/
 }
 td.p2-data {
   width: 75%;
@@ -543,9 +558,10 @@ td.p2-data {
   border: none;
 }
 .p2-divider-img {
-  width: 70%;
+  /*width: 70%;*/
 }
 .p2-divider-img img {
+  width: 600px;
   padding-left: 20px;
 }
 .p2-divider-cert {
@@ -557,6 +573,9 @@ img.p2-cert-img {
   /*padding-right: 10px;*/
   /*height: 50px;*/
 }
+.p2-description-txt {
+  font-family: 'Questrial', sans-serif;
+}
 .item-data-sheet {
   width: 100%;
   font-size: 12px;
@@ -566,9 +585,15 @@ img.p2-cert-img {
 }
 .item-data-sheet th {
   /*width: 100%;*/
+  font-family: 'bignoodletitlingregular';
+  padding-top: 5px;
+  font-size: 20px;
   text-align: center;
   background-color: #000;
   color: #fff;
+}
+.item-data-sheet td {
+  font-family: 'Questrial', sans-serif;
 }
 .item-data-sheet tr {
   border-bottom: 1px solid #A7A9AC;
@@ -588,6 +613,8 @@ img.p2-cert-img {
 }
 #each-item-spec tr {
   border: none;
+  /*padding-top: 10px;*/
+  /*padding-bottom: 10px;*/
 }
 .item-image {
   /*padding: 10px;*/
@@ -603,9 +630,12 @@ img.p2-cert-img {
   /*padding-right: 10px;*/
   /*width: 50%;*/
   vertical-align: top;
+  padding-right: 10px;
   /*width: 50%;*/
 }
 .main-view-lg {
+  margin-top: 10px;
+  margin-bottom: 10px;
   /*padding-left: 10px;*/
   width: 300px;
   /*display: none;*/
@@ -615,25 +645,36 @@ img.p2-cert-img {
 .single-thumb {
   width: 100px;
   margin-left: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
   border: 1px solid #A7A9AC;
 }
 .item-spec-container {
-  padding: 5px;
+  /*padding: 15px;*/
+  /*margin-top: 10px;*/
 }
 .ip-title {
-  font-weight: bold;
-  font-size: 25px;
+  font-family: 'bignoodletitlingregular';
+  height: 50px;
+  /*font-weight: bold;*/
+  font-size: 45px;
+  padding-top: 5px;
 }
 .ip-type {
-  font-weight: bold;
-  font-size: 15px;
+  font-family: 'bignoodletitlingregular';
+  /*font-weight: bold;*/
+  font-size: 35px;
 }
 .ip-each-data {
   font-size: 12px;
 }
+.ip-legend {
+  font-family: 'Questrial', sans-serif;
+}
 .ip-spec {
-  font-weight: bold;
+  font-family: 'Questrial', sans-serif;
+  /*font-weight: bold;*/
+  font-size: 18px;
 }
 a.spec-sheet {
   color: blue;
@@ -643,14 +684,20 @@ a.spec-sheet {
 .ip-certification {
   padding: 10px;
 }
-.ip-certitle {
+.ip-certitle, .ip-desctitle {
+  font-family: 'bignoodletitlingregular';
+  letter-spacing: 2px;
+  font-size: 30px;
   font-weight: bold;
 }
 .ip-description {
   padding: 10px;
 }
-.ip-desctitle {
+/*.ip-desctitle {
   font-weight: bold;
+}*/
+.ip-detaildescription {
+  font-family: 'Questrial', sans-serif;
 }
 .ip-cert-img {
   max-height: 50px;

@@ -4,7 +4,7 @@
 <!-- // Data displaying Page for sub category. -->
 <?php get_header(); ?>
 
-<div class="wrap">
+<div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -29,7 +29,7 @@
 			// print_r($sub_category1);
 
 			// print_r($main_category);
-			echo "<table>";
+			echo "<table id='product-main-page'>";
 			echo "<td class='cat-bar'>";
 			echo "<h4><a href='products/'>PRODUCT CATEGORIES</a></h4>";
 			foreach($main_category as $main_category) {
@@ -40,25 +40,25 @@
 				// print_r($s1_category[0]->s1);
 				if(!empty($s1_category[0]->s1)){
 					// echo "<div>";
-					echo "<div class='accordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
-					echo "<div class='panel'>";
+					echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
+					echo "<div class='custpanel'>";
 					foreach($s1_category as $s1_category) {
 						$s2_category = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE s1 = '$s1_category->s1';");
 						if(!empty($s2_category[0]->s2)){
-							echo "<div class='accordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
-							echo "<div class='panel'>";
+							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
+							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='accordion no-sub'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='accordion'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='products/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
 				}
 				else {
-					echo "<div class='accordion'>".$main_category->m0."</div>";
+					echo "<div class='custaccordion'>".$main_category->m0."</div>";
 				}
 				// echo "<hr/>";
 				// echo "</div>";
@@ -95,7 +95,7 @@
 					echo "</div>";	// end p2-header.
 					echo "<table class='p2-divider'><tr>";
 						if ($item_data_legend[0]->imgdivider != ""){
-							echo "<td class='p2-divider-img'><img src='".$item_data_legend[0]->imgdivider."'></td>";
+							echo "<td class='p2-divider-img col-xs-8'><img src='".$item_data_legend[0]->imgdivider."'></td>";
 						}
 						// echo "<td>".$item_data."</td>";
 						$certDisplay = $item_data;
@@ -110,7 +110,7 @@
 							}
 						}
 						// print_r(count($certArr));
-						echo "<td class='p2-divider-cert'>";
+						echo "<td class='p2-divider-cert col-xs-4'>";
 							for ($iCert=0; $iCert<count($certArr); $iCert++){
 								for($iCertdb = 0; $iCertdb < sizeof($item_certdb); $iCertdb++){
 									if($item_certdb[$iCertdb]->type == $certArr[$iCert]) {
@@ -157,7 +157,7 @@
 					// echo "<hr/>";	// horizontal line break.
 					echo "<table class='item-data-sheet'>";
 					echo "<tr >";
-					echo "<th>".$item_data_legend[0]->item."</th>";
+					echo "<th class='col-xs'>".$item_data_legend[0]->item."</th>";
 					for ($x=1; $x < 9; $x++) {
 						$cell_data = "d".$x;
 						// print_r($item_data_legend[0]->$cell_data);
@@ -165,7 +165,7 @@
 						// 	print_r($x);
 						// }
 						if(($item_data_legend[0]->$cell_data)!=""){
-							echo "<th>".$item_data_legend[0]->$cell_data."</th>";
+							echo "<th class='col-xs'>".$item_data_legend[0]->$cell_data."</th>";
 						}
 					}
 					echo "</tr>";
