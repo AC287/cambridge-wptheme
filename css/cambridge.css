@@ -427,7 +427,7 @@ Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.
 }*/
 
 #main {
-  padding-bottom: 20px;  
+  padding-bottom: 20px;
 }
 
 td.cat-bar {
@@ -467,6 +467,9 @@ td.prod-display {
   /*float: right;*/
   margin: auto;
 }
+.s1-box-background a {
+  text-decoration: none;
+}
 /*.s1-box {
   width: 200px;
   height: 300px;
@@ -493,7 +496,7 @@ td.prod-display {
 .s1-cat {
   font-family: 'Questrial', sans-serif;
   text-align: center;
-  font-size: 15px;
+  font-size: 13px;
   color: white;
   /*background-color: black;*/
 }
@@ -507,6 +510,9 @@ a.display-extra {
   margin-left: 20px;
   /*margin-bottom: 20px;*/
   cursor: pointer;
+  font-family: 'bignoodletitlingregular';
+  font-size: 20px;
+  color: #000;
 }
 
 .m-title a {
