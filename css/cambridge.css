@@ -15,6 +15,18 @@
     font-style: normal;
 
 }
+/*@font-face {
+  font-family: 'helveticaCE';
+  src: url('../fonts/HelveticaCE.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}*/
+@font-face {
+  font-family: 'helveticaCEnarrow';
+  src: url('../fonts/HelveticaCE-Narrow.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   overflow-y: scroll;
 }
@@ -84,10 +96,106 @@ body {
   color: inherit;
   font-size: 15px;
 }
+.tn2-overall-table {
+  margin: 0;
+  width: 100%;
+}
+.top-nav2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 .nav2 {
   font-family: 'bignoodletitlingregular';
-  /*color: #003DA5;*/
-  font-size: 50px;
+  color: #003DA5;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.nav2-logo a {
+  text-decoration: none;
+  padding-left: 20px;
+}
+.nav2-search {
+  text-align: right;
+  margin: 0;
+}
+.nav2-search-icon {
+  color: #003DA5;
+  font-size: 15px;
+}
+.nav2-search-txt {
+  font-family: 'Questrial', sans-serif;
+  color: #003DA5;
+  font-size: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/*.nav2-search input[type=text]{
+  width: 100%;
+  border-radius: 5px;
+  background-color: #F2F2F2;
+}*/
+.search-field {
+  text-align: center;
+  /*width: 100%;*/
+  /*border-radius: 5px;*/
+  /*background-color: #F2F2F2;*/
+}
+
+/*--  site footer --*/
+.site-footer {
+  background-color: #003DA5;
+  color: #fff;
+  font-family: 'Questrial', sans-serif;
+
+}
+.footer1 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /*width: inherit;*/
+  /*background-color: #003DA5;*/
+  /*font-family: 'Questrial', sans-serif;*/
+  /*display: flex;*/
+  /*color: white;*/
+}
+/*.footerlink {
+  height: 150px;
+  margin: auto;
+}*/
+.footer1 a {
+  text-decoration: none;
+  /*color: white;*/
+  color: inherit;
+}
+.footer1-subtxt {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer1-subtxt li {
+  padding-left: 5px;
+}
+.footer1-subtxt li:before{
+  content: "-";
+  padding-right: 8px;
+  color: white;
+}
+.certifications {
+  text-align: right;
+  /*padding-top: 30px;*/
+  /*vertical-align: top;*/
+}
+.certifications-txt {
+  font-size: 35px;
+  font-family: 'bignoodletitlingregular';
+  letter-spacing: 3px;
+  /*font-weight: bold;*/
+}
+.certifications img {
+  width: 200px;
+}
+.footer-socialmedia {
+  float: right;
+  /*padding-right: 15px;*/
 }
 
 /* -- Product pages -- */
