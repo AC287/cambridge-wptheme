@@ -110,7 +110,7 @@
       <span class="mm-divider">|</span>
       <a href="">UPCOMING TRADESHOWS</a>
       <span class="mm-divider">|</span>
-      <a href="">IN THE NEWS</a>
+      <a href="">NEWS</a>
     </span>
   </div> <!-- end container -->
 </div> <!-- end mid-menu -->
