@@ -38,6 +38,31 @@ jQuery(document).ready(function($) {
       break;
   }
 
+  /* - - - index page - - - */
+  $('.gc-block').bind({
+    mouseenter: function(){
+      var currentClass = '.'+classSplit($(this).attr('class'));
+      // console.log(currentClass);
+      var imgClass = '.'+currentClass+'-desc';
+      $(currentClass + ' img').hide();
+      $(currentClass + ' span').hide();
+      $(currentClass + '-desc').fadeIn();
+    },
+    mouseleave: function(){
+      var currentClass = '.'+classSplit($(this).attr('class'));
+      // console.log(currentClass);
+      var imgClass = '.'+currentClass+'-desc';
+      $(currentClass + '-desc').hide();
+      $(currentClass + ' img').fadeIn();
+      $(currentClass + ' span').fadeIn();
+    }
+  });
+
+  function classSplit(x){
+    var mainclass=x.split(' ');
+    return mainclass[0];
+  }
+
   // console.log('JS is fully functional.');
   // console.log(Date());
   // $('.accordion').click(function(){

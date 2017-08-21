@@ -1,5 +1,3 @@
-</div>  <!-- container -->
-</div> <!-- end all-container -->
   <footer class="site-footer">
     <div class="container footer1">
       <div class="row">
