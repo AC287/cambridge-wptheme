@@ -12,27 +12,27 @@ jQuery(document).ready(function($) {
 
   switch (curLocation.length) {
     case 5:
-      $('.home').css('border-bottom', '3px solid #fff');
+      // $('.home').css('border-bottom', '3px solid #fff');
       break;
     default:
       switch (curLocation[4]){
         case 'products':
-          $('.products').css('border-bottom','3px solid #fff');
+          // $('.products').css('border-bottom','3px solid #fff');
           break;
         case 'about':
-          $('.about').css('border-bottom','3px solid #fff');
+          // $('.about').css('border-bottom','3px solid #fff');
           break;
         case 'industries':
-          $('.industries').css('border-bottom','3px solid #fff');
+          // $('.industries').css('border-bottom','3px solid #fff');
           break;
         case 'team':
-          $('.team').css('border-bottom','3px solid #fff');
+          // $('.team').css('border-bottom','3px solid #fff');
           break;
         case 'brands':
-          $('.brands').css('border-bottom','3px solid #fff');
+          // $('.brands').css('border-bottom','3px solid #fff');
           break;
         case 'contact':
-          $('.contact').css('border-bottom','3px solid #fff');
+          // $('.contact').css('border-bottom','3px solid #fff');
           break;
       }
       break;

@@ -39,13 +39,48 @@
                   </tr>
                   <tr>
                     <td class="navi1-btn">
-                      <a class="home" href="<?php echo home_url();?>">HOME</a>
-                      <a class="products" href="<?php echo home_url();?>/products/">PRODUCTS</a>
-                      <a class="about" href="<?php echo home_url();?>/about/">ABOUT</a>
-                      <a class="industries" href="<?php echo home_url();?>/industries/">INDUSTRIES</a>
-                      <a class="team" href="<?php echo home_url();?>/team/">OUR TEAM</a>
-                      <a class="brands" href="<?php echo home_url();?>/brands/">BRANDS</a>
-                      <a class="contact" href="<?php echo home_url();?>/contact/">CONTACT</a>
+                      <div class="navi-menu">
+                        <a class="contact" href="<?php echo home_url();?>/contact/">CONTACT</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
+                      <div class="navi-menu">
+                        <a class="brands" href="<?php echo home_url();?>/brands/">BRANDS</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
+                      <div class="navi-menu">
+                        <a class="team" href="<?php echo home_url();?>/team/">OUR TEAM</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
+                      <div class="navi-menu">
+                        <a class="industries" href="<?php echo home_url();?>/industries/">INDUSTRIES</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
+                      <div class="navi-menu">
+                        <a class="about" href="<?php echo home_url();?>/about/">ABOUT</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
+                      <div class="navi-menu">
+                        <a class="products" href="<?php echo home_url();?>/products/">PRODUCTS</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
+                      <div class="navi-menu">
+                        <a class="home" href="<?php echo home_url();?>">HOME</a>
+                        <div class="navi-underline0">
+                          <img class="navi-underline1" src="<?php bloginfo('template_directory')?>/images/navi-selector.png">
+                        </div>
+                      </div>
                     </td>
                   </tr>
                 </table> <!-- end tn-inner-table  -->

@@ -37,9 +37,10 @@ body {
   /*background: #eee;*/
   /*font: sans-serif;*/
 }
-/*body {
-  padding: 20px;
-}*/
+body {
+  min-width: 1200px;
+  overflow-x: scroll;
+}
 
 /*#all-container {
   max-width: 1366px;
@@ -89,12 +90,21 @@ body {
 }
 .navi1-btn {
   font-family: 'Questrial', sans-serif;
+  /*display: inline-block;*/
 }
-.navi1-btn a {
+.nevi-menu {
+  float: right;
+}
+.navi-menu a {
+  /*float: right;*/
   text-decoration: none;
   margin-left: 15px;
   color: inherit;
   font-size: 15px;
+}
+.navi-underline0 {
+  width: inherit;
+  text-align: center;
 }
 .tn2-overall-table {
   margin: 0;
