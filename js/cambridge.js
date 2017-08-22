@@ -12,37 +12,26 @@ jQuery(document).ready(function($) {
 
   switch (curLocation.length) {
     case 5:
-      // $('.home').css('border-bottom', '1px solid #fff');
-      $('.home').css('box-shadow','0px 10px 0px -7px #fff');
+      navigationSelector('home');
       break;
     default:
-      switch (curLocation[4]){
-        case 'products':
-          // $('.products').css('border-bottom','1px solid #fff');
-          $('.products').css('box-shadow','0px 10px 0px -7px #fff');
-          break;
-        case 'about':
-          // $('.about').css('border-bottom','1px solid #fff');
-          $('.about').css('box-shadow','0px 10px 0px -7px #fff');
-          break;
-        case 'industries':
-          // $('.industries').css('border-bottom','1px solid #fff');
-          $('.industries').css('box-shadow','0px 10px 0px -7px #fff');
-          break;
-        case 'team':
-          // $('.team').css('border-bottom','1px solid #fff');
-          $('.team').css('box-shadow','0px 10px 0px -7px #fff');
-          break;
-        case 'brands':
-          // $('.brands').css('border-bottom','1px solid #fff');
-          $('.brands').css('box-shadow','0px 10px 0px -7px #fff');
-          break;
-        case 'contact':
-          // $('.contact').css('border-bottom','1px solid #fff');
-          $('.contact').css('box-shadow','0px 10px 0px -7px #fff');
-          break;
-      }
+      navigationSelector(curLocation[4]);
       break;
+  }
+
+  function navigationSelector(x) {
+    return (
+      $('.'+x).css({
+                'background-color': '#ffffff',
+                'border-top-left-radius' : '5px',
+                'border-top-right-radius' : '5px',
+                // 'box-shadow': '0px 10px 0px 0px #E6E6E6',
+                'padding': '10px',
+                // 'padding' : '10px 2px 10px 2px',
+                'color' : '#000',
+                'pointer-events' : 'none',
+              })
+    )
   }
 
   /* - - - index page - - - */
