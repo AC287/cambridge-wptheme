@@ -268,6 +268,10 @@ body {
 .hvac-desc {
   display: none;
   padding-top: 20px;
+  color: #003DA5;
+}
+.hvac p, .plumbing p, .electrical p, .automotive p {
+  color: #003DA5;
 }
 .plumbing-desc {
   display: none;
@@ -799,7 +803,7 @@ a.spec-sheet {
 .aboutus-title1 span {
   margin-top: 25px;
   display: inline-block;
-  line-height: 25px;
+  line-height: 33px;
   /*margin: 0 auto;*/
   font-family: 'bignoodletitlingregular',cursive;
   font-size: 50px;
