@@ -90,10 +90,13 @@ body {
 }
 .navi1-btn {
   font-family: 'Questrial', sans-serif;
-  /*display: inline-block;*/
+  display: inline-block;
+  float: right;
 }
 .nevi-menu {
-  float: right;
+  /*float: right;*/
+  /*width: auto;*/
+  display: inline-block;
 }
 .navi-menu a {
   /*float: right;*/
@@ -103,8 +106,9 @@ body {
   font-size: 15px;
 }
 .navi-underline0 {
-  width: inherit;
-  text-align: center;
+  display: inline-block;
+  /*width: inherit;*/
+  /*text-align: center;*/
 }
 .tn2-overall-table {
   margin: 0;
