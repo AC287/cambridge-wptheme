@@ -778,3 +778,30 @@ a.spec-sheet {
 .ip-prev:hover, .ip-next:hover {
   background-color: rgba(0,0,0,0.8);
 }*/
+
+/* - - - ABOUT US - - - */
+
+.aboutus-inthebeginning {
+  /*padding-top: 50px;
+  padding-bottom: 50px;*/
+  padding: 50px;
+  text-align: center;
+}
+.aboutus-title1 span {
+  margin: 0 auto;
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  border-bottom: 4px solid #003DA5;
+}
+.aboutus-content1 {
+  margin-top: 20px;
+  text-align: left;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+}
+.aboutus-timelineimg img {
+  max-width: 100%;
+  /*padding-top: 50px;*/
+  padding-bottom: 50px;
+}
