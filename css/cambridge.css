@@ -267,21 +267,27 @@ body {
 }
 .hvac-desc {
   display: none;
+  padding-top: 20px;
 }
 .plumbing-desc {
   display: none;
+  padding-top: 20px;
 }
 .electrical-desc {
   display: none;
+  padding-top: 20px;
 }
 .automotive-desc {
   display: none;
+  padding-top: 20px;
 }
 .retail-desc {
   display: none;
+  padding-top: 20px;
 }
 .oem-desc {
   display: none;
+  padding-top: 20px;
 }
 .mid-menu {
   height: 50px;
@@ -787,8 +793,14 @@ a.spec-sheet {
   padding: 50px;
   text-align: center;
 }
+.aboutus-title1 {
+  /*height: 50px;*/
+}
 .aboutus-title1 span {
-  margin: 0 auto;
+  margin-top: 25px;
+  display: inline-block;
+  line-height: 25px;
+  /*margin: 0 auto;*/
   font-family: 'bignoodletitlingregular',cursive;
   font-size: 50px;
   letter-spacing: 2px;
