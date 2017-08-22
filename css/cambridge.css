@@ -805,3 +805,39 @@ a.spec-sheet {
   /*padding-top: 50px;*/
   padding-bottom: 50px;
 }
+.about-hvac, .about-plumbing {
+  background-color: #f2f2f2;
+}
+.about-cat-img {
+  padding: 20px;
+}
+.about-cat-img img {
+  max-width: 500px;
+  max-height: 400px;
+}
+.about-cat-desc {
+  padding: 20px 20px 20px 20px;
+  /*display: inline-block;*/
+  vertical-align: middle;
+}
+.about-cat-title {
+  font-family: 'bignoodletitlingregular';
+  font-size: 40px;
+}
+.about-cat-txt-main {
+  padding-bottom: 10px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
+  /*border-bottom: 2px solid #fff;*/
+}
+.about-hvac .about-cat-txt-main,
+.about-plumbing .about-cat-txt-main {
+  border-bottom: 1px solid #fff;
+}
+.about-electrical .about-cat-txt-main,
+.about-automotive .about-cat-txt-main {
+  border-bottom: 1px solid #e6e6e6;
+}
+.about-cat-txt-tags {
+  font-family: 'Questrial', sans-serif;
+}
