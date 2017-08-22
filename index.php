@@ -22,6 +22,8 @@
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
     <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
   </ol>
 
@@ -37,6 +39,14 @@
 
     <div class="item">
       <img src="<?php bloginfo('template_directory')?>/images/img3 copy.jpg">
+    </div>
+
+    <div class="item">
+      <img src="<?php bloginfo('template_directory')?>/images/img4 copy.jpg">
+    </div>
+
+    <div class="item">
+      <img src="<?php bloginfo('template_directory')?>/images/img5 copy.jpg">
     </div>
 
     <!-- <div class="item"> -->
