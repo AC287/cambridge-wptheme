@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
   console.log('Today is 8/22');
 
   var curLocation = $(location).attr('href').split('/');
-  console.log(curLocation);
+  // console.log(curLocation);
 
   switch (curLocation.length) {
     case 5:
