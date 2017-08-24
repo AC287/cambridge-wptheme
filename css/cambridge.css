@@ -89,12 +89,36 @@ body {
 }
 .navi1-btn {
   font-family: 'Questrial', sans-serif;
+  /*vertical-align: text-top;*/
 }
 .navi1-btn a {
+  position: relative;
   text-decoration: none;
   margin-left: 15px;
   color: inherit;
   font-size: 15px;
+  display: inline-block;
+  vertical-align: top;
+  /*line-height: 10px;*/
+}
+.navi1-btn a .header-navi-selector {
+  /*content: "";*/
+  display: none;
+  /*display: block;*/
+  margin: 0 auto;
+  width: 20px;
+  /*padding-top: 10px;*/
+  border-bottom: 2px solid #fff;
+  /*content: "";*/
+  /*background-color: #fff;*/
+  /*max-width: 3px;*/
+  /*line-height: 1px;*/
+  /*text-align: center;*/
+  /*max-width: 4px;*/
+  /*line-height: 3px;*/
+  /*margin-top: 0;*/
+  /*text-align: center;*/
+  /*padding-bottom: 5px;*/
 }
 .tn2-overall-table {
   margin: 0;

@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
   $('.top-nav').click(function(){
     console.log('CLICKED HEHEHE');
   })
-  console.log('Today is 8/22');
+  console.log('Today is 8/24');
 
   var curLocation = $(location).attr('href').split('/');
   // console.log(curLocation);
@@ -21,12 +21,11 @@ jQuery(document).ready(function($) {
       break;
   }
   function navigationSelector(x){
-    return(
-      $('.'+ x ).css({
-        'border-bottom' : '1px solid #fff',
-        // 'box-shadow' : '0px 10px 0px -7px #fff',
-      })
-    );
+    // $('.'+ x + ' . header-navi-title').css('height', '11px');
+    console.log(x);
+    $('.'+ x + ' .header-navi-selector' ).css({'display' : 'block',});
+
+    return;
   }
 
   /* - - - index page - - - */
