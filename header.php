@@ -39,13 +39,34 @@
                   </tr>
                   <tr>
                     <td class="navi1-btn">
-                      <a class="home" href="<?php echo home_url();?>">HOME</a>
-                      <a class="products" href="<?php echo home_url();?>/products/">PRODUCTS</a>
-                      <a class="about" href="<?php echo home_url();?>/about/">ABOUT</a>
-                      <a class="industries" href="<?php echo home_url();?>/industries/">INDUSTRIES</a>
-                      <a class="team" href="<?php echo home_url();?>/team/">OUR TEAM</a>
-                      <a class="brands" href="<?php echo home_url();?>/brands/">BRANDS</a>
-                      <a class="contact" href="<?php echo home_url();?>/contact/">CONTACT</a>
+                      <a class="home" href="<?php echo home_url();?>">
+                        <div class="header-navi-title">HOME</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
+                      <a class="products" href="<?php echo home_url();?>/products/">
+                        <div class="header-navi-title">PRODUCTS</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
+                      <a class="about" href="<?php echo home_url();?>/about/">
+                        <div class="header-navi-title">ABOUT</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
+                      <a class="industries" href="<?php echo home_url();?>/industries/">
+                        <div class="header-navi-title">INDUSTRIES</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
+                      <a class="team" href="<?php echo home_url();?>/team/">
+                        <div class="header-navi-title">OUR TEAM</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
+                      <a class="brands" href="<?php echo home_url();?>/brands/">
+                        <div class="header-navi-title">BRANDS</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
+                      <a class="contact" href="<?php echo home_url();?>/contact/">
+                        <div class="header-navi-title">CONTACT</div>
+                        <div class="header-navi-selector"></div>
+                      </a>
                     </td>
                   </tr>
                 </table> <!-- end tn-inner-table  -->

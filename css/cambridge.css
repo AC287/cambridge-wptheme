@@ -89,12 +89,36 @@ body {
 }
 .navi1-btn {
   font-family: 'Questrial', sans-serif;
+  /*vertical-align: text-top;*/
 }
 .navi1-btn a {
+  position: relative;
   text-decoration: none;
-  margin-left: 15px;
+  margin-left: 20px;
   color: inherit;
   font-size: 15px;
+  display: inline-block;
+  vertical-align: top;
+  /*line-height: 10px;*/
+}
+.navi1-btn a .header-navi-selector {
+  /*content: "";*/
+  display: none;
+  /*display: block;*/
+  margin: 0 auto;
+  width: 30px;
+  /*padding-top: 10px;*/
+  border-bottom: 2px solid #fff;
+  /*content: "";*/
+  /*background-color: #fff;*/
+  /*max-width: 3px;*/
+  /*line-height: 1px;*/
+  /*text-align: center;*/
+  /*max-width: 4px;*/
+  /*line-height: 3px;*/
+  /*margin-top: 0;*/
+  /*text-align: center;*/
+  /*padding-bottom: 5px;*/
 }
 .tn2-overall-table {
   margin: 0;
@@ -267,21 +291,31 @@ body {
 }
 .hvac-desc {
   display: none;
+  padding-top: 20px;
+  color: #003DA5;
+}
+.hvac p, .plumbing p, .electrical p, .automotive p {
+  color: #003DA5;
 }
 .plumbing-desc {
   display: none;
+  padding-top: 20px;
 }
 .electrical-desc {
   display: none;
+  padding-top: 20px;
 }
 .automotive-desc {
   display: none;
+  padding-top: 20px;
 }
 .retail-desc {
   display: none;
+  padding-top: 20px;
 }
 .oem-desc {
   display: none;
+  padding-top: 20px;
 }
 .mid-menu {
   height: 50px;
@@ -778,3 +812,83 @@ a.spec-sheet {
 .ip-prev:hover, .ip-next:hover {
   background-color: rgba(0,0,0,0.8);
 }*/
+
+/* - - - ABOUT US - - - */
+
+.aboutus-inthebeginning {
+  /*padding-top: 50px;
+  padding-bottom: 50px;*/
+  padding: 50px;
+  text-align: center;
+}
+.aboutus-inthebeginning-img {
+  /*text-align: center;*/
+  overflow: hidden;
+}
+.aboutus-title1 {
+  /*height: 50px;*/
+}
+.aboutus-title1 span {
+  margin-top: 25px;
+  display: inline-block;
+  line-height: 50px;
+  /*margin: 0 auto;*/
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.aboutus-title1-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #003DA5;
+}
+.aboutus-content1 {
+  margin-top: 20px;
+  text-align: left;
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+}
+.aboutus-timelineimg img {
+  max-width: 100%;
+  /*padding-top: 50px;*/
+  padding-bottom: 50px;
+}
+.about-hvac, .about-plumbing {
+  background-color: #f2f2f2;
+}
+.about-cat-img {
+  padding: 20px;
+  overflow: hidden;
+}
+.about-cat-img img {
+  max-width: 500px;
+  max-height: 400px;
+  /*height: auto;*/
+}
+.about-cat-desc {
+  padding: 20px 20px 20px 20px;
+  /*display: inline-block;*/
+  vertical-align: middle;
+}
+.about-cat-title {
+  font-family: 'bignoodletitlingregular';
+  font-size: 40px;
+}
+.about-cat-txt-main {
+  padding-bottom: 10px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
+  /*border-bottom: 2px solid #fff;*/
+}
+.about-hvac .about-cat-txt-main,
+.about-plumbing .about-cat-txt-main {
+  border-bottom: 1px solid #fff;
+}
+.about-electrical .about-cat-txt-main,
+.about-automotive .about-cat-txt-main {
+  border-bottom: 1px solid #e6e6e6;
+}
+.about-cat-txt-tags {
+  font-family: 'Questrial', sans-serif;
+}

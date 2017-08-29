@@ -5,37 +5,27 @@ jQuery(document).ready(function($) {
   $('.top-nav').click(function(){
     console.log('CLICKED HEHEHE');
   })
-  console.log('Today is 8/17');
+  console.log('Today is 8/24');
 
   var curLocation = $(location).attr('href').split('/');
-  console.log(curLocation);
+  // console.log(curLocation);
 
   switch (curLocation.length) {
     case 5:
-      $('.home').css('border-bottom', '3px solid #fff');
+      // $('.home').css('border-bottom', '1px solid #fff');
+      // $('.home').css('box-shadow','0px 10px 0px -7px #fff');
+      navigationSelector('home');
       break;
     default:
-      switch (curLocation[4]){
-        case 'products':
-          $('.products').css('border-bottom','3px solid #fff');
-          break;
-        case 'about':
-          $('.about').css('border-bottom','3px solid #fff');
-          break;
-        case 'industries':
-          $('.industries').css('border-bottom','3px solid #fff');
-          break;
-        case 'team':
-          $('.team').css('border-bottom','3px solid #fff');
-          break;
-        case 'brands':
-          $('.brands').css('border-bottom','3px solid #fff');
-          break;
-        case 'contact':
-          $('.contact').css('border-bottom','3px solid #fff');
-          break;
-      }
+      navigationSelector(curLocation[4]);
       break;
+  }
+  function navigationSelector(x){
+    // $('.'+ x + ' . header-navi-title').css('height', '11px');
+    console.log(x);
+    $('.'+ x + ' .header-navi-selector' ).css({'display' : 'block',});
+
+    return;
   }
 
   /* - - - index page - - - */
