@@ -892,3 +892,58 @@ a.spec-sheet {
 .about-cat-txt-tags {
   font-family: 'Questrial', sans-serif;
 }
+.about-4info {
+  background-color: #003DA5;
+  color: #fff;
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.about-4info-img {
+  margin-bottom: 20px;
+}
+.about-4info-img img {
+  max-width: 75px;
+  max-height: 75px;
+}
+.about-4info-title {
+  padding: 5px;
+  margin: 0px 10px 0px 10px;
+  height: 65px;
+  /*width: 100px;*/
+  border: 2px solid #fff;
+  font-size: 18px;
+}
+.about-4info-contents {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  /*line-height: 15px;*/
+  line-height: auto;
+}
+.about-locations {
+  background-image: url("../images/about/about-worldmap.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*height: 500px;*/
+  /*color: #003DA5;*/
+}
+.about-locations-title {
+  text-align: center;
+  font-family: "bignoodletitlingregular";
+  font-size: 50px;
+  padding-top: 30px;
+}
+.about-locations-title1 {
+  /*display: inline-block;*/
+  line-height: 50px;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.about-locations-title1-underline {
+  margin: 0 auto;
+  width: 100px;
+  border-top: 5px solid #003DA5;
+  margin-bottom: 30px;
+}
