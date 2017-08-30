@@ -929,6 +929,10 @@ a.spec-sheet {
   /*line-height: 15px;*/
   /*line-height: auto;*/
 }
+
+/*
+  Worldmap is created with https://mapchart.net/
+*/
 .about-locations {
   background-image: url("../images/about/about-worldmap2.png");
   background-size: 100% 100%;
