@@ -930,13 +930,14 @@ a.spec-sheet {
   /*line-height: auto;*/
 }
 .about-locations {
-  background-image: url("../images/about/about-worldmap.png");
+  background-image: url("../images/about/about-worldmap2.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
   /*height: 500px;*/
   /*color: #003DA5;*/
+  padding-bottom: 20px;
 }
 .about-locations-title {
   text-align: center;
@@ -958,5 +959,20 @@ a.spec-sheet {
 
 .about-locations-localimg img {
   width: 150px;
-  height: auto;
+  height: 150px;
+}
+.about-locations-type {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.about-locations-type p {
+  margin-bottom: 0;
+  font-family: 'Questrial', sans-serif;
+}
+.about-locations-type-title {
+  /*font-weight: bold;*/
+  text-shadow: 0px 0px 1px #000000;
+}
+.about-locations-type-multicities {
+  padding-bottom: 10px;
 }

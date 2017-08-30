@@ -208,15 +208,28 @@
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
 						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">MISSISSAUGA, ON</p>
+							<p>Distribution Center</p>
+						</div>
 					</div>
 					<div class="col-xs-4">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
 						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">CHICAGO, IL</p>
+							<p>Regional Headquarters</p>
+							<p>Distribution Center</p>
+						</div>
 					</div>
 					<div class="col-xs-4">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/newyork.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">NEW YORK, NY</p>
+							<p>Corporate Headquarters</p>
 						</div>
 					</div>
 				</div>
@@ -225,10 +238,18 @@
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/california.png">
 						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">SIMI VALLEY, CA</p>
+							<p>Distribution Center</p>
+						</div>
 					</div>
 					<div class="col-xs-6">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/texas.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">HOUSTON, TX</p>
+							<p>Distribution Center</p>
 						</div>
 					</div>
 				</div>
@@ -236,6 +257,24 @@
 			<div class="col-sm-3">
 				<div class="about-locations-localimg">
 					<img src="<?php bloginfo('template_directory')?>/images/about/china.png">
+				</div>
+				<div class="about-locations-type">
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">BEIJING, CHINA</p>
+						<p>Manufacturing Facility</p>
+					</div>
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">HEZE, CHINA</p>
+						<p>Manufacturing Facility</p>
+					</div>
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">XINCHANG, CHINA</p>
+						<p>Logistics &amp Sourcing Office</p>
+					</div>
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">SHENZHEN, CHINA</p>
+						<p>Sourcing Office</p>
+					</div>
 				</div>
 			</div>
 		</div> <!--	end row -->
