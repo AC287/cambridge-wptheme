@@ -157,7 +157,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
 			</div>
 			<div class="about-4info-title">
-				CUSTOMER SERVICE &amp SALES SUPPORT
+				CUSTOMER SERVICE <br/>&amp SALES SUPPORT
 			</div>
 			<div class="about-4info-contents">
 				<p>U.S. based customer service and sales support team.</p>

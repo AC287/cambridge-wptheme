@@ -129,27 +129,39 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <img src="<?php bloginfo('template_directory')?>/images/distribution02.png"></img>
-        <div class="mc-header" >DISTRIBUTION</div>
-        <div class="mc-border">INDUSTRY DISTRIBUTORS <br/>CARRY CAMBRIDGE</div>
-        <div class="mc-txt">
-          <p>Cambridge manufactures products and sells to a variety of industry wholesalers, jobbers, and importers. Cambridge has a dedicated team of sales professionals who are extremely knowledgable in the inventory they carry, and their respective industries.</p>
+        <div class="index-midcategory" data-toggle="collapse" data-target="#imc-distribution">
+          <img src="<?php bloginfo('template_directory')?>/images/distribution02.png"></img>
+          <div class="mc-header" >DISTRIBUTION</div>
+        </div>
+        <div class="collapse index-midcategory-contents" id="imc-distribution">
+          <div class="mc-border">INDUSTRY DISTRIBUTORS <br/>CARRY CAMBRIDGE</div>
+          <div class="mc-txt">
+            <p>Cambridge manufactures products and sells to a variety of industry wholesalers, jobbers, and importers. Cambridge has a dedicated team of sales professionals who are extremely knowledgable in the inventory they carry, and their respective industries.</p>
+          </div>
         </div>
       </div>
       <div class="col-sm-4">
-        <img src="<?php bloginfo('template_directory')?>/images/retail02.png"></img>
-        <div class="mc-header" >RETAIL</div>
-        <div class="mc-border">INTERNATIONAL RETAILERS <br/>SELL CAMBRIDGE</div>
-        <div class="mc-txt">
-          <p>Retail consumers are drawn to our state-of-the-art branding, and find the entire shopping experience fast and easy since the pertinent product information is easily accessible. With over 1,000 SKUs in over 15,000 retail locations across the USA and Canada, keep your eyes peeled as Cambridge continues to pop up in many new locations.</p>
+        <div class="index-midcategory" data-toggle="collapse" data-target="#imc-retail">
+          <img src="<?php bloginfo('template_directory')?>/images/retail02.png"></img>
+          <div class="mc-header" >RETAIL</div>
+        </div>
+        <div class="collapse index-midcategory-contents" id="imc-retail">
+          <div class="mc-border">INTERNATIONAL RETAILERS <br/>SELL CAMBRIDGE</div>
+          <div class="mc-txt">
+            <p>Retail consumers are drawn to our state-of-the-art branding, and find the entire shopping experience fast and easy since the pertinent product information is easily accessible. With over 1,000 SKUs in over 15,000 retail locations across the USA and Canada, keep your eyes peeled as Cambridge continues to pop up in many new locations.</p>
+          </div>
         </div>
       </div>
       <div class="col-sm-4">
-        <img src="<?php bloginfo('template_directory')?>/images/oem02.png"></img>
-        <div class="mc-header" >O.E.M.</div>
-        <div class="mc-border">ORIGINAL EQUIPMENT <br/>MANUFACTURER</div>
-        <div class="mc-txt">
-          <p>Cambridge supplies its premium industrial products to many OEMs across a variety of industries. OEMs use Cambridge products in their manufacturing process because they know that they can trust it to be high quality and long lasting.</p>
+        <div class="index-midcategory" data-toggle="collapse" data-target="#imc-oem">
+          <img src="<?php bloginfo('template_directory')?>/images/oem02.png"></img>
+          <div class="mc-header" >O.E.M.</div>
+        </div>
+        <div class="collapse index-midcategory-contents" id="imc-oem">
+          <div class="mc-border">ORIGINAL EQUIPMENT <br/>MANUFACTURER</div>
+          <div class="mc-txt">
+            <p>Cambridge supplies its premium industrial products to many OEMs across a variety of industries. OEMs use Cambridge products in their manufacturing process because they know that they can trust it to be high quality and long lasting.</p>
+          </div>
         </div>
       </div>
     </div>
