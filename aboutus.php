@@ -135,12 +135,12 @@
 </div>
 <div class="about-4info">
 	<div class="container">
-		<div class="col-sm-3">
+		<div class="col-sm-3 about-4info-block">
 			<div class="about-4info-img">
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
 			</div>
 			<div class="about-4info-title">
-				DEVELOPMENT &amp PRODUCTION
+				DEVELOPMENT &amp PRODUCTION:
 			</div>
 			<div class="about-4info-contents">
 				<p>Product Design</p>
@@ -152,7 +152,7 @@
 				<p>Sourcing</p>
 			</div>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 about-4info-block">
 			<div class="about-4info-img">
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
 			</div>
@@ -163,7 +163,7 @@
 				<p>U.S. based customer service and sales support team.</p>
 			</div>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 about-4info-block">
 			<div class="about-4info-img">
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-supplymngt.png">
 			</div>
@@ -174,7 +174,7 @@
 				<p>Dedicated QA/SCM team in Cina oversees all area of quality control and supply chain logistics.
 			</div>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-3 about-4info-block">
 			<div class="about-4info-img">
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-distribution.png">
 			</div>
@@ -182,7 +182,7 @@
 				DISTRIBUTION
 			</div>
 			<div class="about-4info-contents">
-				<p>5 Strategically located Distribution facilities</p>
+				<p>5 Strategically located Distribution facilities:</p>
 				<p>Brooklyn, NY</p>
 				<p> Simi Valley, CA</p>
 				<p> Houston, TX</p>
@@ -205,26 +205,38 @@
 			<div class="col-sm-9">
 				<div class="row">
 					<div class="col-xs-4">
-						col 4
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
+						</div>
 					</div>
 					<div class="col-xs-4">
-						col 4
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
+						</div>
 					</div>
 					<div class="col-xs-4">
-						col 4
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/newyork.png">
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-6">
-						col 6
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/california.png">
+						</div>
 					</div>
 					<div class="col-xs-6">
-						col 6
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/texas.png">
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-3">
-				THIS IS CHINA
+				<div class="about-locations-localimg">
+					<img src="<?php bloginfo('template_directory')?>/images/about/china.png">
+				</div>
 			</div>
 		</div> <!--	end row -->
 	</div>	<!--	end container  -->

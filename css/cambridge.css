@@ -900,12 +900,19 @@ a.spec-sheet {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.about-4info-block {
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .about-4info-img {
   margin-bottom: 20px;
 }
 .about-4info-img img {
   max-width: 75px;
   max-height: 75px;
+}
+.about-4info-contents p {
+  margin: 0 auto;
 }
 .about-4info-title {
   padding: 5px;
@@ -920,13 +927,14 @@ a.spec-sheet {
   margin-bottom: 20px;
   font-size: 18px;
   /*line-height: 15px;*/
-  line-height: auto;
+  /*line-height: auto;*/
 }
 .about-locations {
   background-image: url("../images/about/about-worldmap.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
+  text-align: center;
   /*height: 500px;*/
   /*color: #003DA5;*/
 }
@@ -946,4 +954,9 @@ a.spec-sheet {
   width: 100px;
   border-top: 5px solid #003DA5;
   margin-bottom: 30px;
+}
+
+.about-locations-localimg img {
+  width: 150px;
+  height: auto;
 }
