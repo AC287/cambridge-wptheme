@@ -133,5 +133,152 @@
 		</div>
 	</div>
 </div>
+<div class="about-4info">
+	<div class="container">
+		<div class="col-sm-3 about-4info-block">
+			<div class="about-4info-img">
+				<img src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
+			</div>
+			<div class="about-4info-title">
+				DEVELOPMENT &amp PRODUCTION:
+			</div>
+			<div class="about-4info-contents">
+				<p>Product Design</p>
+				<p>Product Development</p>
+				<p>Packaging</p>
+				<p>Marketing</p>
+				<p>Engineering</p>
+				<p>Manufacturing</p>
+				<p>Sourcing</p>
+			</div>
+		</div>
+		<div class="col-sm-3 about-4info-block">
+			<div class="about-4info-img">
+				<img src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
+			</div>
+			<div class="about-4info-title">
+				CUSTOMER SERVICE &amp SALES SUPPORT
+			</div>
+			<div class="about-4info-contents">
+				<p>U.S. based customer service and sales support team.</p>
+			</div>
+		</div>
+		<div class="col-sm-3 about-4info-block">
+			<div class="about-4info-img">
+				<img src="<?php bloginfo('template_directory')?>/images/about/about-supplymngt.png">
+			</div>
+			<div class="about-4info-title">
+				SUPPLY CHAIN MANAGEMENT
+			</div>
+			<div class="about-4info-contents">
+				<p>Dedicated QA/SCM team in Cina oversees all area of quality control and supply chain logistics.
+			</div>
+		</div>
+		<div class="col-sm-3 about-4info-block">
+			<div class="about-4info-img">
+				<img src="<?php bloginfo('template_directory')?>/images/about/about-distribution.png">
+			</div>
+			<div class="about-4info-title">
+				DISTRIBUTION
+			</div>
+			<div class="about-4info-contents">
+				<p>5 Strategically located Distribution facilities:</p>
+				<p>Brooklyn, NY</p>
+				<p> Simi Valley, CA</p>
+				<p> Houston, TX</p>
+				<p>Chicago, IL</p>
+				<p>Mississuaga, ONT</p>
+			</div>
+		</div>
+	</div>	<!--	end container	-->
+</div>
+<div class="about-locations">
+	<div class="container">
+		<div class="about-locations-title">
+			<div class="about-locations-title1">
+				<span>LOCATIONS</span>
+			</div>
+			<div class="about-locations-title1-underline">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="row">
+					<div class="col-xs-4">
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">MISSISSAUGA, ON</p>
+							<p>Distribution Center</p>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">CHICAGO, IL</p>
+							<p>Regional Headquarters</p>
+							<p>Distribution Center</p>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/newyork.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">NEW YORK, NY</p>
+							<p>Corporate Headquarters</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/california.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">SIMI VALLEY, CA</p>
+							<p>Distribution Center</p>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="about-locations-localimg">
+							<img src="<?php bloginfo('template_directory')?>/images/about/texas.png">
+						</div>
+						<div class="about-locations-type">
+							<p class="about-locations-type-title">HOUSTON, TX</p>
+							<p>Distribution Center</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="about-locations-localimg">
+					<img src="<?php bloginfo('template_directory')?>/images/about/china.png">
+				</div>
+				<div class="about-locations-type">
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">BEIJING, CHINA</p>
+						<p>Manufacturing Facility</p>
+					</div>
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">HEZE, CHINA</p>
+						<p>Manufacturing Facility</p>
+					</div>
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">XINCHANG, CHINA</p>
+						<p>Logistics &amp Sourcing Office</p>
+					</div>
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">SHENZHEN, CHINA</p>
+						<p>Sourcing Office</p>
+					</div>
+				</div>
+			</div>
+		</div> <!--	end row -->
+	</div>	<!--	end container  -->
+</div>	<!--	end about-location	-->
 
 <?php get_footer();
