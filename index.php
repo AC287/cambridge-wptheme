@@ -69,7 +69,7 @@
 <div class="general-category">
   <div class="container">
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-sm-3">
         <div class="hvac gc-block">
           <div class="hvac gc-desc-img">
             <img src="<?php bloginfo('template_directory')?>/images/hvac02.png"></img>
@@ -79,7 +79,7 @@
           <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
         </div>
       </div>
-      <div class="col-xs-3">
+      <div class="col-sm-3">
         <div class="plumbing gc-block">
           <div class="plumbing gc-desc-img">
             <img src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
@@ -89,7 +89,7 @@
           <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
         </div>
       </div>
-      <div class="col-xs-3">
+      <div class="col-sm-3">
         <div class="electrical gc-block">
           <div class="electrical gc-desc-img">
             <img src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
@@ -99,7 +99,7 @@
           <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
         </div>
       </div>
-      <div class="col-xs-3">
+      <div class="col-sm-3">
         <div class="automotive gc-block">
           <div class="automotive gc-desc-img">
             <img src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
@@ -128,7 +128,7 @@
 <div id="mid-category">
   <div class="container">
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-sm-4">
         <img src="<?php bloginfo('template_directory')?>/images/distribution02.png"></img>
         <div class="mc-header" >DISTRIBUTION</div>
         <div class="mc-border">INDUSTRY DISTRIBUTORS <br/>CARRY CAMBRIDGE</div>
@@ -136,7 +136,7 @@
           <p>Cambridge manufactures products and sells to a variety of industry wholesalers, jobbers, and importers. Cambridge has a dedicated team of sales professionals who are extremely knowledgable in the inventory they carry, and their respective industries.</p>
         </div>
       </div>
-      <div class="col-xs-4">
+      <div class="col-sm-4">
         <img src="<?php bloginfo('template_directory')?>/images/retail02.png"></img>
         <div class="mc-header" >RETAIL</div>
         <div class="mc-border">INTERNATIONAL RETAILERS <br/>SELL CAMBRIDGE</div>
@@ -144,7 +144,7 @@
           <p>Retail consumers are drawn to our state-of-the-art branding, and find the entire shopping experience fast and easy since the pertinent product information is easily accessible. With over 1,000 SKUs in over 15,000 retail locations across the USA and Canada, keep your eyes peeled as Cambridge continues to pop up in many new locations.</p>
         </div>
       </div>
-      <div class="col-xs-4">
+      <div class="col-sm-4">
         <img src="<?php bloginfo('template_directory')?>/images/oem02.png"></img>
         <div class="mc-header" >O.E.M.</div>
         <div class="mc-border">ORIGINAL EQUIPMENT <br/>MANUFACTURER</div>
