@@ -140,7 +140,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
 			</div>
 			<div class="about-4info-title">
-				DEVELOPMENT &amp PRODUCTION:
+				DEVELOPMENT <br/>&amp PRODUCTION:
 			</div>
 			<div class="about-4info-contents">
 				<p>Product Design</p>
@@ -168,7 +168,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-supplymngt.png">
 			</div>
 			<div class="about-4info-title">
-				SUPPLY CHAIN MANAGEMENT
+				SUPPLY CHAIN <br/>MANAGEMENT
 			</div>
 			<div class="about-4info-contents">
 				<p>Dedicated QA/SCM team in Cina oversees all area of quality control and supply chain logistics.
