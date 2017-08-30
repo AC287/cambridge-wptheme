@@ -179,7 +179,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-distribution.png">
 			</div>
 			<div class="about-4info-title">
-				DISTRIBUTION
+				STRATEGIC<br/>DISTRIBUTION
 			</div>
 			<div class="about-4info-contents">
 				<p>5 Strategically located Distribution facilities:</p>
