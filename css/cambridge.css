@@ -1112,6 +1112,7 @@ a.spec-sheet {
   /*font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;*/
   font-family: 'bignoodletitlingregular';
   font-size: 1.9rem;
+  text-align: center;
   /*line-height: 2rem;*/
   margin: 10px 0px 5px 0px;
 }
