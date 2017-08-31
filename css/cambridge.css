@@ -836,7 +836,7 @@ a.spec-sheet {
 .aboutus-inthebeginning {
   /*padding-top: 50px;
   padding-bottom: 50px;*/
-  padding: 50px;
+  padding: 50px 50px 20px 50px;
   text-align: center;
 }
 .aboutus-inthebeginning-img {
@@ -1026,6 +1026,8 @@ a.spec-sheet {
   -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
   cursor: pointer;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
 }
 .about-tl-item:before, .about-tl-item:after {
   -webkit-transform: translate3d(0, 0, 0);
@@ -1038,7 +1040,8 @@ a.spec-sheet {
   height: 100%;
 }
 .about-tl-item:after {
-  background: rgba(3, 22, 37, 0.85);
+  /*background: rgba(3, 22, 37, 0.85);*/
+  background: #0d1778;
   opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
@@ -1097,6 +1100,7 @@ a.spec-sheet {
   margin: 0 1.618em;
   top: 50%;
   opacity: 0;
+  font-size: 14pt;
 }
 .about-tl-year {
   position: absolute;
