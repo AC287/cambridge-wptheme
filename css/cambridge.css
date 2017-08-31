@@ -347,7 +347,7 @@ body {
   border-top: 3px solid white;
   border-bottom: 3px solid white;
   font-family: 'Questrial', sans-serif;
-  color: #ffffff;
+  color: #fff;
 }
 #mid-category .container {
   padding-top: 30px;
@@ -378,8 +378,8 @@ body {
   padding-bottom: 10px;
   font-size: 25px;
   font-weight: bold;
-  color: #404040;
-  /*color: #003DA5;*/
+  /*color: #404040;*/
+  color: #003DA5;
 }
 .mc-border {
   font-size: 20px;
