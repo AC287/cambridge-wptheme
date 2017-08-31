@@ -25,10 +25,105 @@
 			</div>
 		</div>
 	</div>	<!--	end aboutus-inthebeginning  -->
-	<div class="aboutus-timelineimg">
-		<img src="<?php bloginfo('template_directory')?>/images/timeline.png">
-	</div>
 </div>	<!--  end container  -->
+<!-- <div class="aboutus-timelineimg"> -->
+	<!-- <img src="<?php bloginfo('template_directory')?>/images/timeline.png"> -->
+<!-- </div> -->
+
+<section id="about-timeline">
+  <div class="about-tl-item">
+    <div class="about-tl-bg" style="background-color: #003DA5"></div>
+    <div class="about-tl-year">
+      <p>1947</p>
+    </div>
+    <div class="about-tl-content">
+      <!-- <h1>Lorem ipsum dolor sit</h1> -->
+      <p>Abraham Tropper opens Coda Resources (called Central Supply) and begins selling notion items in New York City.</p>
+    </div>
+  </div>
+  <div class="about-tl-item">
+    <div class="about-tl-bg" style="background-color: #70bdff"></div>
+    <div class="about-tl-year">
+      <p>1985</p>
+    </div>
+    <div class="about-tl-content">
+      <!-- <h1 class="about-f3 text--accent ttu">Vestibulum laoreet lorem</h1> -->
+      <p>Coda relocates to its current 100,000 sq. ft. Headquarters in Brooklyn.</p>
+    </div>
+  </div>
+  <div class="about-tl-item">
+    <div class="about-tl-bg" style="background-color: #003DA5"></div>
+    <div class="about-tl-year">
+      <p>1998</p>
+    </div>
+    <div class="about-tl-content">
+      <!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+      <p>Cambridge Resources is established.</p>
+    </div>
+  </div>
+  <div class="about-tl-item">
+    <div class="about-tl-bg" style="background-color: #70bdff"></div>
+    <div class="about-tl-year">
+      <p>2006</p>
+    </div>
+    <div class="about-tl-content">
+      <!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
+      <p>Cambridge Shenzhen offices are formed.</p>
+    </div>
+  </div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" style="background-color: #003DA5"></div>
+		<div class="about-tl-year">
+			<p>2007-2009</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+			<p>Cambridge expands product line to include hose clamps, terminals, and wire connectors.</p>
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" style="background-color: #70bdff"></div>
+		<div class="about-tl-year">
+			<p>2010</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
+			<p>Cambridge partners with Stanley.</p>
+			<p> Expands China &amp Taiwan facilities.
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" style="background-color: #003DA5"></div>
+		<div class="about-tl-year">
+			<p>2013</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+			<p>Cambridge introduces zipits&trade; Retail product line.</p>
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" style="background-color: #70bdff"></div>
+		<div class="about-tl-year">
+			<p>2015</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
+			<p>Cambridge acquires LDR Global industries.</p>
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" style="background-color: #003DA5"></div>
+		<div class="about-tl-year">
+			<p>2016</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+			<p>Cambridge relocates key operations to Chicago facility.</p>
+		</div>
+	</div>
+</section>
+
 <div class="about-hvac">
 	<div class="container">
 		<div class="row">
