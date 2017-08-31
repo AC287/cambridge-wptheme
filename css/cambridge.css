@@ -358,28 +358,28 @@ body {
   width: 100px;
   cursor: pointer;
 }
-.index-midcategory {
-  /*cursor: pointer;*/
-  /*height: 0px;*/
+.index-midcategory img {
+  -webkit-filter: opacity(.25) drop-shadow(0 0 0 #003DA5);
+          filter: opacity(.25) drop-shadow(0 0 0 #003DA5);
+}
+.index-midcategory img:hover,
+.index-midcategory img:hover ~ .mc-header,
+.index-midcategory[aria-expanded="true"] .mc-header,
+.index-midcategory[aria-expanded="true"] img {
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
+  color: #fff;
 }
 .index-midcategory-contents {
-  /*display: none;*/
-  /*height: 0px;*/
-  /*opacity: 0;*/
-  /*position: relative;*/
   padding-bottom: 20px;
 }
-/*.index-midcategory-contents.open {
-  display: block;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}*/
 .mc-header {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 25px;
   font-weight: bold;
+  color: #404040;
+  /*color: #003DA5;*/
 }
 .mc-border {
   font-size: 20px;
@@ -400,22 +400,6 @@ body {
 #product-main-page {
   width: 100%;
 }
-
-/*
-Accordion. Sample taken from https://www.w3schools.com/howto/howto_js_accordion.asp
-*/
-/*.accordion {
-  cursor: pointer;
-}*/
-/*.accordion {
-    cursor: pointer;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    transition: 0.4s;
-    cursor: pointer;
-}*/
 .custaccordion {
   font-family: 'Questrial', sans-serif;
   cursor: pointer;
