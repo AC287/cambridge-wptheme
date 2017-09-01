@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
   $('.top-nav').click(function(){
     console.log('CLICKED HEHEHE');
   })
-  console.log('Today is 8/24');
+  console.log('Today is 8/30');
 
   var curLocation = $(location).attr('href').split('/');
   // console.log(curLocation);
@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
   /* - - - index page - - - */
   $('.gc-block').bind({
     mouseenter: function(){
-      var currentClass = '.'+classSplit($(this).attr('class'));
+      var currentClass = '.'+classSplit($(this).attr('class'))[0];
       // console.log(currentClass);
       var imgClass = '.'+currentClass+'-desc';
       $(currentClass + ' img').hide();
@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
       $(currentClass + '-desc').fadeIn();
     },
     mouseleave: function(){
-      var currentClass = '.'+classSplit($(this).attr('class'));
+      var currentClass = '.'+classSplit($(this).attr('class'))[0];
       // console.log(currentClass);
       var imgClass = '.'+currentClass+'-desc';
       $(currentClass + '-desc').hide();
@@ -48,16 +48,23 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('.index-midcategory').on('click', function(){
+    var currentSelection = $(this).attr('data-target').split('#')[1];
+    $('.index-midcategory-contents').each(function(i,obj){
+      // console.log(currentSelection);
+      // console.log($(this).attr('id'));
+      if($(this).attr('id')!=currentSelection){
+        $(this).collapse('hide');
+      }
+    })
+  })
+
+
   function classSplit(x){
     var mainclass=x.split(' ');
-    return mainclass[0];
+    return mainclass;
   }
 
-  // console.log('JS is fully functional.');
-  // console.log(Date());
-  // $('.accordion').click(function(){
-  //   console.log('omg u clicked it.');
-  // })
 
 // --- THIS IS FOR ACCORDION BUTTON SECTION ---
 
