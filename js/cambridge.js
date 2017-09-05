@@ -11,13 +11,13 @@ jQuery(document).ready(function($) {
   // console.log(curLocation);
 
   switch (curLocation.length) {
-    case 5:
+    case 3:
       // $('.home').css('border-bottom', '1px solid #fff');
       // $('.home').css('box-shadow','0px 10px 0px -7px #fff');
       navigationSelector('home');
       break;
     default:
-      navigationSelector(curLocation[4]);
+      navigationSelector(curLocation[3]);
       break;
   }
   function navigationSelector(x){
