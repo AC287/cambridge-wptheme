@@ -358,16 +358,12 @@ body {
   width: 100px;
   cursor: pointer;
 }
-.index-midcategory img {
+/*.index-midcategory img {
   -webkit-filter: opacity(.25) drop-shadow(0 0 0 #003DA5);
           filter: opacity(.25) drop-shadow(0 0 0 #003DA5);
-}
-.index-midcategory img:hover,
+}*/
 .index-midcategory img:hover ~ .mc-header,
-.index-midcategory[aria-expanded="true"] .mc-header,
-.index-midcategory[aria-expanded="true"] img {
-  -webkit-filter: opacity(1);
-          filter: opacity(1);
+.index-midcategory[aria-expanded="true"] .mc-header {
   color: #fff;
 }
 .index-midcategory-contents {
