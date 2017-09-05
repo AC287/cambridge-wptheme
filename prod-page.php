@@ -7,26 +7,6 @@
 		<main id="main" class="site-main" role="main">
 				<?php
 					global $wpdb;
-					// $main_category = $wpdb->get_results("SELECT * FROM wp_prod0;");
-					// echo "<table>";
-					// echo "<p>".$main_category."</p>";
-					// print_r(sizeof($main_category));
-					// foreach($main_category as $main_category){
-					// 	echo "<ul>";
-					// 	echo "<li>".$main_category->m0."</li>";
-					// 	echo "</ul>";
-					// 	// echo "<tr>";
-					// 	// echo "<td>".$category->m0."</td>";
-					// 	// echo "<td>".$category->s1."</td>";
-					// 	// echo "<td>".$category->s2."</td>";
-					// 	// echo "</tr>";
-					// }
-					// echo "<ul>"
-					// for ($i=0; $i<= sizeof($main_category); $i++) {
-					//
-					// }
-					// echo "</ul>"
-					// echo "</table>";
 
 					$main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prod0;");
           // $distinct_s1 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0;");
@@ -37,7 +17,7 @@
           $allHeight = sizeof($main_category)+sizeof($distinct_s1)+sizeof($distinct_s2);
           echo "<table id='product-main-page'>";
           echo "<td class='cat-bar'>";
-          echo "<h4><a href='../products/'>PRODUCT CATEGORIES</a></h4>";
+          echo "<h4><a href='products/'>PRODUCT CATEGORIES</a></h4>";
 					foreach($main_category as $main_category) {
             $s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
 						// print_r($main_category->m0);
@@ -70,6 +50,9 @@
 						// echo "</div>";
 					}
           echo "</td>";
+
+					// THIS END ACCORDION.
+
           echo "<td class='prod-display'>";
           // echo "<h1> HELLO </h1>";
           $mPos = 0;
