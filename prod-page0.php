@@ -17,7 +17,7 @@
 			// $main_category2 = $main_category;
 			echo "<table id='product-main-page'>";
 			echo "<td class='cat-bar'>";	// This is accordion section.
-			echo "<h4><a href='products/'>PRODUCT CATEGORIES</a></h4>";
+			echo "<h4><a href='./products'>PRODUCT CATEGORIES</a></h4>";
 			foreach($main_category as $main_category) {
 				$s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
 				if(!empty($s1_category[0]->s1)){
