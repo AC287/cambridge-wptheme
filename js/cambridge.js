@@ -10,8 +10,8 @@ jQuery(document).ready(function($) {
   var curLocation = $(location).attr('href').split('/');
   console.log(curLocation);
 
-  switch (curLocation.length) {
-    case (curLocation.length < 3):
+  switch (curLocation[3]) {
+    case "":
       // $('.home').css('border-bottom', '1px solid #fff');
       // $('.home').css('box-shadow','0px 10px 0px -7px #fff');
       navigationSelector('home');
