@@ -8,10 +8,10 @@ jQuery(document).ready(function($) {
   console.log('Today is 8/30');
 
   var curLocation = $(location).attr('href').split('/');
-  // console.log(curLocation);
+  console.log(curLocation);
 
   switch (curLocation.length) {
-    case 3:
+    case (curLocation.length < 3):
       // $('.home').css('border-bottom', '1px solid #fff');
       // $('.home').css('box-shadow','0px 10px 0px -7px #fff');
       navigationSelector('home');
