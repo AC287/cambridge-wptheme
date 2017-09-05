@@ -353,18 +353,65 @@ body {
   padding-top: 30px;
   padding-bottom: 10px;
 }
-#mid-category img {
+/*#mid-category img {
   height: 100px;
   width: 100px;
   cursor: pointer;
+}*/
+/*.index-midcategory {
+  text-align: center;
+}*/
+.index-midcategory-imgholder {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  display: block;
+  cursor: pointer;
+}
+.index-midcategory-imgholder.index-distribution {
+  background-image: url('../images/distribution01.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index-midcategory-imgholder.index-retail {
+  background-image: url('../images/retail01.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index-midcategory-imgholder.index-oem {
+  background-image: url('../images/oem01.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*.index-midcategory img {
   -webkit-filter: opacity(.25) drop-shadow(0 0 0 #003DA5);
           filter: opacity(.25) drop-shadow(0 0 0 #003DA5);
 }*/
-.index-midcategory img:hover ~ .mc-header,
+/*.index-midcategory img:hover ~ .mc-header,
 .index-midcategory[aria-expanded="true"] .mc-header {
   color: #fff;
+}*/
+.index-midcategory-imgholder:hover ~ .mc-header,
+.index-midcategory[aria-expanded="true"] .mc-header {
+  color: #fff;
+}
+.index-midcategory-imgholder.index-distribution:hover,
+.index-midcategory[aria-expanded="true"] .index-distribution {
+  background-image: url('../images/distribution02.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index-midcategory-imgholder.index-retail:hover,
+.index-midcategory[aria-expanded="true"] .index-retail {
+  background-image: url('../images/retail02.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index-midcategory-imgholder.index-oem:hover,
+.index-midcategory[aria-expanded="true"] .index-oem {
+  background-image: url('../images/oem02.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .index-midcategory-contents {
   padding-bottom: 20px;
@@ -425,6 +472,10 @@ body {
   width: inherit;
   margin-left: 15px;
   /*margin-right: 10px;*/
+}
+.custaccordion a {
+  display: inline-block;
+  width: 100%;
 }
 .chev {
   width: 12px;
