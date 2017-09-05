@@ -151,7 +151,7 @@
           echo "</td>";
           echo "</table>";
 
-				?>href='./
+				?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .container -->
