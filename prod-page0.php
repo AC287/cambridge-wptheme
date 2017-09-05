@@ -17,7 +17,7 @@
 			// $main_category2 = $main_category;
 			echo "<table id='product-main-page'>";
 			echo "<td class='cat-bar'>";	// This is accordion section.
-			echo "<h4><a href='/products/'>PRODUCT CATEGORIES</a></h4>";
+			echo "<h4><a href='../products/'>PRODUCT CATEGORIES</a></h4>";
 			foreach($main_category as $main_category) {
 				$s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
 				if(!empty($s1_category[0]->s1)){
@@ -30,11 +30,11 @@
 							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
 							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='./ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='./ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
@@ -62,9 +62,9 @@
 					// print_r(sizeof($img));
 					$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p0m0' AND s1='$s1_category2->s1';");
 					if((sizeof($s2_check)>=1) && (($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
-						echo "<a href='/ps1/?m0=".$p0m0."&s1=".$s1_category2->s1."' class='s1-box'>";
+						echo "<a href='./ps1/?m0=".$p0m0."&s1=".$s1_category2->s1."' class='s1-box'>";
 					} else {
-						echo "<a href='/ps2/?m0=".$p0m0."&s1=".$s1_category2->s1."' class='s1-box'>";
+						echo "<a href='./ps2/?m0=".$p0m0."&s1=".$s1_category2->s1."' class='s1-box'>";
 					}
 					echo "<div class='item-img'>";
 					if (sizeof($img) > 1) {

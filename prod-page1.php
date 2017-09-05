@@ -29,7 +29,7 @@
 			// print_r($main_category);
 			echo "<table id='product-main-page'>";
 			echo "<td class='cat-bar'>";
-			echo "<h4><a href='/products/'>PRODUCT CATEGORIES</a></h4>";
+			echo "<h4><a href='../products/'>PRODUCT CATEGORIES</a></h4>";
 			foreach($main_category as $main_category) {
 				$s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
 				// print_r($main_category->m0);
@@ -46,11 +46,11 @@
 							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
 							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='./ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='/ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='./ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
@@ -69,14 +69,14 @@
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
-			echo "<div class='m-title'><a href='/pm0/?m0=".$p1m0."'>".$p1m0."</a>  >>  ".$p1s1."</div>";	//Title
+			echo "<div class='m-title'><a href='./pm0/?m0=".$p1m0."'>".$p1m0."</a>  >>  ".$p1s1."</div>";	//Title
 				// $s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category2->m0';");
 				echo "<div class='s1-box-background'>";
 				foreach($sub_category2 as $sub_category2) {
 				// $counter = 0;
 				$img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s2 = '$sub_category2->s2' AND img0 IS NOT NULL;");
 				// print_r(sizeof($img));
-				echo "<a href='/ps2/?m0=".$p1m0."&s1=".$p1s1."&s2=".$sub_category2->s2."' class='s1-box'>";
+				echo "<a href='./ps2/?m0=".$p1m0."&s1=".$p1s1."&s2=".$sub_category2->s2."' class='s1-box'>";
 				echo "<div class='item-img'>";
 				if (sizeof($img) > 1) {
 					// foreach($img as $img) {
