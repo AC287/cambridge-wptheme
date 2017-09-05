@@ -130,7 +130,8 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="index-midcategory" data-toggle="collapse" data-target="#imc-distribution">
-          <img src="<?php bloginfo('template_directory')?>/images/distribution01.png"></img>
+          <!-- <img src="<?php bloginfo('template_directory')?>/images/distribution01.png"></img> -->
+          <div class="index-midcategory-imgholder index-distribution"></div>
           <div class="mc-header" >DISTRIBUTION</div>
         </div>
         <div class="collapse index-midcategory-contents" id="imc-distribution">
@@ -142,7 +143,8 @@
       </div>
       <div class="col-sm-4">
         <div class="index-midcategory" data-toggle="collapse" data-target="#imc-retail">
-          <img src="<?php bloginfo('template_directory')?>/images/retail01.png"></img>
+          <!-- <img src="<?php bloginfo('template_directory')?>/images/retail01.png"></img> -->
+          <div class="index-midcategory-imgholder index-retail"></div>
           <div class="mc-header" >RETAIL</div>
         </div>
         <div class="collapse index-midcategory-contents" id="imc-retail">
@@ -154,7 +156,8 @@
       </div>
       <div class="col-sm-4">
         <div class="index-midcategory" data-toggle="collapse" data-target="#imc-oem">
-          <img src="<?php bloginfo('template_directory')?>/images/oem01.png"></img>
+          <!-- <img src="<?php bloginfo('template_directory')?>/images/oem01.png"></img> -->
+          <div class="index-midcategory-imgholder index-oem"></div>
           <div class="mc-header" >O.E.M.</div>
         </div>
         <div class="collapse index-midcategory-contents" id="imc-oem">
