@@ -1,4 +1,4 @@
-href='/<!-- Template Name: Products Item page. -->
+<!-- Template Name: Products Item page. -->
 
 <!-- // Item page -->
 <!-- // Data displaying individual item. -->
