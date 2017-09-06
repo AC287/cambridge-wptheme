@@ -1204,6 +1204,20 @@ a.spec-sheet {
   text-align: center;
   /*height: 175px;*/
 }
+@media screen and (max-width: 1000px) {
+  .team-individualimg {
+    width: 50%;
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .team-individualimg {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+}
 .team-crop {
   margin: 0 auto;
   width: 200px;

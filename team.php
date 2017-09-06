@@ -20,7 +20,9 @@
       foreach($team as $team) {
         echo "<div class='team-individualimg'>";
           echo "<div class='team-crop'>";
+          echo "<a href='#".strtolower($team->first)."'>";
             echo "<img src='".$team->img."'>";
+          echo "</a>";
           echo "</div>";
           echo "<hr class='team-breakline'/>";
           echo "<div class='team-individualname'>".$team->first." ".$team->last."</div>";
