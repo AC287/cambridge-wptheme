@@ -238,11 +238,30 @@ clickToNext.click(function(){
   // }
 })
 
+/*
+- - - TEAM PAGE - - -
+*/
+$('.team-crop').click(function(){
+  var displayingPerson = '.team-'+$(this).attr('id');
+  // console.log($(this).attr('id'));
+  $('.team-modal').css('display','block');
+  $(displayingPerson).css('display', 'block');
+
+  $('.team-close').click(function(){
+    $('.team-modal').css('display','none');
+    $(displayingPerson).css('display','none');
+  })
+})
+
+
+
 $(document).keydown(function(e){
   // console.log(e);
   if(e.keyCode==27){  //this listen for "ESC" key.
     $('.ip-modal').css('display','none');
     $('.ip-slides').css('display','none');
+    $('.team-modal').css('display', 'none');
+    $('.team-modal-content').css('display','none');
   }
 })
 
