@@ -1193,7 +1193,13 @@ a.spec-sheet {
   width: 200px;
   border-bottom: 4px solid #003DA5;
 }
+.team-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
 .team-individualimg {
+  width: 25%;
   margin-top: 50px;
   text-align: center;
   /*height: 175px;*/
