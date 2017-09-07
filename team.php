@@ -57,6 +57,16 @@
     </div> <!-- END TEAM WRAPPER -->
   </div>
 
+  <div class='team-salesmanager'>
+    <?php
+      // $mapLink = bloginfo('template_directory')."/images/usmap.svg";
+      // print_r($mapLink);
+      // echo file_get_contents($mapLink);
+      include("images/usmap.svg");
+      // echo file_get_contents("images/usmap.svg");
+    ?>
+  </div>
+
 </div>  <!--  end container -->
 
 <?php get_footer(); ?>
