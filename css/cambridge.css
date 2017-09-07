@@ -1280,7 +1280,7 @@ a.spec-sheet {
   right: 5px;
 }
 .team-close:hover, .team-close:focus {
-  color: #999;
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
