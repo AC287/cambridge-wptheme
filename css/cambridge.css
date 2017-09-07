@@ -1247,7 +1247,7 @@ a.spec-sheet {
   display: none;
   position: fixed;
   z-index: 3;
-  padding-top: 100px;
+  padding-top: 50px;
   left: 0;
   top: 0;
   width: 100%;
@@ -1255,10 +1255,6 @@ a.spec-sheet {
   overflow: auto;
   background-color: rgba(0,0,0);
   background-color: rgba(0,0,0,0.9);
-}
-.team-modal-content {
-  display: none;
-  padding: 20px;
 }
 .team-modal-container {
   margin: auto;
@@ -1288,15 +1284,42 @@ a.spec-sheet {
   text-decoration: none;
   cursor: pointer;
 }
+.team-modal-content {
+  display: none;
+  /*display: inline-block;*/
+  padding: 20px 20px 20px 0px;
+  /*float: left;*/
+  /*height: 500px;*/
+}
+.team-modal-icontents {
+  /*margin-left: 5px;*/
+  padding-left: 75px;
+  /*display: inline-block;*/
+  /*width: 520px;*/
+}
 .team-modal-iimage {
   /*padding-top: 50px;*/
   /*overflow: hidden;*/
   /*width: 100%;*/
   /*width: 500px;*/
-  height: 100%;
+  height: 480px;
+  /*width: 480px;*/
+  /*display: inline-block;*/
+  /*padding: 0px;*/
+  /*width: 480px;*/
+  /*width: 100%;*/
+  /*overflow-x: hidden;*/
+  /*margin: 0;*/
+  /*text-align: center;*/
 }
 .team-modal-iimage img {
+  /*margin: 0 auto;*/
+  /*height: 480px;*/
+  height: 100%;
+  /*width: auto;*/
+  display: block;
   margin: 0 auto;
+
   /*width: 100%;*/
   /*height: 100%;*/
 }
@@ -1317,4 +1340,17 @@ a.spec-sheet {
   margin: 0 auto;
   width: 200px;
   border-bottom: 4px solid #fff;
+}
+.team-modal-ititle {
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  font-size: 15pt;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.team-blurb {
+  /*position: relative;*/
+  /*top: 50%;*/
+  font-family: 'Questrial', sans-serif;
+  color: #fff;
 }

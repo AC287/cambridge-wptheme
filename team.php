@@ -34,11 +34,20 @@
             echo "<div class='row team-modal-content team-".strtolower($teammodal->first).strtolower($teammodal->last)."'>";
               echo "<div class='col-sm-5 team-modal-iimage'>";
                 echo "<img src='".$teammodal->img."'>";
-              echo "</div>";
-              echo "<div class='col-sm-7'>";
+              echo "</div>";  // end col
+              echo "<div class='col-sm-7 team-modal-icontents'>";
                 echo "<div class='team-modal-iname'><span>".$teammodal->first." ".$teammodal->last."</span><div class='team-modal-iname-underline'></div></div>";
-              echo "</div>";  // end col-6
-            echo "</div>";  //end team-modal-content with individual person name;
+                echo "<div class='team-modal-ititle'><span>".$teammodal->title."</span></div>";
+                echo "<div class='team-blurb'>";
+                  for($teamdesc=0; $teamdesc < 5; $teamdesc++){
+                    $currDescIndex = 'desc'.$teamdesc;
+                    if($teammodal->$currDescIndex !="") {
+                      echo "<p class='team-blurb-contents'>".$teammodal->$currDescIndex."</p>";
+                    }
+                  }
+                echo "</div>";  // end team-blurb;
+              echo "</div>";  // end col
+            echo "</div>";  //end row team-modal-content with individual person name;
           }
         echo "</div>";  // end team-modal-container;
       echo "</div>";  // end team-modal;
