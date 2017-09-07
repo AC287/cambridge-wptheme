@@ -1354,3 +1354,65 @@ a.spec-sheet {
   font-family: 'Questrial', sans-serif;
   color: #fff;
 }
+
+.team-salesmanager {
+  /*padding-top: 50px;*/
+  /*background-color: cmyk(2.75%, 1.57%, 1.57%, 0%);*/
+  /*background-color: #999888;*/
+  background-color: #F8FBFB;
+  padding-bottom: 50px;
+}
+.team-salesmanager-section {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+.team-salesmanager-section span {
+  display: inline-block;
+  line-height: 50px;
+  /*margin: 0 auto;*/
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.team-salesmanager-section-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #003DA5;
+}
+.team-mapcontainer {
+  /*margin: 20px;*/
+  width: 70%;
+  /*text-align: center;*/
+  margin: 0 auto;
+}
+.team-salesmanager-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.team-salesmanager-each {
+  width: 25%;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Questrial', sans-serif;
+  /*cursor: pointer;*/
+}
+.team-salesmanager-img {
+  margin: 10px;
+}
+.team-salesmanager-img img {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+.team-salesmanager-name {
+  font-size: 16pt;
+  font-weight: bold;
+}
+/*  svg hover  */
+/*.team-state-CA:hover ~ g #CA .cls-1 {
+  fill: #fff;
+}*/
+  /*, OR, WA, NV, AZ, ID, UT, MT, WY, NM, CO, TX, NE, SD, ND, OK, KS, MN, IA, MO, AR, LA, WI, IL, MS, TN, KY, IN, AL, MI, FL, OH, GA, NC, VA, WV, SC, PA, MD, NJ, DE, VT, MA, CT, NH, ME, RI, NY, AK, HI*/
+/*.team-state-*/

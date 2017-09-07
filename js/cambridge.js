@@ -253,7 +253,30 @@ $('.team-crop').click(function(){
   })
 })
 
+// $('.team-salesmanager-each').hover(function(){
+//   // console.log($(this).attr('class'));
+//   var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+//   // console.log(currState);
+//   $(currState).css({
+//     'fill': '#fff',
+//   })
+// })
 
+$('.team-salesmanager-each').bind({
+  mouseenter: function(){
+    var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+    $(currState).css({
+      // 'transform':'scale(1.5)',
+      'fill':'rgb(112, 189, 255)',
+    })
+  },
+  mouseleave: function(){
+    // var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+    $('.cls-1').css({
+      'fill':'#036',
+    })
+  }
+});
 
 $(document).keydown(function(e){
   // console.log(e);
