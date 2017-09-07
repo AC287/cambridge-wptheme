@@ -56,17 +56,22 @@
       ?>
     </div> <!-- END TEAM WRAPPER -->
   </div>
-
-  <div class='team-salesmanager'>
-    <?php
-      // $mapLink = bloginfo('template_directory')."/images/usmap.svg";
-      // print_r($mapLink);
-      // echo file_get_contents($mapLink);
-      include("images/usmap.svg");
-      // echo file_get_contents("images/usmap.svg");
-    ?>
-  </div>
-
 </div>  <!--  end container -->
+
+<div class='team-salesmanager'>
+  <div class='container'>
+    <div class="team-salesmanager-section">
+      <span>SALES MANAGERS</span>
+      <div class="team-salesmanager-section-underline">
+      </div>
+    </div>
+    <div class='team-mapcontainer'>
+      <?php
+      include("images/usmap2.svg");
+      ?>
+    </div>
+  </div>
+</div>
+
 
 <?php get_footer(); ?>

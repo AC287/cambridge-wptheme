@@ -1354,3 +1354,34 @@ a.spec-sheet {
   font-family: 'Questrial', sans-serif;
   color: #fff;
 }
+
+.team-salesmanager {
+  /*padding-top: 50px;*/
+  /*background-color: cmyk(2.75%, 1.57%, 1.57%, 0%);*/
+  /*background-color: #999888;*/
+  background-color: #F8FBFB;
+}
+.team-salesmanager-section {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+.team-salesmanager-section span {
+  display: inline-block;
+  line-height: 50px;
+  /*margin: 0 auto;*/
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.team-salesmanager-section-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #003DA5;
+}
+.team-mapcontainer {
+  /*margin: 20px;*/
+  width: 70%;
+  /*text-align: center;*/
+  margin: 0 auto;
+}
