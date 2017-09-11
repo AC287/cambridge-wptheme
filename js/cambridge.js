@@ -2,27 +2,61 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
-  $('.top-nav').click(function(){
-    console.log('CLICKED HEHEHE');
+  // $('.top-nav').click(function(){
+  //   console.log('CLICKED HEHEHE');
+  // })
+  console.log('Today is 9/11');
+
+  $('.navi1-btn a').bind({
+    mouseenter: function(){
+      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
+      // console.log(currClass);
+      $(currClass).css({
+        // 'transform':'scale(1.5)',
+        'display':'block',
+      })
+    },
+    mouseleave: function(){
+      var currClass = $(this).attr('class');
+      // if (currClass != getCurrentLocation())
+      switch (currClass) {
+        case 'home':
+          if (getCurrentLocation() == ''){
+            break;
+          }
+        default:
+          console.log(currClass);
+          if (currClass == getCurrentLocation()){
+            break;
+          } else {
+            $('.'+currClass+' .header-navi-selector').css ({
+              'display':'none',
+            })
+            break;
+          }
+      }
+    }
   })
-  console.log('Today is 8/30');
+  // });
 
-  var curLocation = $(location).attr('href').split('/');
-  console.log(curLocation);
+  function getCurrentLocation() {
+    var curLocation = $(location).attr('href').split('/');
+    return (curLocation[3]);
+  }
 
-  switch (curLocation[3]) {
+  switch (getCurrentLocation()) {
     case "":
       // $('.home').css('border-bottom', '1px solid #fff');
       // $('.home').css('box-shadow','0px 10px 0px -7px #fff');
       navigationSelector('home');
       break;
     default:
-      navigationSelector(curLocation[3]);
+      navigationSelector(getCurrentLocation());
       break;
   }
   function navigationSelector(x){
     // $('.'+ x + ' . header-navi-title').css('height', '11px');
-    console.log(x);
+    // console.log(x);
     $('.'+ x + ' .header-navi-selector' ).css({'display' : 'block',});
 
     return;
