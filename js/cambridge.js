@@ -296,9 +296,9 @@ $('.team-crop').click(function(){
 //   })
 // })
 
-$('.team-salesmanager-each').bind({
+$('.team-salesmanager-each img').bind({
   mouseenter: function(){
-    var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+    var currState = '#'+$(this).attr('class').split('-')[2]+' .cls-1';
     $(currState).css({
       // 'transform':'scale(1.5)',
       'fill':'rgb(112, 189, 255)',
