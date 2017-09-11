@@ -2,27 +2,61 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
-  $('.top-nav').click(function(){
-    console.log('CLICKED HEHEHE');
+  // $('.top-nav').click(function(){
+  //   console.log('CLICKED HEHEHE');
+  // })
+  console.log('Today is 9/11');
+
+  $('.navi1-btn a').bind({
+    mouseenter: function(){
+      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
+      // console.log(currClass);
+      $(currClass).css({
+        // 'transform':'scale(1.5)',
+        'display':'block',
+      })
+    },
+    mouseleave: function(){
+      var currClass = $(this).attr('class');
+      // if (currClass != getCurrentLocation())
+      switch (currClass) {
+        case 'home':
+          if (getCurrentLocation() == ''){
+            break;
+          }
+        default:
+          console.log(currClass);
+          if (currClass == getCurrentLocation()){
+            break;
+          } else {
+            $('.'+currClass+' .header-navi-selector').css ({
+              'display':'none',
+            })
+            break;
+          }
+      }
+    }
   })
-  console.log('Today is 8/30');
+  // });
 
-  var curLocation = $(location).attr('href').split('/');
-  console.log(curLocation);
+  function getCurrentLocation() {
+    var curLocation = $(location).attr('href').split('/');
+    return (curLocation[3]);
+  }
 
-  switch (curLocation[3]) {
+  switch (getCurrentLocation()) {
     case "":
       // $('.home').css('border-bottom', '1px solid #fff');
       // $('.home').css('box-shadow','0px 10px 0px -7px #fff');
       navigationSelector('home');
       break;
     default:
-      navigationSelector(curLocation[3]);
+      navigationSelector(getCurrentLocation());
       break;
   }
   function navigationSelector(x){
     // $('.'+ x + ' . header-navi-title').css('height', '11px');
-    console.log(x);
+    // console.log(x);
     $('.'+ x + ' .header-navi-selector' ).css({'display' : 'block',});
 
     return;
@@ -238,11 +272,53 @@ clickToNext.click(function(){
   // }
 })
 
+/*
+- - - TEAM PAGE - - -
+*/
+$('.team-crop').click(function(){
+  var displayingPerson = '.team-'+$(this).attr('id');
+  // console.log($(this).attr('id'));
+  $('.team-modal').css('display','block');
+  $(displayingPerson).css('display', 'block');
+
+  $('.team-close').click(function(){
+    $('.team-modal').css('display','none');
+    $(displayingPerson).css('display','none');
+  })
+})
+
+// $('.team-salesmanager-each').hover(function(){
+//   // console.log($(this).attr('class'));
+//   var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+//   // console.log(currState);
+//   $(currState).css({
+//     'fill': '#fff',
+//   })
+// })
+
+$('.team-salesmanager-each').bind({
+  mouseenter: function(){
+    var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+    $(currState).css({
+      // 'transform':'scale(1.5)',
+      'fill':'rgb(112, 189, 255)',
+    })
+  },
+  mouseleave: function(){
+    // var currState = '#'+$(this).attr('class').split(' ')[1].split('-')[2]+' .cls-1';
+    $('.cls-1').css({
+      'fill':'#036',
+    })
+  }
+});
+
 $(document).keydown(function(e){
   // console.log(e);
   if(e.keyCode==27){  //this listen for "ESC" key.
     $('.ip-modal').css('display','none');
     $('.ip-slides').css('display','none');
+    $('.team-modal').css('display', 'none');
+    $('.team-modal-content').css('display','none');
   }
 })
 

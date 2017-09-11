@@ -1193,10 +1193,30 @@ a.spec-sheet {
   width: 200px;
   border-bottom: 4px solid #003DA5;
 }
+.team-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
 .team-individualimg {
+  width: 25%;
   margin-top: 50px;
   text-align: center;
   /*height: 175px;*/
+}
+@media screen and (max-width: 1000px) {
+  .team-individualimg {
+    width: 50%;
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .team-individualimg {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
 }
 .team-crop {
   margin: 0 auto;
@@ -1205,6 +1225,7 @@ a.spec-sheet {
   overflow: hidden;
 }
 .team-crop img {
+  cursor: pointer;
   width: 100%;
   /*height: 100%;*/
 }
@@ -1219,5 +1240,179 @@ a.spec-sheet {
 .team-individualtitle {
   font-size: 18px;
   color: #999999;
+  /*color: #000000;*/
   line-height: 20px;
 }
+.team-modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+.team-modal-container {
+  margin: auto;
+  /*display: block;*/
+  padding: 0;
+  /*width: 65%;*/
+  /*height: 80%;*/
+  width: 1000px;
+  height: 500px;
+  /*max-width: 530px;*/
+  position: relative;
+  background-color: #999999;
+}
+.team-close {
+  color: white;
+  z-index: 4;
+  position: absolute;
+  /*top: 10px;*/
+  /*right: 25px;*/
+  font-size: 18px;
+  /*font-weight: bold;*/
+  top: 5px;
+  right: 5px;
+}
+.team-close:hover, .team-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.team-modal-content {
+  display: none;
+  /*display: inline-block;*/
+  padding: 20px 20px 20px 0px;
+  /*float: left;*/
+  /*height: 500px;*/
+}
+.team-modal-icontents {
+  /*margin-left: 5px;*/
+  padding-left: 75px;
+  /*display: inline-block;*/
+  /*width: 520px;*/
+}
+.team-modal-iimage {
+  /*padding-top: 50px;*/
+  /*overflow: hidden;*/
+  /*width: 100%;*/
+  /*width: 500px;*/
+  height: 480px;
+  /*width: 480px;*/
+  /*display: inline-block;*/
+  /*padding: 0px;*/
+  /*width: 480px;*/
+  /*width: 100%;*/
+  /*overflow-x: hidden;*/
+  /*margin: 0;*/
+  /*text-align: center;*/
+}
+.team-modal-iimage img {
+  /*margin: 0 auto;*/
+  /*height: 480px;*/
+  height: 100%;
+  /*width: auto;*/
+  display: block;
+  margin: 0 auto;
+
+  /*width: 100%;*/
+  /*height: 100%;*/
+}
+.team-modal-iname {
+  text-align: center;
+}
+.team-modal-iname span {
+  margin-top: 25px;
+  display: inline-block;
+  line-height: 50px;
+  /*margin: 0 auto;*/
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.team-modal-iname-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #fff;
+}
+.team-modal-ititle {
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  font-size: 15pt;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+.team-blurb {
+  /*position: relative;*/
+  /*top: 50%;*/
+  font-family: 'Questrial', sans-serif;
+  color: #fff;
+}
+
+.team-salesmanager {
+  /*padding-top: 50px;*/
+  /*background-color: cmyk(2.75%, 1.57%, 1.57%, 0%);*/
+  /*background-color: #999888;*/
+  background-color: #F8FBFB;
+  padding-bottom: 50px;
+}
+.team-salesmanager-section {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+.team-salesmanager-section span {
+  display: inline-block;
+  line-height: 50px;
+  /*margin: 0 auto;*/
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.team-salesmanager-section-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #003DA5;
+}
+.team-mapcontainer {
+  /*margin: 20px;*/
+  width: 70%;
+  /*text-align: center;*/
+  margin: 0 auto;
+}
+.team-salesmanager-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.team-salesmanager-each {
+  width: 25%;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Questrial', sans-serif;
+  /*cursor: pointer;*/
+}
+.team-salesmanager-img {
+  margin: 10px;
+}
+.team-salesmanager-img img {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+.team-salesmanager-name {
+  font-size: 16pt;
+  font-weight: bold;
+}
+/*  svg hover  */
+/*.team-state-CA:hover ~ g #CA .cls-1 {
+  fill: #fff;
+}*/
+  /*, OR, WA, NV, AZ, ID, UT, MT, WY, NM, CO, TX, NE, SD, ND, OK, KS, MN, IA, MO, AR, LA, WI, IL, MS, TN, KY, IN, AL, MI, FL, OH, GA, NC, VA, WV, SC, PA, MD, NJ, DE, VT, MA, CT, NH, ME, RI, NY, AK, HI*/
+/*.team-state-*/
