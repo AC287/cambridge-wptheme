@@ -76,9 +76,9 @@
         global $wpdb;
         $salesmanager = $wpdb->get_results("SELECT * FROM wp_salesmanager ORDER BY sort ASC;");
         foreach ($salesmanager as $salesmanager1){
-          echo "<div class='team-salesmanager-each team-state-".$salesmanager1->si."'>";
+          echo "<div class='team-salesmanager-each'>";
             echo "<div class='team-salesmanager-img'>";
-              echo "<img src='".$salesmanager1->img."'>";
+              echo "<img class='team-state-".$salesmanager1->si."' src='".$salesmanager1->img."'>";
             echo "</div>";
             echo "<div class='team-salesmanager-name'><span>".ucfirst($salesmanager1->first)." ".ucfirst($salesmanager1->last)."</span></div>";
             echo "<div class='team-salesmanager-title'><span>".ucfirst($salesmanager1->title)."</span></div>";
