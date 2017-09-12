@@ -7,6 +7,17 @@ jQuery(document).ready(function($) {
   // })
   console.log('Today is 9/11');
 
+  $('.header-navicon').click(function(){
+    var x = $('#header-rnav').attr('class').split(' ');
+    console.log(x.length);
+    if(x.length===1){
+      $('#header-rnav').addClass('responsive');
+    }
+    else {
+      $('#header-rnav').removeClass('responsive');
+    }
+  })
+
   $('.navi1-btn a').bind({
     mouseenter: function(){
       var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
@@ -25,7 +36,7 @@ jQuery(document).ready(function($) {
             break;
           }
         default:
-          console.log(currClass);
+          // console.log(currClass);
           if (currClass == getCurrentLocation()){
             break;
           } else {
