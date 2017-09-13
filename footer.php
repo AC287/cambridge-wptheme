@@ -1,10 +1,10 @@
   <footer class="site-footer">
-    <div class="container footer1">
-      <div class="row">
-        <div class="col-xs-1">
+    <div class="container">
+      <div class="footer1">
+        <div class="footer1-inner-left">
           <a href="<?php echo home_url();?>" class="footer1-maintxt">Home</a>
         </div>
-        <div class="col-xs-2">
+        <div class="footer1-inner-left">
           <a href="<?php echo home_url();?>/products/" class="footer1-maintxt">Products</a>
           <ul class="footer1-subtxt">
             <li><a href="">Top Seller</a></li>
@@ -14,7 +14,7 @@
             <li><a href="">Warranty</a></li>
           </ul>
         </div>
-        <div class="col-xs-2">
+        <div class="footer1-inner-left">
           <a href="" class="footer1-maintxt">About</a>
           <ul class="footer1-subtxt">
             <li><a href="">Who We Are</a></li>
@@ -23,10 +23,10 @@
             <li><a href="">News</a></li>
           </ul>
         </div>
-        <div class="col-xs-1">
+        <div class="footer1-inner-left">
           <a href="" class="footer1-maintxt">Brands</a>
         </div>
-        <div class="col-xs-2">
+        <div class="footer1-inner-left">
           <a href="" class="footer1-maintxt">Contact Us</a>
           <ul class="footer1-subtxt">
             <li><a href="">Customer Service</a></li>
@@ -35,7 +35,7 @@
             <li><a href="">Map</a></li>
           </ul>
         </div>
-        <div class="col-xs-4 certifications">
+        <div class="footer1-inner-right">
           <div class="certifications-txt">CERTIFICATIONS</div>
           <img src="<?php bloginfo('template_directory')?>/images/certifications3.png"></img>
         </div>
