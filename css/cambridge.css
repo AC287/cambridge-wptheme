@@ -1508,11 +1508,19 @@ a.spec-sheet {
 }
 .team-salesmanager-container {
   margin: 0 auto;
+  /*display: inline-block;*/
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
 .team-salesmanager-each {
-  width: 25%;
+  width: 275px;
   text-align: center;
   margin-top: 30px;
   font-family: 'Questrial', sans-serif;
@@ -1632,12 +1640,22 @@ a.spec-sheet {
   border-bottom: 4px solid #003DA5;
 }
 .contact-salesmanager-container {
-  margin: 0 auto;
+  /*margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
+  /*display: inline-block;*/
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
 .contact-salesmanager-each {
-  width: 25%;
+  width: 275px;
   text-align: center;
   /*margin-top: 30px;*/
   font-family: 'Questrial', sans-serif;
