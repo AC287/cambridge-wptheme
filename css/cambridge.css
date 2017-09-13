@@ -50,6 +50,32 @@ body {
   margin-bottom: 20px;
 }*/
 
+textarea:focus, input:focus {
+  outline: none;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder
+{
+    color: transparent;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder{
+    color: transparent!important;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder{
+    color: transparent!important;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder{
+    color: transparent!important;
+}
+/*input:focus::-webkit-input-placeholder,
+input:focus::-moz-placeholder,
+input:focus:-moz-placeholder,
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}*/
 /* -- This is top navigation. Header across all pages. -- */
 .top-nav {
   width: 100%;
@@ -106,6 +132,7 @@ body {
 .header-mnav .header-navicon {
   display: none;
 }
+/* Responsive css for navigation */
 @media screen and (max-width: 1000px) {
   .tn-inner-table {
     text-align: center;
@@ -172,20 +199,36 @@ body {
 .top-nav2 {
   padding-top: 5px;
   padding-bottom: 5px;
+  /*display: inline-block;*/
 }
 .nav2 {
   font-family: 'bignoodletitlingregular';
   color: #003DA5;
   font-size: 20px;
   letter-spacing: 2px;
+  display: block;
+  float: left;
+}
+.nav2-logo {
+  display: block;
+  float: left;
 }
 .nav2-logo a {
   text-decoration: none;
   padding-left: 20px;
 }
+.nav2,
+.nav2-logo:not(.nav2-coda) {
+  padding-top: 8px;
+  padding-bottom: 5px;
+}
 .nav2-search {
+  display: block;
+  float: right;
   text-align: right;
   margin: 0;
+  padding-top: 3px;
+  padding-bottom: 5px;
 }
 .nav2-search-icon {
   color: #003DA5;
@@ -205,9 +248,11 @@ body {
 }*/
 .search-field {
   text-align: center;
-  /*width: 100%;*/
-  /*border-radius: 5px;*/
-  /*background-color: #F2F2F2;*/
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+  background-color: #F2F2F2;
+  height: 35px;
 }
 
 /*--  site footer --*/
@@ -218,13 +263,27 @@ body {
 
 }
 .footer1 {
-  padding-top: 25px;
+  /*padding-top: 25px;*/
   padding-bottom: 25px;
+  display: inline-block;
+  /*display: block;*/
+  width: 100%;
   /*width: inherit;*/
   /*background-color: #003DA5;*/
   /*font-family: 'Questrial', sans-serif;*/
   /*display: flex;*/
   /*color: white;*/
+}
+.footer1-inner-left {
+  padding-top: 25px;
+  display: block;
+  float: left;
+  padding-right: 30px;
+}
+.footer1-inner-right {
+  padding-top: 25px;
+  display: block;
+  float: right;
 }
 /*.footerlink {
   height: 150px;
@@ -265,6 +324,12 @@ body {
 .footer-socialmedia {
   float: right;
   /*padding-right: 15px;*/
+}
+
+@media screen and (max-width: 1000px) {
+  .footer1-inner-right, .footer1-inner-left {
+    float: none;
+  }
 }
 
 /*  -  -  -  INDEX PAGE -  -  -  */
@@ -363,13 +428,22 @@ body {
   padding-top: 20px;
 }
 .mid-menu {
-  height: 50px;
+  /*height: 50px;*/
   background-color: #003DA5;
   text-align: center;
   color: #ffffff;
 }
 .mid-menu .container {
   padding-top: 10px;
+}
+/*  responsive menu for mid-menu at index page. */
+@media screen and (max-width: 650px) {
+  .mm-divider {
+    display: none;
+  }
+  #mid-menu-menu a {
+    display: block;
+  }
 }
 #mid-menu-menu {
   font-family: 'bignoodletitlingregular';
@@ -1249,6 +1323,7 @@ a.spec-sheet {
   text-align: center;
   /*height: 175px;*/
 }
+/* Responsive css for team page */
 @media screen and (max-width: 1000px) {
   .team-individualimg {
     width: 50%;
@@ -1433,11 +1508,19 @@ a.spec-sheet {
 }
 .team-salesmanager-container {
   margin: 0 auto;
+  /*display: inline-block;*/
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
 .team-salesmanager-each {
-  width: 25%;
+  width: 275px;
   text-align: center;
   margin-top: 30px;
   font-family: 'Questrial', sans-serif;
@@ -1557,12 +1640,22 @@ a.spec-sheet {
   border-bottom: 4px solid #003DA5;
 }
 .contact-salesmanager-container {
-  margin: 0 auto;
+  /*margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
+  /*display: inline-block;*/
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
 }
 .contact-salesmanager-each {
-  width: 25%;
+  width: 275px;
   text-align: center;
   /*margin-top: 30px;*/
   font-family: 'Questrial', sans-serif;
