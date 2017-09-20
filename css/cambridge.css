@@ -1676,3 +1676,60 @@ a.spec-sheet {
 .contact-salesmanager-text {
   font-size: 8pt;
 }
+
+/* - - - CAREER - - - */
+.career-banner img {
+  width: 100%;
+  height: auto;
+}
+.career-mainheader {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.career-mainheader span {
+  /*margin-top: 50px;*/
+  display: inline-block;
+  line-height: 50px;
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+.career-mainheader-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #003DA5;
+}
+.career-pagecallout {
+  background-color: #F8FBFB;
+}
+.career-pagecallout-contents {
+  font-family: 'Questrial', sans-serif;
+  font-size: 13pt;
+  margin: 50px 0px 50px 0px;
+}
+.career-content-container {
+  font-family: 'Questrial', sans-serif;
+}
+.coe-email a {
+  padding-left: 10px;
+}
+.coe-summary,
+.coe-description,
+.coe-tag {
+  margin: 15px 0px 0px 0px;
+}
+.coe-position {
+  font-size: 14pt;
+  font-weight: bold;
+}
+.career-open-container {
+  height: 150px;
+  overflow-y: hidden;
+}
+.career-open-expand {
+  padding-top: 20px;
+}
+.career-open-expand a {
+  cursor: pointer;
+}

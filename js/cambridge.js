@@ -322,7 +322,27 @@ $('.team-salesmanager-each img').bind({
     })
   }
 });
-
+// console.log($('.career-open-each').height());
+/* - - - CAREER EXPAND SECTION - - - */
+$('.career-open-expand a').click(function(){
+  // console.log($(this).attr('id'));
+  var clickedclass = '.'+$(this).attr('id');
+  var clickedID = '#'+$(this).attr('id');
+  var clickedclassHeight = $(clickedclass).height();
+  var clickedHeightInner = $( clickedclass + ' .career-open-each').height();
+  // console.log(typeof(clickedHeight));
+  if (clickedclassHeight > 150){
+    $(clickedclass).css({
+      'height': '150px',
+    })
+    $(clickedID).text('Click to expand');
+  } else {
+    $(clickedclass).css({
+      'height': clickedHeightInner+'px',
+    })
+    $(clickedID).text('Hide');
+  }
+})
 $(document).keydown(function(e){
   // console.log(e);
   if(e.keyCode==27){  //this listen for "ESC" key.
