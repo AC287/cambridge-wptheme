@@ -343,6 +343,23 @@ $('.career-open-expand a').click(function(){
     $(clickedID).text('Hide');
   }
 })
+
+$('.catalog-custbtn').click(function(){
+  $catalogthumbinner = $('.catalog-thumbinner');
+  console.log($catalogthumbinner.length);
+  // for (var i=0; i < $catalogthumbinner.length; i++) {
+  //   $catalogthumbinner[i].style.display="none";
+  // }
+  // console.log('clicked');
+  // console.log($(this).hasClass('active'));
+  // $label ='.'+ $(this).find("input").attr('id');
+  // console.log($label.attr('id'));
+  // $($label).css({
+  //   'display':'inline-flex',
+  // })
+})
+
+/* - - - Pressing ESC will reset everything - - - */
 $(document).keydown(function(e){
   // console.log(e);
   if(e.keyCode==27){  //this listen for "ESC" key.
