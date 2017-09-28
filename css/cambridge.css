@@ -1773,6 +1773,9 @@ a.spec-sheet {
   border: 1px solid #073DA5;
   color: #073DA5;
 }
+.catalog-custbtn:hover {
+  color: #073DA5;
+}
 .catalog-custbtn.active {
   background-color: #073DA5;
   color: #fff;
