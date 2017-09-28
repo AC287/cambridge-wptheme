@@ -1792,7 +1792,7 @@ a.spec-sheet {
   width: 250px;
   display: inline-block;
   text-align: center;
-  padding: 25px 0px 25px 0px;
+  margin: 25px 0px 25px 0px;
 }
 .catalog-each-thumb img {
   width: 200px;

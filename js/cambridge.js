@@ -344,9 +344,30 @@ $('.career-open-expand a').click(function(){
   }
 })
 
+/* - - - catalog initial load - - - */
+$('.catalog-custbtn').each(function(index){
+  var currentClass = '.'+$(this).children('input').attr('id');
+  if($(this).hasClass('active')){
+    // var activeClass = '.'+ $(this).children('input').attr('id');
+    $(currentClass).show();
+  } else {
+    $(currentClass).hide();
+  }
+});
+/* - - - catalog click effect - - - */
 $('.catalog-custbtn').click(function(){
-  $catalogthumbinner = $('.catalog-thumbinner');
-  console.log($catalogthumbinner.length);
+  console.log($(this).children('input').attr('id'));
+  var clickedClass = $(this).children('input').attr('id');
+  $('.catalog-thumbinner').each(function(index){
+    // console.log(index+" "+clickedClass);
+    if($(this).hasClass(clickedClass)){
+      $('.'+clickedClass).show();
+    } else {
+      $(this).hide();
+    };
+  })
+  // $catalogthumbinner = $('.catalog-thumbinner');
+  // console.log($catalogthumbinner.length);
   // for (var i=0; i < $catalogthumbinner.length; i++) {
   //   $catalogthumbinner[i].style.display="none";
   // }
@@ -357,7 +378,7 @@ $('.catalog-custbtn').click(function(){
   // $($label).css({
   //   'display':'inline-flex',
   // })
-})
+});
 
 /* - - - Pressing ESC will reset everything - - - */
 $(document).keydown(function(e){
