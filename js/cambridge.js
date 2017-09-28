@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
   // $('.top-nav').click(function(){
   //   console.log('CLICKED HEHEHE');
   // })
-  console.log('Today is 9/11');
+  console.log('Today is 9/28');
 
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
@@ -18,36 +18,36 @@ jQuery(document).ready(function($) {
     }
   })
 
-  $('.navi1-btn a').bind({
-    mouseenter: function(){
-      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
-      // console.log(currClass);
-      $(currClass).css({
-        // 'transform':'scale(1.5)',
-        'display':'block',
-      })
-    },
-    mouseleave: function(){
-      var currClass = $(this).attr('class');
-      // if (currClass != getCurrentLocation())
-      switch (currClass) {
-        case 'home':
-          if (getCurrentLocation() == ''){
-            break;
-          }
-        default:
-          // console.log(currClass);
-          if (currClass == getCurrentLocation()){
-            break;
-          } else {
-            $('.'+currClass+' .header-navi-selector').css ({
-              'display':'none',
-            })
-            break;
-          }
-      }
-    }
-  })
+  // $('.navi1-btn a').bind({
+  //   mouseenter: function(){
+  //     var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
+  //     // console.log(currClass);
+  //     $(currClass).css({
+  //       // 'transform':'scale(1.5)',
+  //       'display':'block',
+  //     })
+  //   },
+  //   mouseleave: function(){
+  //     var currClass = $(this).attr('class');
+  //     // if (currClass != getCurrentLocation())
+  //     switch (currClass) {
+  //       case 'home':
+  //         if (getCurrentLocation() == ''){
+  //           break;
+  //         }
+  //       default:
+  //         // console.log(currClass);
+  //         if (currClass == getCurrentLocation()){
+  //           break;
+  //         } else {
+  //           $('.'+currClass+' .header-navi-selector').css ({
+  //             'display':'none',
+  //           })
+  //           break;
+  //         }
+  //     }
+  //   }
+  // })
   // });
 
   function getCurrentLocation() {

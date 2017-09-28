@@ -37,18 +37,6 @@ body {
   /*background: #eee;*/
   /*font: sans-serif;*/
 }
-/*body {
-  padding: 20px;
-}*/
-
-/*#all-container {
-  max-width: 1366px;
-}*/
-/*.table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-}*/
 
 textarea:focus, input:focus, button:focus {
   outline: none;
@@ -70,35 +58,30 @@ input:focus:-moz-placeholder,
 textarea:focus:-moz-placeholder{
     color: transparent!important;
 }
-/*input:focus::-webkit-input-placeholder,
-input:focus::-moz-placeholder,
-input:focus:-moz-placeholder,
-input:focus::-ms-input-placeholder {
-  color: transparent;
-}*/
+
 /* -- This is top navigation. Header across all pages. -- */
 .top-nav {
   width: 100%;
   background-color: #003DA5;
   color: #fff;
 }
-.tn-overall-table {
-  /*margin-top: 15px;*/
-  /*margin-bottom: 15px;*/
-  width: 100%;
-  /*margin: 0;*/
-}
 .cambridge-white-logo {
-  padding: 10px 20px 10px 15px;
+  /*height: 80px;*/
+  /*display: inline-block;*/
+  position: absolute;
+  z-index: 1;
+  margin-top: 10px;
+  /*padding: 10px 0px 10px 0px;*/
+  /*margin: 0 auto;*/
 }
-.tn-inner-table {
-  height: inherit;
-  width: 100%;
+.cambridge-white-logo img {
   margin: 0;
-  text-align: right;
+  /*padding: 0;*/
 }
-.tn-inner-table td {
-  padding: 5px 0px 5px 0px;
+.tn-contact-social {
+  display: block;
+  text-align: right;
+  /*float: right;*/
 }
 .ph-icon {
   font-size: 15px;
@@ -112,6 +95,76 @@ input:focus::-ms-input-placeholder {
   text-decoration: none;
   color: inherit;
   padding-left: 10px;
+}
+.navi1-btn {
+  font-family: 'Questrial', sans-serif;
+  display: block;
+  /*text-align: right;*/
+  float: right;
+  height: 35px;
+  padding-top: 5px;
+}
+/* - - - custom nav 0 - - - */
+.navi1-btn ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.navi1-btn li {
+  float: left;
+}
+.navi1-btn li a {
+    display: inline-block;
+    color: white;
+    text-align: right;
+    /*padding: 14px 16px;*/
+    /*margin-right: 15px;*/
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navi1-btn li a:hover .header-navi-selector, .navcust-dropdown:hover .navcust-dropbtn .header-navi-selector{
+    /*background-color: red;*/
+    display: block;
+}
+
+.navi1-btn li.navcust-dropdown {
+    display: inline-block;
+}
+
+.navcust-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #003DA5;
+    /*min-width: 160px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.navcust-dropdown-content a {
+    /*color: black;*/
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    /*margin-left: 5px;*/
+}
+
+.navcust-dropdown-content a:hover .header-navi-selector{
+  /*background-color: #f1f1f1;*/
+  display: block;
+
+}
+
+.navcust-dropdown:hover .navcust-dropdown-content {
+    display: block;
+}
+.header-navi-selector {
+  display: none;
+  margin: 0 auto;
+  width: 30px;
+  border-bottom: 2px solid #fff;
 }
 /* - - - custom nav - - - */
 .header-nav-container {
@@ -159,39 +212,7 @@ input:focus::-ms-input-placeholder {
   }
 }
 /* - - - */
-.navi1-btn {
-  font-family: 'Questrial', sans-serif;
-  /*vertical-align: text-top;*/
-}
-.navi1-btn a {
-  position: relative;
-  text-decoration: none;
-  margin-left: 20px;
-  color: inherit;
-  font-size: 13px;
-  display: inline-block;
-  /*vertical-align: top;*/
-  /*line-height: 10px;*/
-}
-.navi1-btn a .header-navi-selector {
-  /*content: "";*/
-  display: none;
-  /*display: block;*/
-  margin: 0 auto;
-  width: 30px;
-  /*padding-top: 10px;*/
-  border-bottom: 2px solid #fff;
-  /*content: "";*/
-  /*background-color: #fff;*/
-  /*max-width: 3px;*/
-  /*line-height: 1px;*/
-  /*text-align: center;*/
-  /*max-width: 4px;*/
-  /*line-height: 3px;*/
-  /*margin-top: 0;*/
-  /*text-align: center;*/
-  /*padding-bottom: 5px;*/
-}
+
 .tn2-overall-table {
   margin: 0;
   width: 100%;
