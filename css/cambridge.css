@@ -1821,3 +1821,32 @@ a.spec-sheet {
   font-size: 14pt;
   color: #000;
 }
+
+/* - - - brand page - - - */
+.brands-containeroverall {
+  background-color: #E6E6E6;
+  padding: 50px 0px 50px 0px;
+}
+.brands-containerinner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.brands-each {
+  width:250px;
+  /*margin: 0 auto;*/
+}
+.brands-mainimg img {
+  width: 250px;
+  height: 285px;
+}
+.brands-logo {
+  /*width: 250px;*/
+  /*height: 65px;*/
+  text-align: center;
+}
+.brands-logo img {
+  /*margin: 0 auto;*/
+  width: 75px;
+  /*height: 55px;*/
+}
