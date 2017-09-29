@@ -1823,30 +1823,52 @@ a.spec-sheet {
 }
 
 /* - - - brand page - - - */
-.brands-containeroverall {
+.brands-backcolor {
   background-color: #E6E6E6;
-  padding: 50px 0px 50px 0px;
+  padding-bottom: 30px;
 }
-.brands-containerinner {
+.overall-brands-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.brands-each {
-  width:250px;
-  /*margin: 0 auto;*/
+.brands-container {
+  position: relative;
+  width: 250px;
+  margin: 30px 0px 30px 0px;
 }
-.brands-mainimg img {
+
+.brands-container img {
+  display: block;
   width: 250px;
   height: 285px;
 }
-.brands-logo {
-  /*width: 250px;*/
-  /*height: 65px;*/
-  text-align: center;
+
+.brands-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  opacity: 0.7;
+  overflow: hidden;
+  width: 250px;
+  height: 30px;
+  transition: .5s ease;
 }
-.brands-logo img {
-  /*margin: 0 auto;*/
-  width: 75px;
-  /*height: 55px;*/
+
+.brands-container:hover .brands-overlay {
+  height: 100%;
+}
+
+.brands-text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
