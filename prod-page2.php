@@ -69,6 +69,9 @@
 			// Start Right column.
 			echo "<td class='prod-display'>";
 			// echo "<h1> HELLO </h1>";
+			echo "<div class='prod-tocatalogs'>";
+				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
+			echo "</div>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 				if($p2s2!=""){

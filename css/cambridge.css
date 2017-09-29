@@ -559,6 +559,20 @@ input:focus::-ms-input-placeholder {
 
 /* -- Product pages -- */
 
+.prod-tocatalogs {
+  /*height: 20px;*/
+  /*border: 1px solid #003DA5;*/
+  margin: 0px 0px 10px 0px;
+}
+.prod-tocatalogs a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #003DA5;
+  padding: 10px;
+  border-radius: 3px;
+  /*margin-bottom: 5px;*/
+}
+
 #product-main-page {
   width: 100%;
 }
