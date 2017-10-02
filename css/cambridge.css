@@ -1844,8 +1844,8 @@ a.spec-sheet {
 .brands-container img {
   display: block;
   width: 250px;
-  height: 285px;
-  margin-bottom: 90px;
+  height: 375px;
+  /*margin-bottom: 90px;*/
 }
 
 .brands-overlay {
