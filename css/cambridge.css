@@ -1824,7 +1824,9 @@ a.spec-sheet {
 
 /* - - - brand page - - - */
 .brands-backcolor {
-  background-color: #E6E6E6;
+  /*background-color: #E6E6E6;*/
+  /*background-color: #F1F2F2;*/
+  background-color: #F8F8F9;
   padding: 30px 0px 30px 0px;
 }
 .overall-brands-container {
@@ -1899,7 +1901,7 @@ a.spec-sheet {
   /*margin-top: 80px;*/
   color: #fff;
   background-color: #000000;
-  opacity: 0.7;
+  opacity: 0.85;
   height: 100%;
   padding: 10px;
   font-family: 'Questrial' sans-serif;
