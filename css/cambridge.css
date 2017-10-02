@@ -559,6 +559,20 @@ input:focus::-ms-input-placeholder {
 
 /* -- Product pages -- */
 
+.prod-tocatalogs {
+  /*height: 20px;*/
+  /*border: 1px solid #003DA5;*/
+  margin: 0px 0px 10px 0px;
+}
+.prod-tocatalogs a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #003DA5;
+  padding: 10px;
+  border-radius: 3px;
+  /*margin-bottom: 5px;*/
+}
+
 #product-main-page {
   width: 100%;
 }
@@ -1806,4 +1820,91 @@ a.spec-sheet {
   /*margin-top: 10px;*/
   font-size: 14pt;
   color: #000;
+}
+
+/* - - - brand page - - - */
+.brands-backcolor {
+  /*background-color: #E6E6E6;*/
+  /*background-color: #F1F2F2;*/
+  background-color: #F8F8F9;
+  padding: 30px 0px 30px 0px;
+}
+.overall-brands-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.brands-container {
+  position: relative;
+  width: 250px;
+  margin: 30px 0px 30px 0px;
+}
+
+.brands-container img {
+  display: block;
+  width: 250px;
+  height: 375px;
+  /*margin-bottom: 90px;*/
+}
+
+.brands-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*background-color: #000000;*/
+  /*opacity: 0.7;*/
+  overflow: hidden;
+  width: 250px;
+  height: 90px;
+  transition: .5s ease;
+}
+/*.brands-container:hover img {
+  width: 250px;
+  height: 285px;
+  margin-top: 90px;
+  margin-bottom: 0px;
+}*/
+
+.brands-container:hover .brands-overlay {
+  height: 100%;
+}
+
+.brands-container:hover .brands-img {
+  top: 12%;
+  left: 50%;
+}
+
+.brands-container:hover .brandsoverlay-logo {
+  background-color: #ffffff;
+  /*opacity: 0.9;*/
+}
+
+.brands-img {
+  /*white-space: nowrap;*/
+  /*color: white;*/
+  /*font-size: 20px;*/
+  position: absolute;
+  /*overflow: hidden;*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.brandsoverlay-logo {
+  height: 90px;
+  background-color: #E6E6E6;
+  width: 100%;
+  opacity: 0.9;
+}
+.brandsoverlay-text {
+  /*margin-top: 80px;*/
+  color: #fff;
+  background-color: #000000;
+  opacity: 0.85;
+  height: 100%;
+  padding: 10px;
+  font-family: 'Questrial' sans-serif;
+  font-size: 10pt;
 }
