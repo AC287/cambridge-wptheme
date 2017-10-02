@@ -5,28 +5,57 @@
 <div class="brands-backcolor">
   <div class="container">
     <div class="overall-brands-container">
-      <div class="brands-container">
+      <div class="brands-container">  <!--   CODA   -->
         <img src="<?php bloginfo('template_directory')?>/images/brands/codadev.png">
         <div class="brands-overlay">
-          <div class="brands-text">Hello World</div>
+          <div class="brandsoverlay-logo">
+            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" style="height:80px; width:auto">
+          </div>
+          <div class="brandsoverlay-text">
+            <p>SOME TEXT HERE . . . </p>
+            <a href="http://www.codadevelops.com" target="_blank" rel="noopener noreferrer">Visit Site >></a>
+          </div>
         </div>
       </div> <!--  end brands-container  -->
-      <div class="brands-container">
-        <img src="<?php bloginfo('template_directory')?>/images/brands/codadev.png">
+      <div class="brands-container">  <!--  AMRAM  -->
+        <img src="<?php bloginfo('template_directory')?>/images/brands/amram.png">
         <div class="brands-overlay">
-          <div class="brands-text">Hello World</div>
+          <div class="brandsoverlay-logo">
+            <!-- <div class="brands-text">Hello World</div> -->
+            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" style="height: 40px; width:auto">
+          </div>
+          <div class="brandsoverlay-text">
+            <p>SOME TEXT HERE . . . </p>
+            <a href="http://www.codarss.com" target="_blank" rel="noopener noreferrer">Visit Site >></a>
+          </div>
         </div>
       </div> <!--  end brands-container  -->
-      <div class="brands-container">
-        <img src="<?php bloginfo('template_directory')?>/images/brands/codadev.png">
+      <div class="brands-container">  <!--  LDR  -->
+        <img src="<?php bloginfo('template_directory')?>/images/brands/ldr.png">
         <div class="brands-overlay">
-          <div class="brands-text">Hello World</div>
+          <div class="brandsoverlay-logo">
+            <!-- <div class="brands-text">Hello World</div> -->
+            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/ldr_logo.png" style="height:50px; width:auto">
+          </div>
+          <div class="brandsoverlay-text">
+            <p>LDR Global Industries LLC is the leading supplier of high quality kitchen, bath, plumbing and related products to the home improvement industry.</p>
+            <p>Products include hundreds of sku's in Fashion Plumbing, thousands of sku's in Rough Plumbing, and carded plumbing.</p>
+            <a href="http://www.ldrind.com" target="_blank" rel="noopener noreferrer">Visit Site >> </a>
+          </div>
         </div>
       </div> <!--  end brands-container  -->
-      <div class="brands-container">
-        <img src="<?php bloginfo('template_directory')?>/images/brands/codadev.png">
+      <div class="brands-container">  <!--  PIPEDECOR  -->
+        <img src="<?php bloginfo('template_directory')?>/images/brands/pipedecor.png">
         <div class="brands-overlay">
-          <div class="brands-text">Hello World</div>
+          <div class="brandsoverlay-logo">
+            <!-- <div class="brands-text">Hello World</div> -->
+            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" style="height:24px; width: auto">
+          </div>
+          <div class="brandsoverlay-text">
+            <p>From tables, to lamps, shelving units, bed frames, and wine racks, Pipe Decor is the new alternative to modern furniture and home decoration. With an incredible selection of fittings, nipples, pipe, and exclusively patented specialty items, build whatever your imagination can come up with.</p>
+            <p>Also available kits on the go for easy 1-2-3 assembly.</p>
+            <a href="http://www.pipe-decor.com" target="_blank" rel="noopener noreferrer">Visit Site >> </a>
+          </div>
         </div>
       </div> <!--  end brands-container  -->
     </div>  <!--  end overall-brands-container  -->
