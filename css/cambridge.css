@@ -1878,6 +1878,7 @@ a.spec-sheet {
 
 .brands-container:hover .brandsoverlay-logo {
   background-color: #ffffff;
+  /*opacity: 0.9;*/
 }
 
 .brands-img {
