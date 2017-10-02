@@ -1788,7 +1788,9 @@ a.spec-sheet {
   color: #073DA5;
 }
 .catalog-custbtn:hover {
-  color: #073DA5;
+  /*color: #073DA5;*/
+  background-color: #073DA5;
+  color: #fff;
 }
 .catalog-custbtn.active {
   background-color: #073DA5;
@@ -1907,4 +1909,9 @@ a.spec-sheet {
   padding: 10px;
   font-family: 'Questrial' sans-serif;
   font-size: 10pt;
+}
+.brandsoverlay-text a {
+  color: #099FFF;
+  font-weight: bold;
+  text-decoration: none;
 }
