@@ -12,7 +12,7 @@
             <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" style="height:80px; width:auto">
           </div>
           <div class="brandsoverlay-text">
-            <p>SOME TEXT HERE . . . </p>
+            <p>Coda Resources has a proud tradition of innovation. They are constantly working together with their customers to come up with exciting new products that are always on the cutting edge of their industries. Coda handles everything from Research &#38; Development to manufacturing and quality assurance.</p>
             <a href="http://www.codadevelops.com" target="_blank" rel="noopener noreferrer">Visit Site >></a>
           </div>
         </div>
@@ -25,7 +25,8 @@
             <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" style="height: 40px; width:auto">
           </div>
           <div class="brandsoverlay-text">
-            <p>SOME TEXT HERE . . . </p>
+            <p>Amram is the preferred brand by leading retailers, manufacturers and distributors of retail supplies.</p>
+            <p>From tagging guns, needles, attachements and fasteners, to price marking labelers and labels, zip ties, tags, pouches and more – we stock it all.</p>
             <a href="http://www.codarss.com" target="_blank" rel="noopener noreferrer">Visit Site >></a>
           </div>
         </div>
