@@ -54,6 +54,9 @@
 					// THIS END ACCORDION.
 
           echo "<td class='prod-display'>";
+					echo "<div class='prod-tocatalogs'>";
+						echo "<a href='./catalogs/'>Click here to view our catalogs.</a>";
+					echo "</div>";
           // echo "<h1> HELLO </h1>";
           $mPos = 0;
           foreach($main_category2 as $main_category2) {

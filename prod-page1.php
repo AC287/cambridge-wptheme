@@ -66,6 +66,9 @@
 
 			// Start Right column.
 			echo "<td class='prod-display'>";
+			echo "<div class='prod-tocatalogs'>";
+				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
+			echo "</div>";
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";

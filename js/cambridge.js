@@ -7,6 +7,17 @@ jQuery(document).ready(function($) {
   // })
   console.log('Today is 9/11');
 
+  $('.header-navicon').click(function(){
+    var x = $('#header-rnav').attr('class').split(' ');
+    console.log(x.length);
+    if(x.length===1){
+      $('#header-rnav').addClass('responsive');
+    }
+    else {
+      $('#header-rnav').removeClass('responsive');
+    }
+  })
+
   $('.navi1-btn a').bind({
     mouseenter: function(){
       var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
@@ -25,7 +36,7 @@ jQuery(document).ready(function($) {
             break;
           }
         default:
-          console.log(currClass);
+          // console.log(currClass);
           if (currClass == getCurrentLocation()){
             break;
           } else {
@@ -311,7 +322,65 @@ $('.team-salesmanager-each img').bind({
     })
   }
 });
+// console.log($('.career-open-each').height());
+/* - - - CAREER EXPAND SECTION - - - */
+$('.career-open-expand a').click(function(){
+  // console.log($(this).attr('id'));
+  var clickedclass = '.'+$(this).attr('id');
+  var clickedID = '#'+$(this).attr('id');
+  var clickedclassHeight = $(clickedclass).height();
+  var clickedHeightInner = $( clickedclass + ' .career-open-each').height();
+  // console.log(typeof(clickedHeight));
+  if (clickedclassHeight > 150){
+    $(clickedclass).css({
+      'height': '150px',
+    })
+    $(clickedID).text('Click to expand');
+  } else {
+    $(clickedclass).css({
+      'height': clickedHeightInner+'px',
+    })
+    $(clickedID).text('Hide');
+  }
+})
 
+/* - - - catalog initial load - - - */
+$('.catalog-custbtn').each(function(index){
+  var currentClass = '.'+$(this).children('input').attr('id');
+  if($(this).hasClass('active')){
+    // var activeClass = '.'+ $(this).children('input').attr('id');
+    $(currentClass).show();
+  } else {
+    $(currentClass).hide();
+  }
+});
+/* - - - catalog click effect - - - */
+$('.catalog-custbtn').click(function(){
+  console.log($(this).children('input').attr('id'));
+  var clickedClass = $(this).children('input').attr('id');
+  $('.catalog-thumbinner').each(function(index){
+    // console.log(index+" "+clickedClass);
+    if($(this).hasClass(clickedClass)){
+      $('.'+clickedClass).show();
+    } else {
+      $(this).hide();
+    };
+  })
+  // $catalogthumbinner = $('.catalog-thumbinner');
+  // console.log($catalogthumbinner.length);
+  // for (var i=0; i < $catalogthumbinner.length; i++) {
+  //   $catalogthumbinner[i].style.display="none";
+  // }
+  // console.log('clicked');
+  // console.log($(this).hasClass('active'));
+  // $label ='.'+ $(this).find("input").attr('id');
+  // console.log($label.attr('id'));
+  // $($label).css({
+  //   'display':'inline-flex',
+  // })
+});
+
+/* - - - Pressing ESC will reset everything - - - */
 $(document).keydown(function(e){
   // console.log(e);
   if(e.keyCode==27){  //this listen for "ESC" key.

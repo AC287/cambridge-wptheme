@@ -48,6 +48,9 @@
 			echo "</td>";		// This end accordion section.
 
 			echo "<td class='prod-display'>";	// Start product section.
+			echo "<div class='prod-tocatalogs'>";
+				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
+			echo "</div>";
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
