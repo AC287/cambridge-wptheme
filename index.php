@@ -120,7 +120,7 @@
       <span class="mm-divider">|</span>
       <a href="">UPCOMING TRADESHOWS</a>
       <span class="mm-divider">|</span>
-      <a href="">NEWS</a>
+      <a href="<?php echo home_url();?>/news/">NEWS</a>
     </span>
   </div> <!-- end container -->
 </div> <!-- end mid-menu -->

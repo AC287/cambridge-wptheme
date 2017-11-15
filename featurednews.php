@@ -7,7 +7,7 @@ get_header(); ?>
 
 <div class="container news-content-container">
   <div class="news-mainheader">
-    <span>NEWS</span>
+    <span class="featurednews-newslink"><a href="<?php echo home_url();?>/news/">NEWS</a></span>
     <div class="news-mainheader-underline"></div>
   </div>
 </div>
@@ -18,7 +18,7 @@ get_header(); ?>
           echo "<h1>";
           the_title();
           echo "</h1>";
-          echo get_the_date('m-d-Y');
+          echo get_the_date('F d, Y');
           the_content();
 
             /*
@@ -35,17 +35,17 @@ get_header(); ?>
 
             // Previous/next post navigation.
             the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'cambridge' ) . '</span> ' .
-                    '<span class="screen-reader-text">' . __( 'Next post:', 'cambridge' ) . '</span> ' .
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'cambridgetheme' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Next post:', 'cambridgetheme' ) . '</span> ' .
                     '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'cambridge' ) . '</span> ' .
-                    '<span class="screen-reader-text">' . __( 'Previous post:', 'cambridge' ) . '</span> ' .
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'cambridgetheme' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Previous post:', 'cambridgetheme' ) . '</span> ' .
                     '<span class="post-title">%title</span>',
             ) );
 
         // End the loop.
         endwhile;
   ?>
-  <?php printf(wp_get_archives()) ?>
+  <!-- <?php //printf(wp_get_archives()) ?> -->
 </div>
 <?php get_footer(); ?>

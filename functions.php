@@ -47,3 +47,4 @@ add_action('wp_enqueue_scripts', 'cambridge_script_enqueue');
 // add_filter('show_admin_bar','__return_false');
 
 add_theme_support('post-thumbnails');
+set_post_thumbnail_size(50, 50);

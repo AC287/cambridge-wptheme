@@ -1960,3 +1960,16 @@ a.spec-sheet {
   width: 200px;
   border-bottom: 4px solid #003DA5;
 }
+/* - - - News Page Post section - - - */
+.allpost-link-container {
+  display: flex;
+  /*justify-content: space-around;*/
+}
+.allpost-thumbnailimg {
+  padding-right: 25px;
+}
+/* - - - Featured News Page - - - */
+.featurednews-newslink a {
+  color: inherit;
+  text-decoration: none;
+}
