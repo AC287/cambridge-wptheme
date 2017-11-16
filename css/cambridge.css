@@ -1932,7 +1932,7 @@ a.spec-sheet {
   opacity: 0.85;
   height: 100%;
   padding: 10px;
-  font-family: 'Questrial' sans-serif;
+  font-family: 'Questrial', sans-serif;
   font-size: 10pt;
 }
 .brandsoverlay-text a {
@@ -1968,8 +1968,44 @@ a.spec-sheet {
 .allpost-thumbnailimg {
   padding-right: 25px;
 }
+.news-post-title {
+  font-size: 14pt;
+  font-weight: bold;
+}
+.allpost-date {
+  font-size: 8pt;
+  color: #003DA5;
+}
 /* - - - Featured News Page - - - */
 .featurednews-newslink a {
   color: inherit;
   text-decoration: none;
+}
+.featurednews-content {
+  min-height: 85vh;
+}
+
+.newspage .row, .featurednewspage .row {
+  min-height: 100vh;
+}
+.newspage p, .featurednewspage p {
+  font-family: 'Questrial', sans-serif;
+  font-size: 12pt;
+}
+.news-uts-title {
+  background-color: #003DA5;
+  font-family: 'bignoodletitlingregular';
+  font-size: 16pt;
+  color: #fff;
+  padding: 8px 0px 0px 0px;
+  /*line-height: 16pt;*/
+  letter-spacing: 1px;
+  text-align: center;
+}
+.news-archive-col {
+  background-color: #f5f6f6;
+  min-height: 100vh;
+  /*padding: 5px 5px 5px 10px;*/
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
