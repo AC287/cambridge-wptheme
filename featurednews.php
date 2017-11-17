@@ -19,7 +19,7 @@ get_header(); ?>
           <span>UPCOMING TRADESHOWS</span>
         </div>
         <div class="news-uts-contents">
-          <?php include 'upcomingtradeshows.php';?>
+          <?php include 'phpsnippet/upcomingtradeshows.php';?>
         </div>
       </div>
     </div>

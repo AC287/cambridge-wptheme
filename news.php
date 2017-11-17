@@ -15,7 +15,7 @@
         <div class="news-uts-title">
           <span>UPCOMING TRADESHOWS</span>
         </div>
-        <?php include 'upcomingtradeshows.php';?>
+        <?php include 'phpsnippet/upcomingtradeshows.php';?>
       </div>
     </div>
     <div class="col-md-7">

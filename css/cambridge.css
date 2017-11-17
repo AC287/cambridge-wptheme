@@ -2002,10 +2002,25 @@ a.spec-sheet {
   letter-spacing: 1px;
   text-align: center;
 }
+.news-uts-contents {
+  width: 100%;
+}
 .news-archive-col {
   background-color: #f5f6f6;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   /*padding: 5px 5px 5px 10px;*/
   padding-top: 5px;
   padding-bottom: 10px;
+}
+
+/* - - - upcoming tradeshow php snippet - - - */
+.upcoming-tradeshows-snippet-container {
+  padding: 10px;
+}
+.tradeshow-container {
+  padding-bottom: 20px;
+}
+.tsn-title {
+  font-size: 12pt;
+  font-weight: bold;
 }
