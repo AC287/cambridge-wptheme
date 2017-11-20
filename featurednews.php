@@ -28,11 +28,15 @@ get_header(); ?>
       // Start the loop.
       echo "<div class='featurednews-content'>";
       while ( have_posts() ) : the_post();
-      echo "<h1>";
+      echo "<div class='fnc-title'>";
       the_title();
-      echo "</h1>";
+      echo "</div>";
       echo get_the_date('F d, Y');
       the_content();
+      echo "<div class='return-to-news'>";
+        $homeURL = home_url();
+        echo "<a href='$homeURL/news/'>Return to news page.</a>";
+      echo "</div>";  // end return-to-news
       echo "</div>";
       /*
       * Include the post format-specific template for the content. If you want to
@@ -59,9 +63,6 @@ get_header(); ?>
       // End the loop.
       endwhile;
       ?>
-      <div class='return-to-news'>
-        <a href="<?php echo home_url();?>/news/">Return to news page.</a>
-      </div>
       <!-- <?php //printf(wp_get_archives()) ?> -->
     </div>
     <div class="col-md-2 news-archive-col">

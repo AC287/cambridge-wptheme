@@ -13,8 +13,10 @@
       echo "<div class='tradeshow-container'>";
         echo "<div class='tradeshow-name'>";
           echo "<span class='tsn-title'>$upcomingTradeshows2->tradeshow_name</span>";
+          echo "<br/>";
+          echo "<span class='tsn-booth'>BOOTH# $upcomingTradeshows2->booth</span>";
         echo "</div>";  // end tradeshow-name
-        echo "<div class='tradeshow-time'>";
+        echo "<div class='tradeshow-info'>";
           echo "<span class='tsn-time'>";
             // echo gettype($upcomingTradeshows2->start_yyyymmdd);
             $startYear = substr($upcomingTradeshows2->start_yyyymmdd, 0, 4);
@@ -36,16 +38,16 @@
             }
 
           echo "</span>";
-        echo "</div>";  // end tradeshow time
-        echo "<div class='tsn-location'>";
+          echo "<br/>";
+
           $showLocation = $upcomingTradeshows2->location_name;
-          echo "<span>$showLocation</span>";
-        echo "</div>";  // end tradeshow location
-        echo "<div class='tsn-citystate'>";
+          echo "<span class='tsn-location'>$showLocation</span>";
+          echo "<br/>";
           $showCity = $upcomingTradeshows2->city;
           $showState = $upcomingTradeshows2->state;
-          echo "<span>$showCity, $showState</span>";
-        echo "</div>";  // end tradeshow city and state
+          echo "<span class='tsn-citystate'>$showCity, $showState</span>";
+
+        echo "</div>";  // end tradeshow info
       echo "</div>";  // end tradeshow-container
     }
   ?>

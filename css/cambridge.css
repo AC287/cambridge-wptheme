@@ -1981,12 +1981,20 @@ a.spec-sheet {
   color: inherit;
   text-decoration: none;
 }
+.fnc-title {
+  font-size: 20pt;
+  font-weight: bold;
+}
 .featurednews-content {
-  min-height: 85vh;
+  min-height: 55vh;
+}
+.return-to-news {
+  padding-bottom: 20px;
 }
 
+
 .newspage .row, .featurednewspage .row {
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 }
 .newspage p, .featurednewspage p {
   font-family: 'Questrial', sans-serif;
@@ -2021,7 +2029,41 @@ a.spec-sheet {
   padding-bottom: 20px;
   color: #003DA5;
 }
-.tsn-title {
+.tradeshow-name{
   font-size: 12pt;
   font-weight: bold;
+  line-height: 1.25em;
+  margin-bottom: 3px;
+}
+.tradeshow-info {
+  line-height: 1.25em;
+}
+
+/* - - - archive snippet - - - */
+.archive-year-container {
+  padding-top: 5px;
+  /*padding-bottom: 10px;*/
+}
+.archive-chev-container {
+  /*margin-top: 5px;*/
+}
+.archive-chev-container span svg {
+  margin-top: 5px;
+  height: 20px;
+  width: 22px;
+  cursor: pointer;
+  /*margin: 0 auto;*/
+  /*overflow: hidden;*/
+}
+.ayc-year {
+  font-size: 14pt;
+  /*font-weight: bold;*/
+}
+.archive-title {
+  padding-left: 25px;
+}
+.archive-title p{
+  font-size: 10pt;
+  font-weight: bold;
+  line-height: 1.25em;
 }

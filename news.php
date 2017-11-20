@@ -22,8 +22,11 @@
       <?php
       $args = array(
         'post_type' => 'post',
-        'ignore_sticky_posts' => 1,
-        'year'  => the_date('Y'),
+        // 'ignore_sticky_posts' => 1,
+        'year'  => date('Y'),
+        // 'date_query' => array(
+        //   'year' => date('Y'),
+        // ),
       );
       //This will display post from current year only.
       $the_query = new WP_Query( $args );
@@ -50,11 +53,13 @@
     endif;
 
     wp_reset_postdata();
+    wp_reset_query();
     ?>
     </div>
     <div class="col-md-2 news-archive-col">
       <div class="news-archive">
-        <span>ARCHIVE</span>
+        <!-- <span>ARCHIVE</span> -->
+        <?php include 'phpsnippet/archivesnippet.php';?>
       </div>
     </div>
   </div>
