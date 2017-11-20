@@ -67,7 +67,8 @@ get_header(); ?>
     </div>
     <div class="col-md-2 news-archive-col">
       <div class="news-archive">
-        <span>Archive</span>
+        <!-- <span>Archive</span> -->
+        <?php include 'phpsnippet/archivesnippet.php';?>
       </div>
     </div>
   </div>

@@ -24,17 +24,15 @@
     // echo $curYear;
     echo "<div class='archive-year-container'>";
       echo "<div class='ayc-year'>";
-        echo "<p>";
-          echo "<span class='archive-chev-container'>";
-            echo "<span class='chev-right'>";
-              include('chev-icon/chev_right.svg');
-            echo "</span>";
-            // echo "<span class='chev-down'>";
-            //   include('chev-icon/chev_down.svg');
-            // echo "</span>";
+        echo "<span class='archive-chev-container'>";
+          echo "<span class='chev-right'>";
+            echo "<img src='".get_bloginfo('template_directory')."/phpsnippet/chev-icon/chev_right.png'/>";
           echo "</span>";
-          echo $curYear;
-        echo "</p>";
+        // echo "<span class='chev-down'>";
+        //   include('chev-icon/chev_down.svg');
+        // echo "</span>";
+        echo "</span>";
+        echo "<span>&nbsp;$curYear</span>";
       echo "</div>";
       echo "<div class='archive-title'>";
         foreach($allPost as $allPost2) {
@@ -42,7 +40,7 @@
           // print_r ($allPost2['title']);
           if($allPost2['year'] == $curYear) {
             // echo "if triggered.";
-            echo "<p>".$allPost2['title']."<br/>".$allPost2['postdate']."</p>";
+            echo "<p><a href=".$allPost2['link'].">".$allPost2['title']."<br/><span class='archive-date'>".$allPost2['postdate']."</span></a></p>";
           }
         }
       echo "</div>";
