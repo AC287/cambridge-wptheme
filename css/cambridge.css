@@ -1960,6 +1960,16 @@ a.spec-sheet {
   width: 125px;
   border-bottom: 4px solid #003DA5;
 }
+
+/* - - - news page grid - - - */
+/*.row-news {
+  display: table;
+  width: 100%;
+}
+.row-news div {
+  display: table-cell;
+}*/
+
 /* - - - News Page Post section - - - */
 .allpost-link-container {
   display: flex;
@@ -1992,11 +2002,7 @@ a.spec-sheet {
   padding-bottom: 20px;
 }
 
-
-.newspage .row, .featurednewspage .row {
-  /*min-height: 100vh;*/
-}
-.newspage p, .featurednewspage p {
+.newspage p {
   font-family: 'Questrial', sans-serif;
   font-size: 12pt;
 }
@@ -2018,7 +2024,8 @@ a.spec-sheet {
   /*min-height: 100vh;*/
   /*padding: 5px 5px 5px 10px;*/
   padding-top: 5px;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
+  height: 100%;
 }
 
 /* - - - upcoming tradeshow php snippet - - - */
@@ -2032,8 +2039,13 @@ a.spec-sheet {
 .tradeshow-name{
   font-size: 12pt;
   font-weight: bold;
-  line-height: 1.25em;
+  line-height: 1em;
   margin-bottom: 3px;
+}
+.tsn-booth {
+  font-size: 9pt;
+  font-weight: bold;
+  /*line-height: 0.75em;*/
 }
 .tradeshow-info {
   line-height: 1.25em;

@@ -391,6 +391,20 @@ $(document).keydown(function(e){
   }
 })
 
+/* - - - news page archive height - - - */
+checkSize();
+$(window).resize(checkSize);
+
+function checkSize() {
+  var allNewsSize = $('.newspage').height()+'px';
+  $('.news-archive-col').css('min-height', allNewsSize);
+
+  if($('.news-archive-col').css('float')=='none') {
+    // console.log(allNewsSize);
+    $('.news-archive-col').css('min-height','100%');
+  }
+}
+
 })
 
 // console.log('JS is fully functional.');

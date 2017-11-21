@@ -11,7 +11,7 @@ get_header(); ?>
     <div class="news-mainheader-underline"></div>
   </div>
 </div>
-<div class="container featurednewspage">
+<div class="container newspage">
   <div class="row">
     <div class="col-md-3">
       <div class="news-upcomingtradeshows-container">

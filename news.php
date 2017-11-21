@@ -36,16 +36,19 @@
         echo "<div class='allpost-link-container'>";
         if(has_post_thumbnail()){
           echo "<div class='allpost-thumbnailimg'>";
-          the_post_thumbnail('thumbnail');
+          // the_post_thumbnail(array(250,300));
+            echo "<a href=".get_post_permalink().">";
+              the_post_thumbnail('medium');
+            echo "</a>";
           echo "</div>";
         }
         echo "<div class='allpost-contents'>";
-        echo "<p class='allpost-date'>".get_the_date('F d, Y')."</p>";
-        echo "<span class='news-post-title'>";
-        the_title();
-        echo "</span>";
-        the_excerpt();  //this will only show excerpt of the news.
-        echo "<a href=".get_post_permalink().">Click for detail</a>";
+          echo "<p class='allpost-date'><a href=".get_post_permalink().">".get_the_date('F d, Y')."</a></p>";
+          echo "<span class='news-post-title'>";
+            the_title();
+          echo "</span>";
+          the_excerpt();  //this will only show excerpt of the news.
+          echo "<a href=".get_post_permalink().">Click for detail</a>";
         echo "</div>";
         echo "</div>";
         echo "<hr/>";
