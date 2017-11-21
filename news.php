@@ -22,8 +22,11 @@
       <?php
       $args = array(
         'post_type' => 'post',
-        'ignore_sticky_posts' => 1,
-        'year'  => the_date('Y'),
+        // 'ignore_sticky_posts' => 1,
+        'year'  => date('Y'),
+        // 'date_query' => array(
+        //   'year' => date('Y'),
+        // ),
       );
       //This will display post from current year only.
       $the_query = new WP_Query( $args );
@@ -33,16 +36,19 @@
         echo "<div class='allpost-link-container'>";
         if(has_post_thumbnail()){
           echo "<div class='allpost-thumbnailimg'>";
-          the_post_thumbnail('thumbnail');
+          // the_post_thumbnail(array(250,300));
+            echo "<a href=".get_post_permalink().">";
+              the_post_thumbnail('medium');
+            echo "</a>";
           echo "</div>";
         }
         echo "<div class='allpost-contents'>";
-        echo "<p class='allpost-date'>".get_the_date('F d, Y')."</p>";
-        echo "<span class='news-post-title'>";
-        the_title();
-        echo "</span>";
-        the_excerpt();  //this will only show excerpt of the news.
-        echo "<a href=".get_post_permalink().">Click for detail</a>";
+          echo "<p class='allpost-date'><a href=".get_post_permalink().">".get_the_date('F d, Y')."</a></p>";
+          echo "<span class='news-post-title'>";
+            the_title();
+          echo "</span>";
+          the_excerpt();  //this will only show excerpt of the news.
+          echo "<a href=".get_post_permalink().">Click for detail</a>";
         echo "</div>";
         echo "</div>";
         echo "<hr/>";
@@ -50,11 +56,13 @@
     endif;
 
     wp_reset_postdata();
+    wp_reset_query();
     ?>
     </div>
     <div class="col-md-2 news-archive-col">
       <div class="news-archive">
-        <span>ARCHIVE</span>
+        <!-- <span>ARCHIVE</span> -->
+        <?php include 'phpsnippet/archivesnippet.php';?>
       </div>
     </div>
   </div>

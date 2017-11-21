@@ -1957,9 +1957,19 @@ a.spec-sheet {
 }
 .news-mainheader-underline {
   margin: 0 auto;
-  width: 200px;
+  width: 125px;
   border-bottom: 4px solid #003DA5;
 }
+
+/* - - - news page grid - - - */
+/*.row-news {
+  display: table;
+  width: 100%;
+}
+.row-news div {
+  display: table-cell;
+}*/
+
 /* - - - News Page Post section - - - */
 .allpost-link-container {
   display: flex;
@@ -1981,14 +1991,18 @@ a.spec-sheet {
   color: inherit;
   text-decoration: none;
 }
+.fnc-title {
+  font-size: 20pt;
+  font-weight: bold;
+}
 .featurednews-content {
-  min-height: 85vh;
+  min-height: 55vh;
+}
+.return-to-news {
+  padding-bottom: 20px;
 }
 
-.newspage .row, .featurednewspage .row {
-  min-height: 100vh;
-}
-.newspage p, .featurednewspage p {
+.newspage p {
   font-family: 'Questrial', sans-serif;
   font-size: 12pt;
 }
@@ -2010,7 +2024,8 @@ a.spec-sheet {
   /*min-height: 100vh;*/
   /*padding: 5px 5px 5px 10px;*/
   padding-top: 5px;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
+  height: 100%;
 }
 
 /* - - - upcoming tradeshow php snippet - - - */
@@ -2021,7 +2036,61 @@ a.spec-sheet {
   padding-bottom: 20px;
   color: #003DA5;
 }
-.tsn-title {
+.tradeshow-name{
   font-size: 12pt;
   font-weight: bold;
+  line-height: 1em;
+  margin-bottom: 3px;
+}
+.tsn-booth {
+  font-size: 9pt;
+  font-weight: bold;
+  /*line-height: 0.75em;*/
+}
+.tradeshow-info {
+  line-height: 1.25em;
+}
+
+/* - - - archive snippet - - - */
+.archive-year-container {
+  padding-top: 5px;
+  /*padding-bottom: 10px;*/
+}
+.archive-chev-container {
+  /*margin-top: 5px;*/
+}
+.archive-chev-container span {
+  /*padding-bottom: 2px;*/
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  /*margin: 0 auto;*/
+  /*overflow: hidden;*/
+}
+.ayc-year img {
+  height: 15px;
+  width: 15px;
+  margin-bottom: 5px;
+}
+.ayc-year {
+  font-size: 14pt;
+  margin-bottom: 8px;
+  /*font-weight: bold;*/
+}
+.archive-title {
+  padding-left: 25px;
+}
+.archive-title p {
+  font-size: 10pt;
+  /*font-weight: bold;*/
+  line-height: 1.25em;
+  /*color: #0000;*/
+}
+.archive-title a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+.archive-date {
+  font-size: 8pt;
 }
