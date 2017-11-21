@@ -12,9 +12,9 @@
     foreach ($upcomingTradeShows as $upcomingTradeshows2) {
       echo "<div class='tradeshow-container'>";
         echo "<div class='tradeshow-name'>";
-          echo "<span class='tsn-title'>$upcomingTradeshows2->tradeshow_name</span>";
+          echo "<span class='tsn-title'>".$upcomingTradeshows2->tradeshow_name."</span>";
           echo "<br/>";
-          echo "<span class='tsn-booth'>BOOTH# $upcomingTradeshows2->booth</span>";
+          echo "<span class='tsn-booth'>BOOTH# ".$upcomingTradeshows2->booth."</span>";
         echo "</div>";  // end tradeshow-name
         echo "<div class='tradeshow-info'>";
           echo "<span class='tsn-time'>";
