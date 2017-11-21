@@ -25,7 +25,7 @@
       $args = array(
         'post_type' => 'post',
         // 'ignore_sticky_posts' => 1,
-        'year'  => date('Y'),
+        // 'year'  => date('Y'),
         // 'date_query' => array(
         //   'year' => date('Y'),
         // ),
