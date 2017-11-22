@@ -3,7 +3,22 @@
 <?php get_header(); ?>
 
 <div class="career-banner">
-  <img src="<?php bloginfo('template_directory')?>/images/career/careerbanner.jpg">
+  <div class="cb-img">
+    <img src="<?php bloginfo('template_directory')?>/images/banners/career-banner.jpg">
+  </div>
+  <div class="cb-textbox">
+    <div class="cb-textbox1">
+      <span>WHAT DO YOU WANT TO BE WHEN YOU GROW UP?</span>
+    </div>
+    <div class="cb-textbox2">
+      <div class="cb2-i1">
+        <span>JOIN US</span>
+      </div>
+      <div class="cb2-i2">
+        <span>OPPORTUNITY AND SUCCESS IS RIGHT AROUND THE CORNER</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container career-content-container">

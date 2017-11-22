@@ -1835,7 +1835,53 @@ a.spec-sheet {
 .career-banner img {
   width: 100%;
   height: auto;
+  /*position: relative;*/
 }
+.career-banner {
+  position: relative;
+}
+/* - - - career overlay text - - - */
+.cb-textbox {
+  color: #fff;
+  font-family: 'bignoodletitlingregular';
+}
+.cb-textbox1, .cb-textbox2 {
+  position: absolute;
+  z-index: 10;
+}
+@media screen and (min-width: 1200px) {
+  /* - - - for full and large width screens - - - */
+  .cb-textbox1 {
+    top: 10%;
+    left: 12%;
+    font-size: 50pt;
+    width: 500px;
+    line-height: 1em;
+  }
+  .cb-textbox2 {
+    bottom: 5%;
+    right: 5%;
+    /*font-size: 200pt;*/
+  }
+  .cb2-i1 {
+    font-size: 200pt;
+    line-height: 0.5em;
+  }
+  .cb2-i2 {
+    font-size: 26pt;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .cb-textbox1, .cb-textbox2 {
+    /*font-size: 20pt;*/
+    top: 0%;
+    /*display: block;*/
+  }
+}
+/*.cb-textbox1 span {
+  line-height: 1em;
+}*/
 .career-mainheader {
   text-align: center;
   margin-top: 50px;
