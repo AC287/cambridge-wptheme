@@ -53,22 +53,27 @@
 
     <div class="item">
       <img src="<?php bloginfo('template_directory')?>/images/banners/index-img3.jpg">
-      <div class="index-banner-textbox">
-        <p>SOME TEXT HERE</p>
-      </div>
     </div>
 
     <div class="item">
       <img src="<?php bloginfo('template_directory')?>/images/banners/index-img4.jpg">
-      <div class="index-banner-textbox">
-        <p>SOME TEXT HERE</p>
+      <div class="index-banner-textbox ibt-img4">
+        <div class="ibt-text">
+          <span>SUPPLYING OEM'S ACROSS A VARIETY OF INDUSTRIES</span>
+        </div>
+        <div class="ibt-underline">
+        </div>
       </div>
     </div>
 
     <div class="item">
       <img src="<?php bloginfo('template_directory')?>/images/banners/index-img5.jpg">
-      <div class="index-banner-textbox">
-        <p>SOME TEXT HERE</p>
+      <div class="index-banner-textbox ibt-img5">
+        <div class="ibt-text">
+          <span>QUALITY PRODUCTS PROFESSIONALS RELY ON</span>
+        </div>
+        <div class="ibt-underline">
+        </div>
       </div>
     </div>
 
