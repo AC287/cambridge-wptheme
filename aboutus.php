@@ -129,7 +129,7 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="about-cat-img">
-					<img src="<?php bloginfo('template_directory')?>/images/about/about-hvac.png">
+					<img src="<?php bloginfo('template_directory')?>/images/about/about-hvac.jpg">
 				</div>
 			</div>
 			<div class="col-sm-6">
@@ -170,7 +170,7 @@
 			</div>
 			<div class="col-sm-6">
 				<div class="about-cat-img">
-					<img src="<?php bloginfo('template_directory')?>/images/about/about-electrical.png">
+					<img src="<?php bloginfo('template_directory')?>/images/about/about-electrical.jpg">
 				</div>
 			</div>
 		</div>
@@ -222,7 +222,7 @@
 			</div>
 			<div class="col-sm-6">
 				<div class="about-cat-img">
-					<img src="<?php bloginfo('template_directory')?>/images/about/about-automotive.png">
+					<img src="<?php bloginfo('template_directory')?>/images/about/about-automotive.jpg">
 				</div>
 			</div>
 		</div>
