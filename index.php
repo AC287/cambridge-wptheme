@@ -30,23 +30,51 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="<?php bloginfo('template_directory')?>/images/img1 copy.jpg">
+      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img1.jpg">
+      <div class="index-banner-textbox ibt-img1">
+        <div class="ibt-text">
+          <span>#1 DISTRIBUTOR OF DUCT STRAPS IN THE U.S.</span>
+        </div>
+        <div class="ibt-underline">
+        </div>
+      </div>
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/img2 copy.jpg">
+      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img2.jpg">
+      <div class="index-banner-textbox ibt-img2">
+        <div class="ibt-text">
+          <span>FOUND IN RETAIL LOCATIONS GLOBALLY</span>
+        </div>
+        <div class="ibt-underline">
+        </div>
+      </div>
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/img3 copy.jpg">
+      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img3.jpg">
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/img4 copy.jpg">
+      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img4.jpg">
+      <div class="index-banner-textbox ibt-img4">
+        <div class="ibt-text">
+          <span>SUPPLYING OEM'S ACROSS A VARIETY OF INDUSTRIES</span>
+        </div>
+        <div class="ibt-underline">
+        </div>
+      </div>
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/img5 copy.jpg">
+      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img5.jpg">
+      <div class="index-banner-textbox ibt-img5">
+        <div class="ibt-text">
+          <span>QUALITY PRODUCTS PROFESSIONALS RELY ON</span>
+        </div>
+        <div class="ibt-underline">
+        </div>
+      </div>
     </div>
 
     <!-- <div class="item"> -->
