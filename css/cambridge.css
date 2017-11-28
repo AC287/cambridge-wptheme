@@ -1872,11 +1872,44 @@ a.spec-sheet {
     text-align: center;
   }
 }
-@media screen and (max-width: 1000px) {
-  .cb-textbox1, .cb-textbox2 {
+@media screen and (max-width: 1199px) and (min-width: 600px) {
+  .cb-textbox1{
+    top: 10%;
+    right: 0%;
+    font-size: 50pt;
+    /*line-height: 1em;*/
+  }
+  .cb-textbox2 {
+    font-size: 20pt;
     /*font-size: 20pt;*/
-    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    display: flex;
+    /*color: #fff;*/
     /*display: block;*/
+  }
+  .cb2-i2 {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .cb-textbox1{
+    top: 0%;
+    right: 0%;
+    font-size: 20pt;
+    /*line-height: 1em;*/
+  }
+  .cb-textbox2 {
+    /*font-size: 20pt;*/
+    /*font-size: 20pt;*/
+    bottom: 0%;
+    right: 0%;
+    display: flex;
+    /*color: #fff;*/
+    /*display: block;*/
+  }
+  .cb2-i2 {
+    padding-left: 20px;
   }
 }
 /*.cb-textbox1 span {
