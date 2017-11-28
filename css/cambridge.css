@@ -609,7 +609,12 @@ input:focus::-ms-input-placeholder {
   font-size: 50pt;
   /*text-shadow: 0 1px 2px rgba(0, 0, 0, .6);*/
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 775px) and (max-width: 1080px) {
+  .index-banner-textbox {
+    font-size: 30pt;
+  }
+}
+@media screen and (min-width: 775px) {
   /* - - - for full and large width screens - - - */
   .index-banner-textbox {
     /*right: 20%;*/
@@ -663,7 +668,7 @@ input:focus::-ms-input-placeholder {
     width: 175px;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 774px) {
   /* - - - for small width screens - - - */
   .ibt-text {
     font-size: 20pt;
