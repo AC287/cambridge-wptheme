@@ -1708,6 +1708,44 @@ a.spec-sheet {
   width: 100%;
   /*text-align: center;*/
 }
+.contact-banner {
+  position: relative;
+}
+.cb-textbox3 {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  right: 5%;
+  top: 10%;
+}
+.cb-textbox3 span {
+  display: block;
+}
+.cb3-i1 {
+  font-size: 30pt;
+}
+.cb3-i2 {
+  font-size: 50pt;
+}
+@media screen and (max-width: 950px) and (min-width: 700px) {
+  .cb3-i1 {
+    font-size: 20pt;
+  }
+  .cb3-i2 {
+    font-size: 40pt;
+  }
+}
+@media screen and (max-width:699px) and (min-width: 500px) {
+  .cb3-i1, .cb3-i2 {
+    font-size: 20pt;
+    /*display: flex;*/
+  }
+}
+@media screen and (max-width: 499px) {
+  .cb3-i1, .cb3-i2 {
+    font-size: 15pt;
+  }
+}
 .contact-form {
   background-color: #f2f2f2;
 }

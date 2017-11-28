@@ -3,7 +3,17 @@
 <?php get_header();?>
 
 <div class='contact-banner'>
-  <img src="<?php bloginfo('template_directory')?>/images/contact-banner.jpg">
+  <div class='cb-img'>
+    <img src="<?php bloginfo('template_directory')?>/images/banners/contact-banner.jpg">
+  </div>
+  <div class='cb-textbox'>
+    <div class='cb-textbox3'>
+      <span class='cb3-i1'>DO YOU HAVE A </span>
+      <span class='cb3-i2'>QUESTION OR PROJECT IN MIND? </span>
+      <span class='cb3-i1'>JUST WANT TO SAY HI? </span>
+      <span class='cb3-i2'>TALK TO US </span>
+    </div>
+  </div>
 </div>
 
 <div class='contact-form'>
