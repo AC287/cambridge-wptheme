@@ -1499,7 +1499,7 @@ a.spec-sheet {
 }
 .team-crop {
   margin: 0 auto;
-  width: 200px;
+  width: 175px;
   height: 175px;
   overflow: hidden;
 }
@@ -1517,35 +1517,38 @@ a.spec-sheet {
   font-weight: bold;
 }
 .team-individualtitle {
+  padding-top: 10px;
   font-size: 18px;
   color: #999999;
   /*color: #000000;*/
-  line-height: 20px;
+  /*line-height: 20px;*/
 }
 .team-modal {
   display: none;
   position: fixed;
+  /*position: relative;*/
   z-index: 3;
-  padding-top: 50px;
+  padding-top: 75px;
   left: 0;
   top: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0);
-  background-color: rgba(0,0,0,0.9);
+  /*background-color: rgba(0,0,0);*/
+  background-color: rgba(0,0,0,0.8);
 }
 .team-modal-container {
   margin: auto;
   /*display: block;*/
   padding: 0;
-  /*width: 65%;*/
-  /*height: 80%;*/
-  width: 1000px;
-  height: 500px;
+  width: 65%;
+  height: 80%;
+  /*width: 1000px;*/
+  /*height: 500px;*/
   /*max-width: 530px;*/
   position: relative;
   background-color: #999999;
+  /*overflow: auto;*/
 }
 .team-close {
   color: white;
@@ -1566,13 +1569,14 @@ a.spec-sheet {
 .team-modal-content {
   display: none;
   /*display: inline-block;*/
-  padding: 20px 20px 20px 0px;
+  padding: 20px 0px 20px 0px;
   /*float: left;*/
   /*height: 500px;*/
+  /*overflow: hidden;*/
 }
 .team-modal-icontents {
   /*margin-left: 5px;*/
-  padding-left: 75px;
+  /*padding-left: 75px;*/
   /*display: inline-block;*/
   /*width: 520px;*/
 }
@@ -1625,13 +1629,18 @@ a.spec-sheet {
   text-align: center;
   font-size: 15pt;
   padding-top: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 .team-blurb {
   /*position: relative;*/
   /*top: 50%;*/
   font-family: 'Questrial', sans-serif;
+  background-color: #999999;
   color: #fff;
+  /*height: 100%;*/
+  /*overflow: auto;*/
+  /*padding-right: 15px;*/
+  padding: 0px 50px 25px 50px;
 }
 
 .team-salesmanager {
