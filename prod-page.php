@@ -126,10 +126,11 @@
               }
               if($counter > 3) {
                 echo "<div class='show-hide'>";
-                echo "<a class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</a>";
+									echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'></span>";
+                	echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
                 echo "</div>";
               }
-              echo "</div>";
+              echo "</div>";	// end s1-box-background
             }
             $mPos++;
             echo "</div>";  //end group-container div;
