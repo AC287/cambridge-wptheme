@@ -4,6 +4,12 @@
 <!-- // Page for sub category. -->
 <?php get_header(); ?>
 
+<div class='prod-tocatalogs'>
+	<a href='<?php echo home_url();?>/catalogs/'>Click here to view our catalogs.</a>
+	<div class='prod-tocatalogs-underline'>
+	</div>
+</div>
+
 <div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -66,17 +72,15 @@
 
 			// Start Right column.
 			echo "<td class='prod-display'>";
-			echo "<div class='prod-tocatalogs'>";
-				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
-			echo "</div>";
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 			echo "<div class='m-title'><a href='../pm0/?m0=".$p1m0."'>".$p1m0."</a>  >>  ".$p1s1."</div>";	//Title
 				// $s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category2->m0';");
 				echo "<div class='s1-box-background'>";
+				echo "<div class='s1-box-flex-container'>";
+				$counter = 0;
 				foreach($sub_category2 as $sub_category2) {
-				// $counter = 0;
 				$img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s2 = '$sub_category2->s2' AND img0 IS NOT NULL;");
 				// print_r(sizeof($img));
 				echo "<a href='../ps2/?m0=".$p1m0."&s1=".$p1s1."&s2=".$sub_category2->s2."' class='s1-box'>";
@@ -96,9 +100,13 @@
 				echo "</div>";
 				echo "<div class='s1-cat'>".$sub_category2->s2."</div>";
 				echo "</a>";
-
+				$counter++;
 			}
-			echo "</div>";
+			for($k=$counter; $k<4; $k++){
+				echo "<a class='s1-box s1-box-filler'></a>";
+			}
+			echo "</div>";	// end s1-box-flex-container
+			echo "</div>";	// end s1-box-background
 				// $mPos++;
 			echo "</div>";  //end group-container div;
 			echo "</td>";

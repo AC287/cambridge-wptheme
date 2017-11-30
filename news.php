@@ -10,17 +10,15 @@
 </div>
 <div class="container newspage">
   <div class="row">
-    <div class="col-md-3">
-      <div class="news-upcomingtradeshows-container">
-        <div class="news-uts-title">
-          <span>UPCOMING TRADESHOWS</span>
-        </div>
-        <div class="news-uts-contents">
-          <?php include 'phpsnippet/upcomingtradeshows.php';?>
-        </div>
+    <div class="col-md-2 news-upcomingtradeshows-container">
+      <div class="news-uts-title">
+        <span>UPCOMING TRADESHOWS</span>
+      </div>
+      <div class="news-uts-contents">
+        <?php include 'phpsnippet/upcomingtradeshows.php';?>
       </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
       <?php
       $args = array(
         'post_type' => 'post',
