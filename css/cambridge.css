@@ -2305,6 +2305,10 @@ a.spec-sheet {
     flex-wrap: wrap;
   }
 }
+.news-allsection {
+  padding-left: 50px;
+  padding-right: 50px;
+}
 .allpost-thumbnailimg {
   padding-right: 25px;
 }
