@@ -5,6 +5,12 @@
 
 <?php get_header(); ?>
 
+<div class='prod-tocatalogs'>
+	<a href='<?php echo home_url();?>/catalogs/'>Click here to view our catalogs.</a>
+	<div class='prod-tocatalogs-underline'>
+	</div>
+</div>
+
 <div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -48,9 +54,7 @@
 			echo "</td>";		// This end accordion section.
 
 			echo "<td class='prod-display'>";	// Start product section.
-			echo "<div class='prod-tocatalogs'>";
-				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
-			echo "</div>";
+
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
@@ -59,6 +63,7 @@
 			// print_r($s1_category2);
 			if(!empty($s1_category2[0]->s1)) {
 				echo "<div class='s1-box-background'>";
+				echo "<div class='s1-box-flex-container'>";
 				$counter = 0;
 				foreach($s1_category2 as $s1_category2) {
 					$img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
@@ -86,7 +91,12 @@
 					echo "</div>";
 					echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
 					echo "</a>";
+					$counter++;
 				}
+				for($k=$counter; $k<4; $k++){
+					echo "<a class='s1-box s1-box-filler'></a>";
+				}
+				echo "</div>";	// end s1-box-flex-container
 				echo "</div>";	// end s1-box-background
 				}
 				// $mPos++;

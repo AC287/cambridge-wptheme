@@ -167,6 +167,7 @@ for (i = 0; i < acc.length; i++) {
 
 // --- THIS IS FOR PRODUCT MAIN PAGE ---
 var displayExtra = $('.display-extra');
+// var prodChev = $('.show-hide .sh-chev img');
 var i;
 for (i=0; i< displayExtra.length; i++) {
   displayExtra[i].onclick = function () {
@@ -175,18 +176,22 @@ for (i=0; i< displayExtra.length; i++) {
       currentStatus[0] = 'HIDE';
       currentStatus.splice(1,1);
       this.innerHTML = currentStatus.join(' ');
+      // This toggle chevron icon.
+      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_up_blue.png');
     }
     else {
       currentStatus[0] = 'SHOW';
       currentStatus.splice(1,0,'ALL');
       this.innerHTML = currentStatus.join(' ');
+      // This toggle chevron icon.
+      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png');
     }
     var displayAll = $('.'+this.classList[1]);
     displayAll.each(function(index,object){
       if(($(this).css('display'))=='none'){
-        $(this).css('display','inline-block');
+        $(this).css('display','block');
       }
-      else if (($(this).css('display')=='inline-block') && $(this).hasClass('extra-box')){
+      else if (($(this).css('display')=='block') && $(this).hasClass('extra-box')){
         $(this).css('display','none');
       }
     })
@@ -194,6 +199,13 @@ for (i=0; i< displayExtra.length; i++) {
   // displayExtra[i].onclick = function () {
   //
   // }
+}
+
+/* - - - PRODUCT MAIN PAGE FLEX WRAP SCRIPT - - - */
+var $s1BoxFlexContainer = $('.s1-box-flex-container');
+// console.log($s1BoxFlexContainer.length);
+for(var j=0; j<$s1BoxFlexContainer.length; j++){
+  console.log($($s1BoxFlexContainer[j]).children().length)
 }
 
 // --- THIS IS FOR ITEM PAGE ---
