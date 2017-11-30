@@ -1359,7 +1359,9 @@ a.spec-sheet {
 /*  Source: https://codepen.io/jeffglenn/pen/KNYoKa  */
 #about-timeline {
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   background-color: #031625;
 }
@@ -1517,6 +1519,10 @@ a.spec-sheet {
 }
 .team-wrapper {
   margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1988,6 +1994,10 @@ a.spec-sheet {
     /*font-size: 20pt;*/
     bottom: 0%;
     right: 0%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     /*color: #fff;*/
     /*display: block;*/
@@ -2008,6 +2018,10 @@ a.spec-sheet {
     /*font-size: 20pt;*/
     bottom: 0%;
     right: 0%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     /*color: #fff;*/
     /*display: block;*/
@@ -2097,6 +2111,10 @@ a.spec-sheet {
 .catalog-buttons {
   /*text-align: center;*/
   /*margin: 0 auto;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;  /* equal spacing */
   justify-content: space-between;
@@ -2155,6 +2173,10 @@ a.spec-sheet {
   padding: 30px 0px 30px 0px;
 }
 .overall-brands-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -2270,8 +2292,18 @@ a.spec-sheet {
 
 /* - - - News Page Post section - - - */
 .allpost-link-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  /*flex-wrap: wrap;*/
   /*justify-content: space-around;*/
+}
+@media screen and (max-width: 550px) {
+  .allpost-link-container {
+    flex-wrap: wrap;
+  }
 }
 .allpost-thumbnailimg {
   padding-right: 25px;
@@ -2304,6 +2336,9 @@ a.spec-sheet {
   font-family: 'Questrial', sans-serif;
   font-size: 12pt;
 }
+.news-upcomingtradeshows-container {
+  padding: 0;
+}
 .news-uts-title {
   background-color: #003DA5;
   font-family: 'bignoodletitlingregular';
@@ -2311,7 +2346,7 @@ a.spec-sheet {
   color: #fff;
   padding: 8px 0px 0px 0px;
   /*line-height: 16pt;*/
-  letter-spacing: 1px;
+  /*letter-spacing: 1px;*/
   text-align: center;
 }
 .news-uts-contents {
