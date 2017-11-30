@@ -4,6 +4,12 @@
 <!-- // Data displaying individual item. -->
 <?php get_header(); ?>
 
+<div class='prod-tocatalogs'>
+	<a href='<?php echo home_url();?>/catalogs/'>Click here to view our catalogs.</a>
+	<div class='prod-tocatalogs-underline'>
+	</div>
+</div>
+
 <div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -67,9 +73,6 @@
 			// Start Right column.
 			echo "<td class='prod-display'>";
 			// echo "<h1> HELLO </h1>";
-			echo "<div class='prod-tocatalogs'>";
-				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
-			echo "</div>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 				$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id';");
