@@ -1941,6 +1941,11 @@ a.spec-sheet {
   font-size: 8pt;
 }
 
+.contact-success-message {
+  /*margin-top: 30px;*/
+  padding: 0px 0px 50px 0px;
+}
+
 /* - - - CAREER - - - */
 .career-banner img {
   width: 100%;
