@@ -18,7 +18,7 @@
         <?php include 'phpsnippet/upcomingtradeshows.php';?>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 news-allsection">
       <?php
       $args = array(
         'post_type' => 'post',
