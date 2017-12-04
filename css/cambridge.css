@@ -1799,6 +1799,14 @@ a.spec-sheet {
 .cb3-i2 {
   font-size: 50pt;
 }
+@media screen and (min-width: 1370px) {
+  .cb3-i1 {
+    font-size: 40pt;
+  }
+  .cb3-i2 {
+    font-size: 70pt;
+  }
+}
 @media screen and (max-width: 950px) and (min-width: 700px) {
   .cb3-i1 {
     font-size: 20pt;
