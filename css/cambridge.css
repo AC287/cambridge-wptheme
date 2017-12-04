@@ -759,8 +759,8 @@ a.s-icon {
   display: block;
   transition: 0.4s;
   text-align: left;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   /*padding-right: 5px;*/
 }
 .custpanel {
@@ -790,7 +790,7 @@ a.s-icon {
   width: 12px;
   height: 12px;
   margin-bottom: 3px;
-  margin-right: 3px;
+  /*margin-right: 3px;*/
 }
 .custaccordion:hover {
   /*background-color: #ddd;*/
