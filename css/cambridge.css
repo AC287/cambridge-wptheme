@@ -102,10 +102,29 @@ input:focus::-ms-input-placeholder {
   color: transparent;
 }*/
 /* -- This is top navigation. Header across all pages. -- */
-.top-nav {
+.top-nav0 {
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.top-nav0 a span {
+  padding-left: 20px;
+}
+.top-nav0 a {
+  padding: 10px 0px 10px 0px;
+  text-decoration: none;
+}
+.top-nav1 {
   width: 100%;
   background-color: #003DA5;
   color: #fff;
+  /*display: flex;*/
+}
+.tn1-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .tn-overall-table {
   /*margin-top: 15px;*/
@@ -114,7 +133,7 @@ input:focus::-ms-input-placeholder {
   /*margin: 0;*/
 }
 .cambridge-white-logo {
-  padding: 10px 20px 10px 15px;
+  padding: 10px 20px 10px 0px;
 }
 .tn-inner-table {
   height: inherit;
@@ -132,12 +151,12 @@ input:focus::-ms-input-placeholder {
   font-size: 15px;
   font-family: 'Questrial', sans-serif;
 }
-.s-icon {
-  font-size: 25px;
+/*.s-icon {
+  font-size: 25pt;
   text-decoration: none;
   color: inherit;
   padding-left: 10px;
-}
+}*/
 /* - - - custom nav - - - */
 .header-nav-container {
   /*height: auto;*/
@@ -146,15 +165,18 @@ input:focus::-ms-input-placeholder {
 .header-mnav {
   padding-top: 5px;
   margin-bottom: 0;
-  /*height: 100%;*/
+  /*height: auto;*/
   /*float: right;*/
   /*text-align: right;*/
 }
 .header-mnav a {
   /*float: right;*/
   display: block;
+  font-size: 10pt;
+  /*margin-left: 20px;*/
 }
 .header-mnav .header-navicon {
+  color: #fff;
   display: none;
 }
 /* Responsive css for navigation */
@@ -169,6 +191,7 @@ input:focus::-ms-input-placeholder {
   }
   .header-mnav a:not(:first-child) {display: none;}
   .header-mnav a.header-navicon {
+    color: #fff;
     /*float: right;*/
     /*text-align: center;*/
     cursor: pointer;
@@ -178,9 +201,12 @@ input:focus::-ms-input-placeholder {
     /*left: 50%;*/
     padding: 5px;
   }
-  .header-mnav.responsive a {
+  .header-mnav.responsive .navi1-inner {
     display: block;
     padding: 10px;
+  }
+  .header-mnav.responsive .s-icon {
+    display: inline-block;
   }
 }
 /* - - - */
@@ -188,17 +214,32 @@ input:focus::-ms-input-placeholder {
   font-family: 'Questrial', sans-serif;
   /*vertical-align: text-top;*/
 }
-.navi1-btn a {
-  position: relative;
-  text-decoration: none;
-  margin-left: 20px;
-  color: inherit;
-  font-size: 13px;
-  display: inline-block;
+/*.navi1-btn a {*/
+  /*position: relative;*/
+  /*text-decoration: none;*/
+  /*margin-left: 20px;*/
+  /*color: inherit;*/
+  /*font-size: 13px;*/
+  /*display: inline-block;*/
   /*vertical-align: top;*/
   /*line-height: 10px;*/
+/*}*/
+.navi1-btn .navi1-inner {
+  /*position: relative;*/
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.navi1-btn a .header-navi-selector {
+.navi1-btn .s-icon {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 15pt;
+}
+.navi1-btn .navi1-inner .header-navi-selector {
   /*content: "";*/
   display: none;
   /*display: block;*/
@@ -249,8 +290,8 @@ input:focus::-ms-input-placeholder {
 }
 .nav2-search {
   display: block;
-  float: right;
-  text-align: right;
+  /*float: right;*/
+  /*text-align: right;*/
   margin: 0;
   padding-top: 3px;
   padding-bottom: 5px;

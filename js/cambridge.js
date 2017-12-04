@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 
   $('.navi1-btn a').bind({
     mouseenter: function(){
-      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
+      var currClass = '.'+$(this).attr('class').split(' ')[0]+' .header-navi-selector';
       // console.log(currClass);
       $(currClass).css({
         // 'transform':'scale(1.5)',
@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
       })
     },
     mouseleave: function(){
-      var currClass = $(this).attr('class');
+      var currClass = $(this).attr('class').split(' ')[0];
       // if (currClass != getCurrentLocation())
       switch (currClass) {
         case 'home':
