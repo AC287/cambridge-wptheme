@@ -789,6 +789,8 @@ a.s-icon {
 .chev {
   width: 12px;
   height: 12px;
+  margin-bottom: 3px;
+  margin-right: 3px;
 }
 .custaccordion:hover {
   /*background-color: #ddd;*/
