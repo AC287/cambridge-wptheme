@@ -1,4 +1,4 @@
-<!--  Template Name: Career  -->
+<!--  Template Name: Career v0  -->
 
 <?php get_header(); ?>
 
@@ -19,9 +19,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="career-callout">
 </div>
 
 <div class="container career-content-container">
