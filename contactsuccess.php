@@ -43,10 +43,10 @@
   // if($sent) my_contact_form_generate_response('success',$message_sent);
   // else my_contact_form_generate_response('error',$message_unsent);
 ?>
-<?php
+<!-- <?php
   // $homeurl = home_url();
-  header('refresh:5; url='.home_url());
-?>
+  // header('refresh:5; url='.home_url());
+?> -->
 <?php get_header();?>
 
 <div class='contact-banner'>
