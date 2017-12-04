@@ -144,8 +144,8 @@
 <div class="mid-menu">
   <div class="container">
     <span id="mid-menu-menu">
-      <a href="">NEW PRODUCTS</a>
-      <span class="mm-divider">|</span>
+      <!-- <a href="">NEW PRODUCTS</a>
+      <span class="mm-divider">|</span> -->
       <a href="">UPCOMING TRADESHOWS</a>
       <span class="mm-divider">|</span>
       <a href="<?php echo home_url();?>/news/">NEWS</a>
