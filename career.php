@@ -22,6 +22,13 @@
 </div>
 
 <div class="career-callout">
+  <div class="container">
+    <p class="career-blusm">Cambridge Resources is a fun and exciting place to work.</p>
+    <p class="career-blasm">It's a place where employees, regardless of what department they are in, can be sure that they will spend their time at work</p>
+    <p class="career-blusm">"Solving interesting problems and creating value in their workspaces."</p>
+    <p class="career-blasm">If you are interested and qualified for any of the positions listed below, or if you think you can contribute to our company in another way, please email a cover letter and your resume to <a href="">info@cambridgeresources.com</a></p>
+    <p class="career-blulg">We look forward to hearing from you.</p>
+  </div>
 </div>
 
 <div class="container career-content-container">
