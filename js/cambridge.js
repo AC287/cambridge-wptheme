@@ -406,6 +406,7 @@ $(document).keydown(function(e){
     $('.ip-slides').css('display','none');
     $('.team-modal').css('display', 'none');
     $('.team-modal-content').css('display','none');
+    $('.career-modal').css('display','none');
   }
 })
 

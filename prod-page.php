@@ -69,6 +69,7 @@
               echo "<div class='s1-box-background'>";
 							echo "<div class='s1-box-flex-container'>";
               $counter = 0;
+							$counter4 = 0;
               foreach($s1_category2 as $s1_category2) {
                 // $img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
 								$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$main_category2->m0' AND s1 = '$s1_category2->s1' AND cat1img IS NOT NULL");
@@ -107,6 +108,7 @@
                   echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
                   echo "</a>";
                   $counter++;
+									$counter4++;
                 } else {
                   // if sub category is more than 4, this add class to hide.
                   if((sizeof($s2_check)>=1)&&(($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
@@ -130,10 +132,15 @@
                   echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
                   echo "</a>";
                   $counter++;
+									$counter4++;
                 }
               }
-							for($k=$counter; $k<4; $k++){
-								echo "<a class='s1-box s1-box-filler'></a>";
+							for($k=$counter4; $k%4!=0; $k++){
+								if($k < 4){
+									echo "<a class='s1-box s1-box-filler'></a>";
+								} else {
+									echo "<a class='s1-box s1-box-filler extra-box pos".$mPos."'></a>";
+								}
 							}
 							echo "</div>";	// end s1-box-flex-container
               if($counter > 3) {

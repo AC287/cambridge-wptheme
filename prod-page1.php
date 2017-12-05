@@ -102,7 +102,7 @@
 				echo "</a>";
 				$counter++;
 			}
-			for($k=$counter; $k<4; $k++){
+			for($k=$counter; $k%4!=0; $k++){
 				echo "<a class='s1-box s1-box-filler'></a>";
 			}
 			echo "</div>";	// end s1-box-flex-container
