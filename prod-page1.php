@@ -94,7 +94,7 @@
 					// print_r($img->img0);
 					echo "<img src='".$img[0]->cat2img."' height='100' width='100'>";
 				} else {
-					echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/c_logo.jpg' height='100' width='100'>";
+					echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' height='100' width='100'>";
 				};
 				// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 				echo "</div>";
