@@ -230,11 +230,11 @@ a.s-icon {
 .nav2 {
   font-family: 'bignoodletitlingregular';
   color: #003DA5;
-  font-size: 12pt;
+  font-size: 10pt;
   letter-spacing: 2px;
   display: block;
   float: left;
-  padding-top: 12px;
+  padding-top: 14px;
   padding-bottom: 5px;
 }
 .nav2-logo {
@@ -759,8 +759,8 @@ a.s-icon {
   display: block;
   transition: 0.4s;
   text-align: left;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
   /*padding-right: 5px;*/
 }
 .custpanel {
