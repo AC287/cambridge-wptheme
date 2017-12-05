@@ -81,7 +81,7 @@
 				echo "<div class='s1-box-flex-container'>";
 				$counter = 0;
 				foreach($sub_category2 as $sub_category2) {
-				$img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s2 = '$sub_category2->s2' AND img0 IS NOT NULL;");
+				$img = $wpdb->get_results("SELECT cat2img FROM wp_prodlegend WHERE m0 = '$p1m0' AND s1 = '$p1s1' AND s2 = '$sub_category2->s2' AND cat2img IS NOT NULL;");
 				// print_r(sizeof($img));
 				echo "<a href='../ps2/?m0=".$p1m0."&s1=".$p1s1."&s2=".$sub_category2->s2."' class='s1-box'>";
 				echo "<div class='item-img'>";
@@ -89,10 +89,10 @@
 					// foreach($img as $img) {
 					// 	echo "<img src='' height='100' width='100'>";
 					// }
-					echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
+					echo "<img src='".$img[0]->cat2img."' height='100' width='100'>";
 				} elseif (sizeof($img)===1) {
 					// print_r($img->img0);
-					echo "<img src='".$img[0]->img0."' height='100' width='100'>";
+					echo "<img src='".$img[0]->cat2img."' height='100' width='100'>";
 				} else {
 					echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/c_logo.jpg' height='100' width='100'>";
 				};

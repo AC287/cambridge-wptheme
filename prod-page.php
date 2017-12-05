@@ -70,7 +70,11 @@
 							echo "<div class='s1-box-flex-container'>";
               $counter = 0;
               foreach($s1_category2 as $s1_category2) {
-                $img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
+                // $img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
+								$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$main_category2->m0' AND s1 = '$s1_category2->s1' AND cat1img IS NOT NULL");
+								// echo $img;
+								// print_r($img);
+
                 // print_r(sizeof($img));
                 $s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$main_category2->m0' AND s1='$s1_category2->s1';");
                 // print_r(sizeof($s2_check));
@@ -88,11 +92,13 @@
                     // foreach($img as $img) {
                     //   echo "<img src='' height='100' width='100'>";
                     // }
-                    echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
+                    // echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
+										echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+
 
                   } elseif (sizeof($img)===1) {
                     // print_r($img->img0);
-                    echo "<img src='".$img[0]->img0."' height='100' width='100'>";
+                    echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
                   } else {
                     echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/c_logo.jpg' height='100' width='100'>";
                   };
@@ -110,11 +116,11 @@
                   }
                   echo "<div class='item-img'>";
                   if (sizeof($img) > 1) {
-                    echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
+                    echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
                   }
                   elseif (sizeof($img)===1) {
                     // print_r($img->img0);
-                    echo "<img src='".$img[0]->img0."' height='100' width='100'>";
+                    echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
                   }
                   else {
                     echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/c_logo.jpg' height='100' width='100'>";
