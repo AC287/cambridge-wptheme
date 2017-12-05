@@ -94,43 +94,57 @@
 						echo "<tr>";
 						echo "<td class='item-image'>";
 							echo "<div class='img-content-box'>";
-								for ($x=0; $x<=9; $x++) {
-									$img = "img".$x;
-									// This will assign default image at main.
-									if(($get_item_data[0]->img2)!=""){
-										switch ($x) {
-											case (2):
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+							/* - - - THIS IS MAIN VIEW - - - */
+								$imgExist = 0;
+								for ($y = 0; $y<=9; $y++){
+									$imgtemp = 'img'.$y;
+									// echo $get_item_data[0]->$imgtemp;
+									if($get_item_data[0]->$imgtemp != '') {
+										$imgExist++;
+										// echo $imgExist;
+									}
+								}
+								if ($imgExist == 0) {
+									echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+								} else {
+									for ($x=0; $x<=9; $x++) {
+										$img = "img".$x;
+										// This will assign default image at main.
+										if(($get_item_data[0]->img2)!=""){
+											switch ($x) {
+												case (2):
+												{
+													if(($get_item_data[0]->$img) !=""){
+														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+													}
 												}
-											}
-											break;
-											default:
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+												break;
+												default:
+												{
+													if(($get_item_data[0]->$img) !=""){
+														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+													}
 												}
+												// endswitch;
 											}
-											// endswitch;
-										}
-									}	// end if there is no img2.
-									else {
-										switch ($x) {
-											case (0):
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+										}	// end if there is no img2.
+										else {
+											switch ($x) {
+												case (0):
+												{
+													if(($get_item_data[0]->$img) !=""){
+														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+													}
 												}
-											}
-											break;
-											default:
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+												break;
+												default:
+												{
+													if(($get_item_data[0]->$img) !=""){
+														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+													}
 												}
+												// endswitch;
 											}
-											// endswitch;
 										}
 									}
 								}
@@ -211,16 +225,23 @@
 			echo "</td>";
 			echo "</table>";
 
+			/* - - - IMAGE MODAL - - - */
 			echo "<div id='itemModal' class='ip-modal'>";
 				echo "<span class='ip-close'>&times;</span>";
 				echo "<div class='ip-modal-content'>";
-					for($m=0; $m<=9; $m++){
-						$imgLg = 'img'.$m;
-						if($get_item_data[0]->$imgLg!=""){
-							// echo $get_item_data[0]->$imgLg;
-							echo "<div class='ip-slides modal-$imgLg'>";
-							echo "<img src='".$get_item_data[0]->$imgLg."' style='width:100%'>";
-							echo "</div>";	// end ip-slides;
+					if($imgExist == 0) {
+						echo "<div class='ip-slides modal-imgnone'>";
+							echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' style='width: 100%'>";
+						echo "</div>";
+					} else {
+						for($m=0; $m<=9; $m++){
+							$imgLg = 'img'.$m;
+							if($get_item_data[0]->$imgLg!=""){
+								// echo $get_item_data[0]->$imgLg;
+								echo "<div class='ip-slides modal-$imgLg'>";
+								echo "<img src='".$get_item_data[0]->$imgLg."' style='width:100%'>";
+								echo "</div>";	// end ip-slides;
+							}
 						}
 					}
 					// echo "<a class='ip-prev'>&#10094;</a>";
