@@ -828,6 +828,11 @@ td.cat-bar {
   width: 27%;
   vertical-align: top;
   /*max-height: 100%;*/
+  /*margin-left: 10px;*/
+  /*margin-right: 10px;*/
+  padding-left: 10px;
+  padding-right: 10px;
+  /*background-color: #f3f4f4;*/
 }
 td.cat-bar a {
   font-family: 'Questrial', sans-serif;
@@ -841,7 +846,7 @@ td.prod-display {
 
 .group-container {
   padding-bottom: 20px;
-  background-color: #F2F2F2;
+  background-color: #FBFBFB;
 }
 
 .m-title {
@@ -856,7 +861,7 @@ td.prod-display {
 }
 
 .s1-box-background {
-  background-color: #F2F2F2;
+  /*background-color: #FBFBFB;*/
   width: 100%;
   height: 100%;
   /*display: flex;*/
@@ -2059,13 +2064,58 @@ a.spec-sheet {
     padding-left: 20px;
   }
 }
+/*   career callout   */
+.career-callout {
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  background-color: #F8FBFB;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 950px){
+  .career-callout p {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+.career-blusm {
+  font-size: 16pt;
+  color: #003DA5;
+}
+.career-blasm {
+  font-size: 16pt;
+  color: #000;
+}
+.career-blulg {
+  padding-top: 10px;
+  font-size: 25pt;
+  color: #003DA5;
+}
+.career-blaxs {
+  font-size: 14pt;
+}
+@media screen and (max-width: 750px) {
+  .career-blusm, .career-blasm {
+    font-size: 10pt;
+  }
+  .career-blulg {
+    /*padding-top: 10px;*/
+    font-size: 18pt;
+  }
+  .career-blaxs {
+    font-size: 8pt;
+  }
+}
+.career-pagecallout-contents {
+  text-align: center;
+}
 /*.cb-textbox1 span {
   line-height: 1em;
 }*/
 .career-mainheader {
   text-align: center;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .career-mainheader span {
   /*margin-top: 50px;*/
@@ -2103,8 +2153,44 @@ a.spec-sheet {
   font-size: 14pt;
   font-weight: bold;
 }
+.career-open {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+@media screen and (min-width: 1000px) {
+  .career-open-block {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 999px) {
+  .career-open-block {
+    width: 100%;
+  }
+  .career-open-block-holder {
+    display: none;
+  }
+}
+.career-open-block {
+  /*width: 45%;*/
+  /*width: 700px;*/
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #000;
+  /*display: flex;
+  justify-content: space-around;*/
+}
+.career-open-block-holder {
+  /*This is a place holder for even display..*/
+  width: 45%;
+  padding: 20px;
+  margin: 20px;
+}
 .career-open-container {
-  height: 150px;
+  display: block;
+  width: 100%;
+  height: 250px;
   overflow-y: hidden;
 }
 .career-open-expand {
@@ -2113,6 +2199,58 @@ a.spec-sheet {
 .career-open-expand a {
   cursor: pointer;
 }
+
+/*   Career Modal   */
+.career-modal {
+  display: none;
+  position: fixed;
+  /*position: relative;*/
+  z-index: 3;
+  padding-top: 75px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /*background-color: rgba(0,0,0);*/
+  background-color: rgba(0,0,0,0.8);
+}
+.career-modal-container {
+  margin: auto;
+  /*display: block;*/
+  /*padding: 20px;*/
+  width: 65%;
+  height: 80%;
+  /*width: 1000px;*/
+  /*height: 500px;*/
+  /*max-width: 530px;*/
+  position: relative;
+  background-color: #fff;
+  /*overflow: auto;*/
+}
+.career-modal-contents {
+  padding: 25px;
+  height: 100%;
+  /*width: 100%;*/
+  overflow: auto;
+}
+.career-close {
+  color: #000;
+  z-index: 4;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  /*font-weight: bold;*/
+  /*top: 50px;
+  right: 200px;*/
+}
+.career-close:hover, .career-close:focus {
+  color: #003DA5;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /* - - - CATALOG - - - */
 .catalog-mainheader {

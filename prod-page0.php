@@ -66,7 +66,7 @@
 				echo "<div class='s1-box-flex-container'>";
 				$counter = 0;
 				foreach($s1_category2 as $s1_category2) {
-					$img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
+					$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$p0m0' AND s1 = '$s1_category2->s1' AND cat1img IS NOT NULL;");
 					// print_r(sizeof($img));
 					$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p0m0' AND s1='$s1_category2->s1';");
 					if((sizeof($s2_check)>=1) && (($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
@@ -79,13 +79,13 @@
 						// foreach($img as $img) {
 						//   echo "<img src='' height='100' width='100'>";
 						// }
-						echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
+						echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
 
 					} elseif (sizeof($img)===1) {
 						// print_r($img->img0);
-						echo "<img src='".$img[0]->img0."' height='100' width='100'>";
+						echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
 					} else {
-						echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/c_logo.jpg' height='100' width='100'>";
+						echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' height='100' width='100'>";
 					};
 					// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 					echo "</div>";
@@ -93,7 +93,7 @@
 					echo "</a>";
 					$counter++;
 				}
-				for($k=$counter; $k<4; $k++){
+				for($k=$counter; $k%4!=0; $k++){
 					echo "<a class='s1-box s1-box-filler'></a>";
 				}
 				echo "</div>";	// end s1-box-flex-container

@@ -146,7 +146,7 @@
     <span id="mid-menu-menu">
       <!-- <a href="">NEW PRODUCTS</a>
       <span class="mm-divider">|</span> -->
-      <a href="">UPCOMING TRADESHOWS</a>
+      <a href="">TRADESHOWS</a>
       <span class="mm-divider">|</span>
       <a href="<?php echo home_url();?>/news/">NEWS</a>
     </span>
