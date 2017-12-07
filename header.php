@@ -106,9 +106,12 @@
               </div>
             </a>
             <div class="nav2-search">
-              <span class="glyphicon glyphicon-search nav2-search-icon"></span>
-              <span class="nav2-search-txt">PRODUCT SEARCH</span>
-              <input type="text" class="search-field" placeholder="KEYWORD / PHRASE / PART#"></input>
+              <form action='<?php echo home_url();?>/search' method='post'>
+                <span class="glyphicon glyphicon-search nav2-search-icon"></span>
+                <span class="nav2-search-txt">PRODUCT SEARCH</span>
+                <input name="header-search" type="text" class="search-field" placeholder="KEYWORD / PHRASE / PART#"></input>
+                <input type="submit" style="display:none"/>
+              </form>
             </div>
           </div>  <!-- end tn2-overall-table class  -->
         </div>  <!--  end top-nav2 container  -->
