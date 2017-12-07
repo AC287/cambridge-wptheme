@@ -1,24 +1,24 @@
 <?php
 /*
-* Template Name: Featured News
-* Template Post Type: post, news
+* Template Name: Featured tradeshows
+* Template Post Type: post, tradeshows
 */
 get_header(); ?>
 
-<div class="container news-content-container">
-  <div class="news-mainheader">
-    <span class="featurednews-newslink"><a href="<?php echo home_url();?>/news/">NEWS</a></span>
-    <div class="news-mainheader-underline"></div>
+<div class="container tradeshows-content-container">
+  <div class="tradeshows-mainheader">
+    <span class="featuredtradeshows-tradeshowslink"><a href="<?php echo home_url();?>/tradeshows/">tradeshows</a></span>
+    <div class="tradeshows-mainheader-underline"></div>
   </div>
 </div>
-<div class="container newspage">
+<div class="container tradeshowspage">
   <div class="row">
     <div class="col-md-3">
-      <div class="news-upcomingtradeshows-container">
-        <div class="news-uts-title">
+      <div class="tradeshows-upcomingtradeshows-container">
+        <div class="tradeshows-uts-title">
           <span>UPCOMING TRADESHOWS</span>
         </div>
-        <div class="news-uts-contents">
+        <div class="tradeshows-uts-contents">
           <?php include 'phpsnippet/upcomingtradeshows.php';?>
         </div>
       </div>
@@ -26,17 +26,17 @@ get_header(); ?>
     <div class="col-md-7">
       <?php
       // Start the loop.
-      echo "<div class='featurednews-content'>";
+      echo "<div class='featuredtradeshows-content'>";
       while ( have_posts() ) : the_post();
       echo "<div class='fnc-title'>";
       the_title();
       echo "</div>";
       echo get_the_date('F d, Y');
       the_content();
-      echo "<div class='return-to-news'>";
+      echo "<div class='return-to-tradeshows'>";
         $homeURL = home_url();
-        echo "<a href='$homeURL/news/'>Return to news page.</a>";
-      echo "</div>";  // end return-to-news
+        echo "<a href='$homeURL/tradeshows/'>Return to tradeshows page.</a>";
+      echo "</div>";  // end return-to-tradeshows
       echo "</div>";
       /*
       * Include the post format-specific template for the content. If you want to
@@ -65,8 +65,8 @@ get_header(); ?>
       ?>
       <!-- <?php //printf(wp_get_archives()) ?> -->
     </div>
-    <div class="col-md-2 news-archive-col">
-      <div class="news-archive">
+    <div class="col-md-2 tradeshows-archive-col">
+      <div class="tradeshows-archive">
         <!-- <span>Archive</span> -->
         <?php include 'phpsnippet/archivesnippet.php';?>
       </div>
