@@ -410,17 +410,17 @@ $(document).keydown(function(e){
   }
 })
 
-/* - - - news page archive height - - - */
+/* - - - tradeshows page archive height - - - */
 checkSize();
 $(window).resize(checkSize);
 
 function checkSize() {
-  var allNewsSize = $('.newspage').height()+'px';
-  $('.news-archive-col').css('min-height', allNewsSize);
+  var alltradeshowsSize = $('.tradeshowspage').height()+'px';
+  $('.tradeshows-archive-col').css('min-height', alltradeshowsSize);
 
-  if($('.news-archive-col').css('float')=='none') {
-    // console.log(allNewsSize);
-    $('.news-archive-col').css('min-height','100%');
+  if($('.tradeshows-archive-col').css('float')=='none') {
+    // console.log(alltradeshowsSize);
+    $('.tradeshows-archive-col').css('min-height','100%');
   }
 }
 
