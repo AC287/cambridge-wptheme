@@ -87,7 +87,7 @@
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
 
-			<p> Expands China &amp Taiwan facilities.
+			<p> Expands China &amp; Taiwan facilities.</p>
 		</div>
 	</div>
 	<div class="about-tl-item">
@@ -233,7 +233,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
 			</div>
 			<div class="about-4info-title">
-				DEVELOPMENT <br/>&amp PRODUCTION:
+				DEVELOPMENT <br/>&amp; PRODUCTION:
 			</div>
 			<div class="about-4info-contents">
 				<p>Product Design</p>
@@ -250,7 +250,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
 			</div>
 			<div class="about-4info-title">
-				CUSTOMER SERVICE <br/>&amp SALES SUPPORT
+				CUSTOMER SERVICE <br/>&amp; SALES SUPPORT
 			</div>
 			<div class="about-4info-contents">
 				<p>U.S. based customer service and sales support team.</p>
@@ -362,7 +362,7 @@
 					</div>
 					<div class="about-locations-type-multicities">
 						<p class="about-locations-type-title">XINCHANG, CHINA</p>
-						<p>Logistics &amp Sourcing Office</p>
+						<p>Logistics &amp; Sourcing Office</p>
 					</div>
 					<div class="about-locations-type-multicities">
 						<p class="about-locations-type-title">SHENZHEN, CHINA</p>
