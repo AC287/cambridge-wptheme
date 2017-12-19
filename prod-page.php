@@ -38,11 +38,11 @@
                   echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
                   echo "<div class='custpanel'>";
 									foreach($s2_category as $s2_category) {
-										echo "<div class='custaccordion no-sub'><a class='no-sub' href='./ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+										echo "<div class='custaccordion no-sub'><a class='no-sub' href='./ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s2_category->s2."</a></div>";
 									}
                   echo "</div>";  // end custpanel
 								} else {
-                  echo "<div class='custaccordion'><a class='no-sub' href='./ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+                  echo "<div class='custaccordion'><a class='no-sub' href='./ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s1_category->s1."</a></div>";
                 }
 							}
               echo "</div>";  // end custpanel.
@@ -62,7 +62,7 @@
           $mPos = 0;
           foreach($main_category2 as $main_category2) {
             echo "<div class='group-container'>";
-            echo "<div class='m-title'><a href='./pm0/?m0=".$main_category2->m0."'>".$main_category2->m0."</a></div>";
+            echo "<div class='m-title'><a href='./pm0/?m0=".urlencode($main_category2->m0)."'>".$main_category2->m0."</a></div>";
             $s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category2->m0';");
             // print_r($s1_category2);
             if(!empty($s1_category2[0]->s1)) {
@@ -84,9 +84,9 @@
                 // print_r($s1_category2->s1);
                 if($counter < 4) {
                   if((sizeof($s2_check)>=1) && (($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
-                    echo "<a href='./ps1/?m0=".$main_category2->m0."&s1=".$s1_category2->s1."' class='s1-box'>";
+                    echo "<a href='./ps1/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
                   } else {
-                    echo "<a href='./ps2/?m0=".$main_category2->m0."&s1=".$s1_category2->s1."' class='s1-box'>";
+                    echo "<a href='./ps2/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
                   }
                   echo "<div class='item-img'>";
                   if (sizeof($img) > 1) {
@@ -112,9 +112,9 @@
                 } else {
                   // if sub category is more than 4, this add class to hide.
                   if((sizeof($s2_check)>=1)&&(($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
-                    echo "<a href='./ps1/?m0=".$main_category2->m0."&s1=".$s1_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
+                    echo "<a href='./ps1/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
                   } else {
-                    echo "<a href='./ps2/?m0=".$main_category2->m0."&s1=".$s1_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
+                    echo "<a href='./ps2/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
                   }
                   echo "<div class='item-img'>";
                   if (sizeof($img) > 1) {

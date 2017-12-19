@@ -52,11 +52,11 @@
 							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
 							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
@@ -82,11 +82,11 @@
 				$item_sub2_cat = $get_item_data[0]->s2;
 				if($item_sub2_cat != ""){
 					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat' AND s2='$item_sub2_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".$item_main_cat."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".$item_main_cat."&s1=".$item_sub1_cat."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".$item_main_cat."&s1=".$item_sub1_cat."&s2=".$item_sub2_cat."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
 					// print_r("sub2 is not empty");
 				} else {
 					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".$item_main_cat."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".$item_main_cat."&s1=".$item_sub1_cat."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
 					// print_r("sub2 is empty");
 				}
 				echo "<div class='s1-box-background'>";
