@@ -94,7 +94,9 @@
 						echo "<tr>";
 						echo "<td class='item-image'>";
 							echo "<div class='img-content-box'>";
+
 							/* - - - THIS IS MAIN VIEW - - - */
+
 								$imgExist = 0;
 								for ($y = 0; $y<=9; $y++){
 									$imgtemp = 'img'.$y;
@@ -103,13 +105,16 @@
 										$imgExist++;
 										// echo $imgExist;
 									}
-								}
+								}	//Checking to see if image exist
+
 								if ($imgExist == 0) {
 									echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 								} else {
+									$displayCounter = 0;
 									for ($x=0; $x<=9; $x++) {
 										$img = "img".$x;
 										// This will assign default image at main.
+										/*
 										if(($get_item_data[0]->img2)!=""){
 											switch ($x) {
 												case (2):
@@ -129,22 +134,31 @@
 											}
 										}	// end if there is no img2.
 										else {
-											switch ($x) {
-												case (0):
-												{
-													if(($get_item_data[0]->$img) !=""){
-														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-													}
+										}
+										*/
+										switch ($x) {
+											case (0):
+											{
+												if(($get_item_data[0]->$img) !=""){
+													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+													$displayCounter++;
+												} else {
+													break;
 												}
-												break;
-												default:
-												{
+											}
+											break;
+											default:
+											{
+												if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
+													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+													$displayCounter++;
+												} else {
 													if(($get_item_data[0]->$img) !=""){
 														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
 													}
 												}
-												// endswitch;
 											}
+											// endswitch;
 										}
 									}
 								}
