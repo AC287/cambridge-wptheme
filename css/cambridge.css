@@ -2320,8 +2320,13 @@ a.spec-sheet {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;  /* equal spacing */
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .catalog-buttons {
+    flex-wrap: wrap;
+  }
 }
 .catalog-custbtn {
   display: block;
@@ -2330,6 +2335,7 @@ a.spec-sheet {
   border-radius: 0px;
   border: 1px solid #073DA5;
   color: #073DA5;
+  margin-bottom: 20px;
 }
 .catalog-custbtn:hover {
   /*color: #073DA5;*/

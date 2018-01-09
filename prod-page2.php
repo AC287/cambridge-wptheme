@@ -54,11 +54,11 @@
 							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
 							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=". urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
@@ -78,11 +78,11 @@
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 				if($p2s2!=""){
-					echo "<div class='m-title'><a href='../pm0/?m0=".$p2m0."'>".$p2m0."</a>  >>  <a href='../ps1/?m0=".$p2m0."&s1=".$p2s1."'>".$p2s1."</a>  >>  ".$p2s2."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  <a href='../ps1/?m0=".urlencode($p2m0)."&s1=".urlencode($p2s1)."'>".stripslashes($p2s1)."</a>  >>  ".stripslashes($p2s2)."</div>";	//Title
 					$item_data_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$p2m0' AND s1='$p2s1' AND s2='$p2s2';");
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1' AND s2='$p2s2';");
 				} else {
-					echo "<div class='m-title'><a href='../pm0/?m0=".$p2m0."'>".$p2m0."</a>  >>  ".$p2s1."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  ".stripslashes($p2s1)."</div>";	//Title
 					$item_data_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$p2m0' AND s1='$p2s1';");
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1';");
 				}
@@ -93,9 +93,9 @@
 				echo "<div class='s1-box-background'>";
 					echo "<div class='p2-header'>";
 						if($p2s2!=""){
-							echo "<div class='p2-title'>".$p2s2."</div>";
+							echo "<div class='p2-title'>".stripslashes($p2s2)."</div>";
 						} else {
-							echo "<div class='p2-title'>".$p2s1."</div>";
+							echo "<div class='p2-title'>".stripslashes($p2s1)."</div>";
 						}
 						echo "<div class='p2-description-txt'>".$item_data[0]->d0."</div>";
 					echo "</div>";	// end p2-header.
@@ -177,7 +177,7 @@
 					echo "</tr>";
 					foreach($item_data as $item_data) {
 						echo "<tr>";
-						echo "<td><a href='../item/?id=".$item_data->item."'>".$item_data->item."</a></td>";
+						echo "<td><a href='../item/?id=".urlencode($item_data->item)."'>".$item_data->item."</a></td>";
 						for ($y=1; $y<9; $y++) {
 							$cell_data2 = "d".$y;
 							if(($item_data->$cell_data2)!="") {

@@ -52,11 +52,11 @@
 							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
 							echo "<div class='custpanel'>";
 							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
+								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s2_category->s2."</a></div>";
 							}
 							echo "</div>";  // end panel
 						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
+							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s1_category->s1."</a></div>";
 						}
 					}
 					echo "</div>";  // end panel.
@@ -82,11 +82,11 @@
 				$item_sub2_cat = $get_item_data[0]->s2;
 				if($item_sub2_cat != ""){
 					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat' AND s2='$item_sub2_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".$item_main_cat."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".$item_main_cat."&s1=".$item_sub1_cat."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".$item_main_cat."&s1=".$item_sub1_cat."&s2=".$item_sub2_cat."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
 					// print_r("sub2 is not empty");
 				} else {
 					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".$item_main_cat."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".$item_main_cat."&s1=".$item_sub1_cat."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
 					// print_r("sub2 is empty");
 				}
 				echo "<div class='s1-box-background'>";
@@ -94,7 +94,9 @@
 						echo "<tr>";
 						echo "<td class='item-image'>";
 							echo "<div class='img-content-box'>";
+
 							/* - - - THIS IS MAIN VIEW - - - */
+
 								$imgExist = 0;
 								for ($y = 0; $y<=9; $y++){
 									$imgtemp = 'img'.$y;
@@ -103,13 +105,16 @@
 										$imgExist++;
 										// echo $imgExist;
 									}
-								}
+								}	//Checking to see if image exist
+
 								if ($imgExist == 0) {
 									echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 								} else {
+									$displayCounter = 0;
 									for ($x=0; $x<=9; $x++) {
 										$img = "img".$x;
 										// This will assign default image at main.
+										/*
 										if(($get_item_data[0]->img2)!=""){
 											switch ($x) {
 												case (2):
@@ -129,22 +134,31 @@
 											}
 										}	// end if there is no img2.
 										else {
-											switch ($x) {
-												case (0):
-												{
-													if(($get_item_data[0]->$img) !=""){
-														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-													}
+										}
+										*/
+										switch ($x) {
+											case (0):
+											{
+												if(($get_item_data[0]->$img) !=""){
+													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+													$displayCounter++;
+												} else {
+													break;
 												}
-												break;
-												default:
-												{
+											}
+											break;
+											default:
+											{
+												if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
+													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+													$displayCounter++;
+												} else {
 													if(($get_item_data[0]->$img) !=""){
 														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
 													}
 												}
-												// endswitch;
 											}
+											// endswitch;
 										}
 									}
 								}
