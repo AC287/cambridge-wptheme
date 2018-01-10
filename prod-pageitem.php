@@ -194,6 +194,13 @@
 						// This is thumbnail selection image.
 							echo "<td colspan='2'>";
 							echo "<div class='img-thumbnail-section'>";
+								for ($x=0; $x<=9; $x++) {
+									$img = "img".$x;
+									if(($get_item_data[0]->$img) !=""){
+										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
+									}
+								}
+								/*
 								for ($y=2; $y<=9; $y++) {
 									$img = "img".$y;
 									if(($get_item_data[0]->$img) !=""){
@@ -206,6 +213,7 @@
 										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
 									}
 								}
+								*/
 							echo "</div>";	// end img-thumbnail-section;
 							echo "</td>";
 						echo "</tr>";
