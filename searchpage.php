@@ -95,18 +95,18 @@
     //   echo "<p>DESCRIPTION CATEGORY TOTAL RESULTS: ".sizeof($searchdesc)."</p>";
     // }
 
-    $searchValue = strtoupper($_REQUEST['header-search']);
+    $searchValue = strtoupper($_REQUEST['isearch']);
     // echo $searchValue;
-    global $wpdb;
+    // global $wp_query, $wpdb;
     $prodSearch = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item = '$searchValue';");
     // echo sizeof($prodSearch);
     if (sizeof($prodSearch) != 0) {
       //product search is correct and exist.
-      echo "<p>Displaying products for ".$_REQUEST['header-search']."...</p>";
+      echo "<p>Displaying products for ".$searchValue."...</p>";
       echo "<p>Total results found: ".sizeof($prodSearch)."</p>";
     } else {
       //product search is incorrect. Searching for keyword.
-      echo "<p>Displaying products by keyword: ".$_REQUEST['header-search']."...</p>";
+      echo "<p>Displaying products by keyword: ".$searchValue."...</p>";
 
     }
 
