@@ -19,38 +19,9 @@
 			global $wp_query;
 			global $wpdb;
 			$p0m0 = $wp_query->query_vars['m0'];
-			$main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prod0;");
-			// $main_category2 = $main_category;
 			echo "<table id='product-main-page'>";
 			echo "<td class='cat-bar'>";	// This is accordion section.
-			echo "<h4><a href='../'>PRODUCT CATEGORIES</a></h4>";
-			foreach($main_category as $main_category) {
-				$s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
-				if(!empty($s1_category[0]->s1)){
-					// echo "<div>";
-					echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
-					echo "<div class='custpanel'>";
-					foreach($s1_category as $s1_category) {
-						$s2_category = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE s1 = '$s1_category->s1';");
-						if(!empty($s2_category[0]->s2)){
-							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
-							echo "<div class='custpanel'>";
-							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s2_category->s2."</a></div>";
-							}
-							echo "</div>";  // end panel
-						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".urlencode($main_category->m0)."&s1=".urlencode($s1_category->s1)."&s2=".urlencode($s2_category->s2)."'>".$s1_category->s1."</a></div>";
-						}
-					}
-					echo "</div>";  // end panel.
-				}
-				else {
-					echo "<div class='custaccordion'>".$main_category->m0."</div>";
-				}
-				// echo "<hr/>";
-				// echo "</div>";
-			}
+				include 'phpsnippet/productaccordion.php';
 			echo "</td>";		// This end accordion section.
 
 			echo "<td class='prod-display'>";	// Start product section.
