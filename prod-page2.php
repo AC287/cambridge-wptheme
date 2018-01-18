@@ -53,7 +53,7 @@
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1';");
 				}
 				$item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-				
+
 				// print_r($item_data_legend);
 				// print_r(count($item_data_legend[0]));
 				echo "<div class='s1-box-background'>";
@@ -129,6 +129,7 @@
 					// echo "<hr/>";	// horizontal line break.
 					echo "<table class='item-data-sheet'>";
 					echo "<tr >";
+					// Labeling cells.
 					echo "<th class='col-xs'>".$item_data_legend[0]->item."</th>";
 					for ($x=1; $x < 9; $x++) {
 						$cell_data = "d".$x;
@@ -143,7 +144,28 @@
 					echo "</tr>";
 					foreach($item_data as $item_data) {
 						echo "<tr>";
-						echo "<td><a href='../item/?id=".urlencode($item_data->item)."'>".$item_data->item."</a></td>";
+						echo "<td>";
+							$ipt_class = str_replace (' ','-',$item_data->item);
+							// echo $ipt_class;
+							echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."'>";
+								echo $item_data->item;
+								// $ipt_img = $item_data->img0;
+								echo "<p class='item-preview-thumb ipt-$ipt_class'>";
+									$imgCounter = 0;
+									for($i = 0; $i <= 9; $i++) {
+										$img = "img".$i;
+										if ($item_data->$img !="" && $imgCounter == 0 ) {
+											echo "<img src=".$item_data->$img.">";
+											$imgCounter++;
+											break;
+										}
+									}
+									if($imgCounter == 0) {
+											echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+									}
+								echo "</p>";
+							echo "</a>";
+						echo "</td>";
 						for ($y=1; $y<9; $y++) {
 							$cell_data2 = "d".$y;
 							if(($item_data->$cell_data2)!="") {

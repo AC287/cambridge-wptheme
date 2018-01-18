@@ -165,6 +165,31 @@ for (i = 0; i < acc.length; i++) {
 //
 // }
 
+// - - - PRODUCT PS2 PAGE - - -
+// source: cssglobe.com/lab/tooltip/03/
+$('a.ipt').hover(function(e) {
+  //This function run when mouse hover.
+  xOffset = 10;
+  yOffset = 30;
+  var iptName = ".ipt-"+this.className.split(' ')[1];
+  // console.log(iptName);
+  $(iptName)
+          .css("display","block")
+          .css("top",(e.pageY - xOffset) + "px")
+          .css("left",(e.pageX + yOffset) + "px")
+          .fadeIn("fast");
+}, function (){
+  //This function run when mouse hover out.
+  var iptName2 = ".ipt-"+this.className.split(' ')[1];
+  $(iptName2).css("display","none");
+});
+$('a.ipt').mousemove(function(e) {
+  var iptName3 = ".ipt-"+this.className.split(' ')[1];
+  $(iptName3)
+      .css("top",(e.pageY - xOffset) + "px")
+      .css("left",(e.pageX + yOffset) + "px");
+});
+
 // --- THIS IS FOR PRODUCT MAIN PAGE ---
 var displayExtra = $('.display-extra');
 // var prodChev = $('.show-hide .sh-chev img');

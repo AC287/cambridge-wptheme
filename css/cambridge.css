@@ -1034,6 +1034,18 @@ img.p2-cert-img {
   background-color: #fff;
 }
 
+/* - - - preview thumbnail image in ps2 - - - */
+.item-preview-thumb {
+  position: absolute;
+  display: none;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+.item-preview-thumb img {
+  width: 100px;
+  height: 100px;
+}
+
 /* - - - item page - - - */
 #each-item-spec {
   /*padding: 5px;*/
