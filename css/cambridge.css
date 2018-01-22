@@ -1279,6 +1279,9 @@ a.spec-sheet {
     max-width: 250px;
     max-height: 250px;
   } */
+  .aboutus-inthebeginning-contents {
+    padding-top: 25px;
+  }
 }
 .aboutus-inthebeginning-img {
   /*width: 400px;*/
@@ -1298,6 +1301,7 @@ a.spec-sheet {
   /* text-align: center; */
 }
 .aboutus-title1 {
+  text-align: center;
   /*height: 50px;*/
 }
 
