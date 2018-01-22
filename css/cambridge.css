@@ -1218,7 +1218,39 @@ a.spec-sheet {
 }*/
 
 /* - - - ABOUT US - - - */
-
+.about-overall-cover {
+  width: 100%;
+  height: 450px;
+  background-image: url('../images/nyc_beginning00.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+  /* overflow: hidden; */
+}
+.aboutus-title1 span {
+  /* margin-top: 25px; */
+  display: inline-block;
+  line-height: 100px;
+  /*margin: 0 auto;*/
+  font-family: 'bignoodletitlingregular',cursive;
+  font-size: 75pt;
+  letter-spacing: 2px;
+  color: #fff;
+  /*border-bottom: 4px solid #003DA5;*/
+}
+.aboutus-title1-underline {
+  margin: 0 auto;
+  width: 200px;
+  border-bottom: 4px solid #fff;
+}
 .aboutus-inthebeginning {
   /*padding-top: 50px;
   padding-bottom: 50px;*/
@@ -1243,10 +1275,10 @@ a.spec-sheet {
     /*width: 250px;*/
     /*height: 250px;*/
   }
-  .aboutus-inthebeginning-img img {
+  /* .aboutus-inthebeginning-img img {
     max-width: 250px;
     max-height: 250px;
-  }
+  } */
 }
 .aboutus-inthebeginning-img {
   /*width: 400px;*/
@@ -1257,34 +1289,20 @@ a.spec-sheet {
 }
 .aboutus-inthebeginning-img img {
   /*width: inherit;*/
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
 }
 .aboutus-inthebeginning-contents {
   padding-left: 50px;
   padding-right: 50px;
-  text-align: center;
+  /* text-align: center; */
 }
 .aboutus-title1 {
   /*height: 50px;*/
 }
-.aboutus-title1 span {
-  margin-top: 25px;
-  display: inline-block;
-  line-height: 50px;
-  /*margin: 0 auto;*/
-  font-family: 'bignoodletitlingregular',cursive;
-  font-size: 50px;
-  letter-spacing: 2px;
-  /*border-bottom: 4px solid #003DA5;*/
-}
-.aboutus-title1-underline {
-  margin: 0 auto;
-  width: 200px;
-  border-bottom: 4px solid #003DA5;
-}
+
 .aboutus-content1 {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   text-align: left;
   font-family: 'Questrial', sans-serif;
   font-size: 18px;
@@ -1521,10 +1539,10 @@ a.spec-sheet {
   position: relative;
   z-index: 1;
   text-align: center;
-  margin: 0 1.618em;
-  top: 50%;
+  /* margin: 0 1.618em; */
+  /* top: 50%; */
   opacity: 0;
-  font-size: 14pt;
+  /* font-size: 14pt; */
 }
 .about-tl-year {
   position: absolute;
@@ -1562,6 +1580,29 @@ a.spec-sheet {
           filter: grayscale(100%);
 }
 
+
+@media screen and (min-width: 1200px) {
+  .about-tl-content {
+    top: 50%;
+    padding: 1.5em;
+    font-size: 12pt;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 750px){
+  .about-tl-content {
+    top: 40%;
+    padding: 25px;
+    font-size: 10pt;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .about-tl-content {
+    top: 38%;
+    padding: 10px;
+    font-size: 8pt;
+  }
+}
 
 /* - - - TEAM PAGE - - - */
 .team-personnels {

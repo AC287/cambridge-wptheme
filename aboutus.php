@@ -3,18 +3,21 @@
 <!-- // Item page -->
 <!-- // Data displaying individual item. -->
 <?php get_header(); ?>
-
+<div class="about-overall-cover">
+	<div class="about-beginning-title">
+		<div class="aboutus-title1">
+			<span>IN THE BEGINNING</span>
+		</div>
+		<div class="aboutus-title1-underline">
+		</div>
+	</div>
+</div>
 <div class="container">
 	<div class="aboutus-inthebeginning">
 		<div class="aboutus-inthebeginning-img">
 			<img src="<?php bloginfo('template_directory')?>/images/personnel/chief_v1.jpg">
 		</div>
 		<div class="aboutus-inthebeginning-contents">
-			<div class="aboutus-title1">
-				<span>IN THE BEGINNING</span>
-			</div>
-			<div class="aboutus-title1-underline">
-			</div>
 			<p class="aboutus-content1">
 				In 1947, Abraham “The Chief” Tropper founded Coda Resources in New York City’s Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed the multi-national enterprise that, today, includes Cambridge, LDR, Coda Retail Supply Solutions, and Amram Brands.
 			</p>
