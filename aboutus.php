@@ -1,14 +1,15 @@
 <!-- Template Name: About Us. -->
 
-<!-- // Item page -->
-<!-- // Data displaying individual item. -->
 <?php get_header(); ?>
 <div class="about-overall-cover">
+	<div class="about-imgcover-container">
+		<img src="<?php bloginfo('template_directory')?>/images/banners/about-banner-nyc.jpg">
+	</div>
 	<div class="about-beginning-title">
-		<div class="aboutus-title1">
+		<div class="index-title1">
 			<span>IN THE BEGINNING</span>
 		</div>
-		<div class="aboutus-title1-underline">
+		<div class="index-title1-underline">
 		</div>
 	</div>
 </div>
