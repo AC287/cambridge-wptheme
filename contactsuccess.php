@@ -1,5 +1,52 @@
-<!--  Template Name: Contact Us  -->
+<!--  Template Name: Contact Success  -->
 
+<?php
+
+  // source: https://premium.wpmudev.org/blog/how-to-build-your-own-wordpress-contact-form-and-why/
+  //response generation function
+  $response = "";
+
+  //function to generate response
+  // function my_contact_form_generate_response($type, $message){
+  //
+  //   global $response;
+  //
+  //   if($type == "success") $response = "<div class='success'>{$message}</div>";
+  //   else $response = "<div class='error'>{$message}</div>";
+  //
+  // }
+  //response messages
+  // $not_human       = "Human verification incorrect.";
+  // $missing_content = "Please supply all information.";
+  // $email_invalid   = "Email Address Invalid.";
+  // $message_unsent  = "Message was not sent. Try Again.";
+  $message_sent    = "Thanks! Your message has been sent.";
+
+  //user posted variables
+  $name = $_POST['contact-name'];
+  $email = $_POST['contact-email'];
+  $message = $_POST['contact-message'];
+  $company = $_POST['contact-company'];
+  $phone = $_POST['contact-phone'];
+  // $human = $_POST['message_human'];
+  $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
+
+  //php mailer variables
+  $to = "arthurchen287@gmail.com";
+  $subject = "Someone sent a message from ".get_bloginfo('name');
+  $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
+  if($message !=''){
+    $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
+    // unset($name, $email, $message, $company, $phone, $contents);
+  }
+
+  // if($sent) my_contact_form_generate_response('success',$message_sent);
+  // else my_contact_form_generate_response('error',$message_unsent);
+?>
+<!-- <?php
+  // $homeurl = home_url();
+  // header('refresh:5; url='.home_url());
+?> -->
 <?php get_header();?>
 
 <div class='contact-banner'>
@@ -21,31 +68,17 @@
     <div class='col-sm-12 contact-maintitle'>
       <span>CONTACT</span>
     </div>
-    <div class='.contact-form-input'>
-      <?php echo $response; ?>
-      <form action='<?php the_permalink();?>success' method='post' class='row'>
-      <!-- <form action='<?php //echo esc_url(admin_url('admin-post.php'));?>' method='post' class='row'> -->
-        <div class='form-group contact-sm-input col-sm-6'>
-          <input type='text' name='contact-name' placeholder='Name' required>
-        </div>
-        <div class='form-group contact-sm-input col-sm-6'>
-          <input type='text' name='contact-company' placeholder='Company' >
-        </div>
-        <div class='form-group contact-sm-input col-sm-6'>
-          <input type='email' name='contact-email' placeholder='E-mail Address' required>
-        </div>
-        <div class='form-group contact-sm-input col-sm-6'>
-          <input type='text' name='contact-phone' placeholder='Phone Number' required>
-        </div>
-        <div class='form-group contact-message col-sm-12'>
-          <textarea type='text' name='contact-message' placeholder='Type your message here' required></textarea>
-        </div>
-        <div class='form-group contact-submit'>
-          <input type='hidden' name='submitted' value='1'>
-          <!-- <input type='hidden' name='action' value='contact_form'> -->
-          <button type='submit'>SEND</button>
-        </div>
-      </form>
+    <div class='contact-success-message'>
+      <?php while (have_posts()) : the_post(); ?>
+        <article id="post-<?php the_ID();?>"<?php post_class();?>>
+          <header class="entry-header">
+            <h1 class="entry-title"><?php the_title();?></h1>
+          </header>
+          <div class="entry-content">
+            <h4><?php the_content();?></h4>
+          </div>
+        </article>  <!-- end article post -->
+      <?php endwhile;?>
     </div>
     <div class='contact-phaddress'>
       <div class='contact-phaddress-ph'>

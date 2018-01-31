@@ -165,8 +165,34 @@ for (i = 0; i < acc.length; i++) {
 //
 // }
 
+// - - - PRODUCT PS2 PAGE - - -
+// source: cssglobe.com/lab/tooltip/03/
+$('a.ipt').hover(function(e) {
+  //This function run when mouse hover.
+  xOffset = 10;
+  yOffset = 30;
+  var iptName = ".ipt-"+this.className.split(' ')[1];
+  // console.log(iptName);
+  $(iptName)
+          .css("display","block")
+          .css("top",(e.pageY - xOffset) + "px")
+          .css("left",(e.pageX + yOffset) + "px")
+          .fadeIn("fast");
+}, function (){
+  //This function run when mouse hover out.
+  var iptName2 = ".ipt-"+this.className.split(' ')[1];
+  $(iptName2).css("display","none");
+});
+$('a.ipt').mousemove(function(e) {
+  var iptName3 = ".ipt-"+this.className.split(' ')[1];
+  $(iptName3)
+      .css("top",(e.pageY - xOffset) + "px")
+      .css("left",(e.pageX + yOffset) + "px");
+});
+
 // --- THIS IS FOR PRODUCT MAIN PAGE ---
 var displayExtra = $('.display-extra');
+// var prodChev = $('.show-hide .sh-chev img');
 var i;
 for (i=0; i< displayExtra.length; i++) {
   displayExtra[i].onclick = function () {
@@ -175,18 +201,22 @@ for (i=0; i< displayExtra.length; i++) {
       currentStatus[0] = 'HIDE';
       currentStatus.splice(1,1);
       this.innerHTML = currentStatus.join(' ');
+      // This toggle chevron icon.
+      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_up_blue.png');
     }
     else {
       currentStatus[0] = 'SHOW';
       currentStatus.splice(1,0,'ALL');
       this.innerHTML = currentStatus.join(' ');
+      // This toggle chevron icon.
+      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png');
     }
     var displayAll = $('.'+this.classList[1]);
     displayAll.each(function(index,object){
       if(($(this).css('display'))=='none'){
-        $(this).css('display','inline-block');
+        $(this).css('display','block');
       }
-      else if (($(this).css('display')=='inline-block') && $(this).hasClass('extra-box')){
+      else if (($(this).css('display')=='block') && $(this).hasClass('extra-box')){
         $(this).css('display','none');
       }
     })
@@ -194,6 +224,13 @@ for (i=0; i< displayExtra.length; i++) {
   // displayExtra[i].onclick = function () {
   //
   // }
+}
+
+/* - - - PRODUCT MAIN PAGE FLEX WRAP SCRIPT - - - */
+var $s1BoxFlexContainer = $('.s1-box-flex-container');
+// console.log($s1BoxFlexContainer.length);
+for(var j=0; j<$s1BoxFlexContainer.length; j++){
+  console.log($($s1BoxFlexContainer[j]).children().length)
 }
 
 // --- THIS IS FOR ITEM PAGE ---
@@ -327,21 +364,27 @@ $('.team-salesmanager-each img').bind({
 $('.career-open-expand a').click(function(){
   // console.log($(this).attr('id'));
   var clickedclass = '.'+$(this).attr('id');
-  var clickedID = '#'+$(this).attr('id');
-  var clickedclassHeight = $(clickedclass).height();
-  var clickedHeightInner = $( clickedclass + ' .career-open-each').height();
-  // console.log(typeof(clickedHeight));
-  if (clickedclassHeight > 150){
-    $(clickedclass).css({
-      'height': '150px',
-    })
-    $(clickedID).text('Click to expand');
-  } else {
-    $(clickedclass).css({
-      'height': clickedHeightInner+'px',
-    })
-    $(clickedID).text('Hide');
-  }
+  // var clickedID = '#'+$(this).attr('id');
+  // var clickedclassHeight = $(clickedclass).height();
+  // var clickedHeightInner = $( clickedclass + ' .career-open-each').height();
+  // // console.log(typeof(clickedHeight));
+  // if (clickedclassHeight > 150){
+  //   $(clickedclass).css({
+  //     'height': '150px',
+  //   })
+  //   $(clickedID).text('Click to expand');
+  // } else {
+  //   $(clickedclass).css({
+  //     'height': clickedHeightInner+'px',
+  //   })
+  //   $(clickedID).text('Hide');
+  // }
+  $(clickedclass).css('display','block');
+
+  $('.career-close').click(function(){
+    $('.career-modal').css('display','none');
+    $(displayingPerson).css('display','none');
+  })
 })
 
 /* - - - catalog initial load - - - */
@@ -388,20 +431,21 @@ $(document).keydown(function(e){
     $('.ip-slides').css('display','none');
     $('.team-modal').css('display', 'none');
     $('.team-modal-content').css('display','none');
+    $('.career-modal').css('display','none');
   }
 })
 
-/* - - - news page archive height - - - */
+/* - - - tradeshows page archive height - - - */
 checkSize();
 $(window).resize(checkSize);
 
 function checkSize() {
-  var allNewsSize = $('.newspage').height()+'px';
-  $('.news-archive-col').css('min-height', allNewsSize);
+  var alltradeshowsSize = $('.tradeshowspage').height()+'px';
+  $('.tradeshows-archive-col').css('min-height', alltradeshowsSize);
 
-  if($('.news-archive-col').css('float')=='none') {
-    // console.log(allNewsSize);
-    $('.news-archive-col').css('min-height','100%');
+  if($('.tradeshows-archive-col').css('float')=='none') {
+    // console.log(alltradeshowsSize);
+    $('.tradeshows-archive-col').css('min-height','100%');
   }
 }
 

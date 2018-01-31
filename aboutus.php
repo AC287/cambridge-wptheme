@@ -1,28 +1,30 @@
 <!-- Template Name: About Us. -->
 
-<!-- // Item page -->
-<!-- // Data displaying individual item. -->
 <?php get_header(); ?>
-
+<div class="about-overall-cover">
+	<div class="about-imgcover-container">
+		<img src="<?php bloginfo('template_directory')?>/images/banners/about-banner-nyc.jpg">
+	</div>
+	<div class="about-beginning-title">
+		<div class="index-title1">
+			<span>IN THE BEGINNING</span>
+		</div>
+		<div class="index-title1-underline">
+		</div>
+	</div>
+</div>
 <div class="container">
 	<div class="aboutus-inthebeginning">
-		<div class="row">
-			<div class="col-sm-6 aboutus-inthebeginning-img">
-				<img src="<?php bloginfo('template_directory')?>/images/personnel/abrahamtropper copy.jpg">
-			</div>
-			<div class="col-sm-6">
-				<div class="aboutus-title1">
-					<span>IN THE BEGINNING</span>
-				</div>
-				<div class="aboutus-title1-underline">
-				</div>
-				<p class="aboutus-content1">
-					In 1947, Abraham “The Chief” Tropper founded Coda Resources in New York City’s Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed the multi-national enterprise that, today, includes Cambridge Resources, LDR Industries, Coda Retail Supply Solutions, and Amram Brands.
-				</p>
-				<p class="aboutus-content1">
-					Abraham Tropper founded Coda Resources upon the simple principle of offering unparalleled service and high quality products. More than 69 years later, his family still operates the business with these values in mind.
-				</p>
-			</div>
+		<div class="aboutus-inthebeginning-img">
+			<img src="<?php bloginfo('template_directory')?>/images/personnel/chief_v1.jpg">
+		</div>
+		<div class="aboutus-inthebeginning-contents">
+			<p class="aboutus-content1">
+				In 1947, Abraham “The Chief” Tropper founded Coda Resources in New York City’s Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed the multi-national enterprise that, today, includes Cambridge, LDR, Coda Retail Supply Solutions, and Amram Brands.
+			</p>
+			<p class="aboutus-content1">
+				Abraham Tropper founded Coda Resources upon the simple principle of offering unparalleled service and high quality products. More than 70 years later, his family still operates the business with these values in mind.
+			</p>
 		</div>
 	</div>	<!--	end aboutus-inthebeginning  -->
 </div>	<!--  end container  -->
@@ -58,7 +60,7 @@
     </div>
     <div class="about-tl-content">
       <!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
-      <p>Cambridge Resources is established.</p>
+      <p>Cambridge is established.</p>
     </div>
   </div>
   <div class="about-tl-item">
@@ -88,8 +90,8 @@
 		</div>
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
-			<p>Cambridge partners with Stanley.</p>
-			<p> Expands China &amp Taiwan facilities.
+
+			<p> Expands China &amp; Taiwan facilities.</p>
 		</div>
 	</div>
 	<div class="about-tl-item">
@@ -139,7 +141,7 @@
 					</div>
 					<div class="about-cat-txt">
 						<p class="about-cat-txt-main">
-							CambridgeTM has been a leading manufacturer of premium HVAC products for almost two decades. Duct and pipe sup- port straps conform to UL standards and have been found to be suitable for use in plenums .
+							Cambridge has been a leading manufacturer of premium HVAC products for almost two decades. Duct and pipe sup- port straps conform to UL standards and have been found to be suitable for use in plenums .
 						</p>
 						<p class="about-cat-txt-tags">
 							Duct Straps, Support Webbing, Gas Connectors, Pipe Hanging, Chip Brushes, and more
@@ -160,7 +162,7 @@
 					</div>
 					<div class="about-cat-txt">
 						<p class="about-cat-txt-main">
-							CambridgeTM dominates in the electrical industry providing many electrical accessories and electrical product support. In an effort to constantly improve the electrician’s/DIY’er’s experience, Cambridge is always looking to develop and offer better alternatives to the current standards out there.
+							Cambridge dominates in the electrical industry providing many electrical accessories and electrical product support. In an effort to constantly improve the electrician’s/DIY’er’s experience, Cambridge is always looking to develop and offer better alternatives to the current standards out there.
 						</p>
 						<p class="about-cat-txt-tags">
 							Duct Straps, Support Webbing, Gas Connectors, Pipe Hanging, Chip Brushes, and more
@@ -191,7 +193,7 @@
 					</div>
 					<div class="about-cat-txt">
 						<p class="about-cat-txt-main">
-							It may look pretty on the outside but CambridgeTM wants to make sure it’s running efficiently on the inside. Keep your pipes and air lines supported by using Cambridge’s broad offerings, many of which conform to UL standards.
+							It may look pretty on the outside but Cambridge wants to make sure it’s running efficiently on the inside. Keep your pipes and air lines supported by using Cambridge’s broad offerings, many of which conform to UL standards.
 						</p>
 						<p class="about-cat-txt-tags">
 							Hose clamps, Quick release clamps, Pipe hanging support, Gas connec- tors, Fittings, Nipples, Pipe, Valves.
@@ -212,7 +214,7 @@
 					</div>
 					<div class="about-cat-txt">
 						<p class="about-cat-txt-main">
-							CambridgeTM is going at full speed to help organize and secure the hoses and pipes in all types of vehicles. Cars, trucks, boats, ATV’s, and more can benefit from the parts that CambridgeTM offers.
+							Cambridge is going at full speed to help organize and secure the hoses and pipes in all types of vehicles. Cars, trucks, boats, ATV’s, and more can benefit from the parts that Cambridge offers.
 						</p>
 						<p class="about-cat-txt-tags">
 							Standard Hose Clamps, Fuel Injector clamps, Heavy duty t-bolt clamps, Wire connectors, Terminals, Switches, Wire management, Cable Ties, Electrical Tape, Tools, Support Kits.
@@ -235,7 +237,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
 			</div>
 			<div class="about-4info-title">
-				DEVELOPMENT <br/>&amp PRODUCTION:
+				DEVELOPMENT <br/>&amp; PRODUCTION:
 			</div>
 			<div class="about-4info-contents">
 				<p>Product Design</p>
@@ -252,7 +254,7 @@
 				<img src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
 			</div>
 			<div class="about-4info-title">
-				CUSTOMER SERVICE <br/>&amp SALES SUPPORT
+				CUSTOMER SERVICE <br/>&amp; SALES SUPPORT
 			</div>
 			<div class="about-4info-contents">
 				<p>U.S. based customer service and sales support team.</p>
@@ -299,7 +301,7 @@
 		<div class="row">
 			<div class="col-sm-9">
 				<div class="row">
-					<div class="col-xs-4">
+					<div class="col-sm-4">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
 						</div>
@@ -308,7 +310,7 @@
 							<p>Distribution Center</p>
 						</div>
 					</div>
-					<div class="col-xs-4">
+					<div class="col-sm-4">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
 						</div>
@@ -318,7 +320,7 @@
 							<p>Distribution Center</p>
 						</div>
 					</div>
-					<div class="col-xs-4">
+					<div class="col-sm-4">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/newyork.png">
 						</div>
@@ -329,7 +331,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-sm-6">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/california.png">
 						</div>
@@ -338,7 +340,7 @@
 							<p>Distribution Center</p>
 						</div>
 					</div>
-					<div class="col-xs-6">
+					<div class="col-sm-6">
 						<div class="about-locations-localimg">
 							<img src="<?php bloginfo('template_directory')?>/images/about/texas.png">
 						</div>
@@ -364,7 +366,7 @@
 					</div>
 					<div class="about-locations-type-multicities">
 						<p class="about-locations-type-title">XINCHANG, CHINA</p>
-						<p>Logistics &amp Sourcing Office</p>
+						<p>Logistics &amp; Sourcing Office</p>
 					</div>
 					<div class="about-locations-type-multicities">
 						<p class="about-locations-type-title">SHENZHEN, CHINA</p>

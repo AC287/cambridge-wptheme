@@ -1,26 +1,24 @@
-<!--  Template Name: News  -->
+<!--  Template Name: tradeshows  -->
 
 <?php get_header(); ?>
 
-<div class="container news-content-container">
-  <div class="news-mainheader">
-    <span>NEWS</span>
-    <div class="news-mainheader-underline"></div>
+<div class="container tradeshows-content-container">
+  <div class="tradeshows-mainheader">
+    <span>TRADESHOWS</span>
+    <div class="tradeshows-mainheader-underline"></div>
   </div>
 </div>
-<div class="container newspage">
+<div class="container tradeshowspage">
   <div class="row">
-    <div class="col-md-3">
-      <div class="news-upcomingtradeshows-container">
-        <div class="news-uts-title">
-          <span>UPCOMING TRADESHOWS</span>
-        </div>
-        <div class="news-uts-contents">
-          <?php include 'phpsnippet/upcomingtradeshows.php';?>
-        </div>
+    <div class="col-md-2 tradeshows-upcomingtradeshows-container">
+      <div class="tradeshows-uts-title">
+        <span>UPCOMING TRADESHOWS</span>
+      </div>
+      <div class="tradeshows-uts-contents">
+        <?php include 'phpsnippet/upcomingtradeshows.php';?>
       </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8 tradeshows-allsection">
       <?php
       $args = array(
         'post_type' => 'post',
@@ -46,10 +44,10 @@
         }
         echo "<div class='allpost-contents'>";
           echo "<p class='allpost-date'><a href=".get_post_permalink().">".get_the_date('F d, Y')."</a></p>";
-          echo "<span class='news-post-title'>";
+          echo "<span class='tradeshows-post-title'>";
             the_title();
           echo "</span>";
-          the_excerpt();  //this will only show excerpt of the news.
+          the_excerpt();  //this will only show excerpt of the tradeshows.
           echo "<a href=".get_post_permalink().">Click for detail</a>";
         echo "</div>";
         echo "</div>";
@@ -61,8 +59,8 @@
     wp_reset_query();
     ?>
     </div>
-    <div class="col-md-2 news-archive-col">
-      <div class="news-archive">
+    <div class="col-md-2 tradeshows-archive-col">
+      <div class="tradeshows-archive">
         <!-- <span>ARCHIVE</span> -->
         <?php include 'phpsnippet/archivesnippet.php';?>
       </div>

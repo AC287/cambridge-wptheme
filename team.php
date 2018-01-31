@@ -22,8 +22,8 @@
           echo "<div class='team-crop' id='".strtolower($teaminner->first).strtolower($teaminner->last)."'>";
           echo "<img src='".$teaminner->img."'>";
           echo "</div>";
-          echo "<hr class='team-breakline'/>";
           echo "<div class='team-individualname'>".$teaminner->first." ".$teaminner->last."</div>";
+          echo "<hr class='team-breakline'/>";
           echo "<div class='team-individualtitle'>".$teaminner->title."</div>";
         echo "</div>";
       }
@@ -31,11 +31,8 @@
         echo "<div class='team-modal-container'>";
           echo "<span class='team-close glyphicon glyphicon-remove'></span>";
           foreach($team as $teammodal) {
-            echo "<div class='row team-modal-content team-".strtolower($teammodal->first).strtolower($teammodal->last)."'>";
-              echo "<div class='col-sm-5 team-modal-iimage'>";
-                echo "<img src='".$teammodal->img."'>";
-              echo "</div>";  // end col
-              echo "<div class='col-sm-7 team-modal-icontents'>";
+            echo "<div class='team-modal-content team-".strtolower($teammodal->first).strtolower($teammodal->last)."'>";
+              echo "<div class='team-modal-icontents'>";
                 echo "<div class='team-modal-iname'><span>".$teammodal->first." ".$teammodal->last."</span><div class='team-modal-iname-underline'></div></div>";
                 echo "<div class='team-modal-ititle'><span>".$teammodal->title."</span></div>";
                 echo "<div class='team-blurb'>";
