@@ -108,11 +108,16 @@
 
 								// Start thumbnail SECTION
 								echo "<div class='img-thumbnail-section'>";
+									$thumbCounter = 0;
 									for ($x=0; $x<=9; $x++) {
 										$img = "img".$x;
 										if(($get_item_data[0]->$img) !=""){
 											echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
+											$thumbCounter++;
 										}
+									}
+									if ($thumbCounter == 0) {
+										echo "<img class='single-thumb' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 									}
 								echo "</div>";	// end img-thumbnail-section;
 
@@ -124,9 +129,10 @@
 							echo "<div class='item-spec-container'>";
 								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
 								echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
+								echo "<table class='ip-each-data-table'>";
 								for ($x=1; $x <=8; $x++) {
 									$d = "d".$x;
-									echo "<div class='ip-each-data'>";
+									echo "<tr class='ip-each-data'>";
 									if ($get_item_data[0]->$d !=""){
 										# Need to revise this here if datatable will be updated.;
 										// if legend has break tag, this will remove and replace it with space.
@@ -134,11 +140,15 @@
 										$joinlegend = implode(" ",$splitlegend);
 										// print_r($splitlegend);
 										// echo "<span class='ip-legend'>".$get_item_legend[0]->$d.": </span>";
-										echo "<span class='ip-legend'>".$joinlegend.": </span>";
-										echo "<span class='ip-spec'>".$get_item_data[0]->$d."</span>";
+										echo "<th class='ip-legend'>".$joinlegend.": </th>";
+										$splitdata = explode(" <br>",$get_item_data[0]->$d);
+										$joindata = implode("; ",$splitdata);
+										// echo "<td class='ip-spec'>".$get_item_data[0]->$d."</td>";
+										echo "<td class='ip-spec'>".$joindata."</td>";
 									}
-									echo "</div>";	// end ip-spec;
+									echo "</tr>";	// end ip-each-data;
 								}
+								echo "</table>";
 								echo "<br/>";
 								echo "<a class='spec-sheet' href='".$get_item_data[0]->d9."'>SPEC SHEET</a>";
 

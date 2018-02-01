@@ -1113,8 +1113,19 @@ img.p2-cert-img {
 #each-img-data-container {
   padding: 15px;
 }
+@media screen and (min-width: 500px) {
+  #each-img-data {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 499px) {
+  #each-img-data {
+    /* justify-content: space-evenly; */
+  }
+}
 #each-img-data {
   /* width: 100%; */
+  /* padding: 10px; */
   background-color: #fff;
   /* padding: 10px; */
   display: flex;
@@ -1123,37 +1134,20 @@ img.p2-cert-img {
   display: -ms-flexbox;
   display: -webkit-flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
+  justify-content: space-evenly;
 }
 .img-content-box {
 
 }
 .item-image {
-  /*padding: 10px;*/
-  /*margin-left: 10px;*/
-  width: 330px;
-  /* margin: 0 auto; */
-  /* padding: 0px 15px 0px 15px; */
-  /* height: 500px; */
-  /* text-align: center; */
-  /* vertical-align: top; */
-  /*width: 50%;*/
+  width: 300px;
 }
 .item-data {
-  /*padding-left: 10px;*/
-  /*text-align: center;*/
-  /*padding-right: 10px;*/
-  /*width: 50%;*/
-  /* vertical-align: top; */
-  /* padding-right: 10px; */
-  /*width: 50%;*/
+
 }
 .main-view-lg {
-  /* margin-top: 10px; */
   margin-bottom: 10px;
-  /*padding-left: 10px;*/
   width: 300px;
-  /*display: none;*/
   border: 1px solid #A7A9AC;
   cursor: pointer;
 }
@@ -1174,8 +1168,12 @@ img.p2-cert-img {
   cursor: pointer;
   border: 1px solid #A7A9AC;
 }
+.each-item-data {
+  width: 475px;
+  word-wrap: break-word;
+}
 .item-spec-container {
-  /*padding: 15px;*/
+  padding: 0px 15px 0px 15px;
   /*margin-top: 10px;*/
 }
 .ip-title {
@@ -1193,6 +1191,15 @@ img.p2-cert-img {
 .ip-each-data {
   font-size: 12px;
 }
+.ip-each-data-table {
+  width: 100%;
+}
+.ip-each-data th.ip-legend {
+  width: 150px;
+}
+.ip-each-data:nth-child(even) {
+  background-color: #FBFBFB;
+}
 .ip-legend {
   font-family: 'Questrial', sans-serif;
 }
@@ -1200,6 +1207,10 @@ img.p2-cert-img {
   font-family: 'Questrial', sans-serif;
   /*font-weight: bold;*/
   font-size: 18px;
+  /* padding-left: 20px; */
+}
+.ip-legend, .ip-spec {
+  padding: 0px 5px 0px 5px;
 }
 a.spec-sheet {
   color: blue;
