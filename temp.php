@@ -142,7 +142,7 @@
 <!--
  - - - - - - - - - - - product-page.php temp codes - - - - - - - - - -
 -->
-
+<?php
 echo "<table id='product-main-page'>";
   echo "<td class='cat-bar'>";
     include 'phpsnippet/productaccordion.php';
@@ -249,3 +249,39 @@ echo "<table id='product-main-page'>";
   }
   echo "</td>";
 echo "</table>";
+?>
+
+
+<!--
+ - - - - - - - - - - prod-page2 - - - - - - - - - -
+-->
+<?php
+echo "<table class='p2-divider'><tr>";
+  if ($item_data_legend[0]->imgdivider != ""){
+    echo "<td class='p2-divider-img col-xs-8'><img src='".$item_data_legend[0]->imgdivider."'></td>";
+  }
+  // echo "<td>".$item_data."</td>";
+  $certDisplay = $item_data;
+  $certArr=array();
+  foreach ($certDisplay as $certDisplay){
+    for($c=0; $c<=9; $c++){	//There are only 0-9 certification slots at database.
+      // echo $c;
+      $cert = "cert".$c;
+      if( $certDisplay->$cert !="" && in_array($certDisplay->$cert, $certArr)!= TRUE){
+        array_push($certArr, $certDisplay->$cert);
+      }
+    }
+  }
+  // print_r(count($certArr));
+  echo "<td class='p2-divider-cert col-xs-4'>";
+    for ($iCert=0; $iCert<count($certArr); $iCert++){
+      for($iCertdb = 0; $iCertdb < sizeof($item_certdb); $iCertdb++){
+        if($item_certdb[$iCertdb]->type == $certArr[$iCert]) {
+          echo "<img class='p2-cert-img' src='".$item_certdb[$iCertdb]->link."'>";
+        }
+      }
+    }
+  echo "</td>";
+echo "</tr></table>";
+
+ ?>
