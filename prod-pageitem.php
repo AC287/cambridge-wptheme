@@ -56,82 +56,71 @@
 					// print_r("sub2 is empty");
 				}
 				echo "<div class='s1-box-background'>";
-					echo "<table id='each-item-spec'>";
-						echo "<tr>";
-						echo "<td class='item-image'>";
-							echo "<div class='img-content-box'>";
 
+					echo "<div id='each-img-data-container'>";
+					echo "<div id='each-img-data'>";
+						echo "<div class='item-image'>";
+							echo "<div class='img-content-box'>";
 							/* - - - THIS IS MAIN VIEW - - - */
 
-								$imgExist = 0;
-								for ($y = 0; $y<=9; $y++){
-									$imgtemp = 'img'.$y;
-									// echo $get_item_data[0]->$imgtemp;
-									if($get_item_data[0]->$imgtemp != '') {
-										$imgExist++;
-										// echo $imgExist;
-									}
-								}	//Checking to see if image exist
+					      $imgExist = 0;
+					      for ($y = 0; $y<=9; $y++){
+					        $imgtemp = 'img'.$y;
+					        if($get_item_data[0]->$imgtemp != '') {
+					          $imgExist++;
+					          // echo $imgExist;
+					        }
+					      }	//Checking to see if image exist
 
-								if ($imgExist == 0) {
-									echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
-								} else {
-									$displayCounter = 0;
+					      if ($imgExist == 0) {
+					        echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+					      } else {
+					        $displayCounter = 0;
+					        for ($x=0; $x<=9; $x++) {
+					          $img = "img".$x;
+					          // This will assign default image at main.
+					          switch ($x) {
+					            case (0):
+					            {
+					              if(($get_item_data[0]->$img) !=""){
+					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+					                $displayCounter++;
+					              } else {
+					                break;
+					              }
+					            }
+					            break;
+					            default:
+					            {
+					              if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
+					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+					                $displayCounter++;
+					              } else {
+					                if(($get_item_data[0]->$img) !=""){
+					                  echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+					                }
+					              }
+					            }
+					            // endswitch;
+					          }
+					        }
+					      }
+
+								// Start thumbnail SECTION
+								echo "<div class='img-thumbnail-section'>";
 									for ($x=0; $x<=9; $x++) {
 										$img = "img".$x;
-										// This will assign default image at main.
-										/*
-										if(($get_item_data[0]->img2)!=""){
-											switch ($x) {
-												case (2):
-												{
-													if(($get_item_data[0]->$img) !=""){
-														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-													}
-												}
-												break;
-												default:
-												{
-													if(($get_item_data[0]->$img) !=""){
-														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
-													}
-												}
-												// endswitch;
-											}
-										}	// end if there is no img2.
-										else {
-										}
-										*/
-										switch ($x) {
-											case (0):
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-													$displayCounter++;
-												} else {
-													break;
-												}
-											}
-											break;
-											default:
-											{
-												if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-													$displayCounter++;
-												} else {
-													if(($get_item_data[0]->$img) !=""){
-														echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
-													}
-												}
-											}
-											// endswitch;
+										if(($get_item_data[0]->$img) !=""){
+											echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
 										}
 									}
-								}
-							echo "</div>";	// end main-view-lg
-						echo "</td>";	// end item-image.
-						echo "<td class='item-data'>";
-						// echo "<p>DATA HERE</p>";
+								echo "</div>";	// end img-thumbnail-section;
+
+							echo "</div>";	// end img-content-box.
+
+						echo "</div>";	// end item-image class tag.
+
+						echo "<div class='each-item-data'>";
 							echo "<div class='item-spec-container'>";
 								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
 								echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
@@ -154,36 +143,12 @@
 								echo "<a class='spec-sheet' href='".$get_item_data[0]->d9."'>SPEC SHEET</a>";
 
 							echo "</div>";	// end item-spec-container div;
-						echo "</td>";	// end item-data.
-						echo "</tr>";
-						echo "<tr>";
-						// This is thumbnail selection image.
-							echo "<td colspan='2'>";
-							echo "<div class='img-thumbnail-section'>";
-								for ($x=0; $x<=9; $x++) {
-									$img = "img".$x;
-									if(($get_item_data[0]->$img) !=""){
-										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
-									}
-								}
-								/*
-								for ($y=2; $y<=9; $y++) {
-									$img = "img".$y;
-									if(($get_item_data[0]->$img) !=""){
-										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
-									}
-								}
-								for ($z=0; $z<2; $z++) {
-									$img = "img".$z;
-									if(($get_item_data[0]->$img) !=""){
-										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
-									}
-								}
-								*/
-							echo "</div>";	// end img-thumbnail-section;
-							echo "</td>";
-						echo "</tr>";
-					echo "</table>";	// end each-item-spec table.
+						echo "</div>";	// end each-item-data;
+
+					echo "</div>";	// end each-img-data.
+					echo "</div>";	// end each-img-data-container.
+
+
 					echo "<div class='ip-certification'>";
 						echo "<div class='ip-certitle'>CERTIFIED:</div>";
 						echo "<div >";
@@ -207,7 +172,7 @@
 						echo "<div class='ip-desctitle'>PRODUCT DESCRIPTION</div>";
 						echo "<p class='ip-detaildescription'>".$get_item_data[0]->d0."</p>";
 					echo "</div>";	// end ip-description;
-			echo "</div>";	// end s1-box-background div;
+				echo "</div>";	// end s1-box-background div;
 				// $mPos++;
 			echo "</div>";  //end group-container div;
 			echo "</div>";

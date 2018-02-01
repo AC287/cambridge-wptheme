@@ -285,3 +285,139 @@ echo "<table class='p2-divider'><tr>";
 echo "</tr></table>";
 
  ?>
+
+
+<!--
+- - - - - - - - - - - prod-pageitem.php - - - - - - - - - -
+-->
+
+<?php
+echo "<table id='each-item-spec'>";
+  echo "<tr>";
+  echo "<td class='item-image'>";
+    echo "<div class='img-content-box'>";
+
+    /* - - - THIS IS MAIN VIEW - - - */
+
+      $imgExist = 0;
+      for ($y = 0; $y<=9; $y++){
+        $imgtemp = 'img'.$y;
+        // echo $get_item_data[0]->$imgtemp;
+        if($get_item_data[0]->$imgtemp != '') {
+          $imgExist++;
+          // echo $imgExist;
+        }
+      }	//Checking to see if image exist
+
+      if ($imgExist == 0) {
+        echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+      } else {
+        $displayCounter = 0;
+        for ($x=0; $x<=9; $x++) {
+          $img = "img".$x;
+          // This will assign default image at main.
+          /*
+          if(($get_item_data[0]->img2)!=""){
+            switch ($x) {
+              case (2):
+              {
+                if(($get_item_data[0]->$img) !=""){
+                  echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+                }
+              }
+              break;
+              default:
+              {
+                if(($get_item_data[0]->$img) !=""){
+                  echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+                }
+              }
+              // endswitch;
+            }
+          }	// end if there is no img2.
+          else {
+          }
+          */
+          switch ($x) {
+            case (0):
+            {
+              if(($get_item_data[0]->$img) !=""){
+                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+                $displayCounter++;
+              } else {
+                break;
+              }
+            }
+            break;
+            default:
+            {
+              if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
+                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+                $displayCounter++;
+              } else {
+                if(($get_item_data[0]->$img) !=""){
+                  echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+                }
+              }
+            }
+            // endswitch;
+          }
+        }
+      }
+    echo "</div>";	// end main-view-lg
+  echo "</td>";	// end item-image.
+  echo "<td class='item-data'>";
+  // echo "<p>DATA HERE</p>";
+    echo "<div class='item-spec-container'>";
+      echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
+      echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
+      for ($x=1; $x <=8; $x++) {
+        $d = "d".$x;
+        echo "<div class='ip-each-data'>";
+        if ($get_item_data[0]->$d !=""){
+          # Need to revise this here if datatable will be updated.;
+          // if legend has break tag, this will remove and replace it with space.
+          $splitlegend = explode("<br/>",$get_item_legend[0]->$d);
+          $joinlegend = implode(" ",$splitlegend);
+          // print_r($splitlegend);
+          // echo "<span class='ip-legend'>".$get_item_legend[0]->$d.": </span>";
+          echo "<span class='ip-legend'>".$joinlegend.": </span>";
+          echo "<span class='ip-spec'>".$get_item_data[0]->$d."</span>";
+        }
+        echo "</div>";	// end ip-spec;
+      }
+      echo "<br/>";
+      echo "<a class='spec-sheet' href='".$get_item_data[0]->d9."'>SPEC SHEET</a>";
+
+    echo "</div>";	// end item-spec-container div;
+  echo "</td>";	// end item-data.
+  echo "</tr>";
+  echo "<tr>";
+  // This is thumbnail selection image.
+    echo "<td colspan='2'>";
+    echo "<div class='img-thumbnail-section'>";
+      for ($x=0; $x<=9; $x++) {
+        $img = "img".$x;
+        if(($get_item_data[0]->$img) !=""){
+          echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
+        }
+      }
+      /*
+      for ($y=2; $y<=9; $y++) {
+        $img = "img".$y;
+        if(($get_item_data[0]->$img) !=""){
+          echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
+        }
+      }
+      for ($z=0; $z<2; $z++) {
+        $img = "img".$z;
+        if(($get_item_data[0]->$img) !=""){
+          echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
+        }
+      }
+      */
+    echo "</div>";	// end img-thumbnail-section;
+    echo "</td>";
+  echo "</tr>";
+echo "</table>";	// end each-item-spec table.
+ ?>
