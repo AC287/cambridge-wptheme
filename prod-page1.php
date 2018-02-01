@@ -30,19 +30,19 @@
 			$sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
 
-			echo "<table id='product-main-page'>";
-			echo "<td class='cat-bar'>";
+			echo "<div id='product-main-page'>";
+			echo "<div class='cat-bar'>";
 				include 'phpsnippet/productaccordion.php';
-			echo "</td>";
+			echo "</div>";
 			// END Main Category accordion panel.
 
 			// Start Right column.
-			echo "<td class='prod-display'>";
+			echo "<div class='prod-display'>";
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 			echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p1m0)."'>".$p1m0."</a>  >>  ".$p1s1."</div>";	//Title
-				
+
 				echo "<div class='s1-box-background'>";
 				echo "<div class='s1-box-flex-container'>";
 				$counter = 0;
@@ -75,8 +75,8 @@
 			echo "</div>";	// end s1-box-background
 				// $mPos++;
 			echo "</div>";  //end group-container div;
-			echo "</td>";
-			echo "</table>";
+			echo "</div>";
+			echo "</div>";
 
 			// while ( have_posts() ) : the_post();
 			//

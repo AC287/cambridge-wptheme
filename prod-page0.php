@@ -19,12 +19,12 @@
 			global $wp_query;
 			global $wpdb;
 			$p0m0 = $wp_query->query_vars['m0'];
-			echo "<table id='product-main-page'>";
-			echo "<td class='cat-bar'>";	// This is accordion section.
+			echo "<div id='product-main-page'>";
+			echo "<div class='cat-bar'>";	// This is accordion section.
 				include 'phpsnippet/productaccordion.php';
-			echo "</td>";		// This end accordion section.
+			echo "</div>";		// This end accordion section.
 
-			echo "<td class='prod-display'>";	// Start product section.
+			echo "<div class='prod-display'>";	// Start product section.
 
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
@@ -72,8 +72,8 @@
 				}
 				// $mPos++;
 				echo "</div>";  //end group-container div;
-			echo "</td>";
-			echo "</table>";
+			echo "</div>";
+			echo "</div>";
 			?>
 
 		</main><!-- #main -->
