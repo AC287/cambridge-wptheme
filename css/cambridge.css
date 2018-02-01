@@ -1198,10 +1198,12 @@ img.p2-cert-img {
   width: 150px;
 }
 .ip-each-data:nth-child(even) {
-  background-color: #FBFBFB;
+  /* background-color: #FBFBFB; */
+  background-color: #ededed;
 }
 .ip-legend {
   font-family: 'Questrial', sans-serif;
+  /* font-weight: bold; */
 }
 .ip-spec {
   font-family: 'Questrial', sans-serif;
