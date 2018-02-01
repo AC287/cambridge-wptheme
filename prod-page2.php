@@ -32,14 +32,14 @@
 			// $sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
 
-			echo "<table id='product-main-page'>";
-			echo "<td class='cat-bar'>";
+			echo "<div id='product-main-page'>";
+			echo "<div class='cat-bar'>";
 				include 'phpsnippet/productaccordion.php';
-			echo "</td>";
+			echo "</div>";
 			// END Main Category accordion panel.
 			//--------------
 			// Start Right column.
-			echo "<td class='prod-display'>";
+			echo "<div class='prod-display'>";
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
@@ -65,9 +65,10 @@
 						}
 						echo "<div class='p2-description-txt'>".$item_data[0]->d0."</div>";
 					echo "</div>";	// end p2-header.
-					echo "<table class='p2-divider'><tr>";
+
+					echo "<div class='p2-divider'>";
 						if ($item_data_legend[0]->imgdivider != ""){
-							echo "<td class='p2-divider-img col-xs-8'><img src='".$item_data_legend[0]->imgdivider."'></td>";
+							echo "<div class='p2-divider-img'><img src='".$item_data_legend[0]->imgdivider."'></div>";
 						}
 						// echo "<td>".$item_data."</td>";
 						$certDisplay = $item_data;
@@ -82,7 +83,7 @@
 							}
 						}
 						// print_r(count($certArr));
-						echo "<td class='p2-divider-cert col-xs-4'>";
+						echo "<div class='p2-divider-cert'>";
 							for ($iCert=0; $iCert<count($certArr); $iCert++){
 								for($iCertdb = 0; $iCertdb < sizeof($item_certdb); $iCertdb++){
 									if($item_certdb[$iCertdb]->type == $certArr[$iCert]) {
@@ -90,8 +91,8 @@
 									}
 								}
 							}
-						echo "</td>";
-					echo "</tr></table>";
+						echo "</div>";
+					echo "</div>";
 					// print_r($item_data);
 					// echo count($certDisplay);
 
@@ -178,8 +179,8 @@
 			echo "</div>";
 				// $mPos++;
 			echo "</div>";  //end group-container div;
-			echo "</td>";
-			echo "</table>";
+			echo "</div>";
+			echo "</div>";
 
 			// while ( have_posts() ) : the_post();
 			//
