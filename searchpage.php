@@ -33,18 +33,10 @@
     // $total = $wpdb->get_var($total_query);
     $items_per_page = 10;
     $page = isset($_GET['cpage']) ? abs((int) $_GET['cpage']) : 1;
-    // if($page > 1) {
-    //   $offset = $page * $per_page - $per_page;
-    // } else {
-    //   $offset = $page;
-    // }
+
     $offset = ($page * $items_per_page) - $items_per_page;
     $prodSearch = $wpdb->get_results($prodquery . "LIMIT ${offset}, ${items_per_page}");
-    // $prodSearch = $wpdb->get_results($prodquery);
 
-
-    // $prodSearch = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE (item LIKE '%$searchValue%') OR (m0 LIKE '%$searchValue%') OR (s1 LIKE '%$searchValue%') OR (s2  LIKE '%$searchValue%') OR (keyword  LIKE '%$searchValue%');");
-    // echo sizeof($prodSearch);
     if (sizeof($prodSearch) != 0) {
       //product search is correct and exist.
       echo "<p>Displaying products for ".$searchValue."...</p>";
