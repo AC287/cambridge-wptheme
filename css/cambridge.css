@@ -852,7 +852,7 @@ a.s-icon {
   text-decoration: none;
   color: inherit;
 }
-.prod-display {
+.prod-display, .search-display {
   width: 73%;
   /* width: 830px; */
   /* vertical-align: top; */
@@ -862,7 +862,7 @@ a.s-icon {
   .cat-bar {
     width: 100%;
   }
-  .prod-display {
+  .prod-display, .search-display {
     width: 100%;
   }
 }
@@ -2810,4 +2810,14 @@ a.spec-sheet {
 }
 .archive-date {
   font-size: 8pt;
+}
+
+/* - - - - - SEARCH PAGE - - - - - */
+.pagination {
+  width: 100%;
+  text-align: center;
+  font-size: 12pt;
+}
+.page-numbers {
+  padding: 0px 5px 0px 5px;
 }
