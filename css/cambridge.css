@@ -2477,6 +2477,9 @@ a.spec-sheet {
 .catalog-thumbnails {
   font-family: 'Questrial', sans-serif;
 }
+.catalog-thumbnails {
+  min-height: 45vh;
+}
 .catalog-buttons {
   /*text-align: center;*/
   /*margin: 0 auto;*/
