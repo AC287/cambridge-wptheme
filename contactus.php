@@ -23,7 +23,7 @@
     </div>
     <div class='.contact-form-input'>
       <?php echo $response; ?>
-      <form action='<?php the_permalink();?>success' method='post' class='row'>
+      <form action='<?php the_permalink();?>success' method='post' class='row' autocomplete="off">
       <!-- <form action='<?php //echo esc_url(admin_url('admin-post.php'));?>' method='post' class='row'> -->
         <div class='form-group contact-sm-input col-sm-6'>
           <input type='text' name='contact-name' placeholder='Name' required>
