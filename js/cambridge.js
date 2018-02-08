@@ -74,24 +74,6 @@ jQuery(document).ready(function($) {
   }
 
   /* - - - index page - - - */
-  $('.gc-block').bind({
-    mouseenter: function(){
-      var currentClass = '.'+classSplit($(this).attr('class'))[0];
-      // console.log(currentClass);
-      var imgClass = '.'+currentClass+'-desc';
-      $(currentClass + ' img').hide();
-      $(currentClass + ' span').hide();
-      $(currentClass + '-desc').fadeIn();
-    },
-    mouseleave: function(){
-      var currentClass = '.'+classSplit($(this).attr('class'))[0];
-      // console.log(currentClass);
-      var imgClass = '.'+currentClass+'-desc';
-      $(currentClass + '-desc').hide();
-      $(currentClass + ' img').fadeIn();
-      $(currentClass + ' span').fadeIn();
-    }
-  });
 
   $('.index-midcategory').on('click', function(){
     var currentSelection = $(this).attr('data-target').split('#')[1];

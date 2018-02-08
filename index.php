@@ -96,48 +96,48 @@
 <!--  GENERAL-CATEGORY -->
 <div class="general-category">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="hvac gc-block">
-          <div class="hvac gc-desc-img">
-            <img src="<?php bloginfo('template_directory')?>/images/hvac02.png"></img>
-            <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products for more than 15 years for over 250 HVAC industry distributors. </p>
-            <span class="gc-block-title"><br/>HVAC</span>
-          </div>
-          <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
+    <div class="gc-block-container">
+      <div class="hvac gc-block">
+        <div class="hvac gc-desc-img">
+          <img src="<?php bloginfo('template_directory')?>/images/hvac02.png"></img>
+          <span class="gc-block-title"><br/>HVAC</span>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="plumbing gc-block">
-          <div class="plumbing gc-desc-img">
-            <img src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
-            <p class="plumbing-desc">Cambridge offers a full line of fittings, nipples, pipe, hose clamps, gas connectors, and pipe hanging products specially designed for the plumbing industry.</p>
-            <span class="gc-block-title"><br/>PLUMBING</span>
-          </div>
-          <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
+        <div class="hvac gc-desc-txt">
+          <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products for more than 15 years for over 250 HVAC industry distributors. </p>
         </div>
+        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
-      <div class="col-sm-3">
-        <div class="electrical gc-block">
-          <div class="electrical gc-desc-img">
-            <img src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
-            <p class="electrical-desc">Electrical contractors have trusted Cambridge branded cable ties, wire connectors, terminals, and other electrical products for many years. Cambridge has hundreds of SKUs available at over 10,000 electrical supply distributors and retail locations across the U.S.</p>
-            <span class="gc-block-title"><br/>ELECTRICAL</span>
-          </div>
-          <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
+      <div class="plumbing gc-block">
+        <div class="plumbing gc-desc-img">
+          <img src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
+          <span class="gc-block-title"><br/>PLUMBING</span>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="automotive gc-block">
-          <div class="automotive gc-desc-img">
-            <img src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
-            <p class="automotive-desc">Cambridge is a trusted brand in the retail automotive market, supplying hose clamps, fuel injectors, wire connectors, terminals, switches and more.  </p>
-            <span class="gc-block-title"><br/>AUTOMOTIVE</span>
-          </div>
-          <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
+        <div class="hvac gc-desc-txt">
+          <p class="plumbing-desc">Cambridge offers a full line of fittings, nipples, pipe, hose clamps, gas connectors, and pipe hanging products specially designed for the plumbing industry.</p>
         </div>
+        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
-    </div> <!-- end first row -->
+      <div class="electrical gc-block">
+        <div class="electrical gc-desc-img">
+          <img src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
+          <span class="gc-block-title"><br/>ELECTRICAL</span>
+        </div>
+        <div class="hvac gc-desc-txt">
+          <p class="electrical-desc">Electrical contractors have trusted Cambridge branded cable ties, wire connectors, terminals, and other electrical products for many years. Cambridge has hundreds of SKUs available at over 10,000 electrical supply distributors and retail locations across the U.S.</p>
+        </div>
+        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
+      </div>
+      <div class="automotive gc-block">
+        <div class="automotive gc-desc-img">
+          <img src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
+          <span class="gc-block-title"><br/>AUTOMOTIVE</span>
+        </div>
+        <div class="hvac gc-desc-txt">
+          <p class="automotive-desc">Cambridge is a trusted brand in the retail automotive market, supplying hose clamps, fuel injectors, wire connectors, terminals, switches and more.  </p>
+        </div>
+        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
+      </div>
+    </div> <!-- end gc-block-container -->
   </div> <!-- end container -->
 </div> <!-- end general-category row-->
 <!--  MID-MENU  -->

@@ -380,15 +380,26 @@ a.s-icon {
   /*padding-top: 15px;*/
   padding-bottom: 15px;
 }
+.gc-block-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 .gc-block {
   /*display: table;*/
   padding-top: 30px;
   height: 100%;
+  width: 245px;
   /*text-align: center;*/
   /*padding: 10px;*/
   /*float: left;*/
   /*margin: auto;*/
   text-align: center;
+  position: relative;
 }
 .gc-block i {
   color: black;
@@ -401,14 +412,12 @@ a.s-icon {
   /*padding-top: 175px;*/
 }
 .gc-desc-img {
-  /*display: table-cell;*/
   height: 200px;
-  /*position: relative;*/
-  /*vertical-align: middle;*/
-  /*width: 250px;*/
-  /*background-image: url("../images/hvac_icon.png");
-  background-repeat: no-repeat;
-  background-position: center;*/
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
 .gc-desc-img img{
   /*vertical-align: middle;*/
@@ -419,47 +428,40 @@ a.s-icon {
   /*margin: auto;*/
   /*display: none;*/
 }
-.gc-desc-img p {
-  /*font-family: 'BigNoodleTitling';*/
-  /*display: table-cell;*/
-  /*vertical-align: middle;*/
-  color: black;
-  /*font-size: 19px;*/
-  /*margin: 0;*/
-  /*position: absolute;*/
-  /*top: 50%;*/
-  /*left: 50%;*/
-  /*-ms-transform: translate(-50%, -50%);*/
-  /*transform: translate(-50%, -50%);*/
+
+.gc-desc-txt {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* max-width: 160px; */
+  z-index: 1;
+  top: 0%;
+  right: 0%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
 }
-.hvac-desc {
-  display: none;
-  padding-top: 20px;
+
+.gc-desc-txt p {
   color: #003DA5;
+  font-size: 12pt;
 }
-.hvac p, .plumbing p, .electrical p, .automotive p {
-  color: #003DA5;
+
+.gc-block:hover > .gc-desc-img {
+  opacity: 0;
 }
-.plumbing-desc {
-  display: none;
-  padding-top: 20px;
+.gc-block:hover > .gc-desc-txt {
+  opacity: 1;
 }
-.electrical-desc {
-  display: none;
-  padding-top: 20px;
-}
-.automotive-desc {
-  display: none;
-  padding-top: 20px;
-}
-.retail-desc {
-  display: none;
-  padding-top: 20px;
-}
-.oem-desc {
-  display: none;
-  padding-top: 20px;
-}
+
 .mid-menu {
   /*height: 50px;*/
   background-color: #003DA5;
