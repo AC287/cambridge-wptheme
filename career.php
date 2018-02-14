@@ -39,7 +39,7 @@
   <div class="career-open">
     <?php
       global $wpdb;
-      $career = $wpdb->get_results("SELECT * FROM wp_career WHERE active='y' ORDER BY id ASC;");
+      $career = $wpdb->get_results("SELECT * FROM wp_camcareer WHERE active='y' ORDER BY id ASC;");
       $counter;
       foreach($career as $careerinner) {
         echo "<div class='career-open-block'>";
