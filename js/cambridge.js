@@ -224,7 +224,7 @@ imgThumb.click(function(){
   var getClickedClass = this.className.split(' ')[1].split('-')[1];
   // console.log(getClickedClass);
   $('.main-view-lg').each(function(index,object){
-    // console.log(index);
+    console.log(index);
     $(this).css('display','none');
   })
   $('.main-view-lg.main-'+getClickedClass).css('display','initial');
@@ -241,6 +241,10 @@ $('.ip-close').click(function(){
   $('.ip-modal').css('display','none');
   $('.ip-slides').css('display','none');
 })
+
+
+// - - - #replace this with slick plugin (fail. need revision) - - -
+
 var clickToNext = $('.ip-slides');
 // console.log(clickToNext.length);
 clickToNext.click(function(){
@@ -281,18 +285,16 @@ clickToNext.click(function(){
 
 
   // console.log(clickToNext.length);
-  /*
-    # Will need to revise. If there are missing image at specific, it will stuck.
-  */
+    // # Will need to revise. If there are missing image at specific, it will stuck.
   // Image has 9 cells: img0 - img9.
-  /*var nextIndex = getClickedIndex+1;
-  if($('.modal-img'+nextIndex)!=""){
-    $('.modal-img'+nextIndex).css('display','block');
-  } else {
-    for ( var i=getClickedIndex; i <=9; i++){
-    // #Do while loop
-    }
-  }*/
+  // var nextIndex = getClickedIndex+1;
+  // if($('.modal-img'+nextIndex)!=""){
+  //   $('.modal-img'+nextIndex).css('display','block');
+  // } else {
+  //   for ( var i=getClickedIndex; i <=9; i++){
+  //   // #Do while loop
+  //   }
+  // }
 
   // if(getClickedIndex == clickToNext.length-1){
   //   $('.modal-img0').css('display','block');
@@ -302,6 +304,14 @@ clickToNext.click(function(){
   // }
 })
 
+/* // - - - Slick code for modal section - - - */
+// $('.ip-modal-content').slick({
+//   // dots: true,
+//   infinite: true,
+//   speed: 500,
+//   fade: true,
+//   cssEase: 'linear'
+// });
 /*
 - - - TEAM PAGE - - -
 */
@@ -431,6 +441,16 @@ function checkSize() {
   }
 }
 
+/* - - - slick plugin - - - */
+
+$('.img-thumbnail-section').slick({
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1
+});
+console.log('I am working on slick plugin... 2/21 @ 11:25');
 })
 
 // console.log('JS is fully functional.');

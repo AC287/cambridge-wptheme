@@ -83,7 +83,7 @@
 					            case (0):
 					            {
 					              if(($get_item_data[0]->$img) !=""){
-					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:initial'>";
 					                $displayCounter++;
 					              } else {
 					                break;
@@ -93,7 +93,7 @@
 					            default:
 					            {
 					              if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
-					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
+					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:initial'>";
 					                $displayCounter++;
 					              } else {
 					                if(($get_item_data[0]->$img) !=""){
