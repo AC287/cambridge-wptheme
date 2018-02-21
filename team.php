@@ -71,7 +71,7 @@
     <div class='team-salesmanager-container'>
       <?php
         global $wpdb;
-        $salesmanager = $wpdb->get_results("SELECT * FROM wp_salesmanager ORDER BY sort ASC;");
+        $salesmanager = $wpdb->get_results("SELECT * FROM wp_camsalesmanager WHERE active='y' ORDER BY sort ASC;");
         foreach ($salesmanager as $salesmanager1){
           echo "<div class='team-salesmanager-each'>";
             echo "<div class='team-salesmanager-img'>";
