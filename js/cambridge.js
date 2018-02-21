@@ -5,11 +5,11 @@ jQuery(document).ready(function($) {
   // $('.top-nav').click(function(){
   //   console.log('CLICKED HEHEHE');
   // })
-  console.log('Today is 9/11');
+  // console.log('Today is 9/11');
 
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
-    console.log(x.length);
+    // console.log(x.length);
     if(x.length===1){
       $('#header-rnav').addClass('responsive');
     }
@@ -212,7 +212,7 @@ for (i=0; i< displayExtra.length; i++) {
 var $s1BoxFlexContainer = $('.s1-box-flex-container');
 // console.log($s1BoxFlexContainer.length);
 for(var j=0; j<$s1BoxFlexContainer.length; j++){
-  console.log($($s1BoxFlexContainer[j]).children().length)
+  // console.log($($s1BoxFlexContainer[j]).children().length)
 }
 
 // --- THIS IS FOR ITEM PAGE ---
@@ -224,10 +224,11 @@ imgThumb.click(function(){
   var getClickedClass = this.className.split(' ')[1].split('-')[1];
   // console.log(getClickedClass);
   $('.main-view-lg').each(function(index,object){
-    console.log(index);
+    // console.log(index);
     $(this).css('display','none');
   })
-  $('.main-view-lg.main-'+getClickedClass).css('display','initial');
+  var curThumbDisplay = '.img-content-box .main-' + getClickedClass;
+  $(curThumbDisplay).css('display','initial');
 })
 var ipClickedImg = $('.main-view-lg');
 ipClickedImg.click(function(){
@@ -276,7 +277,7 @@ clickToNext.click(function(){
         i = 0;
       }
       if($('.modal-img'+i).length!=0){
-        console.log(i);
+        // console.log(i);
         $('.modal-img'+i).css('display','block');
         break;
       }
@@ -391,7 +392,7 @@ $('.catalog-custbtn').each(function(index){
 });
 /* - - - catalog click effect - - - */
 $('.catalog-custbtn').click(function(){
-  console.log($(this).children('input').attr('id'));
+  // console.log($(this).children('input').attr('id'));
   var clickedClass = $(this).children('input').attr('id');
   $('.catalog-thumbinner').each(function(index){
     // console.log(index+" "+clickedClass);
