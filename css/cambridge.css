@@ -1143,7 +1143,7 @@ img.p2-cert-img {
 }
 .item-image {
   width: 250px;
-  margin: 0px 25px 0px 25px;
+  margin: 0px 25px 25px 25px;
 }
 .item-data {
 
@@ -1172,10 +1172,14 @@ img.p2-cert-img {
 .single-thumb {
   display: inline-block;
   width: 100px;
+  height: 100px;
   margin-right: 10px;
   /* margin-bottom: 10px; */
   cursor: pointer;
   border: 1px solid #A7A9AC;
+}
+.single-thumb.slick-slide {
+  min-height: 74px;
 }
 .single-thumb:last-child {
   margin-right: 0px;
