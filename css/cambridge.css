@@ -1345,10 +1345,15 @@ a.spec-sheet {
 }
 .about-beginning-title {
   position: absolute;
-  z-index: 3;
-  top: 65%;
-  text-align: center;
-  width: 100%;
+  /* z-index: 3; */
+  /* top: 0%; */
+  top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ width: 50%;
+ height: 25%;
+ margin: auto;
 }
 .index-title1 {
   text-align: center;
@@ -1363,7 +1368,7 @@ a.spec-sheet {
   font-size: 75pt;
   letter-spacing: 2px;
   color: #fff;
-  text-shadow: 2px 2px 8px #000;
+  /* text-shadow: 2px 2px 8px #000; */
   /*border-bottom: 4px solid #003DA5;*/
 }
 .index-title1-underline {
@@ -1403,13 +1408,25 @@ a.spec-sheet {
   .aboutus-inthebeginning-contents {
     padding-top: 25px;
   }
+}
+@media screen and (max-width: 995px) and (min-width: 401px) {
   .about-beginning-title {
-    top: 50%;
+    /* top: 50%; */
   }
   .index-title1 span {
     font-size: 45pt;
     line-height: 50px;
-    text-shadow: 2px 2px 8px #000;
+  }
+}
+@media screen and (max-width: 400px) {
+  .index-title1 span {
+    font-size: 25pt;
+    line-height: 30px;
+  }
+  .index-title1-underline {
+    /* margin: 0 auto; */
+    width: 100px;
+    border-bottom: 2px solid #fff;
   }
 }
 .aboutus-inthebeginning-img {
