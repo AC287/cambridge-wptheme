@@ -21,7 +21,7 @@
             <li><a href="<?php echo home_url();?>/team/">Our Team</a></li>
             <!-- <li><a href="">Retailers Who Carry Us</a></li> -->
             <li><a href="<?php echo home_url();?>/career/">Careers</a></li>
-            <li><a href="<?php echo home_url();?>/news/">News</a></li>
+            <li><a href="<?php echo home_url();?>/tradeshows/">News</a></li>
           </ul>
         </div>
         <div class="footer1-inner-left">

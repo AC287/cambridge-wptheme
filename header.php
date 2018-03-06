@@ -85,24 +85,24 @@
                 <span>OUR BRANDS</span>
               </div>
               <div class="nav2-logo nav2-coda">
-                <!-- <a href="http://www.codaresources.com/" target="_blank" rel="noopener noreferrer"> -->
+                <a href="http://www.codaresources.com/" target="_blank" rel="noopener noreferrer">
                 <img src="<?php bloginfo('template_directory')?>/images/CODA DEV_LOGO.png" height="25px">
-                <!-- </a> -->
+                </a>
               </div>
               <div class="nav2-logo nav2-amram">
-                <!-- <a href="" target="_blank" rel="noopener noreferrer"> -->
+                <a href="" target="_blank" rel="noopener noreferrer">
                 <img src="<?php bloginfo('template_directory')?>/images/AMRAM_Logo_001.png" height="15px">
-                <!-- </a> -->
+                </a>
               </div>
               <div class="nav2-logo nav2-ldr">
-                <!-- <a href="http://www.ldrind.com/" target="_blank" rel="noopener noreferrer"> -->
+                <a href="http://www.ldrind.com/" target="_blank" rel="noopener noreferrer">
                 <img src="<?php bloginfo('template_directory')?>/images/LDR_LOGO.png" height="20px">
-                <!-- </a> -->
+                </a>
               </div>
               <div class="nav2-logo nav2-pipedecor">
-                <!-- <a href="" target="_blank" rel="noopener noreferrer"> -->
+                <a href="http://pipe-decor.com/" target="_blank" rel="noopener noreferrer">
                 <img src="<?php bloginfo('template_directory')?>/images/pipedecor_logo.png" height="9px">
-                <!-- </a> -->
+                </a>
               </div>
             </a>
             <div class="nav2-search">
