@@ -47,13 +47,47 @@
           $offset = ($page * $items_per_page) - $items_per_page;
           $prodSearch = $wpdb->get_results($prodquery . "LIMIT ${offset}, ${items_per_page}");
 
+          echo "<div class='ps-topinfo'>";
+            echo "<div class='ps-search-results'>";
+              echo "<p>".$total."&nbsp;items</p>";
+            echo "</div>";
+            echo "<div class='ps-pages pagination'>";
+              echo paginate_links( array(
+                'base' => add_query_arg('cpage','%#%'),
+                'format' => '',
+                'prev_text' => __('&laquo;'),
+                'next_text' => __('&raquo;'),
+                'total' => ceil($total/$items_per_page),
+                'current' => $page,
+                'mid_size' => 2,
+                // 'type' => 'list'
+              ));
+            echo "</div>";
+          echo "</div>";
+
           if (sizeof($prodSearch) != 0) {
             //product search is correct and exist.
             echo "<p>Displaying products for ".$searchValue."...</p>";
             echo "<p>Total results found: ".$total."</p>";
             foreach ($prodSearch as $exactProd) {
               echo "<div class='search-each-container'>";
-              echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."'>".$exactProd->item."</a>";
+                echo "<div class='sec-thumb'>";
+                  if($exactProd->img0 == ''){
+                    echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+                  } else {
+                    echo "<img src='".$exactProd->img0."'>";
+                  }
+                  // print_r($exactProd);
+                echo "</div>";
+                echo "<div class='sec-items'>";
+                  echo "<div class='seci-title'>";
+                    if($exactProd->s2!=''){
+                      echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."'>".$exactProd->item."&nbsp;|&nbsp;".$exactProd->s2."&nbsp;".$exactProd->m0."</a>";
+                    } else {
+                      echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."'>".$exactProd->item."&nbsp;|&nbsp;".$exactProd->s1."&nbsp;".$exactProd->m0."</a>";
+                    }
+                  echo "</div>";
+                echo "</div>";
               echo "</div>";  // end search-each-container class.
             }
           } else {
@@ -62,14 +96,15 @@
 
           };
 
-          echo "<div class='pagination'>";
+          echo "<div class='ps-pages pagination'>";
             echo paginate_links( array(
             'base' => add_query_arg('cpage','%#%'),
             'format' => '',
             'prev_text' => __('&laquo;'),
             'next_text' => __('&raquo;'),
             'total' => ceil($total/$items_per_page),
-            'current' => $page
+            'current' => $page,
+            'mid_size' => 2,
             // 'type' => 'list'
             ));
             echo "</div>";
