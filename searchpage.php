@@ -67,17 +67,28 @@
 
           if (sizeof($prodSearch) != 0) {
             //product search is correct and exist.
-            echo "<p>Displaying products for ".$searchValue."...</p>";
-            echo "<p>Total results found: ".$total."</p>";
+            echo "<div class='search-found'>";
+              echo "<p>Displaying results for ".$searchValue."&nbsp;...</p>";
+            echo "</div>";
+
             foreach ($prodSearch as $exactProd) {
               echo "<div class='search-each-container'>";
                 echo "<div class='sec-thumb'>";
-                  if($exactProd->img0 == ''){
-                    echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
-                  } else {
-                    echo "<img src='".$exactProd->img0."'>";
+                  $thumbCounter = 0;
+                  for($x=0; $x<=9; $x++) {
+                    //This will loop through all 10 image slots and see if there are any images.
+                    $img = "img".$x;
+                    if(($exactProd->$img) !=""){
+                      echo "<img src='".$exactProd->$img."'>";
+                      $thumbCounter++;
+                      break;
+                    }
                   }
-                  // print_r($exactProd);
+                  if($thumbCounter == 0) {
+                    //if no images are found, it will default to image placeholder.
+                    echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+                  }
+
                 echo "</div>";
                 echo "<div class='sec-items'>";
                   echo "<div class='seci-title'>";
@@ -86,13 +97,44 @@
                     } else {
                       echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."'>".$exactProd->item."&nbsp;|&nbsp;".$exactProd->s1."&nbsp;".$exactProd->m0."</a>";
                     }
+                  echo "</div>";  // end seci-title
+                  echo "<div class='seci-spec'>";
+                    $m0 = $exactProd->m0;
+                    $s1 = $exactProd->s1;
+                    $s2 = $exactProd->s2;
+
+                    if($s1 != "" and $s2 != ""){
+                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2';");
+                    } elseif ($s1 != "" and $s2 == ""){
+                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1';");
+                    } else {
+                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0';");
+                    }
+
+                    // print_r($get_item_legend);
+
+                    echo "<table class='secis-each-data-table'>";
+                      for ($y=1; $y < 9; $y++) {
+                        $d = "d".$y;
+                        if ($exactProd->$d !="") {
+                          echo "<tr class='secis-each-data'>";
+                          echo "<th class='secis-legend'>".$get_item_legend[0]->$d."</th><td class='secis-data'>".$exactProd->$d."</td>";
+                          echo "</tr>";
+                        }
+                      }
+                    echo "</table>";
+                  echo "</div>";  // end seci-spec;
+                  echo "<div class='seci-button'>";
+                    echo "<a class='btn btn-secondary' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."' role='button'>View Details</a>";
                   echo "</div>";
-                echo "</div>";
+                echo "</div>";  // end sec-items.
               echo "</div>";  // end search-each-container class.
             }
           } else {
             //product search is incorrect. Searching for keyword.
-            echo "<p>Displaying products by keyword: ".$searchValue."...</p>";
+            echo "<div class='search-notfound'>";
+              echo "<p>No match found for $searchValue.</p>";
+            echo "</div>";
 
           };
 
