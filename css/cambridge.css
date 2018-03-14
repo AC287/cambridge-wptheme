@@ -2868,6 +2868,14 @@ a.spec-sheet {
   width: 100%;
   text-align: right;
   font-size: 11pt;
+  /* text-decoration: none; */
+}
+.ps-pages.pagination a {
+  text-decoration: none;
+}
+.ps-pages .prev.page-numbers, .ps-pages .next.page-numbers {
+  /* text-decoration: none; */
+  font-size: 15pt;
 }
 .ps-pages .page-numbers {
   padding: 10px 10px 10px 10px;
@@ -2910,6 +2918,31 @@ a.spec-sheet {
   overflow: hidden;
   margin-bottom: 15px;
 }
+/* .secis-blur {
+  position: relative;
+  bottom: 4em;
+    height: 4em;
+    background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -moz-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -o-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -ms-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+} */
 .secis-each-data-table {
   width: 100%;
 }
@@ -2921,10 +2954,10 @@ a.spec-sheet {
   width: 20%;
 }
 .secis-data {
+  padding-left: 5px;
   font-size: 14pt;
   vertical-align: top;
   /* font-weight: bold; */
-
 }
 .seci-button .btn {
   background-color: #D2D3D5;
@@ -2941,6 +2974,7 @@ a.spec-sheet {
     font-size: 10pt;
     text-align: center;
   }
+
   .ps-pages .page-numbers {
     padding: 5px;
   }
@@ -2950,11 +2984,21 @@ a.spec-sheet {
     margin-right: 2px;
   }
   .sec-thumb img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
   }
   .seci-title a {
     font-size: 12pt;
     line-height: 10pt;
+  }
+  .secis-legend {
+    /* padding-top: 0px; */
+    font-size: 6pt;
+    line-height: 6pt;
+    /* width: 50%; */
+    width: auto;
+  }
+  .secis-data {
+    font-size: 10pt;
   }
 }
