@@ -1013,6 +1013,10 @@ td.p2-data {
   margin-right: 20px; */
   margin: 10px;
   display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   justify-content: space-around;
 
 }
@@ -1467,12 +1471,17 @@ a.spec-sheet {
 }
 .about-cat-img {
   padding: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .about-cat-img img {
   max-width: 500px;
-  max-height: 400px;
-  /*height: auto;*/
+  /* max-height: 400px; */
+  height: auto;
+}
+@media screen and (max-width: 400px) {
+  .about-cat-img img {
+    width: 300px;
+  }
 }
 .about-cat-desc {
   padding: 20px 20px 20px 20px;
@@ -2394,6 +2403,10 @@ a.spec-sheet {
 }
 .career-open {
   display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding-bottom: 30px;
@@ -2855,6 +2868,10 @@ a.spec-sheet {
 /* - - - - - SEARCH PAGE - - - - - */
 .ps-topinfo {
   display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
 }
 .ps-search-results {
   margin-top: 20px;
@@ -2894,6 +2911,10 @@ a.spec-sheet {
 }
 .search-each-container {
   display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 3pt solid #D1D3D4;

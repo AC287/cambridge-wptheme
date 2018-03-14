@@ -49,7 +49,7 @@
       <p>1985</p>
     </div>
     <div class="about-tl-content">
-      <!-- <h1 class="about-f3 text--accent ttu">Vestibulum laoreet lorem</h1> -->
+      <!-- <h1 class="about-f3 text-accent ttu">Vestibulum laoreet lorem</h1> -->
       <p>Coda relocates to its current 100,000 sq. ft. Headquarters in Brooklyn.</p>
     </div>
   </div>
@@ -59,7 +59,7 @@
       <p>1998</p>
     </div>
     <div class="about-tl-content">
-      <!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+      <!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
       <p>Cambridge is established.</p>
     </div>
   </div>
@@ -69,7 +69,7 @@
       <p>2006</p>
     </div>
     <div class="about-tl-content">
-      <!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
+      <!-- <h1 class="about-f3 text-accent ttu">Mauris vitae nunc elem</h1> -->
       <p>Cambridge Shenzhen offices are formed.</p>
     </div>
   </div>
@@ -79,7 +79,7 @@
 			<p>2007-2009</p>
 		</div>
 		<div class="about-tl-content">
-			<!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
 			<p>Cambridge expands product line to include hose clamps, terminals, and wire connectors.</p>
 		</div>
 	</div>
@@ -89,7 +89,7 @@
 			<p>2010</p>
 		</div>
 		<div class="about-tl-content">
-			<!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
+			<!-- <h1 class="about-f3 text-accent ttu">Mauris vitae nunc elem</h1> -->
 
 			<p> Expands China &amp; Taiwan facilities.</p>
 		</div>
@@ -100,7 +100,7 @@
 			<p>2013</p>
 		</div>
 		<div class="about-tl-content">
-			<!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
 			<p>Cambridge introduces zipits&trade; Retail product line.</p>
 		</div>
 	</div>
@@ -110,7 +110,7 @@
 			<p>2015</p>
 		</div>
 		<div class="about-tl-content">
-			<!-- <h1 class="about-f3 text--accent ttu">Mauris vitae nunc elem</h1> -->
+			<!-- <h1 class="about-f3 text-accent ttu">Mauris vitae nunc elem</h1> -->
 			<p>Cambridge acquires LDR Global industries.</p>
 		</div>
 	</div>
@@ -120,7 +120,7 @@
 			<p>2016</p>
 		</div>
 		<div class="about-tl-content">
-			<!-- <h1 class="about-f3 text--accent ttu">Phasellus mauris elit</h1> -->
+			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
 			<p>Cambridge relocates key operations to Chicago facility.</p>
 		</div>
 	</div>
