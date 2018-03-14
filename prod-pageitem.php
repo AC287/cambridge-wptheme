@@ -136,15 +136,15 @@
 									if ($get_item_data[0]->$d !=""){
 										# Need to revise this here if datatable will be updated.;
 										// if legend has break tag, this will remove and replace it with space.
-										$splitlegend = explode("<br/>",$get_item_legend[0]->$d);
-										$joinlegend = implode(" ",$splitlegend);
+										// $splitlegend = explode("<br/>",$get_item_legend[0]->$d);
+										// $joinlegend = implode(" ",$splitlegend);
 										// print_r($splitlegend);
-										// echo "<span class='ip-legend'>".$get_item_legend[0]->$d.": </span>";
-										echo "<th class='ip-legend'>".$joinlegend.": </th>";
-										$splitdata = explode(" <br>",$get_item_data[0]->$d);
-										$joindata = implode("; ",$splitdata);
-										// echo "<td class='ip-spec'>".$get_item_data[0]->$d."</td>";
-										echo "<td class='ip-spec'>".$joindata."</td>";
+										echo "<th class='ip-legend'>".$get_item_legend[0]->$d.": </th>";
+										// echo "<th class='ip-legend'>".$joinlegend.": </th>";
+										// $splitdata = explode(" <br>",$get_item_data[0]->$d);
+										// $joindata = implode("; ",$splitdata);
+										echo "<td class='ip-spec'>".$get_item_data[0]->$d."</td>";
+										// echo "<td class='ip-spec'>".$joindata."</td>";
 									}
 									echo "</tr>";	// end ip-each-data;
 								}
