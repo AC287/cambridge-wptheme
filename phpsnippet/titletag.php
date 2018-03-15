@@ -12,12 +12,20 @@
 
   switch ($curLocationArr) {
 
+    // case (count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))):
+    case (empty($curLocationArr)):
+      //GET HOME TITLE & META DESC TAG.
+      $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
+      echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
+      echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
+    break;
+
     case (in_array('products',$curLocationArr)):
       //GET PRODUCTS TITLE & META DESC TAG.
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='products';");
       switch ($curLocationArr) {
 
-        case (count($curLocationArr) <=2 && in_array('products',$curLocationArr)):
+        case ((!empty($curLocationArr)) && (count($curLocationArr) <=2) && (in_array('products',$curLocationArr))):
           echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
         break;
 
@@ -80,12 +88,5 @@
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
-    // case (count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))):
-    case (empty($curLocationArr)):
-      //GET HOME TITLE & META DESC TAG.
-      $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
-      echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
-      echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
-    break;
   }
 ?>
