@@ -80,7 +80,8 @@
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
-    case (count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))):
+    // case (count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))):
+    case (empty($curLocationArr)):
       //GET HOME TITLE & META DESC TAG.
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
       echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
