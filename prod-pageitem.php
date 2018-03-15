@@ -4,6 +4,12 @@
 <!-- // Data displaying individual item. -->
 <?php get_header(); ?>
 
+<div class='prod-tocatalogs'>
+	<a href='<?php echo home_url();?>/catalogs/'>Click here to view our catalogs.</a>
+	<div class='prod-tocatalogs-underline'>
+	</div>
+</div>
+
 <div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -21,55 +27,18 @@
 			// print_r($p2s1);
 			// print_r($p2s2);
 
-			$main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prod0;");
-			// $main_category2 = $main_category;
 			// $sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
 
-			// print_r($main_category);
-			echo "<table id='product-main-page'>";
-			echo "<td class='cat-bar'>";
-			echo "<h4><a href='../'>PRODUCT CATEGORIES</a></h4>";
-			foreach($main_category as $main_category) {
-				$s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
-				// print_r($main_category->m0);
-				// print_r(gettype($temp_var));
-				// print_r(sizeof($s1_category));
-				// print_r($s1_category[0]->s1);
-				if(!empty($s1_category[0]->s1)){
-					// echo "<div>";
-					echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
-					echo "<div class='custpanel'>";
-					foreach($s1_category as $s1_category) {
-						$s2_category = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE s1 = '$s1_category->s1';");
-						if(!empty($s2_category[0]->s2)){
-							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
-							echo "<div class='custpanel'>";
-							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
-							}
-							echo "</div>";  // end panel
-						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
-						}
-					}
-					echo "</div>";  // end panel.
-				}
-				else {
-					echo "<div class='custaccordion'>".$main_category->m0."</div>";
-				}
-				// echo "<hr/>";
-				// echo "</div>";
-			}
-			echo "</td>";
+			echo "<div id='product-main-page'>";
+			echo "<div class='cat-bar'>";
+				include 'phpsnippet/productaccordion.php';
+			echo "</div>";
 			// END Main Category accordion panel.
 			//--------------
 			// Start Right column.
-			echo "<td class='prod-display'>";
+			echo "<div class='prod-display'>";
 			// echo "<h1> HELLO </h1>";
-			echo "<div class='prod-tocatalogs'>";
-				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
-			echo "</div>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 				$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id';");
@@ -79,106 +48,117 @@
 				$item_sub2_cat = $get_item_data[0]->s2;
 				if($item_sub2_cat != ""){
 					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat' AND s2='$item_sub2_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".$item_main_cat."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".$item_main_cat."&s1=".$item_sub1_cat."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".$item_main_cat."&s1=".$item_sub1_cat."&s2=".$item_sub2_cat."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
 					// print_r("sub2 is not empty");
 				} else {
 					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".$item_main_cat."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".$item_main_cat."&s1=".$item_sub1_cat."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
 					// print_r("sub2 is empty");
 				}
 				echo "<div class='s1-box-background'>";
-					echo "<table id='each-item-spec'>";
-						echo "<tr>";
-						echo "<td class='item-image'>";
+
+					echo "<div id='each-img-data-container'>";
+					echo "<div id='each-img-data'>";
+						echo "<div class='item-image'>";
 							echo "<div class='img-content-box'>";
-								for ($x=0; $x<=9; $x++) {
-									$img = "img".$x;
-									// This will assign default image at main.
-									if(($get_item_data[0]->img2)!=""){
-										switch ($x) {
-											case (2):
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-												}
-											}
-											break;
-											default:
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
-												}
-											}
-											// endswitch;
-										}
-									}	// end if there is no img2.
-									else {
-										switch ($x) {
-											case (0):
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."'>";
-												}
-											}
-											break;
-											default:
-											{
-												if(($get_item_data[0]->$img) !=""){
-													echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
-												}
-											}
-											// endswitch;
+							/* - - - THIS IS MAIN VIEW - - - */
+
+					      $imgExist = 0;
+					      for ($y = 0; $y<=9; $y++){
+					        $imgtemp = 'img'.$y;
+					        if($get_item_data[0]->$imgtemp != '') {
+					          $imgExist++;
+					          // echo $imgExist;
+					        }
+					      }	//Checking to see if image exist
+
+					      if ($imgExist == 0) {
+					        echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+					      } else {
+					        $displayCounter = 0;
+					        for ($x=0; $x<=9; $x++) {
+					          $img = "img".$x;
+					          // This will assign default image at main.
+					          switch ($x) {
+					            case (0):
+					            {
+					              if(($get_item_data[0]->$img) !=""){
+					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:initial'>";
+					                $displayCounter++;
+					              } else {
+					                break;
+					              }
+					            }
+					            break;
+					            default:
+					            {
+					              if(($x > 0) && ($displayCounter == 0) && ($get_item_data[0]->$img !="")){
+					                echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:initial'>";
+					                $displayCounter++;
+					              } else {
+					                if(($get_item_data[0]->$img) !=""){
+					                  echo "<img class='main-view-lg main-$img' src='".$get_item_data[0]->$img."' style='display:none'>";
+					                }
+					              }
+					            }
+					            // endswitch;
+					          }
+					        }
+					      }
+
+								// Start thumbnail SECTION
+								echo "<div class='img-thumbnail-section'>";
+									$thumbCounter = 0;
+									for ($x=0; $x<=9; $x++) {
+										$img = "img".$x;
+										if(($get_item_data[0]->$img) !=""){
+											echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
+											$thumbCounter++;
 										}
 									}
-								}
-							echo "</div>";	// end main-view-lg
-						echo "</td>";	// end item-image.
-						echo "<td class='item-data'>";
-						// echo "<p>DATA HERE</p>";
+									if ($thumbCounter == 0) {
+										echo "<img class='single-thumb' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+									}
+								echo "</div>";	// end img-thumbnail-section;
+
+							echo "</div>";	// end img-content-box.
+
+						echo "</div>";	// end item-image class tag.
+
+						echo "<div class='each-item-data'>";
 							echo "<div class='item-spec-container'>";
 								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
 								echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
+								echo "<table class='ip-each-data-table'>";
 								for ($x=1; $x <=8; $x++) {
 									$d = "d".$x;
-									echo "<div class='ip-each-data'>";
+									echo "<tr class='ip-each-data'>";
 									if ($get_item_data[0]->$d !=""){
 										# Need to revise this here if datatable will be updated.;
 										// if legend has break tag, this will remove and replace it with space.
-										$splitlegend = explode("<br/>",$get_item_legend[0]->$d);
-										$joinlegend = implode(" ",$splitlegend);
+										// $splitlegend = explode("<br/>",$get_item_legend[0]->$d);
+										// $joinlegend = implode(" ",$splitlegend);
 										// print_r($splitlegend);
-										// echo "<span class='ip-legend'>".$get_item_legend[0]->$d.": </span>";
-										echo "<span class='ip-legend'>".$joinlegend.": </span>";
-										echo "<span class='ip-spec'>".$get_item_data[0]->$d."</span>";
+										echo "<th class='ip-legend'>".$get_item_legend[0]->$d.": </th>";
+										// echo "<th class='ip-legend'>".$joinlegend.": </th>";
+										// $splitdata = explode(" <br>",$get_item_data[0]->$d);
+										// $joindata = implode("; ",$splitdata);
+										echo "<td class='ip-spec'>".$get_item_data[0]->$d."</td>";
+										// echo "<td class='ip-spec'>".$joindata."</td>";
 									}
-									echo "</div>";	// end ip-spec;
+									echo "</tr>";	// end ip-each-data;
 								}
+								echo "</table>";
 								echo "<br/>";
 								echo "<a class='spec-sheet' href='".$get_item_data[0]->d9."'>SPEC SHEET</a>";
 
 							echo "</div>";	// end item-spec-container div;
-						echo "</td>";	// end item-data.
-						echo "</tr>";
-						echo "<tr>";
-						// This is thumbnail selection image.
-							echo "<td colspan='2'>";
-							echo "<div class='img-thumbnail-section'>";
-								for ($y=2; $y<=9; $y++) {
-									$img = "img".$y;
-									if(($get_item_data[0]->$img) !=""){
-										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
-									}
-								}
-								for ($z=0; $z<2; $z++) {
-									$img = "img".$z;
-									if(($get_item_data[0]->$img) !=""){
-										echo "<img class='single-thumb thumb-$img' src='".$get_item_data[0]->$img."'>";
-									}
-								}
-							echo "</div>";	// end img-thumbnail-section;
-							echo "</td>";
-						echo "</tr>";
-					echo "</table>";	// end each-item-spec table.
+						echo "</div>";	// end each-item-data;
+
+					echo "</div>";	// end each-img-data.
+					echo "</div>";	// end each-img-data-container.
+
+
 					echo "<div class='ip-certification'>";
 						echo "<div class='ip-certitle'>CERTIFIED:</div>";
 						echo "<div >";
@@ -202,22 +182,29 @@
 						echo "<div class='ip-desctitle'>PRODUCT DESCRIPTION</div>";
 						echo "<p class='ip-detaildescription'>".$get_item_data[0]->d0."</p>";
 					echo "</div>";	// end ip-description;
-			echo "</div>";	// end s1-box-background div;
+				echo "</div>";	// end s1-box-background div;
 				// $mPos++;
 			echo "</div>";  //end group-container div;
-			echo "</td>";
-			echo "</table>";
+			echo "</div>";
+			echo "</div>";
 
+			/* - - - IMAGE MODAL - - - */
 			echo "<div id='itemModal' class='ip-modal'>";
 				echo "<span class='ip-close'>&times;</span>";
 				echo "<div class='ip-modal-content'>";
-					for($m=0; $m<=9; $m++){
-						$imgLg = 'img'.$m;
-						if($get_item_data[0]->$imgLg!=""){
-							// echo $get_item_data[0]->$imgLg;
-							echo "<div class='ip-slides modal-$imgLg'>";
-							echo "<img src='".$get_item_data[0]->$imgLg."' style='width:100%'>";
-							echo "</div>";	// end ip-slides;
+					if($imgExist == 0) {
+						echo "<div class='ip-slides modal-imgnone'>";
+							echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' style='width: 100%'>";
+						echo "</div>";
+					} else {
+						for($m=0; $m<=9; $m++){
+							$imgLg = 'img'.$m;
+							if($get_item_data[0]->$imgLg!=""){
+								// echo $get_item_data[0]->$imgLg;
+								echo "<div class='ip-slides modal-$imgLg'>";
+								echo "<img src='".$get_item_data[0]->$imgLg."' style='width:100%'>";
+								echo "</div>";	// end ip-slides;
+							}
 						}
 					}
 					// echo "<a class='ip-prev'>&#10094;</a>";

@@ -41,6 +41,10 @@
       global $wpdb;
       $catalogs = $wpdb->get_results("SELECT * FROM wp_catalog ORDER BY id ASC;");
       echo "<div class='catalog-thumbinner catalogs-all'>";
+        usort($catalogs,function($a,$b){  // sort by id.
+          $c =  $a->id - $b->id;
+          return $c;
+        });
         foreach($catalogs as $catalogeach) {
           echo "<a href='".$catalogeach->content."' target='_blank' class='catalog-each'>";
             echo "<div class='catalog-each-thumb'>";
@@ -51,11 +55,16 @@
         }
       echo "</div>";  // end catalogs-all
 
+      //HVAC only catalogs
       echo "<div class='catalog-thumbinner catalogs-hvac'>";
-      // print_r(gettype($catalogs));
+
+        usort($catalogs,function($a,$b){  // sort by hvac value
+          $c =  $a->hvac - $b->hvac;
+          return $c;
+        });
+
         foreach($catalogs as $catalogeach) {
           if ($catalogeach->hvac !=''){
-            // for($x=count())
             echo "<a href='".$catalogeach->content."' target='_blank' class='catalog-each'>";
               echo "<div class='catalog-each-thumb'>";
                 echo "<img src=".$catalogeach->thumb.">";
@@ -66,11 +75,16 @@
         }
       echo "</div>";  // end catalogs-hvac
 
+      //Plumbing only catalogs
       echo "<div class='catalog-thumbinner catalogs-plumbing'>";
-      // print_r(gettype($catalogs));
+
+        usort($catalogs,function($a,$b){  // sort by plumbing
+          $c =  $a->plumbing - $b->plumbing;
+          return $c;
+        });
+
         foreach($catalogs as $catalogeach) {
           if ($catalogeach->plumbing !=''){
-            // for($x=count())
             echo "<a href='".$catalogeach->content."' target='_blank' class='catalog-each'>";
               echo "<div class='catalog-each-thumb'>";
                 echo "<img src=".$catalogeach->thumb.">";
@@ -81,11 +95,16 @@
         }
       echo "</div>";  // end catalogs-plumbing
 
+      // Electrical only catalogs
       echo "<div class='catalog-thumbinner catalogs-electrical'>";
-      // print_r(gettype($catalogs));
+
+        usort($catalogs,function($a,$b){  // sort by electrical
+          $c =  $a->electrical - $b->electrical;
+          return $c;
+        });
+
         foreach($catalogs as $catalogeach) {
           if ($catalogeach->electrical !=''){
-            // for($x=count())
             echo "<a href='".$catalogeach->content."' target='_blank' class='catalog-each'>";
               echo "<div class='catalog-each-thumb'>";
                 echo "<img src=".$catalogeach->thumb.">";
@@ -96,11 +115,16 @@
         }
       echo "</div>";  // end catalogs-electrical
 
+      // Auto only catalog
       echo "<div class='catalog-thumbinner catalogs-auto'>";
-      // print_r(gettype($catalogs));
+
+        usort($catalogs,function($a,$b){   // Sort by auto
+          $c =  $a->auto - $b->auto;
+          return $c;
+        });
+
         foreach($catalogs as $catalogeach) {
           if ($catalogeach->auto !=''){
-            // for($x=count())
             echo "<a href='".$catalogeach->content."' target='_blank' class='catalog-each'>";
               echo "<div class='catalog-each-thumb'>";
                 echo "<img src=".$catalogeach->thumb.">";
@@ -111,11 +135,16 @@
         }
       echo "</div>";  // end catalogs-auto
 
+      // Sign hanging only catalog
       echo "<div class='catalog-thumbinner catalogs-signhanging'>";
-      // print_r(gettype($catalogs));
+
+        usort($catalogs,function($a,$b){  // sort by sign hanging
+          $c =  $a->signhanging - $b->signhanging;
+          return $c;
+        });
+
         foreach($catalogs as $catalogeach) {
           if ($catalogeach->signhanging !=''){
-            // for($x=count())
             echo "<a href='".$catalogeach->content."' target='_blank' class='catalog-each'>";
               echo "<div class='catalog-each-thumb'>";
                 echo "<img src=".$catalogeach->thumb.">";

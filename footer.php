@@ -7,33 +7,34 @@
         <div class="footer1-inner-left">
           <a href="<?php echo home_url();?>/products/" class="footer1-maintxt">Products</a>
           <ul class="footer1-subtxt">
-            <li><a href="">Top Seller</a></li>
-            <li><a href="">Featured Product</a></li>
+            <li><a href="<?php echo home_url();?>/products/">Product Page</a></li>
+            <!-- <li><a href="">Featured Product</a></li> -->
             <li><a href="<?php echo home_url();?>/products/catalogs/">Catalogs</a></li>
-            <li><a href="">Quality</a></li>
-            <li><a href="">Warranty</a></li>
+            <!-- <li><a href="">Quality</a></li> -->
+            <!-- <li><a href="">Warranty</a></li> -->
           </ul>
         </div>
         <div class="footer1-inner-left">
           <a href="<?php echo home_url();?>/about/" class="footer1-maintxt">About</a>
           <ul class="footer1-subtxt">
-            <li><a href="<?php echo home_url();?>/team/">Who We Are</a></li>
-            <li><a href="">Retailers Who Carry Us</a></li>
+            <li><a href="<?php echo home_url();?>/about/">Who We Are</a></li>
+            <li><a href="<?php echo home_url();?>/team/">Our Team</a></li>
+            <!-- <li><a href="">Retailers Who Carry Us</a></li> -->
             <li><a href="<?php echo home_url();?>/career/">Careers</a></li>
-            <li><a href="">News</a></li>
+            <li><a href="<?php echo home_url();?>/tradeshows/">News</a></li>
           </ul>
         </div>
         <div class="footer1-inner-left">
-          <a href="" class="footer1-maintxt">Brands</a>
+          <a href="<?php echo home_url();?>/brands/" class="footer1-maintxt">Brands</a>
         </div>
         <div class="footer1-inner-left">
           <a href="<?php echo home_url();?>/contact/" class="footer1-maintxt">Contact Us</a>
-          <ul class="footer1-subtxt">
-            <li><a href="<?php echo home_url();?>/contact/">Customer Service</a></li>
-            <li><a href="<?php echo home_url();?>/contact/">Sales</a></li>
-            <li><a href="<?php echo home_url();?>/contact/">Technical Support</a></li>
+          <!-- <ul class="footer1-subtxt"> -->
+            <!-- <li><a href="<?php echo home_url();?>/contact/">Customer Service</a></li> -->
+            <!-- <li><a href="<?php echo home_url();?>/contact/">Sales</a></li> -->
+            <!-- <li><a href="<?php echo home_url();?>/contact/">Technical Support</a></li> -->
             <!-- <li><a href="<?php echo home_url();?>/contact/">Map</a></li> -->
-          </ul>
+          <!-- </ul> -->
         </div>
         <div class="footer1-inner-right">
           <div class="certifications-txt">CERTIFICATIONS</div>

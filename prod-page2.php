@@ -4,6 +4,12 @@
 <!-- // Data displaying Page for sub category. -->
 <?php get_header(); ?>
 
+<div class='prod-tocatalogs'>
+	<a href='<?php echo home_url();?>/catalogs/'>Click here to view our catalogs.</a>
+	<div class='prod-tocatalogs-underline'>
+	</div>
+</div>
+
 <div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -23,82 +29,46 @@
 			// print_r($p2s1);
 			// print_r($p2s2);
 
-			$main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prod0;");
-			// $main_category2 = $main_category;
 			// $sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
 
-			// print_r($main_category);
-			echo "<table id='product-main-page'>";
-			echo "<td class='cat-bar'>";
-			echo "<h4><a href='../'>PRODUCT CATEGORIES</a></h4>";
-			foreach($main_category as $main_category) {
-				$s1_category = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category->m0';");
-				// print_r($main_category->m0);
-				// print_r(gettype($temp_var));
-				// print_r(sizeof($s1_category));
-				// print_r($s1_category[0]->s1);
-				if(!empty($s1_category[0]->s1)){
-					// echo "<div>";
-					echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$main_category->m0."</div>";
-					echo "<div class='custpanel'>";
-					foreach($s1_category as $s1_category) {
-						$s2_category = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE s1 = '$s1_category->s1';");
-						if(!empty($s2_category[0]->s2)){
-							echo "<div class='custaccordion'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'>&nbsp".$s1_category->s1."</div>";
-							echo "<div class='custpanel'>";
-							foreach($s2_category as $s2_category) {
-								echo "<div class='custaccordion no-sub'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s2_category->s2."</a></div>";
-							}
-							echo "</div>";  // end panel
-						} else {
-							echo "<div class='custaccordion'><a class='no-sub' href='../ps2/?m0=".$main_category->m0."&s1=".$s1_category->s1."&s2=".$s2_category->s2."'>".$s1_category->s1."</a></div>";
-						}
-					}
-					echo "</div>";  // end panel.
-				}
-				else {
-					echo "<div class='custaccordion'>".$main_category->m0."</div>";
-				}
-				// echo "<hr/>";
-				// echo "</div>";
-			}
-			echo "</td>";
+			echo "<div id='product-main-page'>";
+			echo "<div class='cat-bar'>";
+				include 'phpsnippet/productaccordion.php';
+			echo "</div>";
 			// END Main Category accordion panel.
 			//--------------
 			// Start Right column.
-			echo "<td class='prod-display'>";
+			echo "<div class='prod-display'>";
 			// echo "<h1> HELLO </h1>";
-			echo "<div class='prod-tocatalogs'>";
-				echo "<a href='../catalogs/'>Click here to view our catalogs.</a>";
-			echo "</div>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 				if($p2s2!=""){
-					echo "<div class='m-title'><a href='../pm0/?m0=".$p2m0."'>".$p2m0."</a>  >>  <a href='../ps1/?m0=".$p2m0."&s1=".$p2s1."'>".$p2s1."</a>  >>  ".$p2s2."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  <a href='../ps1/?m0=".urlencode($p2m0)."&s1=".urlencode($p2s1)."'>".stripslashes($p2s1)."</a>  >>  ".stripslashes($p2s2)."</div>";	//Title
 					$item_data_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$p2m0' AND s1='$p2s1' AND s2='$p2s2';");
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1' AND s2='$p2s2';");
 				} else {
-					echo "<div class='m-title'><a href='../pm0/?m0=".$p2m0."'>".$p2m0."</a>  >>  ".$p2s1."</div>";	//Title
+					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  ".stripslashes($p2s1)."</div>";	//Title
 					$item_data_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$p2m0' AND s1='$p2s1';");
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1';");
 				}
 				$item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-				// $s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category2->m0';");
+
 				// print_r($item_data_legend);
 				// print_r(count($item_data_legend[0]));
 				echo "<div class='s1-box-background'>";
 					echo "<div class='p2-header'>";
 						if($p2s2!=""){
-							echo "<div class='p2-title'>".$p2s2."</div>";
+							echo "<div class='p2-title'>".stripslashes($p2s2)."</div>";
 						} else {
-							echo "<div class='p2-title'>".$p2s1."</div>";
+							echo "<div class='p2-title'>".stripslashes($p2s1)."</div>";
 						}
 						echo "<div class='p2-description-txt'>".$item_data[0]->d0."</div>";
 					echo "</div>";	// end p2-header.
-					echo "<table class='p2-divider'><tr>";
+
+					echo "<div class='p2-divider'>";
 						if ($item_data_legend[0]->imgdivider != ""){
-							echo "<td class='p2-divider-img col-xs-8'><img src='".$item_data_legend[0]->imgdivider."'></td>";
+							echo "<div class='p2-divider-img'><img src='".$item_data_legend[0]->imgdivider."'></div>";
 						}
 						// echo "<td>".$item_data."</td>";
 						$certDisplay = $item_data;
@@ -113,7 +83,7 @@
 							}
 						}
 						// print_r(count($certArr));
-						echo "<td class='p2-divider-cert col-xs-4'>";
+						echo "<div class='p2-divider-cert'>";
 							for ($iCert=0; $iCert<count($certArr); $iCert++){
 								for($iCertdb = 0; $iCertdb < sizeof($item_certdb); $iCertdb++){
 									if($item_certdb[$iCertdb]->type == $certArr[$iCert]) {
@@ -121,8 +91,8 @@
 									}
 								}
 							}
-						echo "</td>";
-					echo "</tr></table>";
+						echo "</div>";
+					echo "</div>";
 					// print_r($item_data);
 					// echo count($certDisplay);
 
@@ -160,6 +130,7 @@
 					// echo "<hr/>";	// horizontal line break.
 					echo "<table class='item-data-sheet'>";
 					echo "<tr >";
+					// Labeling cells.
 					echo "<th class='col-xs'>".$item_data_legend[0]->item."</th>";
 					for ($x=1; $x < 9; $x++) {
 						$cell_data = "d".$x;
@@ -174,7 +145,28 @@
 					echo "</tr>";
 					foreach($item_data as $item_data) {
 						echo "<tr>";
-						echo "<td><a href='../item/?id=".$item_data->item."'>".$item_data->item."</a></td>";
+						echo "<td>";
+							$ipt_class = str_replace (' ','-',$item_data->item);
+							// echo $ipt_class;
+							echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."'>";
+								echo $item_data->item;
+								// $ipt_img = $item_data->img0;
+								echo "<p class='item-preview-thumb ipt-$ipt_class'>";
+									$imgCounter = 0;
+									for($i = 0; $i <= 9; $i++) {
+										$img = "img".$i;
+										if ($item_data->$img !="" && $imgCounter == 0 ) {
+											echo "<img src=".$item_data->$img.">";
+											$imgCounter++;
+											break;
+										}
+									}
+									if($imgCounter == 0) {
+											echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+									}
+								echo "</p>";
+							echo "</a>";
+						echo "</td>";
 						for ($y=1; $y<9; $y++) {
 							$cell_data2 = "d".$y;
 							if(($item_data->$cell_data2)!="") {
@@ -187,8 +179,8 @@
 			echo "</div>";
 				// $mPos++;
 			echo "</div>";  //end group-container div;
-			echo "</td>";
-			echo "</table>";
+			echo "</div>";
+			echo "</div>";
 
 			// while ( have_posts() ) : the_post();
 			//

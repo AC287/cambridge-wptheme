@@ -5,11 +5,11 @@ jQuery(document).ready(function($) {
   // $('.top-nav').click(function(){
   //   console.log('CLICKED HEHEHE');
   // })
-  console.log('Today is 9/11');
+  // console.log('Today is 9/11');
 
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
-    console.log(x.length);
+    // console.log(x.length);
     if(x.length===1){
       $('#header-rnav').addClass('responsive');
     }
@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
       $('#header-rnav').removeClass('responsive');
     }
   })
-
+/*
   $('.navi1-btn a').bind({
     mouseenter: function(){
       var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
@@ -72,26 +72,8 @@ jQuery(document).ready(function($) {
 
     return;
   }
-
+*/
   /* - - - index page - - - */
-  $('.gc-block').bind({
-    mouseenter: function(){
-      var currentClass = '.'+classSplit($(this).attr('class'))[0];
-      // console.log(currentClass);
-      var imgClass = '.'+currentClass+'-desc';
-      $(currentClass + ' img').hide();
-      $(currentClass + ' span').hide();
-      $(currentClass + '-desc').fadeIn();
-    },
-    mouseleave: function(){
-      var currentClass = '.'+classSplit($(this).attr('class'))[0];
-      // console.log(currentClass);
-      var imgClass = '.'+currentClass+'-desc';
-      $(currentClass + '-desc').hide();
-      $(currentClass + ' img').fadeIn();
-      $(currentClass + ' span').fadeIn();
-    }
-  });
 
   $('.index-midcategory').on('click', function(){
     var currentSelection = $(this).attr('data-target').split('#')[1];
@@ -165,8 +147,34 @@ for (i = 0; i < acc.length; i++) {
 //
 // }
 
+// - - - PRODUCT PS2 PAGE - - -
+// source: cssglobe.com/lab/tooltip/03/
+$('a.ipt').hover(function(e) {
+  //This function run when mouse hover.
+  xOffset = 10;
+  yOffset = 30;
+  var iptName = ".ipt-"+this.className.split(' ')[1];
+  // console.log(iptName);
+  $(iptName)
+          .css("display","block")
+          .css("top",(e.pageY - xOffset) + "px")
+          .css("left",(e.pageX + yOffset) + "px")
+          .fadeIn("fast");
+}, function (){
+  //This function run when mouse hover out.
+  var iptName2 = ".ipt-"+this.className.split(' ')[1];
+  $(iptName2).css("display","none");
+});
+$('a.ipt').mousemove(function(e) {
+  var iptName3 = ".ipt-"+this.className.split(' ')[1];
+  $(iptName3)
+      .css("top",(e.pageY - xOffset) + "px")
+      .css("left",(e.pageX + yOffset) + "px");
+});
+
 // --- THIS IS FOR PRODUCT MAIN PAGE ---
 var displayExtra = $('.display-extra');
+// var prodChev = $('.show-hide .sh-chev img');
 var i;
 for (i=0; i< displayExtra.length; i++) {
   displayExtra[i].onclick = function () {
@@ -175,18 +183,22 @@ for (i=0; i< displayExtra.length; i++) {
       currentStatus[0] = 'HIDE';
       currentStatus.splice(1,1);
       this.innerHTML = currentStatus.join(' ');
+      // This toggle chevron icon.
+      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_up_blue.png');
     }
     else {
       currentStatus[0] = 'SHOW';
       currentStatus.splice(1,0,'ALL');
       this.innerHTML = currentStatus.join(' ');
+      // This toggle chevron icon.
+      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png');
     }
     var displayAll = $('.'+this.classList[1]);
     displayAll.each(function(index,object){
       if(($(this).css('display'))=='none'){
-        $(this).css('display','inline-block');
+        $(this).css('display','block');
       }
-      else if (($(this).css('display')=='inline-block') && $(this).hasClass('extra-box')){
+      else if (($(this).css('display')=='block') && $(this).hasClass('extra-box')){
         $(this).css('display','none');
       }
     })
@@ -194,6 +206,13 @@ for (i=0; i< displayExtra.length; i++) {
   // displayExtra[i].onclick = function () {
   //
   // }
+}
+
+/* - - - PRODUCT MAIN PAGE FLEX WRAP SCRIPT - - - */
+var $s1BoxFlexContainer = $('.s1-box-flex-container');
+// console.log($s1BoxFlexContainer.length);
+for(var j=0; j<$s1BoxFlexContainer.length; j++){
+  // console.log($($s1BoxFlexContainer[j]).children().length)
 }
 
 // --- THIS IS FOR ITEM PAGE ---
@@ -208,7 +227,8 @@ imgThumb.click(function(){
     // console.log(index);
     $(this).css('display','none');
   })
-  $('.main-view-lg.main-'+getClickedClass).css('display','initial');
+  var curThumbDisplay = '.img-content-box .main-' + getClickedClass;
+  $(curThumbDisplay).css('display','initial');
 })
 var ipClickedImg = $('.main-view-lg');
 ipClickedImg.click(function(){
@@ -222,6 +242,10 @@ $('.ip-close').click(function(){
   $('.ip-modal').css('display','none');
   $('.ip-slides').css('display','none');
 })
+
+
+// - - - #replace this with slick plugin (fail. need revision) - - -
+
 var clickToNext = $('.ip-slides');
 // console.log(clickToNext.length);
 clickToNext.click(function(){
@@ -253,7 +277,7 @@ clickToNext.click(function(){
         i = 0;
       }
       if($('.modal-img'+i).length!=0){
-        console.log(i);
+        // console.log(i);
         $('.modal-img'+i).css('display','block');
         break;
       }
@@ -262,18 +286,16 @@ clickToNext.click(function(){
 
 
   // console.log(clickToNext.length);
-  /*
-    # Will need to revise. If there are missing image at specific, it will stuck.
-  */
+    // # Will need to revise. If there are missing image at specific, it will stuck.
   // Image has 9 cells: img0 - img9.
-  /*var nextIndex = getClickedIndex+1;
-  if($('.modal-img'+nextIndex)!=""){
-    $('.modal-img'+nextIndex).css('display','block');
-  } else {
-    for ( var i=getClickedIndex; i <=9; i++){
-    // #Do while loop
-    }
-  }*/
+  // var nextIndex = getClickedIndex+1;
+  // if($('.modal-img'+nextIndex)!=""){
+  //   $('.modal-img'+nextIndex).css('display','block');
+  // } else {
+  //   for ( var i=getClickedIndex; i <=9; i++){
+  //   // #Do while loop
+  //   }
+  // }
 
   // if(getClickedIndex == clickToNext.length-1){
   //   $('.modal-img0').css('display','block');
@@ -283,6 +305,14 @@ clickToNext.click(function(){
   // }
 })
 
+/* // - - - Slick code for modal section - - - */
+// $('.ip-modal-content').slick({
+//   // dots: true,
+//   infinite: true,
+//   speed: 500,
+//   fade: true,
+//   cssEase: 'linear'
+// });
 /*
 - - - TEAM PAGE - - -
 */
@@ -327,21 +357,27 @@ $('.team-salesmanager-each img').bind({
 $('.career-open-expand a').click(function(){
   // console.log($(this).attr('id'));
   var clickedclass = '.'+$(this).attr('id');
-  var clickedID = '#'+$(this).attr('id');
-  var clickedclassHeight = $(clickedclass).height();
-  var clickedHeightInner = $( clickedclass + ' .career-open-each').height();
-  // console.log(typeof(clickedHeight));
-  if (clickedclassHeight > 150){
-    $(clickedclass).css({
-      'height': '150px',
-    })
-    $(clickedID).text('Click to expand');
-  } else {
-    $(clickedclass).css({
-      'height': clickedHeightInner+'px',
-    })
-    $(clickedID).text('Hide');
-  }
+  // var clickedID = '#'+$(this).attr('id');
+  // var clickedclassHeight = $(clickedclass).height();
+  // var clickedHeightInner = $( clickedclass + ' .career-open-each').height();
+  // // console.log(typeof(clickedHeight));
+  // if (clickedclassHeight > 150){
+  //   $(clickedclass).css({
+  //     'height': '150px',
+  //   })
+  //   $(clickedID).text('Click to expand');
+  // } else {
+  //   $(clickedclass).css({
+  //     'height': clickedHeightInner+'px',
+  //   })
+  //   $(clickedID).text('Hide');
+  // }
+  $(clickedclass).css('display','block');
+
+  $('.career-close').click(function(){
+    $('.career-modal').css('display','none');
+    $(displayingPerson).css('display','none');
+  })
 })
 
 /* - - - catalog initial load - - - */
@@ -356,7 +392,7 @@ $('.catalog-custbtn').each(function(index){
 });
 /* - - - catalog click effect - - - */
 $('.catalog-custbtn').click(function(){
-  console.log($(this).children('input').attr('id'));
+  // console.log($(this).children('input').attr('id'));
   var clickedClass = $(this).children('input').attr('id');
   $('.catalog-thumbinner').each(function(index){
     // console.log(index+" "+clickedClass);
@@ -388,9 +424,34 @@ $(document).keydown(function(e){
     $('.ip-slides').css('display','none');
     $('.team-modal').css('display', 'none');
     $('.team-modal-content').css('display','none');
+    $('.career-modal').css('display','none');
   }
 })
 
+/* - - - tradeshows page archive height - - - */
+checkSize();
+$(window).resize(checkSize);
+
+function checkSize() {
+  var alltradeshowsSize = $('.tradeshowspage').height()+'px';
+  $('.tradeshows-archive-col').css('min-height', alltradeshowsSize);
+
+  if($('.tradeshows-archive-col').css('float')=='none') {
+    // console.log(alltradeshowsSize);
+    $('.tradeshows-archive-col').css('min-height','100%');
+  }
+}
+
+/* - - - slick plugin - - - */
+
+$('.img-thumbnail-section').slick({
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1
+});
+console.log('I am working on slick plugin... 2/21 @ 11:25');
 })
 
 // console.log('JS is fully functional.');
