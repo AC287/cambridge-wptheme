@@ -1,4 +1,12 @@
 <?php
+
+  /*
+    NOTES:
+      This is a manual input.
+      If new page or section is added, you will need to enter manually append below switch/case statement.
+      Then update cammetadesc spreadsheet. 
+  */
+
   // print_r($curLocationArr);
   global $wp_query, $wpdb;
 
