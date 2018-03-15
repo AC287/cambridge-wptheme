@@ -48,7 +48,7 @@
                       <a class="home" href="<?php echo home_url();?>">
                         <div class="header-navi-title">HOME</div>
                         <?php
-                          if(count($curLocationArr) <= 1){
+                          if(count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))){
                             // echo"THIS IS TRUE";
                             $display = "block";
                           } else {
