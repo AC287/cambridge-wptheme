@@ -9,7 +9,7 @@
       $curLocation = $_SERVER['REQUEST_URI'];
       $curLocationArr = array_filter(explode('/',$curLocation));
     ?>
-    <title>Cambridge Resources</title>
+    <!-- <title>Cambridge Resources</title> -->
     <?php include 'phpsnippet/titletag.php';?>
   </head>
 
