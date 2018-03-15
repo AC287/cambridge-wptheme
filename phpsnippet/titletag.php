@@ -17,7 +17,7 @@
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='products';");
       switch ($curLocationArr) {
 
-        case (count($curLocationArr) <=2):
+        case (count($curLocationArr) <=2 && in_array('products',$curLocationArr)):
           echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
         break;
 
