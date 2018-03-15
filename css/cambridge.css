@@ -201,7 +201,7 @@ a.s-icon {
 }
 .navi1-btn a .header-navi-selector {
   /*content: "";*/
-  display: none;
+  /* display: none; */
   /*display: block;*/
   margin: 0 auto;
   width: 30px;
@@ -217,6 +217,10 @@ a.s-icon {
   /*margin-top: 0;*/
   /*text-align: center;*/
   /*padding-bottom: 5px;*/
+}
+.navi1-btn a:hover .header-navi-selector{
+  display: block !important;
+  /* background-color: red; */
 }
 .tn2-overall-table {
   margin: 0;

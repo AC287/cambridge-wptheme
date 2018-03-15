@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
       $('#header-rnav').removeClass('responsive');
     }
   })
-
+/*
   $('.navi1-btn a').bind({
     mouseenter: function(){
       var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
@@ -72,7 +72,7 @@ jQuery(document).ready(function($) {
 
     return;
   }
-
+*/
   /* - - - index page - - - */
 
   $('.index-midcategory').on('click', function(){

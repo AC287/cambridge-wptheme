@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title><?php bloginfo('name');?></title> -->
     <?php wp_head(); ?>
-    <title>Cambridge Resources</title>
+    <?php
+      $curLocation = $_SERVER['REQUEST_URI'];
+      $curLocationArr = array_filter(explode('/',$curLocation));
+    ?>
+    <!-- <title>Cambridge Resources</title> -->
+    <?php include 'phpsnippet/titletag.php';?>
   </head>
 
   <body>
@@ -42,31 +47,84 @@
                       <a class="header-navicon">&#9776;</a>
                       <a class="home" href="<?php echo home_url();?>">
                         <div class="header-navi-title">HOME</div>
-                        <div class="header-navi-selector"></div>
+                        <?php
+                          if(count($curLocationArr) <= 1){
+                            // echo"THIS IS TRUE";
+                            $display = "block";
+                          } else {
+                            // echo"FALSE";
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
+                        <!-- <div class="header-navi-selector"></div> -->
                       </a>
                       <a class="products" href="<?php echo home_url();?>/products/">
                         <div class="header-navi-title">PRODUCTS</div>
-                        <div class="header-navi-selector"></div>
+                        <!-- <div class="header-navi-selector"></div> -->
+                        <?php
+                          if(in_array('products',$curLocationArr)){
+                            $display = "block";
+                          } else {
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
                       </a>
                       <a class="about" href="<?php echo home_url();?>/about/">
                         <div class="header-navi-title">ABOUT</div>
-                        <div class="header-navi-selector"></div>
+                        <?php
+                          if(in_array('about',$curLocationArr)){
+                            $display = "block";
+                          } else {
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
                       </a>
                       <a class="team" href="<?php echo home_url();?>/team/">
                         <div class="header-navi-title">OUR TEAM</div>
-                        <div class="header-navi-selector"></div>
+                        <?php
+                          if(in_array('team',$curLocationArr)){
+                            $display = "block";
+                          } else {
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
                       </a>
                       <a class="brands" href="<?php echo home_url();?>/brands/">
                         <div class="header-navi-title">BRANDS</div>
-                        <div class="header-navi-selector"></div>
+                        <?php
+                          if(in_array('brands',$curLocationArr)){
+                            $display = "block";
+                          } else {
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
                       </a>
                       <a class="career" href="<?php echo home_url();?>/career/">
                         <div class="header-navi-title">CAREER</div>
-                        <div class="header-navi-selector"></div>
+                        <?php
+                          if(in_array('career',$curLocationArr)){
+                            $display = "block";
+                          } else {
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
                       </a>
                       <a class="contact" href="<?php echo home_url();?>/contact/">
                         <div class="header-navi-title">CONTACT</div>
-                        <div class="header-navi-selector"></div>
+                        <?php
+                          if(in_array('contact',$curLocationArr)){
+                            $display = "block";
+                          } else {
+                            $display = "none";
+                          }
+                          echo "<div class='header-navi-selector' style='display:".$display."'></div>";
+                        ?>
                       </a>
                     </div>
                   </div>  <!-- end col-sm-12  -->
