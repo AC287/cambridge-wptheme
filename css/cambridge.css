@@ -926,7 +926,7 @@ a.s-icon {
   height: 100%;
 }
 .s1-box {
-  width: 150px;
+  /* width: 175px; */
   height: 200px;
   /*display: inline-block;*/
   /*margin: 0 auto;*/
@@ -937,6 +937,26 @@ a.s-icon {
   padding: 20px 0px 20px 0px;
   text-align: center;
   /*float: right;*/
+}
+@media screen and (min-width: 1200px) {
+  .s1-box {
+    width: 175px;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 1199px){
+  .s1-box {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .s1-box-filler {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 400px){
+  .s1-box {
+    width: 125px;
+  }
 }
 .s1-cat {
   font-family: 'Questrial', sans-serif;
@@ -952,7 +972,7 @@ a.s-icon {
 }
 .show-hide {
   margin-left: 20px;
-  /*padding-top: 20px;*/
+  padding-top: 20px;
 }
 .sh-chev {
   /*padding-bottom: 10px;*/

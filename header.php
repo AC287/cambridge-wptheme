@@ -8,16 +8,17 @@
     <?php
       $curLocation = $_SERVER['REQUEST_URI'];
       $curLocationArr = array_values(array_filter(explode('/',$curLocation)));
+      //Split string at "/" and make the string into array. array_filter remove empty array element. array_values restructure array.
       // print_r($_SERVER);
       if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){   //Set whether this is dev or live.
         $local=True;
         // array_splice($curLocationArr, 0, 1); // This removes local 1st folder path.
         unset($curLocationArr[0]);
         $curLocationArr = array_values($curLocationArr);
-        print_r($curLocationArr);
+
       } else {
         $local=False;
-        print_r($curLocationArr);
+
       }
 
       for($x=0; $x < count($curLocationArr); $x++){
@@ -25,7 +26,6 @@
           $curLocationArr[$x] = (int)$curLocationArr[$x];
         }
       }
-      print_r($curLocationArr);
 
 
     ?>
