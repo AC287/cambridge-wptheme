@@ -7,11 +7,13 @@
     <?php wp_head(); ?>
     <?php
       $curLocation = $_SERVER['REQUEST_URI'];
-      $curLocationArr = array_filter(explode('/',$curLocation));
+      $curLocationArr = array_values(array_filter(explode('/',$curLocation)));
       // print_r($_SERVER);
       if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){   //Set whether this is dev or live.
         $local=True;
-        array_splice($curLocationArr, 0, 1); // This removes local 1st folder path.
+        // array_splice($curLocationArr, 0, 1); // This removes local 1st folder path.
+        unset($curLocationArr[0]);
+        $curLocationArr = array_values($curLocationArr);
         print_r($curLocationArr);
       } else {
         $local=False;
