@@ -13,14 +13,6 @@
   // switch ($curLocationArr) {
   switch (true) {
 
-    // case (count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))):
-    case ($local && count($curLocationArr)==1):
-      //GET HOME TITLE & META DESC TAG for local dev.
-      $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
-      echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
-      echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
-    break;
-
     case (empty($curLocationArr)):
       //GET HOME TITLE & META DESC TAG for live site.
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
@@ -90,11 +82,22 @@
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
-    case (in_array('tradeshows', $curLocationArr) && count($curLocationArr) >= 2):
+    case (in_array('tradeshows', $curLocationArr)):
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='tradeshows';");
       echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
+    case(count($curLocationArr)==3 && (gettype($curLocationArr[0])=='integer' && gettype($curLocationArr[1]=='integer'))):
+      $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='tradeshows';");
+      echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
+      echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
+    break;
+
+    default:
+    $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
+    echo "<title>Cambridge Resources</title>";
+    echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
+    break;
   }
 ?>

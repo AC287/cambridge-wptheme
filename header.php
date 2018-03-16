@@ -11,9 +11,16 @@
       // print_r($_SERVER);
       if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){   //Set whether this is dev or live.
         $local=True;
+        array_splice($curLocationArr, 0, 1); // This removes local 1st folder path.
       } else {
         $local=False;
       }
+      for($x=0; $x < count($curLocationArr); $x++){
+        if((int)$curLocationArr[$x]!=0) {
+          $curLocationArr[$x] = (int)$curLocationArr[$x];
+        }
+      }
+
     ?>
 
     <?php include 'phpsnippet/titletag.php';?>
@@ -50,18 +57,18 @@
                       <a class="home" href="<?php echo home_url();?>">
                         <div class="header-navi-title">HOME</div>
                         <?php
-                          if($local && count($curLocationArr) == 1) {
-                            // This is local dev.
+                          // if($local && count($curLocationArr) == 1) {
+                          //   // This is local dev.
+                          //   $display = "block";
+                          // } else {
+                          //   // This is live.
+                          // }
+                          if(empty($curLocationArr)){
+                            // echo"THIS IS TRUE";
                             $display = "block";
                           } else {
-                            // This is live.
-                            if(empty($curLocationArr)){
-                              // echo"THIS IS TRUE";
-                              $display = "block";
-                            } else {
-                              // echo"FALSE";
-                              $display = "none";
-                            }
+                            // echo"FALSE";
+                            $display = "none";
                           }
                           echo "<div class='header-navi-selector' style='display:".$display."'></div>";
                         ?>
@@ -173,7 +180,7 @@
               <form action='<?php echo home_url();?>/search' method='get' autocomplete="off">
                 <span class="glyphicon glyphicon-search nav2-search-icon"></span>
                 <span class="nav2-search-txt">PRODUCT SEARCH</span>
-                <input name="isearch" type="text" class="search-field" placeholder="KEYWORD / PHRASE / PART#"></input>
+                <input name="isearch" type="text" class="search-field" placeholder="KEYWORD / PHRASE / PART#" required></input>
                 <input type="submit" style="display:none"/>
               </form>
             </div>
