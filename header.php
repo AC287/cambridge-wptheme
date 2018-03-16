@@ -20,6 +20,8 @@
           $curLocationArr[$x] = (int)$curLocationArr[$x];
         }
       }
+      print_r($curLocationArr);
+      
 
     ?>
 
