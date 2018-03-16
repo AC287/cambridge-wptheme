@@ -12,16 +12,19 @@
       if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){   //Set whether this is dev or live.
         $local=True;
         array_splice($curLocationArr, 0, 1); // This removes local 1st folder path.
+        print_r($curLocationArr);
       } else {
         $local=False;
+        print_r($curLocationArr);
       }
+
       for($x=0; $x < count($curLocationArr); $x++){
         if((int)$curLocationArr[$x]!=0) {
           $curLocationArr[$x] = (int)$curLocationArr[$x];
         }
       }
       print_r($curLocationArr);
-      
+
 
     ?>
 
