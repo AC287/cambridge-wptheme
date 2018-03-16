@@ -5,7 +5,6 @@ jQuery(document).ready(function($) {
   // $('.top-nav').click(function(){
   //   console.log('CLICKED HEHEHE');
   // })
-  // console.log('Today is 9/11');
 
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
@@ -444,14 +443,14 @@ function checkSize() {
 
 /* - - - slick plugin - - - */
 
-$('.img-thumbnail-section').slick({
-  dots: false,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 1
-});
-console.log('I am working on slick plugin... 2/21 @ 11:25');
+  $('.img-thumbnail-section').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  });
+  
 })
 
 // console.log('JS is fully functional.');

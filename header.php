@@ -8,15 +8,19 @@
     <?php
       $curLocation = $_SERVER['REQUEST_URI'];
       $curLocationArr = array_filter(explode('/',$curLocation));
+      // print_r($_SERVER);
+      if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){   //Set whether this is dev or live.
+        $local=True;
+      } else {
+        $local=False;
+      }
     ?>
-    <!-- <title>Cambridge Resources</title> -->
+
     <?php include 'phpsnippet/titletag.php';?>
   </head>
 
   <body>
-    <!-- <div id="css-test">
-      <span>HELLO</span>
-    </div> -->
+
     <div id="all-container">
       <div class="top-nav">
         <div class="container">
@@ -28,8 +32,6 @@
               <div class="tn-inner-table">
                 <div class="row">
                   <div class="col-sm-12">
-                    <!-- <span class="glyphicon glyphicon-earphone ph-icon" aria-hidden="true"></span> -->
-                    <!-- <span class="navi-ph">877.922.2538</span> -->
                     <a class="s-icon" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cambridgeresources/">
                       <span class="fa fa-facebook-official"></span>
                     </a>
@@ -48,23 +50,26 @@
                       <a class="home" href="<?php echo home_url();?>">
                         <div class="header-navi-title">HOME</div>
                         <?php
-                          // if(count($curLocationArr) <= 1 || empty($curLocationArr)){
-                          if(empty($curLocationArr)){
-                            // echo"THIS IS TRUE";
+                          if($local && count($curLocationArr) == 1) {
+                            // This is local dev.
                             $display = "block";
                           } else {
-                            // echo"FALSE";
-                            $display = "none";
+                            // This is live.
+                            if(empty($curLocationArr)){
+                              // echo"THIS IS TRUE";
+                              $display = "block";
+                            } else {
+                              // echo"FALSE";
+                              $display = "none";
+                            }
                           }
                           echo "<div class='header-navi-selector' style='display:".$display."'></div>";
                         ?>
-                        <!-- <div class="header-navi-selector"></div> -->
                       </a>
                       <a class="products" href="<?php echo home_url();?>/products/">
                         <div class="header-navi-title">PRODUCTS</div>
-                        <!-- <div class="header-navi-selector"></div> -->
                         <?php
-                          if(in_array('products',$curLocationArr)){
+                          if(in_array('products',$curLocationArr) || in_array('search',$curLocationArr)){
                             $display = "block";
                           } else {
                             $display = "none";
