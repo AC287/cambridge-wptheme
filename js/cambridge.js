@@ -152,8 +152,10 @@ $('a.ipt').hover(function(e) {
   //This function run when mouse hover.
   xOffset = 10;
   yOffset = 30;
-  var iptName = ".ipt-"+this.className.split(' ')[1];
-  // console.log(iptName);
+  var iptName = ".ipt-"+this.className.split('ipt ')[1];
+  // var iptName = this.className.split('ipt ')[1];
+  // var iptName = (iptName.split(/[^A-Za-z0-9]/)).join('');
+  console.log(iptName);
   $(iptName)
           .css("display","block")
           .css("top",(e.pageY - xOffset) + "px")
@@ -450,7 +452,7 @@ function checkSize() {
     slidesToShow: 3,
     slidesToScroll: 1
   });
-  
+
 })
 
 // console.log('JS is fully functional.');

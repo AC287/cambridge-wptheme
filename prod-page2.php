@@ -146,7 +146,9 @@
 					foreach($item_data as $item_data) {
 						echo "<tr>";
 						echo "<td>";
-							$ipt_class = str_replace (' ','-',$item_data->item);
+							$ipt_class = str_replace (' ','',$item_data->item);
+							$ipt_class = str_replace ('/','',$ipt_class);
+							$ipt_class = str_replace ('-','',$ipt_class);
 							// echo $ipt_class;
 							echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."'>";
 								echo $item_data->item;
