@@ -26,7 +26,7 @@
       $args = array(
         'nopaging'=>false,
         'paged'=>$paged,
-        'posts_per_page' =>2,
+        'posts_per_page' =>5,
         'post_type' => 'post',
         // 'ignore_sticky_posts' => 1,
         // 'year'  => date('Y'),
@@ -39,9 +39,9 @@
 
       if ( $the_query->have_posts() ) :
 
+
         // previous_posts_link('<< Newer Entries');
-        previous_posts_link('<< Newer Entries');
-        next_posts_link('Older Entries>>', $the_query->max_num_pages);
+        // next_posts_link('Older Entries>>', $the_query->max_num_pages);
 
         while ( $the_query->have_posts() ) : $the_query->the_post();
         echo "<div class='allpost-link-container'>";
@@ -78,8 +78,14 @@
         //     // 'type' => 'list'
         //   ));
         // echo "</div>";
-        previous_posts_link('<< Newer Entries');
-        next_posts_link('Older Entries>>', $the_query->max_num_pages);
+        echo "<div class='tradeshows-old-new'>";
+          echo "<div class='ton-new'>";
+            previous_posts_link('<span class="glyphicon glyphicon-chevron-left"></span> Newer Entries');
+          echo "</div>";
+          echo "<div class='ton-old'>";
+            next_posts_link('Older Entries <span class="glyphicon glyphicon-chevron-right"></span>', $the_query->max_num_pages);
+          echo "</div>";
+        echo "</div>";
       endif;
 
       wp_reset_postdata();
