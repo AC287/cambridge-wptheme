@@ -155,7 +155,7 @@ $('a.ipt').hover(function(e) {
   var iptName = ".ipt-"+this.className.split('ipt ')[1];
   // var iptName = this.className.split('ipt ')[1];
   // var iptName = (iptName.split(/[^A-Za-z0-9]/)).join('');
-  console.log(iptName);
+  // console.log(iptName);
   $(iptName)
           .css("display","block")
           .css("top",(e.pageY - xOffset) + "px")
