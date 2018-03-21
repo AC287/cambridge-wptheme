@@ -158,31 +158,33 @@
       <div class="top-nav2">
         <div class="container">
           <div class="tn2-overall-table" href="<?php echo home_url();?>/brands/">
-            <a href="<?php echo home_url();?>/brands/">
+            <div class="header-brands-navi">
               <div class="nav2">
-                <span>OUR BRANDS</span>
+                <a href="<?php echo home_url();?>/brands/">
+                  <span>OUR BRANDS</span>
+                </a>
               </div>
               <div class="nav2-logo nav2-coda">
                 <a href="http://www.codaresources.com/" target="_blank" rel="noopener noreferrer">
-                <img src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" height="25px">
+                  <img src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-amram">
                 <a href="" target="_blank" rel="noopener noreferrer">
-                <img src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" height="15px">
+                  <img src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-ldr">
                 <a href="http://www.ldrind.com/" target="_blank" rel="noopener noreferrer">
-                <img src="<?php bloginfo('template_directory')?>/images/brands/ldr_logo.png" height="20px">
+                  <img src="<?php bloginfo('template_directory')?>/images/brands/ldr_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-pipedecor">
                 <a href="http://pipe-decor.com/" target="_blank" rel="noopener noreferrer">
-                <img src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" height="9px">
+                  <img src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" >
                 </a>
               </div>
-            </a>
+            </div>
             <div class="nav2-search">
               <form action='<?php echo home_url();?>/search' method='get' autocomplete="off">
                 <span class="glyphicon glyphicon-search nav2-search-icon"></span>

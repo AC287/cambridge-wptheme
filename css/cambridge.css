@@ -225,11 +225,26 @@ a.s-icon {
 .tn2-overall-table {
   margin: 0;
   width: 100%;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .top-nav2 {
   padding-top: 5px;
   padding-bottom: 5px;
   /*display: inline-block;*/
+}
+.header-brands-navi {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: flex-start;
 }
 .nav2 {
   font-family: 'bignoodletitlingregular';
@@ -240,23 +255,38 @@ a.s-icon {
   float: left;
   padding-top: 14px;
   padding-bottom: 5px;
+  margin-right: 10px;
+}
+.nav2 a {
+  text-decoration: none;
 }
 .nav2-logo {
-  display: block;
-  float: left;
+  /* display: block;
+  float: left; */
+  margin: 0px 10px 0px 10px;
 }
-.nav2-logo {
-  /*text-decoration: none;*/
-  padding-left: 20px;
-}
+
 /*.nav2,
 .nav2-logo:not(.nav2-coda) {
   padding-top: 15px;
   padding-bottom: 5px;
 }*/
 
+.nav2-coda a img {
+  height: 25px;
+}
+.nav2-amram a img {
+  height: 12px;
+}
+.nav2-ldr a img {
+  height: 20px;
+}
+.nav2-pipedecor a img {
+  height: 9px;
+}
+
 .nav2-coda, .nav2-amram, .nav2-ldr, .nav2-pipedecor {
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .nav2-search {
@@ -290,6 +320,41 @@ a.s-icon {
   border: none;
   background-color: #F2F2F2;
   height: 35px;
+}
+
+@media screen and (max-width: 420px) {
+  .nav2 {
+    /* font-size: 8pt; */
+    letter-spacing: 0pt;
+    padding-top: 11px;
+  }
+  .nav2-logo a {
+    text-decoration: none;
+  }
+  .nav2-cambridge a img {
+    height: 20px;
+  }
+  .nav2-amram a img {
+    height: 9.6px;
+  }
+  .nav2-ldr a img {
+    height: 16px;
+  }
+  .nav2-pipedecor a img {
+    height: 7.2px;
+  }
+  .nav2-coda, .nav2-amram, .nav2-ldr, .nav2-pipedecor {
+    padding-top: 5px;
+  }
+  .nav2-search-txt {
+    display: none;
+  }
+  .search-field {
+    width: 250px;
+  }
+  .nav2-search-icon {
+    margin-right: 10px;
+  }
 }
 
 /*--  site footer --*/
