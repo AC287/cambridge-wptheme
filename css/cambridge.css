@@ -2315,11 +2315,29 @@ a.spec-sheet {
   font-size: 12pt;
   color: #073DA5;
 }
+.contact-phaddress-ph {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+}
 .contact-phaddress-ph span {
   padding: 0 10px 0 10px;
 }
 .contact-phaddress-address p {
   margin: 0;
+}
+.contact-phaddress-address p strong {
+  -webkit-text-stroke: 0.5px;
+}
+@media screen and (max-width: 750px) {
+  .contact-container {
+    width: 80%;
+  }
 }
 .contact-salesmanager {
   /*padding-top: 50px;*/

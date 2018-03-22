@@ -102,7 +102,7 @@
     <div class='contact-salesmanager-container'>
       <?php
         global $wpdb;
-        $salesmanager = $wpdb->get_results("SELECT * FROM wp_salesmanager ORDER BY sort ASC;");
+        $salesmanager = $wpdb->get_results("SELECT * FROM wp_camsalesmanager ORDER BY sort ASC;");
         foreach ($salesmanager as $salesmanager1){
           echo "<div class='contact-salesmanager-each'>";
             echo "<div class='contact-salesmanager-img'>";
