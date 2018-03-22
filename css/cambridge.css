@@ -425,12 +425,26 @@ a.s-icon {
 }
 .footer-socialmedia {
   float: right;
+  display: inline-block;
   /*padding-right: 15px;*/
+}
+.copyright {
+  display: inline-block;
+  padding-top: 5px;
 }
 
 @media screen and (max-width: 1000px) {
   .footer1-inner-right, .footer1-inner-left {
     float: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .copyright p {
+    font-size: 7pt;
+  }
+  .copyright {
+    padding-top: 10px;
   }
 }
 
@@ -1437,16 +1451,27 @@ a.spec-sheet {
   /* align: middle; */
 }
 .about-beginning-title {
-  position: absolute;
-  /* z-index: 3; */
-  /* top: 0%; */
-  top: 0;
+ /* position: absolute;
+ top: 0;
  bottom: 0;
  left: 0;
  right: 0;
  width: 50%;
  height: 25%;
- margin: auto;
+ margin: auto; */
+ position: absolute;
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ top: 0%;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0,0,0,0.1);
+ text-align: center;
 }
 .index-title1 {
   text-align: center;
@@ -1555,11 +1580,23 @@ a.spec-sheet {
   /*padding-top: 50px;*/
   padding-bottom: 50px;
 }
-.about-hvac, .about-plumbing {
+/* .about-hvac, .about-plumbing {
+  background-color: #f2f2f2;
+} */
+
+.about-cat {
+  padding: 40px 0px 40px 0px;
+}
+.about-cat .container {
+  text-align: center;
+}
+.about-cat:nth-of-type(even) {
   background-color: #f2f2f2;
 }
 .about-cat-img {
-  padding: 20px;
+  padding: 0px 10px 0px 10px;
+  vertical-align: top;
+  display: inline-block;
   /* overflow: hidden; */
 }
 .about-cat-img img {
@@ -1567,15 +1604,21 @@ a.spec-sheet {
   /* max-height: 400px; */
   height: auto;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
+  .about-cat-img {
+    padding: 0px;
+  }
   .about-cat-img img {
-    width: 300px;
+    width: 280px;
   }
 }
 .about-cat-desc {
-  padding: 20px 20px 20px 20px;
-  /*display: inline-block;*/
-  vertical-align: middle;
+  padding: 0px 20px 0px 20px;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 500px;
+  text-align: left;
+  /* vertical-align: middle; */
 }
 .about-cat-title {
   font-family: 'bignoodletitlingregular';
@@ -1587,12 +1630,18 @@ a.spec-sheet {
   font-size: 16px;
   /*border-bottom: 2px solid #fff;*/
 }
-.about-hvac .about-cat-txt-main,
+/* .about-hvac .about-cat-txt-main,
 .about-plumbing .about-cat-txt-main {
   border-bottom: 1px solid #fff;
+} */
+.about-cat:nth-of-type(even) .about-cat-txt-main {
+  border-bottom: 1px solid #fff;
 }
-.about-electrical .about-cat-txt-main,
+/* .about-electrical .about-cat-txt-main,
 .about-automotive .about-cat-txt-main {
+  border-bottom: 1px solid #e6e6e6;
+} */
+.about-cat:nth-of-type(odd) .about-cat-txt-main {
   border-bottom: 1px solid #e6e6e6;
 }
 .about-cat-txt-tags {
@@ -1607,8 +1656,10 @@ a.spec-sheet {
   padding-bottom: 20px;
 }
 .about-4info-block {
-  padding-left: 30px;
-  padding-right: 30px;
+  width: 250px;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
 }
 .about-4info-img {
   margin-bottom: 20px;
@@ -1622,6 +1673,7 @@ a.spec-sheet {
 }
 .about-4info-title {
   padding: 5px;
+  min-width:
   margin: 0px 10px 0px 10px;
   height: 65px;
   /*width: 100px;*/
@@ -1710,7 +1762,7 @@ a.spec-sheet {
   position: relative;
   width: 11.11%;
   height: 25vh;
-  min-height: 250px;
+  min-height: 300px;
   color: #fff;
   overflow: hidden;
   -webkit-transition: width 0.5s ease;
@@ -1731,7 +1783,8 @@ a.spec-sheet {
 }
 .about-tl-item:after {
   /*background: rgba(3, 22, 37, 0.85);*/
-  background: #0d1778;
+  /* background: #0d1778; */
+  background-color: #c4c4c4;
   opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
@@ -1769,6 +1822,11 @@ a.spec-sheet {
   -webkit-transition: all 0.75s ease 0.5s;
           transition: all 0.75s ease 0.5s;
 }
+.about-tl-item:hover .about-tl-year p {
+  margin-top: 16px;
+  line-height: 3rem;
+
+}
 .about-tl-item:hover .about-tl-content {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -1788,7 +1846,7 @@ a.spec-sheet {
   z-index: 1;
   text-align: center;
   /* margin: 0 1.618em; */
-  /* top: 50%; */
+  top: 50%;
   opacity: 0;
   /* font-size: 14pt; */
 }
@@ -1804,11 +1862,15 @@ a.spec-sheet {
 }
 .about-tl-year p {
   /*font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;*/
-  font-family: 'bignoodletitlingregular';
-  font-size: 1.9rem;
+  font-family: 'bignoodletitlingregular', cursive;
+  /* font-size: 1.9rem; */
+  font-size: 20pt;
   text-align: center;
   /*line-height: 2rem;*/
   margin: 10px 0px 5px 0px;
+}
+.about-tl-item .about-tl-bg {
+  background-color: #003DA5;
 }
 .about-tl-bg {
   -webkit-transform: translate3d(0, 0, 0);
@@ -1828,8 +1890,14 @@ a.spec-sheet {
           filter: grayscale(100%);
 }
 
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1301px) {
+  .about-tl-content {
+    top: 40%;
+    padding: 1.5em;
+    font-size: 14pt;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
   .about-tl-content {
     top: 50%;
     padding: 1.5em;
@@ -1849,6 +1917,15 @@ a.spec-sheet {
     top: 38%;
     padding: 10px;
     font-size: 8pt;
+  }
+}
+@media screen and (max-width: 450px) {
+  .about-tl-item {
+    min-height: 350px;
+  }
+  .about-tl-year p {
+    font-size: 10pt;
+    line-height: 12pt;
   }
 }
 
