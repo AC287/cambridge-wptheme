@@ -1437,16 +1437,27 @@ a.spec-sheet {
   /* align: middle; */
 }
 .about-beginning-title {
-  position: absolute;
-  /* z-index: 3; */
-  /* top: 0%; */
-  top: 0;
+ /* position: absolute;
+ top: 0;
  bottom: 0;
  left: 0;
  right: 0;
  width: 50%;
  height: 25%;
- margin: auto;
+ margin: auto; */
+ position: absolute;
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -webkit-flex;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ top: 0%;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0,0,0,0.1);
+ text-align: center;
 }
 .index-title1 {
   text-align: center;
@@ -1555,11 +1566,23 @@ a.spec-sheet {
   /*padding-top: 50px;*/
   padding-bottom: 50px;
 }
-.about-hvac, .about-plumbing {
+/* .about-hvac, .about-plumbing {
+  background-color: #f2f2f2;
+} */
+
+.about-cat {
+  padding: 40px 0px 40px 0px;
+}
+.about-cat .container {
+  text-align: center;
+}
+.about-cat:nth-of-type(even) {
   background-color: #f2f2f2;
 }
 .about-cat-img {
-  padding: 20px;
+  padding: 0px 10px 0px 10px;
+  vertical-align: top;
+  display: inline-block;
   /* overflow: hidden; */
 }
 .about-cat-img img {
@@ -1567,15 +1590,21 @@ a.spec-sheet {
   /* max-height: 400px; */
   height: auto;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
+  .about-cat-img {
+    padding: 0px;
+  }
   .about-cat-img img {
-    width: 300px;
+    width: 280px;
   }
 }
 .about-cat-desc {
-  padding: 20px 20px 20px 20px;
-  /*display: inline-block;*/
-  vertical-align: middle;
+  padding: 0px 20px 0px 20px;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 500px;
+  text-align: left;
+  /* vertical-align: middle; */
 }
 .about-cat-title {
   font-family: 'bignoodletitlingregular';
@@ -1587,12 +1616,18 @@ a.spec-sheet {
   font-size: 16px;
   /*border-bottom: 2px solid #fff;*/
 }
-.about-hvac .about-cat-txt-main,
+/* .about-hvac .about-cat-txt-main,
 .about-plumbing .about-cat-txt-main {
   border-bottom: 1px solid #fff;
+} */
+.about-cat:nth-of-type(even) .about-cat-txt-main {
+  border-bottom: 1px solid #fff;
 }
-.about-electrical .about-cat-txt-main,
+/* .about-electrical .about-cat-txt-main,
 .about-automotive .about-cat-txt-main {
+  border-bottom: 1px solid #e6e6e6;
+} */
+.about-cat:nth-of-type(odd) .about-cat-txt-main {
   border-bottom: 1px solid #e6e6e6;
 }
 .about-cat-txt-tags {
@@ -1607,8 +1642,10 @@ a.spec-sheet {
   padding-bottom: 20px;
 }
 .about-4info-block {
-  padding-left: 30px;
-  padding-right: 30px;
+  width: 250px;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
 }
 .about-4info-img {
   margin-bottom: 20px;
@@ -1622,6 +1659,7 @@ a.spec-sheet {
 }
 .about-4info-title {
   padding: 5px;
+  min-width:
   margin: 0px 10px 0px 10px;
   height: 65px;
   /*width: 100px;*/
