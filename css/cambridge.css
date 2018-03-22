@@ -425,12 +425,26 @@ a.s-icon {
 }
 .footer-socialmedia {
   float: right;
+  display: inline-block;
   /*padding-right: 15px;*/
+}
+.copyright {
+  display: inline-block;
+  padding-top: 5px;
 }
 
 @media screen and (max-width: 1000px) {
   .footer1-inner-right, .footer1-inner-left {
     float: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .copyright p {
+    font-size: 7pt;
+  }
+  .copyright {
+    padding-top: 10px;
   }
 }
 

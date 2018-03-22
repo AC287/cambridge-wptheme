@@ -43,26 +43,20 @@
       </div>
     </div>
     <div class="container footer2">
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-lg-6">
-          <div class="copyright">
-            <p>&copy <?php echo date('Y')?> Cambridge Resources. All rights reserved.</p>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-lg-6">
-          <div class="footer-socialmedia">
-            <a class="navi-margin s-icon" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cambridgeresources/">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-            <a class="navi-margin s-icon" target="_blank" rel="noopener noreferrer" href="https://twitter.com/CambridgeRes">
-              <span class="fa fa-twitter-square"></span>
-            </a>
-            <a class="navi-margin s-icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/cambridgeresources/">
-              <span class="fa fa-linkedin-square"></span>
-            </a>
-          </div>  <!--end footer-socialmedia-->
-        </div>  <!-- end footer-socialmedia cell -->
-      </div>  <!-- end row-->
+      <div class="copyright">
+        <p>&copy <?php echo date('Y')?> Cambridge Resources. All rights reserved.</p>
+      </div>
+      <div class="footer-socialmedia">
+        <a class="navi-margin s-icon" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cambridgeresources/">
+          <i class="fa fa-facebook-official"></i>
+        </a>
+        <a class="navi-margin s-icon" target="_blank" rel="noopener noreferrer" href="https://twitter.com/CambridgeRes">
+          <span class="fa fa-twitter-square"></span>
+        </a>
+        <a class="navi-margin s-icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/cambridgeresources/">
+          <span class="fa fa-linkedin-square"></span>
+        </a>
+      </div>  <!--end footer-socialmedia-->
     </div>  <!--  end container -->
   </footer>
 <?php wp_footer(); ?>
