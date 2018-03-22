@@ -34,7 +34,7 @@
 
 <section id="about-timeline">
   <div class="about-tl-item">
-    <div class="about-tl-bg" style="background-color: #003DA5"></div>
+    <div class="about-tl-bg" ></div>
     <div class="about-tl-year">
       <p>1947</p>
     </div>
@@ -44,7 +44,7 @@
     </div>
   </div>
   <div class="about-tl-item">
-    <div class="about-tl-bg" style="background-color: #70bdff"></div>
+    <div class="about-tl-bg" ></div>
     <div class="about-tl-year">
       <p>1985</p>
     </div>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="about-tl-item">
-    <div class="about-tl-bg" style="background-color: #003DA5"></div>
+    <div class="about-tl-bg" ></div>
     <div class="about-tl-year">
       <p>1998</p>
     </div>
@@ -64,7 +64,7 @@
     </div>
   </div>
   <div class="about-tl-item">
-    <div class="about-tl-bg" style="background-color: #70bdff"></div>
+    <div class="about-tl-bg" ></div>
     <div class="about-tl-year">
       <p>2006</p>
     </div>
@@ -74,7 +74,7 @@
     </div>
   </div>
 	<div class="about-tl-item">
-		<div class="about-tl-bg" style="background-color: #003DA5"></div>
+		<div class="about-tl-bg" ></div>
 		<div class="about-tl-year">
 			<p>2007-2009</p>
 		</div>
@@ -84,7 +84,7 @@
 		</div>
 	</div>
 	<div class="about-tl-item">
-		<div class="about-tl-bg" style="background-color: #70bdff"></div>
+		<div class="about-tl-bg" ></div>
 		<div class="about-tl-year">
 			<p>2010</p>
 		</div>
@@ -95,7 +95,7 @@
 		</div>
 	</div>
 	<div class="about-tl-item">
-		<div class="about-tl-bg" style="background-color: #003DA5"></div>
+		<div class="about-tl-bg" ></div>
 		<div class="about-tl-year">
 			<p>2013</p>
 		</div>
@@ -105,7 +105,7 @@
 		</div>
 	</div>
 	<div class="about-tl-item">
-		<div class="about-tl-bg" style="background-color: #70bdff"></div>
+		<div class="about-tl-bg" ></div>
 		<div class="about-tl-year">
 			<p>2015</p>
 		</div>
@@ -115,7 +115,7 @@
 		</div>
 	</div>
 	<div class="about-tl-item">
-		<div class="about-tl-bg" style="background-color: #003DA5"></div>
+		<div class="about-tl-bg" ></div>
 		<div class="about-tl-year">
 			<p>2016</p>
 		</div>

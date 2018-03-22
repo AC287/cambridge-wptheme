@@ -1710,7 +1710,7 @@ a.spec-sheet {
   position: relative;
   width: 11.11%;
   height: 25vh;
-  min-height: 250px;
+  min-height: 300px;
   color: #fff;
   overflow: hidden;
   -webkit-transition: width 0.5s ease;
@@ -1731,7 +1731,8 @@ a.spec-sheet {
 }
 .about-tl-item:after {
   /*background: rgba(3, 22, 37, 0.85);*/
-  background: #0d1778;
+  /* background: #0d1778; */
+  background-color: #c4c4c4;
   opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
@@ -1769,6 +1770,11 @@ a.spec-sheet {
   -webkit-transition: all 0.75s ease 0.5s;
           transition: all 0.75s ease 0.5s;
 }
+.about-tl-item:hover .about-tl-year p {
+  margin-top: 16px;
+  line-height: 3rem;
+
+}
 .about-tl-item:hover .about-tl-content {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -1788,7 +1794,7 @@ a.spec-sheet {
   z-index: 1;
   text-align: center;
   /* margin: 0 1.618em; */
-  /* top: 50%; */
+  top: 50%;
   opacity: 0;
   /* font-size: 14pt; */
 }
@@ -1804,11 +1810,15 @@ a.spec-sheet {
 }
 .about-tl-year p {
   /*font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;*/
-  font-family: 'bignoodletitlingregular';
-  font-size: 1.9rem;
+  font-family: 'bignoodletitlingregular', cursive;
+  /* font-size: 1.9rem; */
+  font-size: 20pt;
   text-align: center;
   /*line-height: 2rem;*/
   margin: 10px 0px 5px 0px;
+}
+.about-tl-item .about-tl-bg {
+  background-color: #003DA5;
 }
 .about-tl-bg {
   -webkit-transform: translate3d(0, 0, 0);
@@ -1828,8 +1838,14 @@ a.spec-sheet {
           filter: grayscale(100%);
 }
 
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1301px) {
+  .about-tl-content {
+    top: 40%;
+    padding: 1.5em;
+    font-size: 14pt;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
   .about-tl-content {
     top: 50%;
     padding: 1.5em;
@@ -1849,6 +1865,15 @@ a.spec-sheet {
     top: 38%;
     padding: 10px;
     font-size: 8pt;
+  }
+}
+@media screen and (max-width: 450px) {
+  .about-tl-item {
+    min-height: 350px;
+  }
+  .about-tl-year p {
+    font-size: 10pt;
+    line-height: 12pt;
   }
 }
 
