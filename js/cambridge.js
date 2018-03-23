@@ -2,10 +2,8 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
-  // $('.top-nav').click(function(){
-  //   console.log('CLICKED HEHEHE');
-  // })
 
+  //Adding responsive class to header navigation.
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
     // console.log(x.length);
@@ -17,37 +15,6 @@ jQuery(document).ready(function($) {
     }
   })
 /*
-  $('.navi1-btn a').bind({
-    mouseenter: function(){
-      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
-      // console.log(currClass);
-      $(currClass).css({
-        // 'transform':'scale(1.5)',
-        'display':'block',
-      })
-    },
-    mouseleave: function(){
-      var currClass = $(this).attr('class');
-      // if (currClass != getCurrentLocation())
-      switch (currClass) {
-        case 'home':
-          if (getCurrentLocation() == ''){
-            break;
-          }
-        default:
-          // console.log(currClass);
-          if (currClass == getCurrentLocation()){
-            break;
-          } else {
-            $('.'+currClass+' .header-navi-selector').css ({
-              'display':'none',
-            })
-            break;
-          }
-      }
-    }
-  })
-  // });
 
   function getCurrentLocation() {
     var curLocation = $(location).attr('href').split('/');
@@ -113,38 +80,32 @@ $('.custaccordion').click(function(e){
   }
 });
 
-/*
-var acc = $('.accordion');
-var i;
-// console.log($('.cat-bar').attr('class'));
-var getTotalHeight = parseInt($('.cat-bar').attr('class').split(' ')[1].split('-')[1]);
-console.log(getTotalHeight);
-// console.log($('.accordion').length);
-var getEachCellHeight = $('.accordion').height();
-console.log(getEachCellHeight);
-var catBarHeight = (getTotalHeight * getEachCellHeight) + 'px';
-$('.cat-bar').css('height',catBarHeight);
-for (i = 0; i < acc.length; i++) {
-  acc[i].onclick = function() {
-    // console.log('clicked');
-    this.classList.toggle("active");
-    $(this).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){ // this close.
-      panel.style.maxHeight = null;
-      // console.log('if activated');
-      $(this).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
-    } else {  //this extend
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      // console.log('else activated');
-    }
+var m0param = getURLparam('m0');
+var s1param = getURLparam('s1');
+
+if(m0 != '') {
+  var m0paramInner = 'm0-'+m0param;
+}
+
+function getURLparam(sParam) {
+  /*
+    source: http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
+    source: https://stackoverflow.com/questions/3431512/javascript-equivalent-to-phps-urldecode
+  */
+  var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+          return (((sParameterName[1] === undefined ? true : sParameterName[1]).replace(/\+/g, '')).replace('"', '')).replace("'",'');
+      }
   }
 }
-*/
 
-// $('.display-extra').onclick = function () {
-//
-// }
 
 // - - - PRODUCT PS2 PAGE - - -
 // source: cssglobe.com/lab/tooltip/03/

@@ -1010,7 +1010,7 @@ a.s-icon {
     display: none !important;
   }
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
   .s1-box {
     width: 125px;
   }
@@ -1162,7 +1162,7 @@ img.p2-cert-img {
     line-height: 14pt;
   }
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
   .p2-title {
     font-size: 18pt;
     line-height: 18pt;
@@ -3175,7 +3175,7 @@ a.spec-sheet {
   background-color: #D2D3D5;
   color: #000;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .search-display {
     padding: 0px 20px 0px 20px;
   }
