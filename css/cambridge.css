@@ -447,7 +447,8 @@ a.s-icon {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  /* space-evenly didn't work in IE */
   flex-wrap: wrap;
 }
 .gc-block {
@@ -3026,6 +3027,10 @@ a.spec-sheet {
 }
 .featuredtradeshows-content {
   min-height: 55vh;
+}
+.featuredtradeshows-content p img {
+  max-width: 100%;
+  /* max-height: 100% */
 }
 .return-to-tradeshows {
   padding-bottom: 20px;
