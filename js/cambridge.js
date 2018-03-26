@@ -2,10 +2,8 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
-  // $('.top-nav').click(function(){
-  //   console.log('CLICKED HEHEHE');
-  // })
 
+  //Adding responsive class to header navigation.
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
     // console.log(x.length);
@@ -17,37 +15,6 @@ jQuery(document).ready(function($) {
     }
   })
 /*
-  $('.navi1-btn a').bind({
-    mouseenter: function(){
-      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
-      // console.log(currClass);
-      $(currClass).css({
-        // 'transform':'scale(1.5)',
-        'display':'block',
-      })
-    },
-    mouseleave: function(){
-      var currClass = $(this).attr('class');
-      // if (currClass != getCurrentLocation())
-      switch (currClass) {
-        case 'home':
-          if (getCurrentLocation() == ''){
-            break;
-          }
-        default:
-          // console.log(currClass);
-          if (currClass == getCurrentLocation()){
-            break;
-          } else {
-            $('.'+currClass+' .header-navi-selector').css ({
-              'display':'none',
-            })
-            break;
-          }
-      }
-    }
-  })
-  // });
 
   function getCurrentLocation() {
     var curLocation = $(location).attr('href').split('/');
@@ -113,38 +80,59 @@ $('.custaccordion').click(function(e){
   }
 });
 
-/*
-var acc = $('.accordion');
-var i;
-// console.log($('.cat-bar').attr('class'));
-var getTotalHeight = parseInt($('.cat-bar').attr('class').split(' ')[1].split('-')[1]);
-console.log(getTotalHeight);
-// console.log($('.accordion').length);
-var getEachCellHeight = $('.accordion').height();
-console.log(getEachCellHeight);
-var catBarHeight = (getTotalHeight * getEachCellHeight) + 'px';
-$('.cat-bar').css('height',catBarHeight);
-for (i = 0; i < acc.length; i++) {
-  acc[i].onclick = function() {
-    // console.log('clicked');
-    this.classList.toggle("active");
-    $(this).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){ // this close.
-      panel.style.maxHeight = null;
-      // console.log('if activated');
-      $(this).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
-    } else {  //this extend
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      // console.log('else activated');
-    }
+$('.productaccordion-mobilemenu').click(function(){
+  var x = $('.cat-bar').attr('class').split(' ');
+  // console.log(x.length);
+  if(x.length===1){
+    $('.cat-bar').addClass('responsive');
+    $('.productaccordion-mobilemenu span').removeClass('glyphicon-plus');
+    $('.productaccordion-mobilemenu span').addClass('glyphicon-minus');
+
+  }
+  else {
+    $('.cat-bar').removeClass('responsive');
+    $('.productaccordion-mobilemenu span').removeClass('glyphicon-minus');
+    $('.productaccordion-mobilemenu span').addClass('glyphicon-plus');
+  }
+})
+
+var m0param = getURLparam('m0');
+var s1param = getURLparam('s1');
+
+if(m0param) {
+  // console.log('m0param triggered');
+  var m0paramInner = '.m0-'+m0param;
+  console.log($(m0paramInner).next());
+  $(m0paramInner).next().toggleClass('show');
+  $(m0paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+}
+if(s1param) {
+  console.log(s1param);
+  var s1paramInner = '.s1-'+s1param;
+  console.log($(s1paramInner).next());
+  $(s1paramInner).next().toggleClass('show');
+  $(s1paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+}
+
+function getURLparam(sParam) {
+  /*
+    source: http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
+    source: https://stackoverflow.com/questions/3431512/javascript-equivalent-to-phps-urldecode
+  */
+  var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'),
+      sParameterName,
+      i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+      sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+          return (((sParameterName[1] === undefined ? true : sParameterName[1]).replace(/\+/g, '')).replace('"', '')).replace("'",'');
+      }
   }
 }
-*/
 
-// $('.display-extra').onclick = function () {
-//
-// }
 
 // - - - PRODUCT PS2 PAGE - - -
 // source: cssglobe.com/lab/tooltip/03/
@@ -163,11 +151,11 @@ $('a.ipt').hover(function(e) {
           .fadeIn("fast");
 }, function (){
   //This function run when mouse hover out.
-  var iptName2 = ".ipt-"+this.className.split(' ')[1];
+  var iptName2 = ".ipt-"+this.className.split('ipt ')[1];
   $(iptName2).css("display","none");
 });
 $('a.ipt').mousemove(function(e) {
-  var iptName3 = ".ipt-"+this.className.split(' ')[1];
+  var iptName3 = ".ipt-"+this.className.split('ipt ')[1];
   $(iptName3)
       .css("top",(e.pageY - xOffset) + "px")
       .css("left",(e.pageX + yOffset) + "px");
@@ -229,7 +217,7 @@ imgThumb.click(function(){
     $(this).css('display','none');
   })
   var curThumbDisplay = '.img-content-box .main-' + getClickedClass;
-  $(curThumbDisplay).css('display','initial');
+  $(curThumbDisplay).css('display','block');
 })
 var ipClickedImg = $('.main-view-lg');
 ipClickedImg.click(function(){
