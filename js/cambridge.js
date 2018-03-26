@@ -217,7 +217,7 @@ imgThumb.click(function(){
     $(this).css('display','none');
   })
   var curThumbDisplay = '.img-content-box .main-' + getClickedClass;
-  $(curThumbDisplay).css('display','initial');
+  $(curThumbDisplay).css('display','block');
 })
 var ipClickedImg = $('.main-view-lg');
 ipClickedImg.click(function(){
