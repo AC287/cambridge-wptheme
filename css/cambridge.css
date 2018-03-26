@@ -812,6 +812,7 @@ a.s-icon {
   border-bottom: 4px solid #003DA5;
 }
 
+
 .custaccordion {
   font-family: 'Questrial', sans-serif;
   cursor: pointer;
@@ -921,12 +922,35 @@ a.s-icon {
   /* vertical-align: top; */
 }
 
+.productaccordion-maintitle-container {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.productaccordion-mobilemenu {
+  display: none;
+}
+
 @media screen and (max-width: 800px){
   .cat-bar {
     width: 100%;
   }
   .prod-display, .search-display {
     width: 100%;
+  }
+  .productaccordion-content-container {
+    display: none;
+  }
+  .productaccordion-mobilemenu {
+    display: block;
+    cursor: pointer;
+  }
+  .responsive .productaccordion-content-container{
+    display: block;
   }
 }
 
