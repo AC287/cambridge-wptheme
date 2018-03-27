@@ -2295,9 +2295,15 @@ a.spec-sheet {
     /*display: flex;*/
   }
 }
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 499px) and (min-width: 400px) {
   .cb3-i1, .cb3-i2 {
     font-size: 15pt;
+  }
+}
+@media screen and (max-width: 399px) {
+  .cb3-i1, .cb3-i2 {
+    font-size: 15pt;
+    line-height: 15pt;
   }
 }
 .contact-form {
