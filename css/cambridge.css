@@ -838,11 +838,12 @@ a.s-icon {
   text-align: left;
   padding-top: 1.5px;
   padding-bottom: 1.5px;
-  /*padding-right: 5px;*/
+  padding-left: 10px;
+  padding-right: 5px;
 }
 .custpanel {
   /*width: 100%;*/
-  margin-left: 10px;
+  padding-left: 10px;
   /*margin-right: 5px;*/
 
   /*overflow: hidden;*/
@@ -915,13 +916,8 @@ a.s-icon {
 }
 .cat-bar {
   width: 27%;
-  /* min-width: 300px; */
-  /* vertical-align: top; */
-  /*max-height: 100%;*/
-  /*margin-left: 10px;*/
-  /*margin-right: 10px;*/
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
   margin-bottom: 25px;
   /*background-color: #f3f4f4;*/
 }
@@ -930,6 +926,9 @@ a.s-icon {
   /* text-decoration: inherit; */
   text-decoration: none;
   color: inherit;
+}
+.cat-bar h4 {
+  padding: 0px 10px 0px 10px;
 }
 .prod-display, .search-display {
   width: 73%;
