@@ -3218,7 +3218,7 @@ a.spec-sheet {
   display: -webkit-flex;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 3pt solid #D1D3D4;
+  border-bottom: 1pt solid #D1D3D4;
 }
 
 .sec-items {

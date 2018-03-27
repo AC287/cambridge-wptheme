@@ -44,11 +44,11 @@
 			// $mPos = 0;
 			echo "<div class='group-container'>";
 				if($p2s2!=""){
-					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  <a href='../ps1/?m0=".urlencode($p2m0)."&s1=".urlencode($p2s1)."'>".stripslashes($p2s1)."</a>  >>  ".stripslashes($p2s2)."</div>";	//Title
+					echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> <a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  <a href='../ps1/?m0=".urlencode($p2m0)."&s1=".urlencode($p2s1)."'>".stripslashes($p2s1)."</a>  >>  ".stripslashes($p2s2)."</div>";	//Title
 					$item_data_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$p2m0' AND s1='$p2s1' AND s2='$p2s2';");
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1' AND s2='$p2s2';");
 				} else {
-					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  ".stripslashes($p2s1)."</div>";	//Title
+					echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> <a href='../pm0/?m0=".urlencode($p2m0)."'>".stripslashes($p2m0)."</a>  >>  ".stripslashes($p2s1)."</div>";	//Title
 					$item_data_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$p2m0' AND s1='$p2s1';");
 					$item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$p2m0' AND s1='$p2s1';");
 				}

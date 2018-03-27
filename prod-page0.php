@@ -29,7 +29,9 @@
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
-			echo "<div class='m-title'>".$p0m0."</div>";
+			echo "<div class='m-title'>";
+				echo "<a href='".home_url()."/product'>PRODUCT HOME </a> >> ".$p0m0;
+			echo "</div>";
 			$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$p0m0';");
 			// print_r($s1_category2);
 			if(!empty($s1_category2[0]->s1)) {

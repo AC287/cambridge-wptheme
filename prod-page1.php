@@ -41,7 +41,7 @@
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
-			echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($p1m0)."'>".$p1m0."</a>  >>  ".$p1s1."</div>";	//Title
+			echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> <a href='../pm0/?m0=".urlencode($p1m0)."'>".$p1m0."</a>  >>  ".$p1s1."</div>";	//Title
 
 				echo "<div class='s1-box-background'>";
 				echo "<div class='s1-box-flex-container'>";
