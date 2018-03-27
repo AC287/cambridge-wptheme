@@ -3030,7 +3030,7 @@ a.spec-sheet {
 }
 .featuredtradeshows-content p img {
   max-width: 100%;
-  /* max-height: 100% */
+  max-height: 100%
 }
 .return-to-tradeshows {
   padding-bottom: 20px;
