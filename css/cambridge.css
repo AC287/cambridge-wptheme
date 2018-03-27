@@ -2490,9 +2490,9 @@ a.spec-sheet {
 @media screen and (max-width: 1199px) and (min-width: 600px) {
   .cb-textbox1{
     top: 10%;
-    right: 0%;
     font-size: 50pt;
-    /*line-height: 1em;*/
+    line-height: 1em;
+    padding: 0px 10px 0px 10px;
   }
   .cb-textbox2 {
     font-size: 20pt;
@@ -2509,18 +2509,16 @@ a.spec-sheet {
   }
   .cb2-i2 {
     padding-left: 20px;
+    padding-right: 10px;
   }
 }
 @media screen and (max-width: 599px) {
   .cb-textbox1{
     top: 0%;
-    right: 0%;
     font-size: 20pt;
-    /*line-height: 1em;*/
+    padding: 10px 10px 0px 10px;
   }
   .cb-textbox2 {
-    /*font-size: 20pt;*/
-    /*font-size: 20pt;*/
     bottom: 0%;
     right: 0%;
     display: -webkit-box;
@@ -2528,11 +2526,10 @@ a.spec-sheet {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    /*color: #fff;*/
-    /*display: block;*/
   }
   .cb2-i2 {
     padding-left: 20px;
+    padding-right: 10px;
   }
 }
 /*   career callout   */
