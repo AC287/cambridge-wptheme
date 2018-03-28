@@ -1613,10 +1613,11 @@ a.spec-sheet {
   padding: 0px 10px 0px 10px;
   vertical-align: top;
   display: inline-block;
+  width: 50%;
   /* overflow: hidden; */
 }
 .about-cat-img img {
-  max-width: 500px;
+  max-width: 100%;
   /* max-height: 400px; */
   height: auto;
 }
@@ -1634,6 +1635,7 @@ a.spec-sheet {
   }
   .about-cat-img {
     order: 2;
+    width: 100%;
   }
 
 }
@@ -1642,7 +1644,7 @@ a.spec-sheet {
     padding: 0px;
   }
   .about-cat-img img {
-    width: 280px;
+    /* width: 280px; */
   }
 }
 .about-cat-desc {
