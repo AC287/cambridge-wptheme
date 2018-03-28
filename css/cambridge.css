@@ -863,8 +863,8 @@ a.s-icon {
 .custaccordion a {
   display: inline-block;
   text-decoration: none;
-  color: #000;
-  /* width: 100%; */
+  /* color: #000; */
+  width: 100%;
 }
 .chev {
   width: 12px;

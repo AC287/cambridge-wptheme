@@ -108,18 +108,21 @@ var s2paramInner = '.s2-'+s2param;
 */
 if(m0param) {
 
-  $(m0paramInner).next().toggleClass('show');
+  // $(m0paramInner).next().toggleClass('show');
+  $('.m0i-'+m0param).toggleClass('show');
+
 
   $(m0paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
 }
 if(s1param) {
 
-  if(s2param){
-    $(s2paramInner).css({
-      'background-color':'#f7f7f7',
-    })
-  }
-  $(s1paramInner).next().toggleClass('show');
+  // if(s2param){
+  //   $(s2paramInner).css({
+  //     'background-color':'#f7f7f7',
+  //   })
+  // }
+  // $(s1paramInner).next().toggleClass('show');
+  $('.s1i-'+s1param).toggleClass('show');
 
   $(s1paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
 }
@@ -140,6 +143,16 @@ if(m0param && s1param && s2param) {
     'background-color':'#f7f7f7',
   })
 }
+if(m0param && s1param && !s2param) {
+  $('.m0i-'+m0param+' '+s1paramInner).css({
+    'background-color':'#f7f7f7',
+  })
+}
+if(m0param && !s1param && !s2param) {
+  $(m0paramInner).css({
+    'background-color':'#f7f7f7',
+  })
+}
 
 
 function getURLparam(sParam) {
@@ -156,7 +169,7 @@ function getURLparam(sParam) {
       sParameterName = sURLVariables[i].split('=');
 
       if (sParameterName[0] === sParam) {
-          return ((((sParameterName[1] === undefined ? true : sParameterName[1]).replace(/\+/g, '')).replace('"', '')).replace("'",'')).replace("/",'');
+          return (sParameterName[1] === undefined ? true : sParameterName[1]).replace(/[^a-zA-Z0-9]/g, '');;
       }
   }
 }
