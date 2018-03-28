@@ -838,11 +838,12 @@ a.s-icon {
   text-align: left;
   padding-top: 1.5px;
   padding-bottom: 1.5px;
-  /*padding-right: 5px;*/
+  padding-left: 10px;
+  padding-right: 5px;
 }
 .custpanel {
   /*width: 100%;*/
-  margin-left: 10px;
+  padding-left: 10px;
   /*margin-right: 5px;*/
 
   /*overflow: hidden;*/
@@ -862,8 +863,8 @@ a.s-icon {
 .custaccordion a {
   display: inline-block;
   text-decoration: none;
-  color: #000;
-  /* width: 100%; */
+  /* color: #000; */
+  width: 100%;
 }
 .chev {
   width: 12px;
@@ -915,13 +916,8 @@ a.s-icon {
 }
 .cat-bar {
   width: 27%;
-  /* min-width: 300px; */
-  /* vertical-align: top; */
-  /*max-height: 100%;*/
-  /*margin-left: 10px;*/
-  /*margin-right: 10px;*/
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
   margin-bottom: 25px;
   /*background-color: #f3f4f4;*/
 }
@@ -930,6 +926,9 @@ a.s-icon {
   /* text-decoration: inherit; */
   text-decoration: none;
   color: inherit;
+}
+.cat-bar h4 {
+  padding: 0px 10px 0px 10px;
 }
 .prod-display, .search-display {
   width: 73%;
@@ -2295,9 +2294,15 @@ a.spec-sheet {
     /*display: flex;*/
   }
 }
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 499px) and (min-width: 400px) {
   .cb3-i1, .cb3-i2 {
     font-size: 15pt;
+  }
+}
+@media screen and (max-width: 399px) {
+  .cb3-i1, .cb3-i2 {
+    font-size: 15pt;
+    line-height: 15pt;
   }
 }
 .contact-form {
@@ -2490,9 +2495,9 @@ a.spec-sheet {
 @media screen and (max-width: 1199px) and (min-width: 600px) {
   .cb-textbox1{
     top: 10%;
-    right: 0%;
     font-size: 50pt;
-    /*line-height: 1em;*/
+    line-height: 1em;
+    padding: 0px 10px 0px 10px;
   }
   .cb-textbox2 {
     font-size: 20pt;
@@ -2509,18 +2514,16 @@ a.spec-sheet {
   }
   .cb2-i2 {
     padding-left: 20px;
+    padding-right: 10px;
   }
 }
 @media screen and (max-width: 599px) {
   .cb-textbox1{
     top: 0%;
-    right: 0%;
     font-size: 20pt;
-    /*line-height: 1em;*/
+    padding: 10px 10px 0px 10px;
   }
   .cb-textbox2 {
-    /*font-size: 20pt;*/
-    /*font-size: 20pt;*/
     bottom: 0%;
     right: 0%;
     display: -webkit-box;
@@ -2528,11 +2531,10 @@ a.spec-sheet {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    /*color: #fff;*/
-    /*display: block;*/
   }
   .cb2-i2 {
     padding-left: 20px;
+    padding-right: 10px;
   }
 }
 /*   career callout   */
@@ -3215,7 +3217,7 @@ a.spec-sheet {
   display: -webkit-flex;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 3pt solid #D1D3D4;
+  border-bottom: 1pt solid #D1D3D4;
 }
 
 .sec-items {

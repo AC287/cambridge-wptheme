@@ -98,21 +98,62 @@ $('.productaccordion-mobilemenu').click(function(){
 
 var m0param = getURLparam('m0');
 var s1param = getURLparam('s1');
-
+var s2param = getURLparam('s2');
+console.log(s2param);
+var m0paramInner = '.m0-'+m0param;
+var s1paramInner = '.s1-'+s1param;
+var s2paramInner = '.s2-'+s2param;
+/*
+  This is for current active section.
+*/
 if(m0param) {
-  // console.log('m0param triggered');
-  var m0paramInner = '.m0-'+m0param;
-  console.log($(m0paramInner).next());
-  $(m0paramInner).next().toggleClass('show');
+
+  // $(m0paramInner).next().toggleClass('show');
+  $('.m0i-'+m0param).toggleClass('show');
+
+
   $(m0paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
 }
 if(s1param) {
-  console.log(s1param);
-  var s1paramInner = '.s1-'+s1param;
-  console.log($(s1paramInner).next());
-  $(s1paramInner).next().toggleClass('show');
+
+  // if(s2param){
+  //   $(s2paramInner).css({
+  //     'background-color':'#f7f7f7',
+  //   })
+  // }
+  // $(s1paramInner).next().toggleClass('show');
+  $('.s1i-'+s1param).toggleClass('show');
+
   $(s1paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
 }
+// if(!s2param) {
+//   if(s1param) {
+//     $(s1paramInner).css({
+//       'background-color':'#f7f7f7',
+//     })
+//   } else {
+//     $(m0paramInner).css({
+//       'background-color':'#f7f7f7',
+//     })
+//   }
+// }
+
+if(m0param && s1param && s2param) {
+  $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
+    'background-color':'#f7f7f7',
+  })
+}
+if(m0param && s1param && !s2param) {
+  $('.m0i-'+m0param+' '+s1paramInner).css({
+    'background-color':'#f7f7f7',
+  })
+}
+if(m0param && !s1param && !s2param) {
+  $(m0paramInner).css({
+    'background-color':'#f7f7f7',
+  })
+}
+
 
 function getURLparam(sParam) {
   /*
@@ -128,7 +169,7 @@ function getURLparam(sParam) {
       sParameterName = sURLVariables[i].split('=');
 
       if (sParameterName[0] === sParam) {
-          return (((sParameterName[1] === undefined ? true : sParameterName[1]).replace(/\+/g, '')).replace('"', '')).replace("'",'');
+          return (sParameterName[1] === undefined ? true : sParameterName[1]).replace(/[^a-zA-Z0-9]/g, '');;
       }
   }
 }

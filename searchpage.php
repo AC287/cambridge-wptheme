@@ -49,7 +49,7 @@
 
           echo "<div class='ps-topinfo'>";
             echo "<div class='ps-search-results'>";
-              echo "<p>".$total."&nbsp;items</p>";
+              echo "<p>".$total."&nbsp;".((int)$total > 1 ? 'items' : 'item' )."</p>";
             echo "</div>";
             echo "<div class='ps-pages pagination'>";
               echo paginate_links( array(
@@ -68,7 +68,7 @@
           if (sizeof($prodSearch) != 0) {
             //product search is correct and exist.
             echo "<div class='search-found'>";
-              echo "<p>Displaying results for ".$searchValue."&nbsp;...</p>";
+              echo "<p>Displaying ".((int)$total > 1 ? 'results' : 'result')." for ".$searchValue."&nbsp;...</p>";
             echo "</div>";
 
             foreach ($prodSearch as $exactProd) {
