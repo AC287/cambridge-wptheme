@@ -13,9 +13,10 @@
 				<?php
 					global $wpdb;
 
-					$main_category2 = $wpdb->get_results("SELECT DISTINCT m0 From wp_prod0;");
+					// $main_category2 = $wpdb->get_results("SELECT DISTINCT m0 From wp_prod0;");
+					$main_category2 = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend;");
 
-          $allHeight = sizeof($main_category2)+sizeof($distinct_s1)+sizeof($distinct_s2);
+          // $allHeight = sizeof($main_category2)+sizeof($distinct_s1)+sizeof($distinct_s2);
 
 					echo "<div id='product-main-page'>";
 
@@ -30,7 +31,7 @@
 								echo "<div class='m-title'>";
 									echo "<a href='./pm0/?m0=".urlencode($main_category2->m0)."'>".$main_category2->m0."</a>";
 								echo "</div>";
-								$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$main_category2->m0';");
+								$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$main_category2->m0';");
 								// print_r($s1_category2);
 								if(!empty($s1_category2[0]->s1)) {
 									echo "<div class='s1-box-background'>";
@@ -44,7 +45,7 @@
 										// print_r($img);
 
 										// print_r(sizeof($img));
-										$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$main_category2->m0' AND s1='$s1_category2->s1';");
+										$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$main_category2->m0' AND s1='$s1_category2->s1';");
 										// print_r(sizeof($s2_check));
 										// print_r($s2_check[0]->s2);
 										// print_r($main_category2->m0);
@@ -61,14 +62,14 @@
 												//   echo "<img src='' height='100' width='100'>";
 												// }
 												// echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
-												echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+												echo "<img src='".$img[0]->cat1img."'>";
 
 
 											} elseif (sizeof($img)===1) {
 												// print_r($img->img0);
-												echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+												echo "<img src='".$img[0]->cat1img."'>";
 											} else {
-												echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' height='100' width='100'>";
+												echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 											};
 											// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 											echo "</div>";
@@ -85,14 +86,14 @@
 											}
 											echo "<div class='item-img'>";
 											if (sizeof($img) > 1) {
-												echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+												echo "<img src='".$img[0]->cat1img."'>";
 											}
 											elseif (sizeof($img)===1) {
 												// print_r($img->img0);
-												echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+												echo "<img src='".$img[0]->cat1img."'>";
 											}
 											else {
-												echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' height='100' width='100'>";
+												echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 											};
 											// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 											echo "</div>";

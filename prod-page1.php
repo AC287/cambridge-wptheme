@@ -27,7 +27,7 @@
 			// print_r($p1m0);
 			// print_r($p1s1);
 
-			$sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
+			$sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
 
 			echo "<div id='product-main-page'>";
@@ -55,12 +55,12 @@
 					// foreach($img as $img) {
 					// 	echo "<img src='' height='100' width='100'>";
 					// }
-					echo "<img src='".$img[0]->cat2img."' height='100' width='100'>";
+					echo "<img src='".$img[0]->cat2img."'>";
 				} elseif (sizeof($img)===1) {
 					// print_r($img->img0);
-					echo "<img src='".$img[0]->cat2img."' height='100' width='100'>";
+					echo "<img src='".$img[0]->cat2img."'>";
 				} else {
-					echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' height='100' width='100'>";
+					echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 				};
 				// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 				echo "</div>";
