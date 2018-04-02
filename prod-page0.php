@@ -32,7 +32,7 @@
 			echo "<div class='m-title'>";
 				echo "<a href='".home_url()."/product'>PRODUCT HOME </a> >> ".$p0m0;
 			echo "</div>";
-			$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prod0 WHERE m0 = '$p0m0';");
+			$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$p0m0';");
 			// print_r($s1_category2);
 			if(!empty($s1_category2[0]->s1)) {
 				echo "<div class='s1-box-background'>";
@@ -41,7 +41,7 @@
 				foreach($s1_category2 as $s1_category2) {
 					$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$p0m0' AND s1 = '$s1_category2->s1' AND cat1img IS NOT NULL;");
 					// print_r(sizeof($img));
-					$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p0m0' AND s1='$s1_category2->s1';");
+					$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$p0m0' AND s1='$s1_category2->s1';");
 					if((sizeof($s2_check)>=1) && (($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
 						echo "<a href='../ps1/?m0=".urlencode($p0m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
 					} else {
@@ -52,13 +52,13 @@
 						// foreach($img as $img) {
 						//   echo "<img src='' height='100' width='100'>";
 						// }
-						echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+						echo "<img src='".$img[0]->cat1img."'>";
 
 					} elseif (sizeof($img)===1) {
 						// print_r($img->img0);
-						echo "<img src='".$img[0]->cat1img."' height='100' width='100'>";
+						echo "<img src='".$img[0]->cat1img."'>";
 					} else {
-						echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' height='100' width='100'>";
+						echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
 					};
 					// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 					echo "</div>";
