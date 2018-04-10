@@ -101,9 +101,9 @@
                     }
                   echo "</div>";  // end seci-title
                   echo "<div class='seci-spec'>";
-                    $m0 = $exactProd->m0;
-                    $s1 = $exactProd->s1;
-                    $s2 = $exactProd->s2;
+                    $m0 = addslashes($exactProd->m0);
+                    $s1 = addslashes($exactProd->s1);
+                    $s2 = addslashes($exactProd->s2);
 
                     if($s1 != "" and $s2 != ""){
                       $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2';");
