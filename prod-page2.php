@@ -25,9 +25,14 @@
 			$p2m0 = $wp_query->query_vars['m0'];	//assign query value
 			$p2s1 = $wp_query->query_vars['s1'];	// assign query value
 			$p2s2 = $wp_query->query_vars['s2'];
-			// print_r($p2m0);
-			// print_r($p2s1);
-			// print_r($p2s2);
+
+			// $qp2m0 = addslashes($p2m0);
+			// $qp2s1 = addslashes($p2s1);
+			// $qp2s2 = addslashes($p2s2);
+
+			print_r($p2m0);
+			print_r($p2s1);
+			print_r($p2s2);
 
 			// $sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);

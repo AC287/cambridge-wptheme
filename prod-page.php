@@ -31,7 +31,8 @@
 								echo "<div class='m-title'>";
 									echo "<a href='./pm0/?m0=".urlencode($main_category2->m0)."'>".$main_category2->m0."</a>";
 								echo "</div>";
-								$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$main_category2->m0';");
+								$qm0 = addslashes($main_category2->m0); //Slash escape is required for special character such as " , ' , \ to search in query.
+								$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$qm0';");
 								// print_r($s1_category2);
 								if(!empty($s1_category2[0]->s1)) {
 									echo "<div class='s1-box-background'>";
@@ -39,13 +40,14 @@
 									$counter = 0;
 									$counter4 = 0;
 									foreach($s1_category2 as $s1_category2) {
+										$qs1 = addslashes($s1_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
 										// $img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
-										$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$main_category2->m0' AND s1 = '$s1_category2->s1' AND cat1img IS NOT NULL");
+										$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");
 										// echo $img;
 										// print_r($img);
 
 										// print_r(sizeof($img));
-										$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$main_category2->m0' AND s1='$s1_category2->s1';");
+										$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");
 										// print_r(sizeof($s2_check));
 										// print_r($s2_check[0]->s2);
 										// print_r($main_category2->m0);

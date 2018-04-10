@@ -27,6 +27,8 @@
 			// print_r($p1m0);
 			// print_r($p1s1);
 
+			// $qp1m0 = addslashes($p1m0);
+			// $qp1s1 = addslashes($p1s1);
 			$sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
 
@@ -47,7 +49,8 @@
 				echo "<div class='s1-box-flex-container'>";
 				$counter = 0;
 				foreach($sub_category2 as $sub_category2) {
-				$img = $wpdb->get_results("SELECT cat2img FROM wp_prodlegend WHERE m0 = '$p1m0' AND s1 = '$p1s1' AND s2 = '$sub_category2->s2' AND cat2img IS NOT NULL;");
+				$qp1s2 = addslashes($sub_category2->s2);
+				$img = $wpdb->get_results("SELECT cat2img FROM wp_prodlegend WHERE m0 = '$p1m0' AND s1 = '$p1s1' AND s2 = '$qp1s2' AND cat2img IS NOT NULL;");
 				// print_r(sizeof($img));
 				echo "<a href='../ps2/?m0=".urlencode($p1m0)."&s1=".urlencode($p1s1)."&s2=".urlencode($sub_category2->s2)."' class='s1-box'>";
 				echo "<div class='item-img'>";

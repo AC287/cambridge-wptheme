@@ -32,6 +32,7 @@
 			echo "<div class='m-title'>";
 				echo "<a href='".home_url()."/product'>PRODUCT HOME </a> >> ".$p0m0;
 			echo "</div>";
+			// $qp0m0 = addslashes($p0m0);
 			$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$p0m0';");
 			// print_r($s1_category2);
 			if(!empty($s1_category2[0]->s1)) {
@@ -39,9 +40,10 @@
 				echo "<div class='s1-box-flex-container'>";
 				$counter = 0;
 				foreach($s1_category2 as $s1_category2) {
-					$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$p0m0' AND s1 = '$s1_category2->s1' AND cat1img IS NOT NULL;");
+					$qp0s1 = addslashes($s1_category2->s1);
+					$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$p0m0' AND s1 = '$qp0s1' AND cat1img IS NOT NULL;");
 					// print_r(sizeof($img));
-					$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$p0m0' AND s1='$s1_category2->s1';");
+					$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$p0m0' AND s1='$qp0s1';");
 					if((sizeof($s2_check)>=1) && (($s2_check[0]->s2)!="")){  //if s2 is not empty, go to ps1 page. else, go to ps2.
 						echo "<a href='../ps1/?m0=".urlencode($p0m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
 					} else {
