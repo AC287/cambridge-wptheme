@@ -3168,6 +3168,9 @@ a.spec-sheet {
 }
 
 /* - - - - - SEARCH PAGE - - - - - */
+.ps-result-header {
+  padding-bottom: 25px;
+}
 .ps-topinfo {
   display: flex;
   display: -webkit-box;

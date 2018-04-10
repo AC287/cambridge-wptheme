@@ -47,6 +47,7 @@
           $offset = ($page * $items_per_page) - $items_per_page;
           $prodSearch = $wpdb->get_results($prodquery . "LIMIT ${offset}, ${items_per_page}");
 
+          echo "<div class='ps-result-header'>";
           echo "<div class='ps-topinfo'>";
             echo "<div class='ps-search-results'>";
               echo "<p>".$total."&nbsp;".((int)$total > 1 ? 'items' : 'item' )."</p>";
@@ -68,8 +69,9 @@
           if (sizeof($prodSearch) != 0) {
             //product search is correct and exist.
             echo "<div class='search-found'>";
-              echo "<p>Displaying ".((int)$total > 1 ? 'results' : 'result')." for ".$searchValue."&nbsp;...</p>";
+              echo "<p>Displaying ".((int)$total > 1 ? 'results' : 'result')." for ".stripslashes($searchValue)."&nbsp;. . .</p>";
             echo "</div>";
+            echo "</div>";  // end if for ps-result-header.
 
             foreach ($prodSearch as $exactProd) {
               echo "<div class='search-each-container'>";
@@ -134,8 +136,9 @@
           } else {
             //product search is incorrect. Searching for keyword.
             echo "<div class='search-notfound'>";
-              echo "<p>No match found for $searchValue.</p>";
+              echo "<p>No match found for ".stripslashes($searchValue).".</p>";
             echo "</div>";
+            echo "</div>";  // end else for ps-result-header.
 
           };
 

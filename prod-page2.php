@@ -30,9 +30,9 @@
 			// $qp2s1 = addslashes($p2s1);
 			// $qp2s2 = addslashes($p2s2);
 
-			print_r($p2m0);
-			print_r($p2s1);
-			print_r($p2s2);
+			// print_r($p2m0);
+			// print_r($p2s1);
+			// print_r($p2s2);
 
 			// $sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
 			// print_r($sub_category1);
