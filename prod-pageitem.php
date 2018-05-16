@@ -52,15 +52,59 @@
 				$qis1c = addslashes($item_sub1_cat);
 				$qis2c = addslashes($item_sub2_cat);
 
-				if($item_sub2_cat != ""){
-					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
-					echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> <a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
-					// print_r("sub2 is not empty");
-				} else {
-					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
-					// print_r("sub2 is empty");
+				$totalquery = 0;
+				(!empty($qim0c)?$totalquery++:$totalquery);
+				(!empty($qis1c)?$totalquery++:$totalquery);
+				(!empty($qis2c)?$totalquery++:$totalquery);
+
+				echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
+					switch($totalquery) {
+						case 1:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
+							main0cat($item_main_cat);
+						break;
+						case 2:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
+							s1cat($item_main_cat,$item_sub1_cat);
+						break;
+						case 3:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
+							s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
+						break;
+						case 4:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
+						break;
+						case 5:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat);
+						break;
+						default:
+						break;
+					}
+					echo $item_id;
+				echo "</div>";	// end m-title div.
+
+				function main0cat($item_main_cat) {
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a> >> ";
 				}
+				function s1cat($item_main_cat,$item_sub1_cat) {
+					main0cat($item_main_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a> >> ";
+				}
+				function s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat) {
+					s1cat($item_main_cat, $item_sub1_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a> >> ";
+				}
+				function s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat) {
+					s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."'>".$item_sub3_cat."</a> >> ";
+				}
+				function s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat) {
+					s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."&s4=".urlencode($item_sub4_cat)."'>".$item_sub4_cat."</a> >> ";
+				}
+
 				echo "<div class='s1-box-background'>";
 
 					echo "<div id='each-img-data-container'>";
