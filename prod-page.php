@@ -106,7 +106,7 @@
 										}
 									}
 									echo "</div>";	// end s1-box-flex-container
-									if($counter > 3) {
+									if($counter > 4) {
 										echo "<div class='show-hide'>";
 											echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
 											echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
