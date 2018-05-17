@@ -830,7 +830,8 @@ a.s-icon {
 
 .custaccordion {
   font-family: 'Questrial', sans-serif;
-  cursor: pointer;
+  position: relative;
+  /* cursor: pointer; */
   width: 100%;
   /* width: inherit; */
   display: block;
@@ -838,12 +839,23 @@ a.s-icon {
   text-align: left;
   padding-top: 1.5px;
   padding-bottom: 1.5px;
-  padding-left: 10px;
+  padding-left: 5px;
   padding-right: 5px;
+}
+.custaccordion img {
+  /* display: inline-block; */
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  cursor: pointer;
+  /* vertical-align: text-top; */
+}
+.custaccordion img.chev {
+  vertical-align: text-top;
 }
 .custpanel {
   /*width: 100%;*/
-  padding-left: 10px;
+  padding-left: 15px;
   /*margin-right: 5px;*/
 
   /*overflow: hidden;*/
@@ -857,14 +869,16 @@ a.s-icon {
 }*/
 .no-sub {
   width: inherit;
-  margin-left: 15px;
+  /* margin-left: 15px; */
   /*margin-right: 10px;*/
 }
 .custaccordion a {
   display: inline-block;
   text-decoration: none;
+  margin-left: 15px;
   /* color: #000; */
-  width: 100%;
+  /* width: 90%; */
+  word-wrap: break-word;
 }
 .chev {
   width: 12px;
@@ -948,7 +962,9 @@ a.s-icon {
 .productaccordion-mobilemenu {
   display: none;
 }
-
+.productaccordion-content-container {
+  padding-left: 10px;
+}
 @media screen and (max-width: 800px){
   .cat-bar {
     width: 100%;
@@ -1194,7 +1210,7 @@ img.p2-cert-img {
   padding-right: 5px;
 }
 td.prod-itemnum {
-  font-size: 12pt;
+  font-size: 10pt;
   white-space: nowrap;
 }
 td.prod-data {

@@ -62,8 +62,9 @@ jQuery(document).ready(function($) {
 // --- THIS IS FOR ACCORDION BUTTON SECTION ---
 
 // source: https://codepen.io/brenden/pen/Kwbpyj
-$('.custaccordion').click(function(e){
-  var $this = $(this);
+$('.custaccordion img').click(function(e){
+  var $this = $(this).parent();
+  console.log($this);
   if($this.next().hasClass('show')){
     $this.next().removeClass('show');
     $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
