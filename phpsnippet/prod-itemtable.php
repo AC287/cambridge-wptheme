@@ -56,7 +56,7 @@ for ($x=1; $x < 12; $x++) {
 echo "</tr>";
 foreach($catitems as $item_data) {
   echo "<tr>";
-  echo "<td>";
+  echo "<td class='prod-itemnum'>";
     $ipt_class = str_replace (' ','',$item_data->item);
     $ipt_class = str_replace ('/','',$ipt_class);
     $ipt_class = str_replace ('-','',$ipt_class);
@@ -84,7 +84,7 @@ foreach($catitems as $item_data) {
   for ($y=1; $y<9; $y++) {
     $cell_data2 = "d".$y;
     if(($item_data->$cell_data2)!="") {
-      echo "<td>".$item_data->$cell_data2."</td>";
+      echo "<td class='prod-data'>".$item_data->$cell_data2."</td>";
     }
   }
   echo "</tr>";

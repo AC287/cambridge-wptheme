@@ -1171,7 +1171,7 @@ img.p2-cert-img {
 }
 .item-data-sheet {
   width: 100%;
-  font-size: 12px;
+  /* font-size: 10pt; */
   text-align: center;
   /*padding: 5px;*/
   /*margin: auto;*/
@@ -1179,14 +1179,26 @@ img.p2-cert-img {
 .item-data-sheet th {
   /*width: 100%;*/
   font-family: 'bignoodletitlingregular';
-  padding-top: 5px;
+  /* padding-top: 5px; */
+  padding: 8px 5px 0px 5px;
+  height: 30pt;
   font-size: 16pt;
   text-align: center;
   background-color: #000;
   color: #fff;
+  line-height: 16pt;
 }
 .item-data-sheet td {
   font-family: 'Questrial', sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+td.prod-itemnum {
+  font-size: 12pt;
+  white-space: nowrap;
+}
+td.prod-data {
+  font-size: 9pt;
 }
 .item-data-sheet tr {
   border-bottom: 1px solid #A7A9AC;
@@ -1214,7 +1226,13 @@ img.p2-cert-img {
   }
   .item-data-sheet th {
     font-size: 12pt;
-    line-height: 13pt;
+    line-height: 12pt;
+  }
+  td.prod-itemnum {
+    font-size: 8pt;
+  }
+  td.prod-data {
+    font-size: 6pt;
   }
 }
 /* - - - preview thumbnail image in ps2 - - - */

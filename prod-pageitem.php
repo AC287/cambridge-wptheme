@@ -178,7 +178,7 @@
 						echo "<div class='each-item-data'>";
 							echo "<div class='item-spec-container'>";
 								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
-								echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
+								// echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
 								echo "<table class='ip-each-data-table'>";
 								for ($x=1; $x <=8; $x++) {
 									$d = "d".$x;
