@@ -33,18 +33,18 @@
             foreach($s2_category as $each_s2) {
               $s2class = $each_s2->s2;
               $s2class = preg_replace("/[^a-zA-Z0-9]/","",$s2class);
-              echo "<div class='custaccordion no-sub s2-$s2class'><a href='".home_url()."/products/ps2/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."&s2=".urlencode($each_s2->s2)."'>".$each_s2->s2."</a></div>";
+              echo "<div class='custaccordion no-sub s2-$s2class'><a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."&s2=".urlencode($each_s2->s2)."'>".$each_s2->s2."</a></div>";
             }
             echo "</div>";  // end panel
           } else {
             // s2 is empty
-            echo "<div class='custaccordion no-sub s1-$s1class'><a href='".home_url()."/products/ps2/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."'>".$each_s1->s1."</a></div>";
+            echo "<div class='custaccordion no-sub s1-$s1class'><a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."'>".$each_s1->s1."</a></div>";
           }
         }
         echo "</div>";  // end panel
       } else {
         // s1 is empty
-        echo "<div class='custaccordion m0-$m0class'><a href='".home_url()."/products/pm0/?m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a></div>";
+        echo "<div class='custaccordion m0-$m0class'><a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a></div>";
       }
     }
   echo "</div>";
