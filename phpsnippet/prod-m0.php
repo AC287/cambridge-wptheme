@@ -6,42 +6,100 @@
     echo "<a href='".home_url()."/product'>PRODUCT HOME </a> >> ".stripslashes($cm0);
   echo "</div>";
 
-  $prods1 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$cm0';");
-  $descm0 = $wpdb->get_results("SELECT DISTINCT m0desc FROM wp_prodlegend WHERE m0 = '$cm0' AND m0desc IS NOT NULL;");
-  // print_r($descm0);
-  if(!empty($descm0[0]->m0desc)) {
-    echo "<div class='prod-cat-desc'>";
+  if($cm0!='Tools') {
+
+    $prods1 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$cm0';");
+    $descm0 = $wpdb->get_results("SELECT DISTINCT m0desc FROM wp_prodlegend WHERE m0 = '$cm0' AND m0desc IS NOT NULL;");
+    // print_r($descm0);
+    if(!empty($descm0[0]->m0desc)) {
+      echo "<div class='prod-cat-desc'>";
       echo "<p>".$descm0[0]->m0desc."</p>";
-    echo "</div>";
-  }
-  // print_r($prods1);
-  if(!empty($prods1[0]->s1)) {
-    echo "<div class='s1-box-background'>";
-    echo "<div class='s1-box-flex-container'>";
-    $counter = 0;
-    foreach($prods1 as $prods1) {
-      $qs1 = addslashes($prods1->s1);
-      $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$qs1' AND cat1img IS NOT NULL;");
-      // print_r(sizeof($img));
-      echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
-      echo "<div class='item-img'>";
-      if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
-        echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
-      } else {
-        echo "<img src='".$img[0]->cat1img."'>";
-      };
-      // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
       echo "</div>";
-      echo "<div class='s1-cat'>".$prods1->s1."</div>";
-      echo "</a>";
-      $counter++;
     }
-    for($k=$counter; $k%4!=0; $k++){
-      echo "<a class='s1-box s1-box-filler'></a>";
+    // print_r($prods1);
+    if(!empty($prods1[0]->s1)) {
+      echo "<div class='s1-box-background'>";
+      echo "<div class='s1-box-flex-container'>";
+      $counter = 0;
+      foreach($prods1 as $prods1) {
+        $qs1 = addslashes($prods1->s1);
+        $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$qs1' AND cat1img IS NOT NULL;");
+        // print_r(sizeof($img));
+        echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        echo "<div class='item-img'>";
+        if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
+          echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+        } else {
+          echo "<img src='".$img[0]->cat1img."'>";
+        };
+        // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
+        echo "</div>";
+        echo "<div class='s1-cat'>".$prods1->s1."</div>";
+        echo "</a>";
+        $counter++;
+      }
+      for($k=$counter; $k%4!=0; $k++){
+        echo "<a class='s1-box s1-box-filler'></a>";
+      }
+      echo "</div>";	// end s1-box-flex-container
+      echo "</div>";	// end s1-box-background
+    } else {
+      //s1 category is empty. display graph.
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0';");
+      $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
+      include 'prod-itemtable.php';
     }
-    echo "</div>";	// end s1-box-flex-container
-    echo "</div>";	// end s1-box-background
+
+  } // end if main cat is not equal to 'Tools';
+  else {
+    //THIS IS TOOLS...
+
+    $prods1 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE s1 LIKE '%tools%';");
+    $descm0 = $wpdb->get_results("SELECT DISTINCT m0desc FROM wp_prodlegend WHERE m0 = '$cm0' AND m0desc IS NOT NULL;");
+    // print_r($descm0);
+    if(!empty($descm0[0]->m0desc)) {
+      echo "<div class='prod-cat-desc'>";
+      echo "<p>".$descm0[0]->m0desc."</p>";
+      echo "</div>";
     }
+    // print_r($prods1);
+    if(!empty($prods1[0]->s1)) {
+      echo "<div class='s1-box-background'>";
+      echo "<div class='s1-box-flex-container'>";
+      $counter = 0;
+      foreach($prods1 as $prods1) {
+        $qs1 = addslashes($prods1->s1);
+        $m0qs1 = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
+        $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE s1 = '$qs1' AND cat1img IS NOT NULL;");
+        // print_r(sizeof($img));
+        echo "<a href='../categories/?m0=".urlencode($m0qs1[0]->m0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        echo "<div class='item-img'>";
+        if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
+          echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+        } else {
+          echo "<img src='".$img[0]->cat1img."'>";
+        };
+        // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
+        echo "</div>";
+        echo "<div class='s1-cat'>".$prods1->s1."</div>";
+        echo "</a>";
+        $counter++;
+      }
+      for($k=$counter; $k%4!=0; $k++){
+        echo "<a class='s1-box s1-box-filler'></a>";
+      }
+      echo "</div>";	// end s1-box-flex-container
+      echo "</div>";	// end s1-box-background
+    } else {
+      //s1 category is empty. display graph.
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0';");
+      $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
+      include 'prod-itemtable.php';
+    }
+  }
+
     // $mPos++;
     echo "</div>";  //end group-container div;
 

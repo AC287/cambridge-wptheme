@@ -31,90 +31,326 @@
 								echo "<div class='m-title'>";
 									echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."'>".$main_category2->m0."</a>";
 								echo "</div>";
-								$qm0 = addslashes($main_category2->m0); //Slash escape is required for special character such as " , ' , \ to search in query.
-								$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$qm0';");
-								// print_r($s1_category2);
-								if(!empty($s1_category2[0]->s1)) {
-									echo "<div class='s1-box-background'>";
-									echo "<div class='s1-box-flex-container'>";
-									$counter = 0;
-									$counter4 = 0;
-									foreach($s1_category2 as $s1_category2) {
-										$qs1 = addslashes($s1_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
-										// $img = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE s1 = '$s1_category2->s1' AND img0 IS NOT NULL;");
-										$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");
-										// echo $img;
-										// print_r($img);
+								if($main_category2->m0 != 'Tools') {
+									$qm0 = addslashes($main_category2->m0); //Slash escape is required for special character such as " , ' , \ to search in query.
+									$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE m0 = '$qm0';");
+									// print_r($s1_category2);
+									if(!empty($s1_category2[0]->s1)) {
+										echo "<div class='s1-box-background'>";
+										echo "<div class='s1-box-flex-container'>";
+										$counter = 0;
+										$counter4 = 0;
+										foreach($s1_category2 as $s1_category2) {
 
-										// print_r(sizeof($img));
-										$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");
-										// print_r(sizeof($s2_check));
-										// print_r($s2_check[0]->s2);
-										// print_r($main_category2->m0);
-										// print_r($s1_category2->s1);
-										if($counter < 4) {
-											echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
+											$qs1 = addslashes($s1_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
 
-											echo "<div class='item-img'>";
-											if (sizeof($img) > 1) {
-												// foreach($img as $img) {
-												//   echo "<img src='' height='100' width='100'>";
-												// }
-												// echo "<img src='".$img[array_rand($img)]->img0."' height='100' width='100'>";
-												echo "<img src='".$img[0]->cat1img."'>";
+											$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");
 
+											$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");
 
-											} elseif (sizeof($img)===1) {
-												// print_r($img->img0);
-												echo "<img src='".$img[0]->cat1img."'>";
+											if($counter < 4) {
+												echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
+
+												echo "<div class='item-img'>";
+												if (sizeof($img) > 1) {
+
+													echo "<img src='".$img[0]->cat1img."'>";
+
+												} elseif (sizeof($img)===1) {
+													// print_r($img->img0);
+													echo "<img src='".$img[0]->cat1img."'>";
+												} else {
+													echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+												};
+
+												echo "</div>";
+												echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
+												echo "</a>";
+												$counter++;
+												$counter4++;
 											} else {
-												echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
-											};
-											// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
-											echo "</div>";
-											echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
-											echo "</a>";
-											$counter++;
-											$counter4++;
-										} else {
-											// if sub category is more than 4, this add class to hide.
-											echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
-											echo "<div class='item-img'>";
-											if (sizeof($img) > 1) {
-												echo "<img src='".$img[0]->cat1img."'>";
+												// if sub category is more than 4, this add class to hide.
+												echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
+												echo "<div class='item-img'>";
+												if (sizeof($img) > 1) {
+													echo "<img src='".$img[0]->cat1img."'>";
+												}
+												elseif (sizeof($img)===1) {
+													// print_r($img->img0);
+													echo "<img src='".$img[0]->cat1img."'>";
+												}
+												else {
+													echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+												};
+												// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
+												echo "</div>";
+												echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
+												echo "</a>";
+												$counter++;
+												$counter4++;
 											}
-											elseif (sizeof($img)===1) {
-												// print_r($img->img0);
-												echo "<img src='".$img[0]->cat1img."'>";
+										}	// end foreach.
+										for($k=$counter4; $k%4!=0; $k++){
+											if($k < 4){
+												echo "<a class='s1-box s1-box-filler'></a>";
+											} else {
+												echo "<a class='s1-box s1-box-filler extra-box pos".$mPos."'></a>";
 											}
-											else {
-												echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
-											};
-											// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
+										}
+										echo "</div>";	// end s1-box-flex-container
+										if($counter > 4) {
+											echo "<div class='show-hide'>";
+												echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
+												echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
 											echo "</div>";
-											echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
-											echo "</a>";
-											$counter++;
-											$counter4++;
 										}
+										echo "</div>";	// end s1-box-background
+									} else {
+										//s1 is empty. get item data.
+										// echo "THERE IS NO CATEGORY IN HERE!";
+										$m0_items = $wpdb->get_results("SELECT item,img0,img1,img2,img3,img4,img5 FROM wp_prod0 WHERE m0 = '$qm0';");
+										echo "<div class='s1-box-background'>";
+											echo "<div class='s1-box-flex-container'>";
+												$counter = 0;
+												$counter4 = 0;
+												foreach($m0_items as $m0_item_inner) {
+													if($counter < 4){
+														echo "<a href='./item/?id=".urlencode($m0_item_inner->item)."' class='s1-box'>";
+														echo "<div class='item-img'>";
+														$prodimgtracker = 0;
+														for($x=0; $x <= 5; $x++) {
+															$prodimg = 'img'.$x;
+															// print_r($m0_item_inner);
+
+															if(!empty($m0_item_inner->$prodimg)) {
+																echo "<img src='".$m0_item_inner->$prodimg."'>";
+																break;
+															} else {
+																$prodimgtracker++;
+															}
+														}
+														if($prodimgtracker > 0) {
+															//no image available...
+															echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+														}
+														echo "</div>";	// end item-img tag.
+														echo "<div class='s1-cat'>".$m0_item_inner->item."</div>";
+														echo "</a>";	// end anchor tag of class s1-box
+														$counter++;
+														$counter4++;
+
+														// end if counter < 4;
+													}	else{
+														echo "<a href='./item/?id=".urlencode($m0_item_inner->item)."' class='s1-box extra-box pos$mPos'>";
+														echo "<div class='item-img'>";
+														$prodimgtracker = 0;
+														for($x=0; $x <= 5; $x++) {
+															$prodimg = 'img'.$x;
+															// echo $prodimg;
+															if(!empty($m0_item_inner->$prodimg)) {
+																echo "<img src='".$m0_item_inner->$prodimg."'>";
+																break;
+															} else {
+																$prodimgtracker++;
+															}
+														}
+														if($prodimgtracker > 0) {
+															//no image available...
+															echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+														}
+														echo "</div>";	// end item-img tag.
+														echo "<div class='s1-cat'>".$m0_item_inner->item."</div>";
+														echo "</a>";	// end anchor tag of class s1-box
+														$counter++;
+														$counter4++;
+													}
+												}	// end foreach loop.
+												for($k=$counter4; $k%4!=0; $k++){
+													if($k < 4){
+														echo "<a class='s1-box s1-box-filler'></a>";
+													} else {
+														echo "<a class='s1-box s1-box-filler extra-box pos".$mPos."'></a>";
+													}
+												}
+											echo "</div>";	// end s1-box-flex-container
+											if($counter > 4) {
+												echo "<div class='show-hide'>";
+													echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
+													echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
+												echo "</div>";
+											}
+										echo "</div>";	// end s1-box-background
+
+
+
 									}
-									for($k=$counter4; $k%4!=0; $k++){
-										if($k < 4){
-											echo "<a class='s1-box s1-box-filler'></a>";
-										} else {
-											echo "<a class='s1-box s1-box-filler extra-box pos".$mPos."'></a>";
+									$mPos++;
+
+								}	// end if main is != Tools;
+								else {
+
+									//m0 is TOOLS
+
+									$qm0 = addslashes($main_category2->m0); //Slash escape is required for special character such as " , ' , \ to search in query.
+									$s1_category2 = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE s1 LIKE '%tools%';");
+									// $s1_category_tools = $wpdb->get_results("SELECT DISTINCT s1 FROM wp_prodlegend WHERE s1 LIKE '%tools%';");
+									// print_r($s1_category_tools);
+									// print_r($s1_category2);
+									if(!empty($s1_category2[0]->s1)) {
+										echo "<div class='s1-box-background'>";
+										echo "<div class='s1-box-flex-container'>";
+										$counter = 0;
+										$counter4 = 0;
+										foreach($s1_category2 as $s1_category2) {
+
+											$qs1 = addslashes($s1_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
+
+											$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE s1 = '$qs1' AND cat1img IS NOT NULL;");
+
+											$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE s1='$qs1';");
+
+											$tools_maincat = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
+
+											if($counter < 4) {
+												echo "<a href='./categories/?m0=".urlencode($tools_maincat[0]->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
+
+												echo "<div class='item-img'>";
+												if (sizeof($img) > 1) {
+
+													echo "<img src='".$img[0]->cat1img."'>";
+
+												} elseif (sizeof($img)===1) {
+													// print_r($img->img0);
+													echo "<img src='".$img[0]->cat1img."'>";
+												} else {
+													echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+												};
+
+												echo "</div>";
+												echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
+												echo "</a>";
+												$counter++;
+												$counter4++;
+											} else {
+												// if sub category is more than 4, this add class to hide.
+												echo "<a href='./categories/?m0=".urlencode($tools_maincat[0]->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
+												echo "<div class='item-img'>";
+												if (sizeof($img) > 1) {
+													echo "<img src='".$img[0]->cat1img."'>";
+												}
+												elseif (sizeof($img)===1) {
+													// print_r($img->img0);
+													echo "<img src='".$img[0]->cat1img."'>";
+												}
+												else {
+													echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+												};
+												// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
+												echo "</div>";
+												echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
+												echo "</a>";
+												$counter++;
+												$counter4++;
+											}
+										}	// end foreach.
+										for($k=$counter4; $k%4!=0; $k++){
+											if($k < 4){
+												echo "<a class='s1-box s1-box-filler'></a>";
+											} else {
+												echo "<a class='s1-box s1-box-filler extra-box pos".$mPos."'></a>";
+											}
 										}
+										echo "</div>";	// end s1-box-flex-container
+										if($counter > 4) {
+											echo "<div class='show-hide'>";
+												echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
+												echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
+											echo "</div>";
+										}
+										echo "</div>";	// end s1-box-background
+									} else {
+										//s1 is empty. get item data.
+										// echo "THERE IS NO CATEGORY IN HERE!";
+										$m0_items = $wpdb->get_results("SELECT item,img0,img1,img2,img3,img4,img5 FROM wp_prod0 WHERE m0 = '$qm0';");
+										echo "<div class='s1-box-background'>";
+											echo "<div class='s1-box-flex-container'>";
+												$counter = 0;
+												$counter4 = 0;
+												foreach($m0_items as $m0_item_inner) {
+													if($counter < 4){
+														echo "<a href='./item/?id=".urlencode($m0_item_inner->item)."' class='s1-box'>";
+														echo "<div class='item-img'>";
+														$prodimgtracker = 0;
+														for($x=0; $x <= 5; $x++) {
+															$prodimg = 'img'.$x;
+															// print_r($m0_item_inner);
+
+															if(!empty($m0_item_inner->$prodimg)) {
+																echo "<img src='".$m0_item_inner->$prodimg."'>";
+																break;
+															} else {
+																$prodimgtracker++;
+															}
+														}
+														if($prodimgtracker > 0) {
+															//no image available...
+															echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+														}
+														echo "</div>";	// end item-img tag.
+														echo "<div class='s1-cat'>".$m0_item_inner->item."</div>";
+														echo "</a>";	// end anchor tag of class s1-box
+														$counter++;
+														$counter4++;
+
+														// end if counter < 4;
+													}	else{
+														echo "<a href='./item/?id=".urlencode($m0_item_inner->item)."' class='s1-box extra-box pos$mPos'>";
+														echo "<div class='item-img'>";
+														$prodimgtracker = 0;
+														for($x=0; $x <= 5; $x++) {
+															$prodimg = 'img'.$x;
+															// echo $prodimg;
+															if(!empty($m0_item_inner->$prodimg)) {
+																echo "<img src='".$m0_item_inner->$prodimg."'>";
+																break;
+															} else {
+																$prodimgtracker++;
+															}
+														}
+														if($prodimgtracker > 0) {
+															//no image available...
+															echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+														}
+														echo "</div>";	// end item-img tag.
+														echo "<div class='s1-cat'>".$m0_item_inner->item."</div>";
+														echo "</a>";	// end anchor tag of class s1-box
+														$counter++;
+														$counter4++;
+													}
+												}	// end foreach loop.
+												for($k=$counter4; $k%4!=0; $k++){
+													if($k < 4){
+														echo "<a class='s1-box s1-box-filler'></a>";
+													} else {
+														echo "<a class='s1-box s1-box-filler extra-box pos".$mPos."'></a>";
+													}
+												}
+											echo "</div>";	// end s1-box-flex-container
+											if($counter > 4) {
+												echo "<div class='show-hide'>";
+													echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
+													echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
+												echo "</div>";
+											}
+										echo "</div>";	// end s1-box-background
+
+
+
 									}
-									echo "</div>";	// end s1-box-flex-container
-									if($counter > 4) {
-										echo "<div class='show-hide'>";
-											echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
-											echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
-										echo "</div>";
-									}
-									echo "</div>";	// end s1-box-background
-								}
-								$mPos++;
+									$mPos++;
+								}	// end else for tools.
+
+
 								echo "</div>";  //end group-container div;
 							}
 						echo "</div>";	// end pro-display div tag.
