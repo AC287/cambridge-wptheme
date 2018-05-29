@@ -70,10 +70,10 @@
       $counter = 0;
       foreach($prods1 as $prods1) {
         $qs1 = addslashes($prods1->s1);
-        $m0qs1 = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
+        // $m0qs1 = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
         $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE s1 = '$qs1' AND cat1img IS NOT NULL;");
         // print_r(sizeof($img));
-        echo "<a href='../categories/?m0=".urlencode($m0qs1[0]->m0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
         echo "<div class='item-img'>";
         if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
           echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
@@ -93,8 +93,9 @@
       echo "</div>";	// end s1-box-background
     } else {
       //s1 category is empty. display graph.
-      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
-      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0';");
+      // $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1 LIKE '%tools%';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE s1 LIKE '%tools%';");
       $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
       include 'prod-itemtable.php';
     }

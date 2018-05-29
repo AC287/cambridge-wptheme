@@ -23,6 +23,8 @@
 			// echo 'Sub Category : ' . $wp_query->query_vars['s1'];
 
 			$item_id = $wp_query->query_vars['id'];	//assign query value
+			$item_m0 = $wp_query->query_vars['m0'];
+			// echo $item_m0;
 			// print_r($p2m0);
 			// print_r($p2s1);
 			// print_r($p2s2);
@@ -41,10 +43,15 @@
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
-				$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id';");
+				if($item_m0!='Tools'){
+					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND m0='$item_m0';");
+					$item_main_cat = $get_item_data[0]->m0;
+				} else {
+					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id';");
+					$item_main_cat = $item_m0;
+				}
 				$get_cert_img = $wpdb->get_results("SELECT * FROM wp_cert;");
 
-				$item_main_cat = $get_item_data[0]->m0;
 				$item_sub1_cat = $get_item_data[0]->s1;
 				$item_sub2_cat = $get_item_data[0]->s2;
 
@@ -60,22 +67,32 @@
 				echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
 					switch($totalquery) {
 						case 1:
+							echo $qim0c;
+							echo "this is case 1.";
 							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
 							main0cat($item_main_cat);
 						break;
 						case 2:
+							echo $qim0c;
+							echo "this is case 2.";
 							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
 							s1cat($item_main_cat,$item_sub1_cat);
 						break;
 						case 3:
+							echo $qim0c;
+							echo "this is case 3.";
 							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
 							s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
 						break;
 						case 4:
+							echo $qim0c;
+							echo "this is case 4.";
 							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
 							s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
 						break;
 						case 5:
+							echo $qim0c;
+							echo "this is case 5.";
 							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
 							s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat);
 						break;

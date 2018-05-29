@@ -209,10 +209,10 @@
 
 											$s2_check = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prodlegend WHERE s1='$qs1';");
 
-											$tools_maincat = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
+											// $tools_maincat = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
 
 											if($counter < 4) {
-												echo "<a href='./categories/?m0=".urlencode($tools_maincat[0]->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
+												echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
 
 												echo "<div class='item-img'>";
 												if (sizeof($img) > 1) {
@@ -233,7 +233,7 @@
 												$counter4++;
 											} else {
 												// if sub category is more than 4, this add class to hide.
-												echo "<a href='./categories/?m0=".urlencode($tools_maincat[0]->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
+												echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
 												echo "<div class='item-img'>";
 												if (sizeof($img) > 1) {
 													echo "<img src='".$img[0]->cat1img."'>";

@@ -43,9 +43,15 @@
     }
   } else {
     //s2 is empty. This should display item thumb or item table.
-    $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
-    $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
     $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
+    if($cm0=='Tools') {
+      // This is special case for tools.
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1 = '$cs1';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE s1 = '$cs1';");
+    } else {
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
+    }
 
     include 'prod-itemtable.php';
 

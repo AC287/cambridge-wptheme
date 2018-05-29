@@ -62,7 +62,8 @@ foreach($catitems as $item_data) {
     $ipt_class = str_replace ('-','',$ipt_class);
     $ipt_class = str_replace ('*','',$ipt_class);
     // echo $ipt_class;
-    echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."'>";
+    // echo $cm0;
+    echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."'>";
       echo $item_data->item;
       // $ipt_img = $item_data->img0;
       echo "<p class='item-preview-thumb ipt-$ipt_class'>";
