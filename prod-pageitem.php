@@ -67,33 +67,49 @@
 				echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
 					switch($totalquery) {
 						case 1:
-							echo $qim0c;
-							echo "this is case 1.";
+							// echo $qim0c;
+							// echo "this is case 1.";
 							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
 							main0cat($item_main_cat);
 						break;
 						case 2:
-							echo $qim0c;
-							echo "this is case 2.";
-							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
+							// echo $qim0c;
+							// echo "this is case 2.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c';");
+							}
 							s1cat($item_main_cat,$item_sub1_cat);
 						break;
 						case 3:
-							echo $qim0c;
-							echo "this is case 3.";
-							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
+							// echo $qim0c;
+							// echo "this is case 3.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c' AND s2='$qis2c';");
+							}
 							s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
 						break;
 						case 4:
-							echo $qim0c;
-							echo "this is case 4.";
-							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							// echo $qim0c;
+							// echo "this is case 4.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							}
 							s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
 						break;
 						case 5:
-							echo $qim0c;
-							echo "this is case 5.";
-							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							// echo $qim0c;
+							// echo "this is case 5.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							}
 							s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat);
 						break;
 						default:
