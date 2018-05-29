@@ -1208,6 +1208,7 @@ img.p2-cert-img {
   font-family: 'Questrial', sans-serif;
   padding-left: 5px;
   padding-right: 5px;
+  /* vertical-align: top; */
 }
 td.prod-itemnum {
   font-size: 10pt;

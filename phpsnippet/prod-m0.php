@@ -18,12 +18,15 @@
     }
     // print_r($prods1);
     if(!empty($prods1[0]->s1)) {
+      //s1 is not empty. s1 category exits here.
       echo "<div class='s1-box-background'>";
       echo "<div class='s1-box-flex-container'>";
       $counter = 0;
       foreach($prods1 as $prods1) {
         $qs1 = addslashes($prods1->s1);
         $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$qs1' AND cat1img IS NOT NULL;");
+        $s2count = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$cm0' AND s1 = '$qs1';");
+        echo $s2count;
         // print_r(sizeof($img));
         echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
         echo "<div class='item-img'>";
@@ -48,7 +51,12 @@
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0';");
       $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-      include 'prod-itemtable.php';
+      $itemcount = count($catitems);
+      if($itemcount > 1) {
+        include 'prod-itemtable.php';
+      } else {
+        echo "go straight to item page.";
+      }
     }
 
   } // end if main cat is not equal to 'Tools';
@@ -97,7 +105,13 @@
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1 LIKE '%tools%';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE s1 LIKE '%tools%';");
       $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-      include 'prod-itemtable.php';
+      // echo count($catitems);
+      $itemcount = count($catitems);
+      if($itemcount > 1) {
+        include 'prod-itemtable.php';
+      } else {
+        echo "go straight to item page.";
+      }
     }
   }
 

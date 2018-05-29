@@ -47,7 +47,12 @@
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1' AND s2 = '$cs2';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1' AND s2 = '$cs2';");
       $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-      include 'prod-itemtable.php';
+      $itemcount = count($catitems);
+      if($itemcount > 1) {
+        include 'prod-itemtable.php';
+      } else {
+        echo "go straight to item page.";
+      }
 
     }
     echo "</div>";	// end s1-box-flex-container

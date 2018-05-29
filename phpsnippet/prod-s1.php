@@ -52,8 +52,12 @@
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
     }
-
-    include 'prod-itemtable.php';
+    $itemcount = count($catitems);
+    if($itemcount > 1) {
+      include 'prod-itemtable.php';
+    } else {
+      echo "go straight to item page.";
+    }
 
     // echo "Only s1 for this category. This is rough. need to display table here.";
     // display item table here...
