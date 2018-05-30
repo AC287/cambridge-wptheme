@@ -28,15 +28,15 @@
             $tools_cats1iclass = $tools_cats1i->s1;
             $tools_cats1iclass = preg_replace("/[^a-zA-Z0-9]/","",$tools_cats1iclass);
             echo "<div class='custaccordion no-sub s1-$tools_cats1iclass'>";
-            $tools_s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE s1='$tools_cats1i->s1';");
-            if(!$tools_s2_check){
-              $tools_item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE s1='$tools_cats1i->s1';");
-            }
-            if(count($tools_item_check)==1){
-              echo "<a href='".home_url()."/products/item/?id=".urlencode($tools_item_check[0]->item)."&m0=".urlencode($each_mc->m0)."&s1=".urlencode($tools_cats1i->s1)."'>".$tools_cats1i->s1."</a>";
-            } else {
-              echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($tools_cats1i->s1)."'>".$tools_cats1i->s1."</a>";
-            }
+            // $tools_s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE s1='$tools_cats1i->s1';");
+            // if(!$tools_s2_check){
+            //   $tools_item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE s1='$tools_cats1i->s1';");
+            // }
+            // if(count($tools_item_check)==1){
+            //   echo "<a href='".home_url()."/products/item/?id=".urlencode($tools_item_check[0]->item)."&m0=".urlencode($each_mc->m0)."&s1=".urlencode($tools_cats1i->s1)."'>".$tools_cats1i->s1."</a>";
+            // } else {
+            // }
+            echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($tools_cats1i->s1)."'>".$tools_cats1i->s1."</a>";
             echo "</div>";
           }
         } // end if m0 == tools.
@@ -58,25 +58,25 @@
               foreach($s2_category as $each_s2) {
                 $s2class = $each_s2->s2;
                 $s2class = preg_replace("/[^a-zA-Z0-9]/","",$s2class);
-                $s2_item = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$each_mc->m0' AND s1='$each_s1->s1' AND s2='$each_s2->s2';");
+                // $s2_item = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$each_mc->m0' AND s1='$each_s1->s1' AND s2='$each_s2->s2';");
                 echo "<div class='custaccordion no-sub s2-$s2class'>";
-                  if(count($s2_item)==1){
-                    echo "<a href='".home_url()."/products/item/?id=".urlencode($s2_item[0]->item)."&m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."&s2=".urlencode($each_s2->s2)."'>".$each_s2->s2."</a>";
-                  } else {
-                    echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."&s2=".urlencode($each_s2->s2)."'>".$each_s2->s2."</a>";
-                  }
+                  // if(count($s2_item)==1){
+                  //   echo "<a href='".home_url()."/products/item/?id=".urlencode($s2_item[0]->item)."&m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."&s2=".urlencode($each_s2->s2)."'>".$each_s2->s2."</a>";
+                  // } else {
+                  // }
+                  echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."&s2=".urlencode($each_s2->s2)."'>".$each_s2->s2."</a>";
                 echo "</div>";
               }
               echo "</div>";  // end panel
             } else {
               // s2 is empty. Item category only have s1.
-              $s1_item = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$each_mc->m0' AND s1='$each_s1->s1';");
+              // $s1_item = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$each_mc->m0' AND s1='$each_s1->s1';");
               echo "<div class='custaccordion no-sub s1-$s1class'>";
-                if(count($s1_item)==1){
-                  echo "<a href='".home_url()."/products/item/?id=".urlencode($s1_item[0]->item)."&m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."'>".$each_s1->s1."</a>";
-                } else {
-                  echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."'>".$each_s1->s1."</a>";
-                }
+                // if(count($s1_item)==1){
+                //   echo "<a href='".home_url()."/products/item/?id=".urlencode($s1_item[0]->item)."&m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."'>".$each_s1->s1."</a>";
+                // } else {
+                // }
+                echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."&s1=".urlencode($each_s1->s1)."'>".$each_s1->s1."</a>";
               echo "</div>";
             }
           } // end foreach of s1.
@@ -87,14 +87,14 @@
         echo "</div>";  // end panel
       } else {
         // s1 is empty. Item category only have m0.
-        $m0_item = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$each_mc->m0';");
+        // $m0_item = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$each_mc->m0';");
 
         echo "<div class='custaccordion m0-$m0class'>";
-        if(count($m0_item)==1) {
-          echo "<a href='".home_url()."/products/item/?id=".urlencode($m0_item[0]->item)."&m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a>";
-        } else {
-          echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a>";
-        }
+        // if(count($m0_item)==1) {
+        //   echo "<a href='".home_url()."/products/item/?id=".urlencode($m0_item[0]->item)."&m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a>";
+        // } else {
+        // }
+        echo "<a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a>";
         echo "</div>";
       }
     }

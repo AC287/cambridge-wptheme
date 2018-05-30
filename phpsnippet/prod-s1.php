@@ -24,7 +24,7 @@
       $qs2 = addslashes($prods2->s2);
       $img = $wpdb->get_results("SELECT DISTINCT cat2img FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1' AND s2 = '$qs2' AND cat2img IS NOT NULL;");
 
-      $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$cm0' AND s1='$qs1' AND s2 = '$qs2';");
+      $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$cm0' AND s1='$cs1' AND s2 = '$qs2';");
 
       // print_r(sizeof($img));
       // print_r($img);
