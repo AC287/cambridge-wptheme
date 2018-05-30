@@ -23,9 +23,16 @@
     foreach($prods2 as $prods2) {
       $qs2 = addslashes($prods2->s2);
       $img = $wpdb->get_results("SELECT DISTINCT cat2img FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1' AND s2 = '$qs2' AND cat2img IS NOT NULL;");
+
+      $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$cm0' AND s1='$qs1' AND s2 = '$qs2';");
+
       // print_r(sizeof($img));
       // print_r($img);
-      echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($prods2->s2)."' class='s1-box'>";
+      if(count($item_check)==1) {
+        echo "<a href='../item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($prods2->s2)."' class='s1-box'>";
+      } else {
+        echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($prods2->s2)."' class='s1-box'>";
+      }
       echo "<div class='item-img'>";
       if ($img[0]->cat2img==' ' || $img[0]->cat2img=='') {
         echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
@@ -53,19 +60,16 @@
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
     }
     $itemcount = count($catitems);
-    if($itemcount > 1) {
-      include 'prod-itemtable.php';
-    } else {
-      echo "go straight to item page.";
-    }
+    include 'prod-itemtable.php';
+
 
     // echo "Only s1 for this category. This is rough. need to display table here.";
     // display item table here...
   }
   echo "</div>";	// end s1-box-flex-container
   echo "</div>";	// end s1-box-background
-    // $mPos++;
-    echo "</div>";  //end group-container div;
+  // $mPos++;
+  echo "</div>";  //end group-container div;
 
 
 

@@ -1,7 +1,7 @@
 <?php
 echo "<div class='prod-tt-container'>";
   echo "<div class='p2-header'>";
-    if($p2s2!=""){
+    if($cs2!=""){
       echo "<div class='p2-title'>".stripslashes($cs2)."</div>";
     } else {
       echo "<div class='p2-title'>".stripslashes($cs1)."</div>";

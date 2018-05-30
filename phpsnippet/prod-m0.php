@@ -26,9 +26,16 @@
         $qs1 = addslashes($prods1->s1);
         $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$qs1' AND cat1img IS NOT NULL;");
         $s2count = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$cm0' AND s1 = '$qs1';");
-        echo $s2count;
+        if(!$s2count){
+          $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$cm0' AND s1='$qs1';");
+        }
+        // echo $s2count;
         // print_r(sizeof($img));
-        echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        if(count($item_check)==1){
+          echo "<a href='../item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        } else {
+          echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        }
         echo "<div class='item-img'>";
         if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
           echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
@@ -52,14 +59,13 @@
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0';");
       $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
       $itemcount = count($catitems);
-      if($itemcount > 1) {
-        include 'prod-itemtable.php';
-      } else {
-        echo "go straight to item page.";
-      }
+
+      include 'prod-itemtable.php';
+
     }
 
   } // end if main cat is not equal to 'Tools';
+
   else {
     //THIS IS TOOLS...
 
@@ -80,8 +86,17 @@
         $qs1 = addslashes($prods1->s1);
         // $m0qs1 = $wpdb->get_results("SELECT DISTINCT m0 FROM wp_prodlegend WHERE s1 = '$qs1';");
         $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE s1 = '$qs1' AND cat1img IS NOT NULL;");
-        // print_r(sizeof($img));
-        echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+
+        $s2count = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE s1 = '$qs1';");
+        if(!$s2count){
+          $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE s1='$qs1';");
+        }
+
+        if(count($item_check)==1) {
+          echo "<a href='../item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        } else {
+          echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1->s1)."' class='s1-box'>";
+        }
         echo "<div class='item-img'>";
         if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
           echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
@@ -105,13 +120,8 @@
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1 LIKE '%tools%';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE s1 LIKE '%tools%';");
       $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-      // echo count($catitems);
       $itemcount = count($catitems);
-      if($itemcount > 1) {
-        include 'prod-itemtable.php';
-      } else {
-        echo "go straight to item page.";
-      }
+      include 'prod-itemtable.php';
     }
   }
 

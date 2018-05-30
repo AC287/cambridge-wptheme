@@ -24,6 +24,8 @@
 
 			$item_id = $wp_query->query_vars['id'];	//assign query value
 			$item_m0 = $wp_query->query_vars['m0'];
+			$item_s1 = $wp_query->query_vars['s1'];
+			$item_s2 = $wp_query->query_vars['s2'];
 			// echo $item_m0;
 			// print_r($p2m0);
 			// print_r($p2s1);
@@ -47,7 +49,7 @@
 					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND m0='$item_m0';");
 					$item_main_cat = $get_item_data[0]->m0;
 				} else {
-					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id';");
+					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND s1='$item_s1';");
 					$item_main_cat = $item_m0;
 				}
 				$get_cert_img = $wpdb->get_results("SELECT * FROM wp_cert;");
