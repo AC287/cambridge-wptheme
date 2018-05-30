@@ -3100,7 +3100,7 @@ a.spec-sheet {
 .tradeshows-archive-col {
   background-color: #f5f6f6;
   /*min-height: 100vh;*/
-  padding: 5px 5px 5px 10px;
+  padding: 5px 10px 5px 10px;
   /* padding-top: 5px; */
   /* padding-left: 10px; */
   /*padding-bottom: 10px;*/
@@ -3161,10 +3161,10 @@ a.spec-sheet {
   /*font-weight: bold;*/
 }
 .ayc-year span {
-  padding-left: 5px;
+  padding-left: 15px;
 }
 .archive-title {
-  padding-left: 25px;
+  padding-left: 35px;
 }
 .archive-title p {
   font-size: 10pt;
