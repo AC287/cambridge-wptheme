@@ -141,17 +141,17 @@ if(s1param) {
 
 if(m0param && s1param && s2param) {
   $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
-    'background-color':'#f7f7f7',
+    'background-color':'#e5e5e5',
   })
 }
 if(m0param && s1param && !s2param) {
   $('.m0i-'+m0param+' '+s1paramInner).css({
-    'background-color':'#f7f7f7',
+    'background-color':'#e5e5e5',
   })
 }
 if(m0param && !s1param && !s2param) {
   $(m0paramInner).css({
-    'background-color':'#f7f7f7',
+    'background-color':'#e5e5e5',
   })
 }
 
