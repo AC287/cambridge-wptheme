@@ -8,6 +8,46 @@ echo "<div class='prod-tt-container'>";
     }
     echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
+  echo "<div class='p2-header'>";
+    // echo "yohoo";
+    // print_r($catitems);
+    // echo count($catitems);
+    // echo gettype($catitems);
+    $uniquespec = unique_multidim_array($catitems,'spec');
+    // print_r($uniquespec);
+    // echo "<ul class='prodcat-spec'>";
+    foreach($uniquespec as $uniqueindex=>$uniquespec1) {
+      if($uniquespec1) {
+        echo "<p>";
+        echo "<a target='_blank' rel='noopener noreferrer' href='$uniquespec1'>Specsheet (".($uniqueindex + 1).")</a>";
+        echo "</p>";
+      }
+    }
+    // echo "</ul>";
+
+
+    function unique_multidim_array($array, $key) {
+      // source: http://php.net/manual/en/function.array-unique.php
+        $temp_array = array();
+        $key_array = array();
+
+        foreach($array as $val) {
+          // print_r($val);
+            if (!in_array($val->$key, $key_array)) {
+                // $key_array[$i] = $val->$key;
+                // $temp_array[$i] = $val;
+                array_push($key_array, $val->$key);
+            }
+            $i++;
+        }
+        // return $temp_array;
+        return $key_array;
+
+    }
+
+
+
+  echo "</div>";
 
   echo "<div class='p2-divider'>";
     if ($catlegend[0]->imgdivider != ""){
