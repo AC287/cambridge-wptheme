@@ -51,6 +51,8 @@
 											$s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");
 											if(!$s2_check){
 												$item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$qm0' AND s1='$qs1';");
+											} else {
+												$item_check = null;
 											}
 
 											if($counter < 4) {
@@ -228,6 +230,8 @@
 											$s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE s1='$qs1';");
 											if(!$s2_check){
 												$item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE s1='$qs1';");
+											} else {
+												$item_check = null;
 											}
 
 											if($counter < 4) {

@@ -16,11 +16,12 @@
       echo "<p>".$descm0[0]->m0desc."</p>";
       echo "</div>";
     }
+    echo "<div class='s1-box-background'>";
+    echo "<div class='s1-box-flex-container'>";
     // print_r($prods1);
     if(!empty($prods1[0]->s1)) {
       //s1 is not empty. s1 category exits here.
-      echo "<div class='s1-box-background'>";
-      echo "<div class='s1-box-flex-container'>";
+
       $counter = 0;
       foreach($prods1 as $prods1) {
         $qs1 = addslashes($prods1->s1);
@@ -28,6 +29,8 @@
         $s2count = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$cm0' AND s1 = '$qs1';");
         if(!$s2count){
           $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$cm0' AND s1='$qs1';");
+        } else {
+          $item_check = null;
         }
         // echo $s2count;
         // print_r(sizeof($img));
@@ -51,8 +54,6 @@
       for($k=$counter; $k%4!=0; $k++){
         echo "<a class='s1-box s1-box-filler'></a>";
       }
-      echo "</div>";	// end s1-box-flex-container
-      echo "</div>";	// end s1-box-background
     } else {
       //s1 category is empty. display graph.
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
@@ -63,6 +64,8 @@
       include 'prod-itemtable.php';
 
     }
+    echo "</div>";	// end s1-box-flex-container
+    echo "</div>";	// end s1-box-background
 
   } // end if main cat is not equal to 'Tools';
 
@@ -77,10 +80,11 @@
       echo "<p>".$descm0[0]->m0desc."</p>";
       echo "</div>";
     }
+    echo "<div class='s1-box-background'>";
+    echo "<div class='s1-box-flex-container'>";
     // print_r($prods1);
     if(!empty($prods1[0]->s1)) {
-      echo "<div class='s1-box-background'>";
-      echo "<div class='s1-box-flex-container'>";
+
       $counter = 0;
       foreach($prods1 as $prods1) {
         $qs1 = addslashes($prods1->s1);
@@ -90,6 +94,8 @@
         $s2count = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE s1 = '$qs1';");
         if(!$s2count){
           $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE s1='$qs1';");
+        } else {
+          $item_check = null;
         }
 
         if(count($item_check)==1) {
@@ -112,8 +118,6 @@
       for($k=$counter; $k%4!=0; $k++){
         echo "<a class='s1-box s1-box-filler'></a>";
       }
-      echo "</div>";	// end s1-box-flex-container
-      echo "</div>";	// end s1-box-background
     } else {
       //s1 category is empty. display graph.
       // $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0';");
@@ -123,6 +127,8 @@
       $itemcount = count($catitems);
       include 'prod-itemtable.php';
     }
+    echo "</div>";	// end s1-box-flex-container
+    echo "</div>";	// end s1-box-background
   }
 
     // $mPos++;
