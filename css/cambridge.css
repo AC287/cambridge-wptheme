@@ -1400,7 +1400,7 @@ td.prod-data {
 a.spec-sheet {
   color: blue;
   text-decoration: underline;
-  cursor: auto;
+  cursor: pointer;
 }
 .ip-certification, .ip-description {
   padding: 10px 40px 10px 40px;

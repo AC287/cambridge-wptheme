@@ -215,7 +215,7 @@
 								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
 								// echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
 								echo "<table class='ip-each-data-table'>";
-								for ($x=1; $x <=8; $x++) {
+								for ($x=1; $x <=9; $x++) {
 									$d = "d".$x;
 									echo "<tr class='ip-each-data'>";
 									if ($get_item_data[0]->$d !=""){
@@ -235,7 +235,7 @@
 								}
 								echo "</table>";
 								echo "<br/>";
-								echo "<a class='spec-sheet' href='".$get_item_data[0]->d9."'>SPEC SHEET</a>";
+								echo "<a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a>";
 
 							echo "</div>";	// end item-spec-container div;
 						echo "</div>";	// end each-item-data;

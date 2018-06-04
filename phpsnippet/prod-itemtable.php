@@ -19,7 +19,7 @@ echo "<div class='prod-tt-container'>";
     foreach($uniquespec as $uniqueindex=>$uniquespec1) {
       if($uniquespec1) {
         echo "<p>";
-        echo "<a target='_blank' rel='noopener noreferrer' href='$uniquespec1'>Specsheet (".($uniqueindex + 1).")</a>";
+        echo "<a target='_blank' rel='noopener noreferrer' href='$uniquespec1'>Spec sheet (".($uniqueindex + 1).")</a>";
         echo "</p>";
       }
     }
@@ -83,7 +83,7 @@ echo "<table class='item-data-sheet'>";
 echo "<tr >";
 // Labeling cells.
 echo "<th class='col-xs'>".$catlegend[0]->item."</th>";
-for ($x=1; $x < 12; $x++) {
+for ($x=1; $x <= 9; $x++) {
   $cell_data = "d".$x;
   // print_r($catlegend[0]->$cell_data);
   // if(($catlegend[0]->d.$x)) {
@@ -123,7 +123,7 @@ foreach($catitems as $item_data) {
       echo "</p>";
     echo "</a>";
   echo "</td>";
-  for ($y=1; $y<9; $y++) {
+  for ($y=1; $y<=9; $y++) {
     $cell_data2 = "d".$y;
     if(($item_data->$cell_data2)!="") {
       echo "<td class='prod-data'>".$item_data->$cell_data2."</td>";
