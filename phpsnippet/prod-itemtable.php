@@ -8,24 +8,23 @@ echo "<div class='prod-tt-container'>";
     }
     echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
+
+
   echo "<div class='p2-header'>";
-    // echo "yohoo";
-    // print_r($catitems);
-    // echo count($catitems);
-    // echo gettype($catitems);
+
     $uniquespec = unique_multidim_array($catitems,'spec');
-    // print_r($uniquespec);
-    // echo "<ul class='prodcat-spec'>";
-    foreach($uniquespec as $uniqueindex=>$uniquespec1) {
+
+    $specsheetnum = 0;
+
+    foreach($uniquespec as $uniquespec1) {
       if($uniquespec1) {
         echo "<p>";
-        echo "<a target='_blank' rel='noopener noreferrer' href='$uniquespec1'>Spec sheet (".($uniqueindex + 1).")</a>";
+        $specsheetnum++;
+        echo "<a target='_blank' rel='noopener noreferrer' href='$uniquespec1'>Spec sheet (".$specsheetnum.")</a>";
         echo "</p>";
       }
     }
-    // echo "</ul>";
-
-
+  
     function unique_multidim_array($array, $key) {
       // source: http://php.net/manual/en/function.array-unique.php
         $temp_array = array();
