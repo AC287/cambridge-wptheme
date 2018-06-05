@@ -1402,6 +1402,12 @@ a.spec-sheet {
   text-decoration: underline;
   cursor: pointer;
 }
+a.spec-sheet.ss-empty {
+  color: currentColor;
+  text-decoration: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 .ip-certification, .ip-description {
   padding: 10px 40px 10px 40px;
 }

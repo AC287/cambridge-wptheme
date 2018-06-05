@@ -9,7 +9,8 @@ echo "<div class='prod-tt-container'>";
     echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
 
-
+/*
+  //This will display spec link in lowest level category page, on top of table.
   echo "<div class='p2-header'>";
 
     $uniquespec = unique_multidim_array($catitems,'spec');
@@ -24,7 +25,7 @@ echo "<div class='prod-tt-container'>";
         echo "</p>";
       }
     }
-  
+
     function unique_multidim_array($array, $key) {
       // source: http://php.net/manual/en/function.array-unique.php
         $temp_array = array();
@@ -47,6 +48,7 @@ echo "<div class='prod-tt-container'>";
 
 
   echo "</div>";
+  */
 
   echo "<div class='p2-divider'>";
     if ($catlegend[0]->imgdivider != ""){

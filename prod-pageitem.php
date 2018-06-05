@@ -235,7 +235,13 @@
 								}
 								echo "</table>";
 								echo "<br/>";
-								echo "<a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a>";
+								if(($get_item_data[0]->spec)!='' || ($get_item_data[0]->spec)){
+									// echo "spec is not empty";
+									echo "<a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a>";
+								} else {
+									// echo "spec is empty";
+									echo "<a class='spec-sheet ss-empty'>SPEC SHEET</a>";
+								}
 
 							echo "</div>";	// end item-spec-container div;
 						echo "</div>";	// end each-item-data;
