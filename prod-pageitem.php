@@ -249,10 +249,12 @@
 					echo "</div>";	// end each-img-data.
 					echo "</div>";	// end each-img-data-container.
 
+					if(($get_item_data[0]->cert0)!='' || ($get_item_data[0]->cert0)) {
+						// Display only when certification value exist.
 
-					echo "<div class='ip-certification'>";
-						echo "<div class='ip-certitle'>CERTIFIED:</div>";
-						echo "<div >";
+						echo "<div class='ip-certification'>";
+							echo "<div class='ip-certitle'>CERTIFIED:</div>";
+							echo "<div >";
 							// print_r(sizeof($get_cert_img));
 							for ($x=0; $x<=9; $x++) {	//this get total list of certified from item db.
 								$cert = "cert".$x;
@@ -267,12 +269,18 @@
 									}// end check loop for $get_cert_img;
 								}
 							}
-						echo "</div>";
-					echo "</div>";	// end ip-certification
-					echo "<div class='ip-description'>";
-						echo "<div class='ip-desctitle'>PRODUCT DESCRIPTION</div>";
-						echo "<p class='ip-detaildescription'>".$get_item_data[0]->d0."</p>";
-					echo "</div>";	// end ip-description;
+							echo "</div>";
+						echo "</div>";	// end ip-certification
+					}	// end if selection for certification.
+
+					if(($get_item_data[0]->d0)!='' || ($get_item_data[0]->d0)) {
+						// Display only when product description is available.
+						echo "<div class='ip-description'>";
+							echo "<div class='ip-desctitle'>PRODUCT DESCRIPTION</div>";
+							echo "<p class='ip-detaildescription'>".$get_item_data[0]->d0."</p>";
+						echo "</div>";	// end ip-description;
+					}	// end if selection for product description.
+
 				echo "</div>";	// end s1-box-background div;
 				// $mPos++;
 			echo "</div>";  //end group-container div;
