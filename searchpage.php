@@ -141,7 +141,7 @@
                     echo "<div class='secis-blur'></div>";
                   echo "</div>";  // end seci-spec;
                   echo "<div class='seci-button'>";
-                    echo "<a class='btn btn-secondary' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."' role='button'>View Details</a>";
+                    echo "<a class='btn btn-secondary' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."' role='button'>View Details</a>";
                   echo "</div>";
                 echo "</div>";  // end sec-items.
               echo "</div>";  // end search-each-container class.
