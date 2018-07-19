@@ -1174,6 +1174,9 @@ td.p2-data {
   width: 30%;
   text-align: center;
 }
+.p2-cert-img {
+  padding: 0px 5px 0px 5px;
+}
 img.p2-cert-img {
   height: 40px;
   /* height: 100%; */
@@ -1397,7 +1400,10 @@ td.prod-data {
 .ip-legend, .ip-spec {
   padding: 0px 5px 0px 5px;
 }
-a.spec-sheet {
+.ip-pdf {
+  padding-bottom: 10px;
+}
+a.spec-sheet, a.usermanual {
   color: blue;
   text-decoration: underline;
   cursor: pointer;

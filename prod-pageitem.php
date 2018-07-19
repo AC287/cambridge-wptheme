@@ -237,7 +237,10 @@
 								echo "<br/>";
 								if(($get_item_data[0]->spec)!='' || ($get_item_data[0]->spec)){
 									// echo "spec is not empty";
-									echo "<a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a>";
+									echo "<div class='ip-pdf'><a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a></div>";
+								}
+								if(($get_item_data[0]->usermanual)!='' || ($get_item_data[0]->usermanual)) {
+									echo "<div class='ip-pdf'><a class='usermanual' href='".$get_item_data[0]->usermanual."' rel='noopener noreferrer' target='_blank'>USER MANUAL</a></div>";
 								}
 
 							echo "</div>";	// end item-spec-container div;
