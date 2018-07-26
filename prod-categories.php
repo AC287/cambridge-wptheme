@@ -21,10 +21,12 @@
 			$cm0 = $wp_query->query_vars['m0'];
 			$cs1 = $wp_query->query_vars['s1'];
 			$cs2 = $wp_query->query_vars['s2'];
+			$cs3 = $wp_query->query_vars['s3'];
 			$totalquery = 0;
 			(!empty($cm0)?$totalquery++:$totalquery);
 			(!empty($cs1)?$totalquery++:$totalquery);
 			(!empty($cs2)?$totalquery++:$totalquery);
+			(!empty($cs3)?$totalquery++:$totalquery);
 
 			echo "<div id='product-main-page'>";
 			echo "<div class='cat-bar'>";	// This is accordion section.
@@ -46,6 +48,10 @@
 				case 3:
 					// echo "only m0, s1, and s2 are present";
 					include 'phpsnippet/prod-s2.php';
+				break;
+				case 4:
+					// only m0, s1, s2, and s3 are present;
+					include 'phpsnippet/prod-s3.php';
 				break;
 				default:
 					// need default when all query is emptpy........

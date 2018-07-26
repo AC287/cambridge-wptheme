@@ -1,12 +1,23 @@
 <?php
 echo "<div class='prod-tt-container'>";
   echo "<div class='p2-header'>";
-    if($cs2!=""){
-      echo "<div class='p2-title'>".stripslashes($cs2)."</div>";
-    } else {
+  switch ($totalquery) {
+    case 1:
+      echo "<div class='p2-title'>".stripslashes($cm0)."</div>";
+    break;
+    case 2:
       echo "<div class='p2-title'>".stripslashes($cs1)."</div>";
-    }
-    echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
+    break;
+    case 3:
+      echo "<div class='p2-title'>".stripslashes($cs2)."</div>";
+    break;
+    case 4:
+      echo "<div class='p2-title'>".stripslashes($cs3)."</div>";
+    break;
+    default:
+    break;
+  }
+  echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
 
 /*
