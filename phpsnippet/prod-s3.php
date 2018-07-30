@@ -1,6 +1,6 @@
 <?php
   //Product with only sub category3. m0, s1, and s2 are not empty. This will list all s3 inside given s2.
-  echo $cs2;
+  // echo $cs2;
   echo "<div class='group-container'>";
   echo "<div class='m-title'>";
     echo "<a href='".home_url()."/product'>PRODUCT HOME </a> >> <a href='../categories/?m0=".urlencode($cm0)."'>".stripslashes($cm0)."</a> >> ";

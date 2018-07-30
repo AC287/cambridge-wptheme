@@ -116,7 +116,7 @@ foreach($catitems as $item_data) {
     $ipt_class = preg_replace("/[^a-zA-Z0-9]/","",$item_data->item);
     // echo $ipt_class;
     // echo $cm0;
-    echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($cs2)."'>";
+    echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($cs2)."&s3=".urlencode($cs3)."'>";
       echo $item_data->item;
       // $ipt_img = $item_data->img0;
       echo "<p class='item-preview-thumb ipt-$ipt_class'>";

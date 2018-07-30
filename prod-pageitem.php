@@ -26,6 +26,7 @@
 			$item_m0 = $wp_query->query_vars['m0'];
 			$item_s1 = $wp_query->query_vars['s1'];
 			$item_s2 = $wp_query->query_vars['s2'];
+			$item_s3 = $wp_query->query_vars['s3'];
 			// echo $item_m0;
 			// print_r($p2m0);
 			// print_r($p2s1);
@@ -56,15 +57,19 @@
 
 				$item_sub1_cat = $get_item_data[0]->s1;
 				$item_sub2_cat = $get_item_data[0]->s2;
+				$item_sub3_cat = $get_item_data[0]->s3;
 
 				$qim0c = addslashes($item_main_cat);
 				$qis1c = addslashes($item_sub1_cat);
 				$qis2c = addslashes($item_sub2_cat);
+				$qis3c = addslashes($item_sub3_cat);
 
 				$totalquery = 0;
 				(!empty($qim0c)?$totalquery++:$totalquery);
 				(!empty($qis1c)?$totalquery++:$totalquery);
 				(!empty($qis2c)?$totalquery++:$totalquery);
+				(!empty($qis3c)?$totalquery++:$totalquery);
+
 
 				echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
 					switch($totalquery) {
