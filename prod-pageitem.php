@@ -240,7 +240,7 @@
 								}
 								echo "</table>";
 								echo "<br/>";
-								if(($get_item_data[0]->spec)!='' || ($get_item_data[0]->spec) || ($get_item_data[0]->spec)!=' '){
+								if((($get_item_data[0]->spec)!='' || ($get_item_data[0]->spec)) && ($get_item_data[0]->spec)!=" "){
 									// echo "spec is not empty";
 									echo "<div class='ip-pdf'><a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a></div>";
 								}
