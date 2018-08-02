@@ -59,7 +59,7 @@
       echo "</div>";  // end panel
     } else {
       // s1 is empty
-      echo "<div class='custaccordion m0-$m0class'><a href='".home_url()."/products/pm0/?m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a></div>";
+      echo "<div class='custaccordion m0-$m0class'><a href='".home_url()."/products/categories/?m0=".urlencode($each_mc->m0)."'>".$each_mc->m0."</a></div>";
     }
   }
   echo "</div>";
