@@ -1,7 +1,25 @@
 <?php
 
   global $wpdb;
-  $main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prodlegend;");
+  // $main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prodlegend;");
+  $main_category = $wpdb->get_results("SELECT m0priority,m0 FROM wp_prodlegend GROUP BY m0;");
+  // usort($main_category, function($a,$b){
+  //   if($a->m0priority == $b->m0priority) {
+  //     return 0;
+  //   }
+  //   return ($a->m0priority < $b->m0priority)? -1:1;
+  // });
+  // usort($main_category, function($a,$b){
+  //   return strcmp($a->m0,$b->m0);
+  // });
+  // $mc_m0priority = array_column($main_category->m0priority);
+  // $mc_m0 = array_column($main_category->m0);
+  // array_multisort($main_category->m0priority, SORT_ASC, $main_category->m0, SORT_ASC, SORT_STRING, $main_category);
+  foreach($main_category as $main_category0) {
+    $m0priority[] = $main_category0->m0priority;
+    $m0[] = $main_category0->m0;
+  }
+  array_multisort($m0priority, SORT_ASC, $m0, SORT_ASC, $main_category);
   echo "<h4 class='productaccordion-maintitle-container'>";
     echo "<a class='productaccordion-maintitle' href='".home_url()."/products'>PRODUCT CATEGORIES</a>";
     echo "<div class='productaccordion-mobilemenu'>";
