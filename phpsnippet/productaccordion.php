@@ -1,6 +1,13 @@
 <?php
 
   global $wpdb;
+  $test_cat = $wpdb->get_results("SELECT * From wp_prodlegend;");
+  // print_r(array_unique($test_cat->m0));
+  // print_r($test_cat);
+
+  //  https://stackoverflow.com/questions/4742903/php-find-entry-by-object-property-from-a-array-of-objects/4742925
+
+
   $main_category = $wpdb->get_results("SELECT DISTINCT m0 From wp_prodlegend;");
   echo "<h4 class='productaccordion-maintitle-container'>";
     echo "<a class='productaccordion-maintitle' href='".home_url()."/products'>PRODUCT CATEGORIES</a>";
