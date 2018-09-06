@@ -33,7 +33,7 @@
 
   //php mailer variables
   $to = "arthurchen287@gmail.com";
-  $subject = "Someone sent a message from ".get_bloginfo('name');
+  $subject = "Cambridge web contact from $name";
   $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
   if($message !=''){
     $sent = wp_mail($to,$subject,strip_tags($contents),$headers);

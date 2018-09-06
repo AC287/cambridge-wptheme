@@ -1,7 +1,7 @@
 <?php
 
   global $wpdb;
-  $test_cat = $wpdb->get_results("SELECT * From wp_prodlegend;");
+  // $test_cat = $wpdb->get_results("SELECT * From wp_prodlegend;");
   // print_r(array_unique($test_cat->m0));
   // print_r($test_cat);
 

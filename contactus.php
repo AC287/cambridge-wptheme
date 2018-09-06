@@ -1,6 +1,8 @@
 <!--  Template Name: Contact Us  -->
-
-<?php get_header();?>
+<?php
+wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js');
+get_header();
+?>
 
 <div class='contact-banner'>
   <div class='cb-img'>
@@ -21,9 +23,9 @@
     <div class='col-sm-12 contact-maintitle'>
       <span>CONTACT</span>
     </div>
-    <div class='.contact-form-input'>
+    <div class='contact-form-input'>
       <?php echo $response; ?>
-      <form action='<?php the_permalink();?>success' method='post' class='row' autocomplete="off">
+      <form action='<?php the_permalink();?>success' method='post' class='row' autocomplete="off" id='contact_form'>
       <!-- <form action='<?php //echo esc_url(admin_url('admin-post.php'));?>' method='post' class='row'> -->
         <div class='form-group contact-sm-input col-sm-6'>
           <input type='text' name='contact-name' placeholder='Name' required>
@@ -39,6 +41,9 @@
         </div>
         <div class='form-group contact-message col-sm-12'>
           <textarea type='text' name='contact-message' placeholder='Type your message here' required></textarea>
+        </div>
+        <div class='form-group contact-nonrobot'>
+          <div class='g-recaptcha' data-sitekey='6Ld_zG4UAAAAALPR_7esBJ6jfRSu1wa0zZVHvh-n'></div>
         </div>
         <div class='form-group contact-submit'>
           <input type='hidden' name='submitted' value='1'>
@@ -88,3 +93,9 @@
 </div>  <!--  end contact-salesmanager class -->
 
 <?php get_footer();?>
+
+<!---
+  reCaptcha:
+  https://codeforgeek.com/2014/12/add-google-recaptcha-wordpress/
+  https://www.oueta.com/wordpress/add-google-recaptcha-to-wordpress-comments-without-plugin/
+->
