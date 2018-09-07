@@ -575,6 +575,42 @@ function checkSize() {
     slidesToShow: 3,
     slidesToScroll: 1
   });
+  // console.log(siteParameters.theme_directory);
+
+  // console.log(grecaptcha.getResponse());
+
+  // if(grecaptcha.getResponse()=='') {
+  //   $('.contact-submit-button').prop('disabled', true);
+  // } else {
+  //   $('.contact-submit-button').prop('disabled', false);
+  // }
+  $('.recaptcha-checkbox').click(function(){
+    console.log(grecaptcha.getResponse());
+  })
+  $('#contact_form').on("submit", function(e) {
+    e.preventDefault();
+    // console.log('submit is clicked.');
+    // console.log(grecaptcha.getResponse());
+
+
+
+    // $.ajax({
+    //   type:"POST",
+    //   url: siteParameters.theme_directory + 'phpsnippet/google_captcha.php',
+    //   data: {
+    //     captcha: grecaptcha.getResponse()
+    //   },
+    //   success: function() {
+    //     console.log('success');
+    //   }
+    // })
+
+  })
+
+  // $.ajax({
+  //   type:"POST",
+  //   url: siteParameters.theme_directory + "/phpsnippet/google_captcha.php"
+  // })
 
 })
 

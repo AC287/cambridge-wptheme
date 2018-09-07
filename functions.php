@@ -42,10 +42,20 @@ function cambridge_script_enqueue() {
 
   // wp_enqueue_script('jquery');
   wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.js',array('jquery'),'1.0.0',true);
-  wp_enqueue_script('customjs',get_template_directory_uri().'/js/cambridge.js', array('jquery'), '1.0.44', true);
+  wp_enqueue_script('customjs',get_template_directory_uri().'/js/cambridge.js', array('jquery'), '1.0.45', true);
   wp_enqueue_script('slickjs',get_template_directory_uri().'/js/slick.js', array('jquery'), '1.0.0',true);
+  // wp_enqueue_script('mylib');
   // wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js');
 }
+
+//wp_register_script is necessary to call wp_localize_script.
+//This allow javascript to get theme directory template.
+wp_register_script('customjs', get_template_directory_uri().'/js/cambridge.js');
+$site_parameters = array(
+    'site_url' => get_site_url(),
+    'theme_directory' => get_template_directory_uri()
+);
+wp_localize_script('customjs','siteParameters',$site_parameters);
 
 add_action('wp_enqueue_scripts', 'cambridge_script_enqueue');
 // add_filter('show_admin_bar','__return_false');
@@ -59,6 +69,8 @@ function my_excerpt_length($length) {
 add_filter('excerpt_length', 'my_excerpt_length');
 
 
+
+// wp_localize_script('mylib','WPURLS', array('siteurl'=>get_option('siteurl')));
 /**
  * Google recaptcha add before the submit button
  */

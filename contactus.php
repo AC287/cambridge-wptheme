@@ -48,7 +48,7 @@ get_header();
         <div class='form-group contact-submit'>
           <input type='hidden' name='submitted' value='1'>
           <!-- <input type='hidden' name='action' value='contact_form'> -->
-          <button type='submit'>SEND</button>
+          <button type='submit' class='contact-submit-button'>SEND</button>
         </div>
       </form>
     </div>
