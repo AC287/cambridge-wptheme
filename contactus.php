@@ -1,10 +1,18 @@
 <!--  Template Name: Contact Us  -->
+
+<?php
+// if(!isset($_SERVER['HTTPS'])) {
+//   header('Location: https://'.$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']);
+//   exit();
+// }
+?>
+
 <?php
 wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js');
-if($_SERVER["HTTPS"] != "on") {
-  header("Location: https://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
-  exit();
-}
+// if($_SERVER["HTTPS"] != "on") {
+//   header("Location: https://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
+//   exit();
+// }
 get_header();
 ?>
 
