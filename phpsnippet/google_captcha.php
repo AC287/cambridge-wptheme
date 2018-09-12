@@ -1,5 +1,9 @@
 <?php
+
+/*
     $data;
+    // print_r($data);
+    // echo $data;
     header('Content-Type: application/json');
     error_reporting(E_ALL ^ E_NOTICE);
     if(isset($_POST['g-recaptcha-response'])) {
@@ -13,6 +17,7 @@
      // calling google recaptcha api.
      $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Ld_zG4UAAAAACmaLT4I56matKabtGpTLUM5kO1h&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
      // validating result.
+     // echo json_encode($response);
      if($response.success==false) {
         $data=array('spam' => 'true');
         echo json_encode($data);
@@ -20,4 +25,25 @@
         $data=array('spam' => 'false');
         echo json_encode($data);
      }
+     */
+
+     $captchasecret = '6Ld_zG4UAAAAACmaLT4I56matKabtGpTLUM5kO1h';
+     $captcharesponse = $_POST['g-recaptcha-response'];
+
+     if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){
+       $arrContextOptions = array(
+         "ssl"=>array(
+           "verify_peer" => false,
+           "verify_peer_name" => false,
+         ),
+       );
+       $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchasecret.'&response='.$captcharesponse.'&remoteip='.$_SERVER['REMOTE_ADDR'], false, stream_context_create($arrContextOptions));
+     } else {
+       $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchasecret.'&response='.$captcharesponse.'&remoteip='.$_SERVER['REMOTE_ADDR']);
+
+     }
+
+     $responseData = json_decode($verifyResponse);
+     // print_r($responseData);
+
 ?>

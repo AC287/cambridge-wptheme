@@ -1,4 +1,12 @@
 <!--  Template Name: Contact Success  -->
+<?php
+if($_SERVER["HTTPS"] != "on") {
+  header("Location: https://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
+  exit();
+}
+get_header();
+
+?>
 
 <?php
 
@@ -21,19 +29,16 @@
   // $email_invalid   = "Email Address Invalid.";
   // $message_unsent  = "Message was not sent. Try Again.";
   $message_sent    = "Thanks! Your message has been sent.";
-
+  $message_spam    = "Spam detected. Please sent your inquiry to info@cambridgeresources.com";
+  include 'phpsnippet/google_captcha.php';
   //user posted variables
   $name = $_POST['contact-name'];
   $email = $_POST['contact-email'];
   $message = $_POST['contact-message'];
   $company = $_POST['contact-company'];
   $phone = $_POST['contact-phone'];
-  $captcha = $_POST['g-recaptcha-response'];
   // print_r($captcha);
-  $captchasecret = '6Ld_zG4UAAAAACmaLT4I56matKabtGpTLUM5kO1h';
-  $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchasecret.'&response='.$captcha);
-  $responseData = json_decode($verifyResponse);
-  print_r($responseData);
+  // print_r($responseData);
   // $human = $_POST['message_human'];
   $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
 
@@ -41,8 +46,8 @@
   $to = "arthurchen287@gmail.com";
   $subject = "Cambridge web contact from $name";
   $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
-  if($message !=''){
-    // $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
+  if($message !='' && $responseData->success){
+    $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
 
     // unset($name, $email, $message, $company, $phone, $contents);
   }
@@ -54,7 +59,6 @@
   // $homeurl = home_url();
   // header('refresh:5; url='.home_url());
 ?> -->
-<?php get_header();?>
 
 <div class='contact-banner'>
   <div class='cb-img'>
@@ -84,7 +88,8 @@
           <div class="entry-content">
             <h4><?php the_content();?></h4>
           </div>
-        </article>  <!-- end article post -->
+        </article>
+        <!-- end article post -->
       <?php endwhile;?>
     </div>
     <div class='contact-phaddress'>

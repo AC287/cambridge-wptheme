@@ -584,26 +584,22 @@ function checkSize() {
   // } else {
   //   $('.contact-submit-button').prop('disabled', false);
   // }
-  $('.recaptcha-checkbox').click(function(){
-    console.log(grecaptcha.getResponse());
-  })
+  // $('.recaptcha-checkbox').click(function(){
+  //   // console.log(grecaptcha.getResponse());
+  //   console.log('clicked');
+  // })
   $('#contact_form').on("submit", function(e) {
     e.preventDefault();
-    // console.log('submit is clicked.');
-    // console.log(grecaptcha.getResponse());
 
+    var captcharesponse = grecaptcha.getResponse();
 
+    if(captcharesponse == '') {
+      alert('Please check the captcha!');
+    }
 
-    // $.ajax({
-    //   type:"POST",
-    //   url: siteParameters.theme_directory + 'phpsnippet/google_captcha.php',
-    //   data: {
-    //     captcha: grecaptcha.getResponse()
-    //   },
-    //   success: function() {
-    //     console.log('success');
-    //   }
-    // })
+    if(captcharesponse != ''){
+      $('#contact_form')[0].submit();
+    }
 
   })
 
