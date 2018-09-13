@@ -1,60 +1,13 @@
 <!--  Template Name: Contact Success  -->
 <?php
-if($_SERVER["HTTPS"] != "on") {
-  header("Location: https://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
-  exit();
-}
+// if($_SERVER["HTTPS"] != "on") {
+//   header("Location: https://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
+//   exit();
+// }
 get_header();
 
 ?>
 
-<?php
-
-  // source: https://premium.wpmudev.org/blog/how-to-build-your-own-wordpress-contact-form-and-why/
-  //response generation function
-  $response = "";
-
-  //function to generate response
-  // function my_contact_form_generate_response($type, $message){
-  //
-  //   global $response;
-  //
-  //   if($type == "success") $response = "<div class='success'>{$message}</div>";
-  //   else $response = "<div class='error'>{$message}</div>";
-  //
-  // }
-  //response messages
-  // $not_human       = "Human verification incorrect.";
-  // $missing_content = "Please supply all information.";
-  // $email_invalid   = "Email Address Invalid.";
-  // $message_unsent  = "Message was not sent. Try Again.";
-  $message_sent    = "Thanks! Your message has been sent.";
-  $message_spam    = "Spam detected. Please sent your inquiry to info@cambridgeresources.com";
-  include 'phpsnippet/google_captcha.php';
-  //user posted variables
-  $name = $_POST['contact-name'];
-  $email = $_POST['contact-email'];
-  $message = $_POST['contact-message'];
-  $company = $_POST['contact-company'];
-  $phone = $_POST['contact-phone'];
-  // print_r($captcha);
-  // print_r($responseData);
-  // $human = $_POST['message_human'];
-  $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
-
-  //php mailer variables
-  $to = "arthurchen287@gmail.com";
-  $subject = "Cambridge web contact from $name";
-  $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
-  if($message !='' && $responseData->success){
-    $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
-
-    // unset($name, $email, $message, $company, $phone, $contents);
-  }
-
-  // if($sent) my_contact_form_generate_response('success',$message_sent);
-  // else my_contact_form_generate_response('error',$message_unsent);
-?>
 <!-- <?php
   // $homeurl = home_url();
   // header('refresh:5; url='.home_url());
@@ -80,17 +33,69 @@ get_header();
       <span>CONTACT</span>
     </div>
     <div class='contact-success-message'>
-      <?php while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID();?>"<?php post_class();?>>
+      <!-- <?php //while (have_posts()) : the_post(); ?> -->
+        <!-- <article id="post-<?php //the_ID();?>"<?php //post_class();?>>
           <header class="entry-header">
-            <h1 class="entry-title"><?php the_title();?></h1>
+            <h1 class="entry-title"><?php //the_title();?></h1>
           </header>
           <div class="entry-content">
-            <h4><?php the_content();?></h4>
+            <h4><?php //the_content();?></h4>
           </div>
-        </article>
+        </article> -->
         <!-- end article post -->
-      <?php endwhile;?>
+      <!-- <?php //endwhile;?> -->
+
+      <?php
+
+        // source: https://premium.wpmudev.org/blog/how-to-build-your-own-wordpress-contact-form-and-why/
+        //response generation function
+        $response = "";
+
+        //function to generate response
+        // function my_contact_form_generate_response($type, $message){
+        //
+        //   global $response;
+        //
+        //   if($type == "success") $response = "<div class='success'>{$message}</div>";
+        //   else $response = "<div class='error'>{$message}</div>";
+        //
+        // }
+        //response messages
+        // $not_human       = "Human verification incorrect.";
+        // $missing_content = "Please supply all information.";
+        // $email_invalid   = "Email Address Invalid.";
+        // $message_unsent  = "Message was not sent. Try Again.";
+        $message_sent    = "Thanks! Your message has been sent.";
+        $message_spam    = "Spam detected. Please sent your inquiry to info@cambridgeresources.com";
+        include 'phpsnippet/google_captcha.php';
+        //user posted variables
+        $name = $_POST['contact-name'];
+        $email = $_POST['contact-email'];
+        $message = $_POST['contact-message'];
+        $company = $_POST['contact-company'];
+        $phone = $_POST['contact-phone'];
+        // print_r($captcha);
+        // print_r($responseData);
+        // $human = $_POST['message_human'];
+        $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
+
+        //php mailer variables
+        $to = "arthurchen287@gmail.com";
+        $subject = "Cambridge web contact from $name";
+        $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
+        if($message !='' && $responseData->success){
+          $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
+          echo $local;
+          echo "<div>$message_sent</div>";
+          // unset($name, $email, $message, $company, $phone, $contents);
+        } else {
+          echo "<div>$message_spam</div>";
+        }
+
+        // if($sent) my_contact_form_generate_response('success',$message_sent);
+        // else my_contact_form_generate_response('error',$message_unsent);
+      ?>
+
     </div>
     <div class='contact-phaddress'>
       <div class='contact-phaddress-ph'>
