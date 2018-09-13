@@ -80,7 +80,7 @@ get_header();
         $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
 
         //php mailer variables
-        $to = "arthurchen287@gmail.com";
+        $to = "arthurchen287@gmail.com; arthurchen@cambridgeresources.com";
         $subject = "Cambridge web contact from $name";
         $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
         if($message !='' && $responseData->success){
