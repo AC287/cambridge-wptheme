@@ -37,13 +37,13 @@
            "verify_peer_name" => false,
          ),
        );
-       echo "<div>THIS IS LOCAL</div>";
-       echo $_SERVER["REMOTE_ADDR"];
+       // echo "<div>THIS IS LOCAL</div>";
+       // echo $_SERVER["REMOTE_ADDR"];
        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchasecret.'&response='.$captcharesponse.'&remoteip='.$_SERVER['REMOTE_ADDR'], false, stream_context_create($arrContextOptions));
      } else {
-       echo "<div>THIS IS LIVE</div>";
+       // echo "<div>THIS IS LIVE</div>";
        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchasecret.'&response='.$captcharesponse.'&remoteip='.$_SERVER['REMOTE_ADDR']);
-       echo $_SERVER["REMOTE_ADDR"];
+       // echo $_SERVER["REMOTE_ADDR"];
      }
 
      $responseData = json_decode($verifyResponse);

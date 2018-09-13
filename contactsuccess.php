@@ -86,10 +86,11 @@ get_header();
         if($message !='' && $responseData->success){
           $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
           echo $local;
-          echo "<div>$message_sent</div>";
+          echo "<h3>$message_sent</h3>";
+          echo "<p>We will respond to you within one to two business days.</p>";
           // unset($name, $email, $message, $company, $phone, $contents);
         } else {
-          echo "<div>$message_spam</div>";
+          echo "<h3>$message_spam</h3>";
         }
 
         // if($sent) my_contact_form_generate_response('success',$message_sent);
