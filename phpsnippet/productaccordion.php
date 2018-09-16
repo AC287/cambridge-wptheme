@@ -1,9 +1,79 @@
 <?php
 
   global $wpdb;
-  // $test_cat = $wpdb->get_results("SELECT * From wp_prodlegend;");
+  $accordcat = $wpdb->get_results("SELECT m0priority, m0, s1, s2, s3, jointcat From wp_prodlegend;");
   // print_r(array_unique($test_cat->m0));
-  // print_r($test_cat);
+  // print_r($accordcat);
+
+  $accordcat0 = array();
+  $accordcat1 = array();
+  $accordcat2 = array();
+  $uniquem0 = array();
+  $uniques1 = array();
+  $uniques2 = array();
+  $uniques3 = array();
+
+  foreach ($accordcat as $accordcatinner) { //this will sort importance: value between 0-2
+    switch($accordcatinner->m0priority) {
+      case 0:
+        array_push($accordcat0, $accordcatinner);
+      break;
+      case 1:
+        array_push($accordcat1, $accordcatinner);
+      break;
+      case 2:
+        array_push($accordcat2, $accordcatinner);
+      break;
+      default:
+      break;
+    }
+  }
+
+  foreach($accordcat0 as $accordcat0i){
+    array_push($uniquem0, $accordcat0i->m0);
+  }
+  $uniquem0 = array_unique($uniquem0);
+  // print_r($uniquem0);
+
+  foreach($uniquem0 as $uniquem0i){
+    echo "<div>$uniquem0i</div>";
+    foreach($accordcat0 as $accordcat0i){
+      if($uniquem0i == $accordcat0i->m0){
+        array_push($uniques1, $accordcat0i->s1);
+      }
+
+    }
+    $uniques1 = array_unique($uniques1);  //this get unique s1.
+    foreach($uniques1 as $uniques1i){
+      foreach($accordcat0 as $accordcat0i){
+        if($uniques1i == $accordcat0i->s1 && $uniquem0i == $accordcat0i->m0){
+          array_push($uniques2, $accordcat0i->s2);
+        }
+      }
+      echo"<div>&nbsp;$uniques1i</div>";
+      $uniques2 = array_unique($uniques2);
+      // print_r($uniques2);
+      foreach($uniques2 as $uniques2i) {
+        echo "<div>&nbsp;&nbsp;$uniques2i</div>";
+        foreach($accordcat0 as $accordcat0i){
+          if($accordcat0i->s2 == $uniques2i &&  $uniquem0i == $accordcat0i->m0 && $uniquesii == $accordcat0i->s1){
+            array_push($uniques3, $accordcat0i->s3);
+          }
+        }
+        $uniques3 = array_unique($uniques3);
+        print_r($uniques3);
+        $uniques3 = array();
+      }
+      $uniques2 = array();
+    }
+    // print_r($uniques1);
+    // unset($uniques1);
+    $uniques1 = array();
+  }
+
+  // print_r($accordcat0);
+  // print_r($accordcat1);
+  // print_r($accordcat2);
 
   //  https://stackoverflow.com/questions/4742903/php-find-entry-by-object-property-from-a-array-of-objects/4742925
 
