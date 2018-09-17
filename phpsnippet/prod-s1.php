@@ -56,24 +56,23 @@
     // $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
     $jclv = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cm0' OR jointcat='$cs1';");
     // $jcls1 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cs1';");
-
+    $jclvm0 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cm0' AND s1='$cs1';"); //joint is m0.
+    $jclvs1 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cs1';"); //joint is s1.
     // print_r($jointcatlegend);
     // print_r($jointcatdata);
 
-    if($jclv[0]->jointcat==$cm0){
-      // echo "joint is equal main cat.";
+    if(!empty($jclvm0)){
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE jointcat='$cm0' AND s1='$cs1';");
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cm0' AND s1='$cs1';");
-      // print_r($catlegend);
     }
-    if($jclv[0]->jointcat==$cs1){
+    if(!empty($jclvs1)){
       // echo "joint is equal s1 cat.";
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$cm0' AND s1='$cs1';");
       $jcdv = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE jointcat='$cs1';");
       $catitems = array_merge($catitems,$jcdv);
     }
-    if(empty($jclv)){
+    if(empty($jclvm0) AND empty($jclvs1)){
       // echo "joint is empty.";
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
