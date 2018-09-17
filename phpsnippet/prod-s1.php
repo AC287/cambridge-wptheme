@@ -51,14 +51,54 @@
   } else {
     //s2 is empty. This should display item thumb or item table.
     $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
-    if($cm0=='Tools') {
-      // This is special case for tools.
-      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1 = '$cs1';");
-      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE s1 = '$cs1';");
+
+    // $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
+    // $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
+    $jclv = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cm0' OR jointcat='$cs1';");
+    // $jcls1 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cs1';");
+
+    // print_r($jointcatlegend);
+    // print_r($jointcatdata);
+
+    if($jclv[0]->jointcat==$cm0){
+      // echo "joint is equal main cat.";
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE jointcat='$cm0' AND s1='$cs1';");
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cm0' AND s1='$cs1';");
+      // print_r($catlegend);
+    }
+    if($jclv[0]->jointcat==$cs1){
+      // echo "joint is equal s1 cat.";
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$cm0' AND s1='$cs1';");
+      $jcdv = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE jointcat='$cs1';");
+      $catitems = array_merge($catitems,$jcdv);
+    }
+    if(empty($jclv)){
+      // echo "joint is empty.";
+      $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
+      $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
+    }
+
+/*
+    // if($cm0=='Tools') {
+    if((!empty($jcls1)) && ($jcls1[0]->m0 != $cm0)) {
+      // This is special case for tools. "MIGHT" or "MIGHT NOT" cause bug......
+      // $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1 = '$cs1';");
+      // $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE s1 = '$cs1';");
+      $catlegend = $jcls1;
+
+      $catitems1 = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$cm0' AND s1 = '$cs1';");
+      $jcds1 = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE jointcat='$cs1';");
+
+      $catitems = array_merge($catitems1,$jcds1);
+
+      // print_r($catitems);
     } else {
       $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
       $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
     }
+*/
+
     $itemcount = count($catitems);
     include 'prod-itemtable.php';
 

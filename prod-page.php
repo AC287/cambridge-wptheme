@@ -133,7 +133,7 @@
 
 												if($counter < 4) {
 
-													print_r($itemj_check);
+													// print_r($itemj_check);
 
 													if(sizeof($itemj_check) == 1){
 														//This will determine if link should take user to individual item page or table page.

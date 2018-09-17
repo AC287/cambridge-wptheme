@@ -20,47 +20,6 @@ echo "<div class='prod-tt-container'>";
   echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
 
-/*
-  //This will display spec link in lowest level category page, on top of table.
-  echo "<div class='p2-header'>";
-
-    $uniquespec = unique_multidim_array($catitems,'spec');
-
-    $specsheetnum = 0;
-
-    foreach($uniquespec as $uniquespec1) {
-      if($uniquespec1) {
-        echo "<p>";
-        $specsheetnum++;
-        echo "<a target='_blank' rel='noopener noreferrer' href='$uniquespec1'>Spec sheet (".$specsheetnum.")</a>";
-        echo "</p>";
-      }
-    }
-
-    function unique_multidim_array($array, $key) {
-      // source: http://php.net/manual/en/function.array-unique.php
-        $temp_array = array();
-        $key_array = array();
-
-        foreach($array as $val) {
-          // print_r($val);
-            if (!in_array($val->$key, $key_array)) {
-                // $key_array[$i] = $val->$key;
-                // $temp_array[$i] = $val;
-                array_push($key_array, $val->$key);
-            }
-            $i++;
-        }
-        // return $temp_array;
-        return $key_array;
-
-    }
-
-
-
-  echo "</div>";
-  */
-
   echo "<div class='p2-divider'>";
     if ($catlegend[0]->imgdivider != ""){
       echo "<div class='p2-divider-img'><img src='".$catlegend[0]->imgdivider."'></div>";
@@ -95,6 +54,7 @@ echo "<table class='item-data-sheet'>";
 echo "<tr >";
 // Labeling cells.
 echo "<th class='col-xs'>".$catlegend[0]->item."</th>";
+$thcounter = 0;
 for ($x=1; $x <= 9; $x++) {
   $cell_data = "d".$x;
   // print_r($catlegend[0]->$cell_data);
@@ -103,6 +63,7 @@ for ($x=1; $x <= 9; $x++) {
   // }
   if(($catlegend[0]->$cell_data)!=""){
     echo "<th class='col-xs'>".$catlegend[0]->$cell_data."</th>";
+    $thcounter++;
   }
 }
 echo "</tr>";
@@ -135,11 +96,13 @@ foreach($catitems as $item_data) {
       echo "</p>";
     echo "</a>";
   echo "</td>";
-  for ($y=1; $y<=9; $y++) {
+  for ($y=1; $y<=$thcounter; $y++) {
     $cell_data2 = "d".$y;
-    if(($item_data->$cell_data2)!="") {
-      echo "<td class='prod-data'>".$item_data->$cell_data2."</td>";
-    }
+    echo "<td class='prod-data'>".$item_data->$cell_data2."</td>";
+
+    // if(($item_data->$cell_data2)!="") {
+    //   echo "<td class='prod-data'>".$item_data->$cell_data2."</td>";
+    // }
   }
   echo "</tr>";
 }
