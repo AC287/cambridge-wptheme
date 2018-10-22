@@ -27,7 +27,7 @@
      }
      */
 
-     $captchasecret = '6Ld_zG4UAAAAACmaLT4I56matKabtGpTLUM5kO1h';
+     $captchasecret = '6LfmTHYUAAAAAJGJmUIXGINeeQTQ0jCrphsYfaoT';
      $captcharesponse = $_POST['g-recaptcha-response'];
 
      if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){

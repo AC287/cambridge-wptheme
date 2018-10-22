@@ -66,7 +66,7 @@ get_header();
         // $email_invalid   = "Email Address Invalid.";
         // $message_unsent  = "Message was not sent. Try Again.";
         $message_sent    = "Thanks! Your message has been sent.";
-        $message_spam    = "Spam detected. Please sent your inquiry to info@cambridgeresources.com";
+        $message_spam    = "Spam detected. Please send your inquiry to info@cambridgeresources.com";
         include 'phpsnippet/google_captcha.php';
         //user posted variables
         $name = $_POST['contact-name'];
