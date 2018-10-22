@@ -82,7 +82,7 @@
 													echo "<img src='".$img[0]->cat1img."'>";
 
 												} else {
-													echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+													echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 												};
 
 												echo "</div>";
@@ -108,7 +108,7 @@
 													echo "<img src='".$img[0]->cat1img."'>";
 												}
 												else {
-													echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+													echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 												};
 												// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 												echo "</div>";
@@ -148,7 +148,7 @@
 														echo "<img src='".$jimg[0]->cat1img."'>";
 
 													} else {
-														echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+														echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 													};
 
 													echo "</div>";
@@ -174,7 +174,7 @@
 														echo "<img src='".$jimg[0]->cat1img."'>";
 													}
 													else {
-														echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+														echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 													};
 													// echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
 													echo "</div>";
@@ -201,7 +201,7 @@
 
 										if($counter > 4) {
 											echo "<div class='show-hide'>";
-												echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
+												echo "<span class='sh-chev'><img class='chev' src='https://storage.codacambridge.com/files/icons/chev_down_blue.png'></span>";
 												echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
 											echo "</div>";
 										}
@@ -234,7 +234,7 @@
 														}
 														if($prodimgtracker > 0) {
 															//no image available...
-															echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+															echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 														}
 														echo "</div>";	// end item-img tag.
 														echo "<div class='s1-cat'>".$m0_item_inner->item."</div>";
@@ -259,7 +259,7 @@
 														}
 														if($prodimgtracker > 0) {
 															//no image available...
-															echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+															echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 														}
 														echo "</div>";	// end item-img tag.
 														echo "<div class='s1-cat'>".$m0_item_inner->item."</div>";
@@ -278,7 +278,7 @@
 											echo "</div>";	// end s1-box-flex-container
 											if($counter > 4) {
 												echo "<div class='show-hide'>";
-													echo "<span class='sh-chev'><img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png'></span>";
+													echo "<span class='sh-chev'><img class='chev' src='https://storage.codacambridge.com/files/icons/chev_down_blue.png'></span>";
 													echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
 												echo "</div>";
 											}

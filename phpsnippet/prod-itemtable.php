@@ -91,7 +91,7 @@ foreach($catitems as $item_data) {
           }
         }
         if($imgCounter == 0) {
-            echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
         }
       echo "</p>";
     echo "</a>";

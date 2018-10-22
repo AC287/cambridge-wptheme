@@ -35,7 +35,7 @@
       }
       echo "<div class='item-img'>";
       if ($img[0]->cat2img==' ' || $img[0]->cat2img=='') {
-        echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+        echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
       } else {
         echo "<img src='".$img[0]->cat2img."'>";
       };

@@ -22,7 +22,7 @@
   for( $curYear = date('Y'); $curYear >= $minYear; $curYear--) {
     echo "<div class='archive-year-container'>";
       echo "<div class='ayc-year custaccordion'>";
-        echo "<img class='chev' src='http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png'/>";
+        echo "<img class='chev' src='https://storage.codacambridge.com/files/icons/chev-right.png'/>";
         echo "<span>$curYear</span>";
       echo "</div>";  // end ayc-year
       echo "<div class='archive-title custpanel'>";

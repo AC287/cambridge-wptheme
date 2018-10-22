@@ -163,7 +163,7 @@
 					      }	//Checking to see if image exist
 
 					      if ($imgExist == 0) {
-					        echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+					        echo "<img class='main-view-lg main-imgnone' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 					      } else {
 					        $displayCounter = 0;
 					        for ($x=0; $x<=9; $x++) {
@@ -207,7 +207,7 @@
 										}
 									}
 									if ($thumbCounter == 0) {
-										echo "<img class='single-thumb' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+										echo "<img class='single-thumb' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 									}
 								echo "</div>";	// end img-thumbnail-section;
 
@@ -298,7 +298,7 @@
 				echo "<div class='ip-modal-content'>";
 					if($imgExist == 0) {
 						echo "<div class='ip-slides modal-imgnone'>";
-							echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' style='width: 100%'>";
+							echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg' style='width: 100%'>";
 						echo "</div>";
 					} else {
 						for($m=0; $m<=9; $m++){
