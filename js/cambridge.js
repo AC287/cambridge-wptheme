@@ -67,16 +67,16 @@ $('.custaccordion img').click(function(e){
   console.log($this);
   if($this.next().hasClass('show')){
     $this.next().removeClass('show');
-    $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
+    $this.children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-right.png');
     $this.next();
   } else {
     // $this.parent().find('.panel').removeClass('show');
     // console.log('Else section. Find parent panel and removeClass show');
-    $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
+    $this.children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-right.png');
     // $this.parent().find('.panel').slideUp(350);
     // console.log('Else section. Find parent panel and slideup.');
     $this.next().toggleClass('show');
-    $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+    $this.children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
     $this.next();
   }
 });
@@ -129,35 +129,35 @@ if(m0param) {
   $('.m0i-'+m0param).toggleClass('show');
 
 
-  $(m0paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+  $(m0paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 }
 
 if(s1param) {
 
   $('.s1i-'+s1param).toggleClass('show');
 
-  $(s1paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+  $(s1paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 }
 
 if(s2param) {
 
   $('.s2i-'+s2param).toggleClass('show');
 
-  $(s2paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+  $(s2paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 }
 
 if(s3param) {
 
   $('.s3i-'+s3param).toggleClass('show');
 
-  $(s3paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+  $(s3paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 }
 
 // if(s4param) {
 //
 //   $('.s4i-'+s4param).toggleClass('show');
 //
-//   $(s4paramInner).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+//   $(s4paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 // }
 
 switch(paramCounter) {
@@ -308,14 +308,14 @@ for (i=0; i< displayExtra.length; i++) {
       currentStatus.splice(1,1);
       this.innerHTML = currentStatus.join(' ');
       // This toggle chevron icon.
-      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_up_blue.png');
+      $(this).closest('div').children().children().attr('src','https://storage.codacambridge.com/files/icons/chev_up_blue.png');
     }
     else {
       currentStatus[0] = 'SHOW';
       currentStatus.splice(1,0,'ALL');
       this.innerHTML = currentStatus.join(' ');
       // This toggle chevron icon.
-      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png');
+      $(this).closest('div').children().children().attr('src','https://storage.codacambridge.com/files/icons/chev_down_blue.png');
     }
     var displayAll = $('.'+this.classList[1]);
     displayAll.each(function(index,object){
