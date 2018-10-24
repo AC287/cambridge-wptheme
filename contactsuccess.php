@@ -83,7 +83,9 @@ get_header();
         $to = "arthurchen@cambridgeresources.com, arthurchen287@gmail.com";
         $subject = "Cambridge web contact from $name";
         // $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
-        $headers = 'From: arthurchen287@gmail.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
+        // $headers = 'From: arthurchen287@gmail.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
+        // $headers = 'From:'.$email."\r\n";
+        $headers = array ('From: '.$name.' <'.$email.'>');
         if($message !='' && $responseData->success){
           $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
           echo $local;
