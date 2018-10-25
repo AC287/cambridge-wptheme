@@ -20,6 +20,7 @@
           global $wp_query, $wpdb;
           //help link: https://wordpress.stackexchange.com/questions/53194/wordpress-paginate-wpdb-get-results
 
+          /*
           $prodquery = "
           (SELECT * FROM wp_prod0 WHERE
           item LIKE '%$searchValue%'
@@ -37,6 +38,25 @@
           OR d8 LIKE '%$searchValue%'
           OR d9 LIKE '%$searchValue%'
           )";
+          */
+
+          $searchArray = explode(" ", $searchValue);
+          // $q = 0;
+          $queryAdd = "";
+          foreach($searchArray as $word) {
+            $queryAdd .= "+".$word."* ";
+          }
+
+          $prodquery = "
+            SELECT * FROM wp_prod0 WHERE MATCH (m0, s1, s2, s3, d1, d2, d3, d4, d5, d6, d7, d8, d9) AGAINST ('$queryAdd' IN BOOLEAN MODE)
+          ";
+
+          print_r($prodquery);
+
+          $test0 = $wpdb->get_results("$prodquery");
+
+          print_r($test0);
+
           $total = $wpdb -> get_var("SELECT COUNT(1) FROM (${prodquery}) AS combined_table");
           // echo "$total";
           // $total_query = "SELECT COUNT(*) FROM wp_prod0";
