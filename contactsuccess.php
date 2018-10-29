@@ -85,7 +85,16 @@ get_header();
         // $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
         // $headers = 'From: arthurchen287@gmail.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
         // $headers = 'From:'.$email."\r\n";
-        $headers = array ('From: '.$name.' <'.$email.'>');
+        // $headers = array ('From: '.$name.' <'.$email.'>');
+        // $headers = 'From: '.$name.' <wordpress@codacambridge.com>'."\r\n" .'Reply-To: '.$email."\r\n";
+        $headers = array(
+          // 'From: <wordpress@codacambridge.com>',
+          'From: Web Contact Form <no-reply@cambridgeresources.com>',
+          // 'Content-Type:text/html;charset=UTF-8',
+          'Reply-To: '.$email
+        );
+        $headers = implode("\r\n", $headers);
+
         if($message !='' && $responseData->success){
           $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
           echo $local;

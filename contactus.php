@@ -54,7 +54,7 @@ get_header();
         <div class='form-group contact-message col-sm-12'>
           <textarea type='text' name='contact-message' placeholder='Type your message here' required></textarea>
         </div>
-        <div class='form-group contact-nonrobot'>
+        <div class='form-group contact-nonrobot col-sm-12'>
           <div class='g-recaptcha' data-sitekey='6LfmTHYUAAAAAJ3clYNDURExFe6U7bQtqkxuci96'></div>
         </div>
         <div class='form-group contact-submit'>
