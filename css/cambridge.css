@@ -2392,9 +2392,9 @@ a.spec-sheet, a.usermanual {
   padding: 5px 10px;
 }
 .contact-nonrobot {
-  margin: 15px;
-  width: 100%;
-  text-align: center;
+  /* margin: 15px; */
+  /* width: 100%; */
+  /* text-align: center; */
   /* height: 80px; */
   /* padding: 10px; */
 }
@@ -2429,11 +2429,6 @@ a.spec-sheet, a.usermanual {
 }
 .contact-phaddress-address p strong {
   -webkit-text-stroke: 0.5px;
-}
-@media screen and (min-width: 768px) {
-  .contact-submit button {
-    margin-top: 85px;
-  }
 }
 @media screen and (max-width: 750px) {
   .contact-container {
