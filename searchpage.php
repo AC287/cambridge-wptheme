@@ -14,48 +14,63 @@
         <div class="search-display">
 
           <?php
+          // print_r(is_numeric('14\"'));
           // $searchValue = strtoupper($_REQUEST['isearch']);
           $searchValue = $_REQUEST['isearch'];
           // echo $searchValue;
           global $wp_query, $wpdb;
           //help link: https://wordpress.stackexchange.com/questions/53194/wordpress-paginate-wpdb-get-results
 
-          /*
-          $prodquery = "
-          (SELECT * FROM wp_prod0 WHERE
-          item LIKE '%$searchValue%'
-          OR m0 LIKE '%$searchValue%'
-          OR s1 LIKE '%$searchValue%'
-          OR s2 LIKE '%$searchValue%'
-          OR keyword  LIKE '%$searchValue%'
-          OR d1 LIKE '%$searchValue%'
-          OR d2 LIKE '%$searchValue%'
-          OR d3 LIKE '%$searchValue%'
-          OR d4 LIKE '%$searchValue%'
-          OR d5 LIKE '%$searchValue%'
-          OR d6 LIKE '%$searchValue%'
-          OR d7 LIKE '%$searchValue%'
-          OR d8 LIKE '%$searchValue%'
-          OR d9 LIKE '%$searchValue%'
-          )";
-          */
-
           $searchArray = explode(" ", $searchValue);
-          // $q = 0;
-          $queryAdd = "";
-          foreach($searchArray as $word) {
-            $queryAdd .= "+".$word."* ";
+          // print_r(count($searchArray));
+
+          $prodqueryArr = array();
+          $prodquery = "";
+
+          for ($i=0; $i < count($searchArray); $i++) {
+          
+            $prodqueryArr[] = "
+            WHERE
+            item LIKE '%$searchArray[$i]%'
+            OR m0 LIKE '%$searchArray[$i]%'
+            OR s1 LIKE '%$searchArray[$i]%'
+            OR s2 LIKE '%$searchArray[$i]%'
+            OR keyword  LIKE '%$searchArray[$i]%'
+            OR d1 LIKE '%$searchArray[$i]%'
+            OR d2 LIKE '%$searchArray[$i]%'
+            OR d3 LIKE '%$searchArray[$i]%'
+            OR d4 LIKE '%$searchArray[$i]%'
+            OR d5 LIKE '%$searchArray[$i]%'
+            OR d6 LIKE '%$searchArray[$i]%'
+            OR d7 LIKE '%$searchArray[$i]%'
+            OR d8 LIKE '%$searchArray[$i]%'
+            OR d9 LIKE '%$searchArray[$i]%'
+            ";
           }
 
-          $prodquery = "
-            SELECT * FROM wp_prod0 WHERE MATCH (m0, s1, s2, s3, d1, d2, d3, d4, d5, d6, d7, d8, d9) AGAINST ('$queryAdd' IN BOOLEAN MODE)
-          ";
+          // NESTED SELECT SQL FUNCTION
+          for ($j=0; $j < count($searchArray); $j++) {
+            switch ($j) {
+              case 0:
+                //First search or very inner search.
+                if (count($searchArray) > 1) {
+                  $prodquery = "(SELECT * FROM wp_prod0 ".$prodqueryArr[$j].") AS tempTable$j";
+                } else {
+                  $prodquery = "SELECT * FROM wp_prod0 ".$prodqueryArr[$j];
+                }
 
-          print_r($prodquery);
+              break;
+              case (count($searchArray)-1):
+                //This is the outer search.
+                $prodquery = "SELECT * FROM ".$prodquery." ".$prodqueryArr[$j];
 
-          $test0 = $wpdb->get_results("$prodquery");
-
-          print_r($test0);
+              break;
+              default:
+                // default search.
+                $prodquery = "(SELECT * FROM ".$prodquery." ".$prodqueryArr[$j].") AS tempTable$j";
+              break;
+            }
+          }
 
           $total = $wpdb -> get_var("SELECT COUNT(1) FROM (${prodquery}) AS combined_table");
           // echo "$total";
