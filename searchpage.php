@@ -28,13 +28,14 @@
           $prodquery = "";
 
           for ($i=0; $i < count($searchArray); $i++) {
-          
+
             $prodqueryArr[] = "
             WHERE
             item LIKE '%$searchArray[$i]%'
             OR m0 LIKE '%$searchArray[$i]%'
             OR s1 LIKE '%$searchArray[$i]%'
             OR s2 LIKE '%$searchArray[$i]%'
+            OR s3 LIKE '%$searchArray[$i]%'
             OR keyword  LIKE '%$searchArray[$i]%'
             OR d1 LIKE '%$searchArray[$i]%'
             OR d2 LIKE '%$searchArray[$i]%'
@@ -130,12 +131,8 @@
                 echo "</div>";
                 echo "<div class='sec-items'>";
                   echo "<div class='seci-title'>";
-                    echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."' target='_blank' rel='noopener noreferrer'>".$exactProd->item."</a>";
-                    // if($exactProd->s2!=''){
-                    //   echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."'>".$exactProd->item."&nbsp;|&nbsp;".$exactProd->s2."&nbsp;".$exactProd->m0."</a>";
-                    // } else {
-                    //   echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."'>".$exactProd->item."&nbsp;|&nbsp;".$exactProd->s1."&nbsp;".$exactProd->m0."</a>";
-                    // }
+                    echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."' target='_blank' rel='noopener noreferrer'>".$exactProd->item."</a>";
+
                     echo "<p>";
                       echo $exactProd->m0." > ";
                       if($exactProd->s1){
@@ -146,6 +143,12 @@
                       }
                       if($exactProd->s2){
                         echo $exactProd->s2;
+                        if(!empty($exactProd->s3)){
+                          echo " > ";
+                        }
+                      }
+                      if($exactProd->s3) {
+                        echo $exactProd->s3;
                       }
                     echo "</p>";
                   echo "</div>";  // end seci-title
@@ -153,8 +156,11 @@
                     $m0 = addslashes($exactProd->m0);
                     $s1 = addslashes($exactProd->s1);
                     $s2 = addslashes($exactProd->s2);
+                    $s3 = addslashes($exactProd->s3);
 
-                    if($s1 != "" and $s2 != ""){
+                    if ($s1 != "" and $s2 !="" and $s3 !=""){
+                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2' AND s3='$s3';");
+                    }  elseif($s1 != "" and $s2 != ""){
                       $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2';");
                     } elseif ($s1 != "" and $s2 == ""){
                       $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1';");
@@ -177,7 +183,7 @@
                     echo "<div class='secis-blur'></div>";
                   echo "</div>";  // end seci-spec;
                   echo "<div class='seci-button'>";
-                    echo "<a class='btn btn-secondary' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."' role='button' target='_blank' rel='noopener noreferrer'>View Details</a>";
+                    echo "<a class='btn btn-secondary' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."' role='button' target='_blank' rel='noopener noreferrer'>View Details</a>";
                   echo "</div>";
                 echo "</div>";  // end sec-items.
               echo "</div>";  // end search-each-container class.
