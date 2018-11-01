@@ -26,22 +26,35 @@ echo "<div class='prod-tt-container'>";
     }
     // echo "<td>".$item_data."</td>";
     $certDisplay = $catitems;
+    // print_r(count($certDisplay));
     $certArr=array();
+    $certArrCounter = 0;
     foreach ($certDisplay as $certDisplay){
+      if($certDisplay->cert0 !="") {
+        $certArrCounter += 1;
+      }
+      // $certArrCounter += 1;
       for($c=0; $c<=9; $c++){	//There are only 0-9 certification slots at database.
         // echo $c;
         $cert = "cert".$c;
+        // if($certDisplay->$cert !="") {
+        //   $certArrCounter += 1;
+        // }
         if( $certDisplay->$cert !="" && in_array($certDisplay->$cert, $certArr)!= TRUE){
           array_push($certArr, $certDisplay->$cert);
         }
       }
     }
     // print_r(count($certArr));
+    // print_r($certArrCounter);
+    // print_r(count($catitems));
     echo "<div class='p2-divider-cert'>";
-    for ($iCert=0; $iCert<count($certArr); $iCert++){
-      for($iCertdb = 0; $iCertdb < sizeof($item_certdb); $iCertdb++){
-        if($item_certdb[$iCertdb]->type == $certArr[$iCert]) {
-          echo "<img class='p2-cert-img' src='".$item_certdb[$iCertdb]->link."'>";
+    if($certArrCounter == count($catitems)) {  // Display certification if all items have cert. If some dont have certification, icon will not display.
+      for ($iCert=0; $iCert<count($certArr); $iCert++){
+        for($iCertdb = 0; $iCertdb < sizeof($item_certdb); $iCertdb++){
+          if($item_certdb[$iCertdb]->type == $certArr[$iCert]) {
+            echo "<img class='p2-cert-img' src='".$item_certdb[$iCertdb]->link."'>";
+          }
         }
       }
     }
