@@ -28,25 +28,69 @@
           $prodquery = "";
 
           for ($i=0; $i < count($searchArray); $i++) {
+            // $prodqueryArr[] = "
+            // WHERE
+            // p.item LIKE '%$searchArray[$i]%'
+            // OR p.m0 LIKE '%$searchArray[$i]%'
+            // OR p.s1 LIKE '%$searchArray[$i]%'
+            // OR p.s2 LIKE '%$searchArray[$i]%'
+            // OR p.s3 LIKE '%$searchArray[$i]%'
+            // OR p.prodkeyword  LIKE '%$searchArray[$i]%'
+            // OR l.catkeyword LIKE '%$searchArray[$i]%'
+            // OR p.d1 LIKE '%$searchArray[$i]%'
+            // OR p.d2 LIKE '%$searchArray[$i]%'
+            // OR p.d3 LIKE '%$searchArray[$i]%'
+            // OR p.d4 LIKE '%$searchArray[$i]%'
+            // OR p.d5 LIKE '%$searchArray[$i]%'
+            // OR p.d6 LIKE '%$searchArray[$i]%'
+            // OR p.d7 LIKE '%$searchArray[$i]%'
+            // OR p.d8 LIKE '%$searchArray[$i]%'
+            // OR p.d9 LIKE '%$searchArray[$i]%'
+            // ";
+            if ($i==0) {
+              $prodqueryArr[] = "
+              WHERE
+              p.item LIKE '%$searchArray[$i]%'
+              OR p.m0 LIKE '%$searchArray[$i]%'
+              OR p.s1 LIKE '%$searchArray[$i]%'
+              OR p.s2 LIKE '%$searchArray[$i]%'
+              OR p.s3 LIKE '%$searchArray[$i]%'
+              OR p.jointcat LIKE '%$searchArray[$i]%'
+              OR p.prodkeyword  LIKE '%$searchArray[$i]%'
+              OR l.catkeyword LIKE '%$searchArray[$i]%'
+              OR p.d1 LIKE '%$searchArray[$i]%'
+              OR p.d2 LIKE '%$searchArray[$i]%'
+              OR p.d3 LIKE '%$searchArray[$i]%'
+              OR p.d4 LIKE '%$searchArray[$i]%'
+              OR p.d5 LIKE '%$searchArray[$i]%'
+              OR p.d6 LIKE '%$searchArray[$i]%'
+              OR p.d7 LIKE '%$searchArray[$i]%'
+              OR p.d8 LIKE '%$searchArray[$i]%'
+              OR p.d9 LIKE '%$searchArray[$i]%'
+              ";
+            } else {
 
-            $prodqueryArr[] = "
-            WHERE
-            item LIKE '%$searchArray[$i]%'
-            OR m0 LIKE '%$searchArray[$i]%'
-            OR s1 LIKE '%$searchArray[$i]%'
-            OR s2 LIKE '%$searchArray[$i]%'
-            OR s3 LIKE '%$searchArray[$i]%'
-            OR keyword  LIKE '%$searchArray[$i]%'
-            OR d1 LIKE '%$searchArray[$i]%'
-            OR d2 LIKE '%$searchArray[$i]%'
-            OR d3 LIKE '%$searchArray[$i]%'
-            OR d4 LIKE '%$searchArray[$i]%'
-            OR d5 LIKE '%$searchArray[$i]%'
-            OR d6 LIKE '%$searchArray[$i]%'
-            OR d7 LIKE '%$searchArray[$i]%'
-            OR d8 LIKE '%$searchArray[$i]%'
-            OR d9 LIKE '%$searchArray[$i]%'
-            ";
+              $prodqueryArr[] = "
+              WHERE
+              item LIKE '%$searchArray[$i]%'
+              OR m0 LIKE '%$searchArray[$i]%'
+              OR s1 LIKE '%$searchArray[$i]%'
+              OR s2 LIKE '%$searchArray[$i]%'
+              OR s3 LIKE '%$searchArray[$i]%'
+              OR jointcat LIKE '%$searchArray[$i]%'
+              OR prodkeyword  LIKE '%$searchArray[$i]%'
+              OR catkeyword LIKE '%$searchArray[$i]%'
+              OR d1 LIKE '%$searchArray[$i]%'
+              OR d2 LIKE '%$searchArray[$i]%'
+              OR d3 LIKE '%$searchArray[$i]%'
+              OR d4 LIKE '%$searchArray[$i]%'
+              OR d5 LIKE '%$searchArray[$i]%'
+              OR d6 LIKE '%$searchArray[$i]%'
+              OR d7 LIKE '%$searchArray[$i]%'
+              OR d8 LIKE '%$searchArray[$i]%'
+              OR d9 LIKE '%$searchArray[$i]%'
+              ";
+            }
           }
 
           // NESTED SELECT SQL FUNCTION
@@ -55,9 +99,11 @@
               case 0:
                 //First search or very inner search.
                 if (count($searchArray) > 1) {
-                  $prodquery = "(SELECT * FROM wp_prod0 ".$prodqueryArr[$j].") AS tempTable$j";
+                  $prodquery = "(SELECT p.*,l.catkeyword FROM wp_prod0 p LEFT JOIN wp_prodlegend l ON p.m0=l.m0 AND p.s1<=>l.s1 AND p.s2<=>l.s2 AND p.s3<=>l.s3 ".$prodqueryArr[$j].") AS tempTable$j";
+                  // $prodquery = "(SELECT p.*,l.catkeyword FROM wp_prod0 as p LEFT JOIN wp_prodlegend AS l ON p.m0=l.m0 AND p.s1=l.s1 AND p.s2=l.s2 AND p.s3=l.s3 ".$prodqueryArr[$j]." UNION SELECT * FROM wp_prod0 AS p RIGHT JOIN wp_prodlegend AS l ON p.m0=l.m0 AND p.s1=l.s1 AND p.s2=l.s2 AND p.s3=l.s3 ".$prodqueryArr[$j].") AS tempTable$j";
                 } else {
-                  $prodquery = "SELECT * FROM wp_prod0 ".$prodqueryArr[$j];
+                  $prodquery = "SELECT p.*,l.catkeyword FROM wp_prod0 p LEFT JOIN wp_prodlegend l ON p.m0=l.m0 AND p.s1<=>l.s1 AND p.s2<=>l.s2 AND p.s3<=>l.s3 ".$prodqueryArr[$j];
+                  // $prodquery = "SELECT p.*,l.catkeyword FROM wp_prod0 AS p LEFT JOIN wp_prodlegend AS l ON p.m0=l.m0 AND p.s1=l.s1 AND p.s2=l.s2 AND p.s3=l.s3 ".$prodqueryArr[$j]." UNION SELECT * FROM wp_prod0 AS RIGHT JOIN wp_prodlegend AS l ON p.m0=l.m0 AND p.s1=l.s1 AND p.s2=l.s2 AND p.s3=l.s3 ".$prodqueryArr[$j];
                 }
 
               break;
@@ -72,6 +118,46 @@
               break;
             }
           }
+
+          // if(count($searchArray) == 1) {
+          //   $prodquery = $prodquery."
+          //   ORDER BY ((concat_ws(p.m0,p.s1,p.s2,p.s3) LIKE '%$searchValue%')) DESC
+          //   ";
+          // } else {
+          //   $prodquery = $prodquery."
+          //   ORDER BY (";
+          //   for($k=0; $k < count($searchArray); $k++) {
+          //     switch($k) {
+          //       // case 0:
+          //       //   $prodquery = $prodquery."(concat_ws(p.m0,p.s1,p.s2,p.s3) LIKE '%$searchArray[$k]%')";
+          //       // break;
+          //       case (count($searchArray)-1):
+          //         $prodquery = $prodquery."(concat_ws(m0,s1,s2,s3) LIKE '%$searchArray[$k]%'))";
+          //       break;
+          //       default:
+          //         $prodquery = $prodquery."(concat_ws(m0,s1,s2,s3) LIKE '%$searchArray[$k]%') + ";
+          //       break;
+          //     }
+          //   }
+          //   $prodquery = $prodquery." DESC";
+          // }
+
+          // $prodquery = $prodquery."
+          // ORDER BY (concat_ws(m0,s1,s2,s3) LIKE '%$searchValue%')
+          // ";
+
+          // $prodquery = $prodquery."
+          // ORDER BY (m0 LIKE '%$searchValue%') DESC
+          // ";
+
+/*
+          SELECT * FROM (SELECT p.*,l.catkeyword FROM wp_prod0 p LEFT JOIN wp_prodlegend l ON p.m0=l.m0 AND p.s1<=>l.s1 AND p.s2<=>l.s2 AND p.s3<=>l.s3 WHERE p.item LIKE '%electrical%' OR p.m0 LIKE '%electrical%' OR p.s1 LIKE '%electrical%' OR p.s2 LIKE '%electrical%' OR p.s3 LIKE '%electrical%' OR p.jointcat LIKE '%electrical%' OR p.prodkeyword LIKE '%electrical%' OR l.catkeyword LIKE '%electrical%' OR p.d1 LIKE '%electrical%' OR p.d2 LIKE '%electrical%' OR p.d3 LIKE '%electrical%' OR p.d4 LIKE '%electrical%' OR p.d5 LIKE '%electrical%' OR p.d6 LIKE '%electrical%' OR p.d7 LIKE '%electrical%' OR p.d8 LIKE '%electrical%' OR p.d9 LIKE '%electrical%' ) AS tempTable0 WHERE item LIKE '%tape%' OR m0 LIKE '%tape%' OR s1 LIKE '%tape%' OR s2 LIKE '%tape%' OR s3 LIKE '%tape%' OR jointcat LIKE '%tape%' OR prodkeyword LIKE '%tape%' OR catkeyword LIKE '%tape%' OR d1 LIKE '%tape%' OR d2 LIKE '%tape%' OR d3 LIKE '%tape%' OR d4 LIKE '%tape%' OR d5 LIKE '%tape%' OR d6 LIKE '%tape%' OR d7 LIKE '%tape%' OR d8 LIKE '%tape%' OR d9 LIKE '%tape%' ORDER BY
+          ((concat_ws(m0,s1,s2,s3) LIKE '%electrical%')+(concat_ws(m0,s1,s2,s3) LIKE '%tape%')) DESC
+*/
+
+
+
+          // print_r($prodquery);
 
           $total = $wpdb -> get_var("SELECT COUNT(1) FROM (${prodquery}) AS combined_table");
           // echo "$total";
