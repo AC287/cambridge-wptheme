@@ -244,7 +244,7 @@
 
 														// end if counter < 4;
 													}	else{
-														echo "<a href='./item/?id=".urlencode($m0_item_inner->item)."' class='s1-box extra-box pos$mPos'>";
+														echo "<a href='./item/?id=".urlencode($m0_item_inner->item)."&m0=".urlencode($main_category2->m0)."' class='s1-box extra-box pos$mPos'>";
 														echo "<div class='item-img'>";
 														$prodimgtracker = 0;
 														for($x=0; $x <= 5; $x++) {
