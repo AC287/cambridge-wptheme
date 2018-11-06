@@ -50,16 +50,15 @@
 									$counter = 0;
 									$counter4 = 0;
 
-										if(!empty($s1_category2[0]->s1)) {
+										if(!empty($s1_category2[0]->s1)) {	//s1 category is not empty.
 
-										foreach($s1_category2 as $s1_category2) {
+										foreach($s1_category2 as $s1_category2) {	//loop through each s1 category.
 
 											$qs1 = addslashes($s1_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
 
-											$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");
+											$img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");	//Get s1 image.
 
-
-											$s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");
+											$s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");	//Check for s2.
 
 											if(!$s2_check){
 												$item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$qm0' AND s1='$qs1';");
@@ -211,6 +210,39 @@
 									} else {
 										//s1 is empty. get item data.
 										// echo "THERE IS NO CATEGORY IN HERE!";
+										// discussion with miriam: if there is no sub category, web should display main category, clicking on main category should take user to table, then to item page.
+
+										$m0_images = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE m0 = '$qm0';");
+										$m0_imgarray = array();
+										echo "<div class='s1-box-background'>";
+											echo "<div class='s1-box-flex-container'>";
+												foreach ($m0_images as $tempimg) {
+													if($tempimg->img0 != '' || $tempimg->img0 != ' '){
+														$m0_imgarray[] = $tempimg->img0;
+													}
+												}
+												$m0_imgarray = array_values(array_filter($m0_imgarray));
+												// print_r($m0_imgarray);
+												echo "<a href='./categories/?m0=".urlencode($qm0)."' class='s1-box'>";
+													echo "<div class='item-img'>";
+														if(in_array('',$m0_imgarray) || in_array(' ',$m0_imgarray)) {
+															echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+														} else {
+															echo "<img src='".$m0_imgarray[array_rand($m0_imgarray,1)]."'>";
+														}
+													echo "</div>";	// end item-img class.
+													echo "<div class='s1-cat'>".$main_category2->m0."</div>";
+												echo "</a>";	// end a tag s1-box class.
+												// print_r($m0_images);
+												// print_r($m0_imgarray);
+												$counter4++;
+												for($k=$counter4; $k%4!=0; $k++){
+													echo "<a class='s1-box s1-box-filler'></a>";
+												}
+											echo "</div>";	// end s1-box-flex-container;
+										echo "</div>";	// end s1-box-background container;
+
+										/*
 										$m0_items = $wpdb->get_results("SELECT item,img0,img1,img2,img3,img4,img5 FROM wp_prod0 WHERE m0 = '$qm0';");
 										echo "<div class='s1-box-background'>";
 											echo "<div class='s1-box-flex-container'>";
@@ -284,7 +316,7 @@
 											}
 										echo "</div>";	// end s1-box-background
 
-
+										*/
 
 									}
 									$mPos++;
