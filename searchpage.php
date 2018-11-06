@@ -36,7 +36,7 @@
             OR s1 LIKE '%$searchArray[$i]%'
             OR s2 LIKE '%$searchArray[$i]%'
             OR s3 LIKE '%$searchArray[$i]%'
-            OR keyword  LIKE '%$searchArray[$i]%'
+            OR prodkeyword  LIKE '%$searchArray[$i]%'
             OR d1 LIKE '%$searchArray[$i]%'
             OR d2 LIKE '%$searchArray[$i]%'
             OR d3 LIKE '%$searchArray[$i]%'
