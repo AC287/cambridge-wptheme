@@ -25,18 +25,48 @@
           // print_r(count($searchArray));
 
           $prodqueryArr = array();
+          $prodqueryArrCont0 = array(); //SELECT clause container for m0s1s2s3jointcat search
+          $prodqueryArrCont1 = array(); //SELECT clause container for keyword and all remaining attribute search.
+          $prodqueryArrAll = array(); //WHERE LIKE clause for all attributes.
+          $prodqueryArr0 = array(); //WHERE LIKE clause m0s1s2s3jointcat search
+          $prodqueryArr1 = array(); //WHERE LIKE clause keyword and all remaining attribute search.
           $prodquery = "";
+          $prodquery0 = "";
+          $prodquery1 = "";
 
           for ($i=0; $i < count($searchArray); $i++) {
 
-            $prodqueryArr[] = "
+            $prodqueryArrAll[] = "
             WHERE
             item LIKE '%$searchArray[$i]%'
             OR m0 LIKE '%$searchArray[$i]%'
             OR s1 LIKE '%$searchArray[$i]%'
             OR s2 LIKE '%$searchArray[$i]%'
             OR s3 LIKE '%$searchArray[$i]%'
+            OR jointcat LIKE '%$searchArray[$i]%'
             OR prodkeyword  LIKE '%$searchArray[$i]%'
+            OR d1 LIKE '%$searchArray[$i]%'
+            OR d2 LIKE '%$searchArray[$i]%'
+            OR d3 LIKE '%$searchArray[$i]%'
+            OR d4 LIKE '%$searchArray[$i]%'
+            OR d5 LIKE '%$searchArray[$i]%'
+            OR d6 LIKE '%$searchArray[$i]%'
+            OR d7 LIKE '%$searchArray[$i]%'
+            OR d8 LIKE '%$searchArray[$i]%'
+            OR d9 LIKE '%$searchArray[$i]%'
+            ";
+            $prodqueryArr0[] = "
+            WHERE
+            item LIKE '%$searchArray[$i]%'
+            OR m0 LIKE '%$searchArray[$i]%'
+            OR s1 LIKE '%$searchArray[$i]%'
+            OR s2 LIKE '%$searchArray[$i]%'
+            OR s3 LIKE '%$searchArray[$i]%'
+            OR jointcat LIKE '%$searchArray[$i]%'
+            ";
+            $prodqueryArr1[] = "
+            WHERE
+            prodkeyword  LIKE '%$searchArray[$i]%'
             OR d1 LIKE '%$searchArray[$i]%'
             OR d2 LIKE '%$searchArray[$i]%'
             OR d3 LIKE '%$searchArray[$i]%'
@@ -49,29 +79,35 @@
             ";
           }
 
-          // NESTED SELECT SQL FUNCTION
-          for ($j=0; $j < count($searchArray); $j++) {
-            switch ($j) {
-              case 0:
-                //First search or very inner search.
-                if (count($searchArray) > 1) {
-                  $prodquery = "(SELECT * FROM wp_prod0 ".$prodqueryArr[$j].") AS tempTable$j";
-                } else {
-                  $prodquery = "SELECT * FROM wp_prod0 ".$prodqueryArr[$j];
-                }
+          for($j=0; $j < count($searchArray); $j++) {
+            $prodqueryArrCont0[] = "SELECT * from wp_prod0 ".$prodqueryArr0[$j];
+            $prodqueryArrCont1[] = "SELECT * from wp_prod0 ".$prodqueryArr1[$j];
+          }
 
+          //Initial get data. group by m0s1s2s3jointcat first, then the rest of the attribute.
+          $prodquery = "(".implode(' UNION ', $prodqueryArrCont0).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+
+          //SEarch filter.
+          for($k=0; $k < count($searchArray); $k++) {
+            switch ($k) {
+              case 0:
+              if(count($searchArray) > 1) {
+                $prodquery = "(SELECT * from ".$prodquery.$prodqueryArrAll[$k].") AS tempTable$k";
+              } else {
+                print_r("only one word in search");
+                $prodquery = "SELECT * from ".$prodquery.$prodqueryArrAll[$k];
+              }
               break;
               case (count($searchArray)-1):
-                //This is the outer search.
-                $prodquery = "SELECT * FROM ".$prodquery." ".$prodqueryArr[$j];
-
+                $prodquery = "SELECT * from ".$prodquery." ".$prodqueryArrAll[$k];
               break;
               default:
-                // default search.
-                $prodquery = "(SELECT * FROM ".$prodquery." ".$prodqueryArr[$j].") AS tempTable$j";
+                $prodquery = "(SELECT * FROM ".$prodquery." ".$prodqueryArrAll[$k].") AS tempTable$k";
               break;
             }
           }
+
+          // print_r($prodquery);
 
           $total = $wpdb -> get_var("SELECT COUNT(1) FROM (${prodquery}) AS combined_table");
           // echo "$total";
