@@ -25,11 +25,13 @@
           // print_r(count($searchArray));
 
           $prodqueryArr = array();
-          $prodqueryArrCont0 = array(); //SELECT clause container for m0s1s2s3jointcat search
+          // $prodqueryArrCont0 = ""; //SELECT clause container for m0s1s2s3jointcat search
+          $prodqueryArrCont0 = array();
           $prodqueryArrCont1 = array(); //SELECT clause container for keyword and all remaining attribute search.
           $prodqueryArrAll = array(); //WHERE LIKE clause for all attributes.
           $prodqueryArr0 = array(); //WHERE LIKE clause m0s1s2s3jointcat search
           $prodqueryArr1 = array(); //WHERE LIKE clause keyword and all remaining attribute search.
+          $conCatArr = array();
           $prodquery = "";
           $prodquery0 = "";
           $prodquery1 = "";
@@ -80,13 +82,17 @@
           }
 
           for($j=0; $j < count($searchArray); $j++) {
+
             $prodqueryArrCont0[] = "SELECT * from wp_prod0 ".$prodqueryArr0[$j];
             $prodqueryArrCont1[] = "SELECT * from wp_prod0 ".$prodqueryArr1[$j];
           }
 
           //Initial get data. group by m0s1s2s3jointcat first, then the rest of the attribute.
-          $prodquery = "(".implode(' UNION ', $prodqueryArrCont0).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
 
+          $prodquery = "(".implode(' UNION ', $prodqueryArrCont0).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+          // $prodquery = "(".$prodqueryArrCont0.' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+
+          // print_r($prodquery);
           //SEarch filter.
           for($k=0; $k < count($searchArray); $k++) {
             switch ($k) {
@@ -110,9 +116,7 @@
           // print_r($prodquery);
 
           $total = $wpdb -> get_var("SELECT COUNT(1) FROM (${prodquery}) AS combined_table");
-          // echo "$total";
-          // $total_query = "SELECT COUNT(*) FROM wp_prod0";
-          // $total = $wpdb->get_var($total_query);
+          
           $items_per_page = 10;
           $page = isset($_GET['cpage']) ? abs((int) $_GET['cpage']) : 1;
 
