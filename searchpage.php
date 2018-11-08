@@ -36,6 +36,17 @@
           $prodquery0 = "";
           $prodquery1 = "";
 
+          // print_r($main_category);
+
+          // $catSearchm0 = array();
+          $catSearchObj = $wpdb->get_results("SELECT CONCAT_WS('|',m0,s1,s2,s3) AS combiCat FROM wp_prodlegend");
+          $catSearchArr = array();
+          foreach($catSearchObj as $tempVal) {
+            $catSearchArr[] = $tempVal->combiCat;
+          }
+
+          print_r($catSearchArr);
+
           for ($i=0; $i < count($searchArray); $i++) {
 
             $prodqueryArrAll[] = "
@@ -116,7 +127,7 @@
           // print_r($prodquery);
 
           $total = $wpdb -> get_var("SELECT COUNT(1) FROM (${prodquery}) AS combined_table");
-          
+
           $items_per_page = 10;
           $page = isset($_GET['cpage']) ? abs((int) $_GET['cpage']) : 1;
 
