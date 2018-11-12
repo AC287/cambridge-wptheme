@@ -38,14 +38,99 @@
 
           // print_r($main_category);
 
-          // $catSearchm0 = array();
-          $catSearchObj = $wpdb->get_results("SELECT CONCAT_WS('|',m0,s1,s2,s3) AS combiCat FROM wp_prodlegend");
+          $catSearchm0 = array();
+          // $catSearchObj = $wpdb->get_results("SELECT CONCAT_WS('|',m0,s1,s2,s3) AS combiCat FROM wp_prodlegend");
+          $catSearchObj = $wpdb->get_results("SELECT m0,s1,s2,s3,jointcat FROM wp_prodlegend");
+
+          // $catSearchArr = array();
+          // foreach($catSearchObj as $tempVal) {
+          //   $catSearchArr[] = $tempVal->combiCat;
+          // }
+
           $catSearchArr = array();
           foreach($catSearchObj as $tempVal) {
-            $catSearchArr[] = $tempVal->combiCat;
+            // $catSearchArr[] = get_object_vars($tempVal);
+            // $catSearchArr[] = $tempVal->m0, $tempVal->s1, $tempVal->s2, $tempVal->s3, $tempVal->jointcat;
+            // $catSearchArr[] = $tempVal->m0;
+            $catSearchArrI = "";
+            foreach($tempVal as $tempVal0) {
+              $catSearchArrI .= $tempVal0.", ";
+            }
+            $catSearchArr[] = $catSearchArrI;
           }
 
-          print_r($catSearchArr);
+
+          function sampling($chars, $size, $combinations = array()) {
+            //This is possible combination of search words.
+            //https://stackoverflow.com/questions/19067556/php-algorithm-to-generate-all-combinations-of-a-specific-size-from-a-single-set
+            # if it's the first iteration, the first set
+            # of combinations is the same as the set of characters
+            if (empty($combinations)) {
+                $combinations = $chars;
+            }
+
+            # we're done if we're at size 1
+            if ($size == 1) {
+                return $combinations;
+            }
+
+            # initialise array to put new values in
+            $new_combinations = array();
+
+            # loop through existing combinations and character set to create strings
+            foreach ($combinations as $combination) {
+                foreach ($chars as $char) {
+                    $new_combinations[] = $combination . " " . $char;
+                }
+            }
+
+            # call same function again for the next iteration
+            return sampling($chars, $size - 1, $new_combinations);
+
+        }
+
+        $combiTest = array();
+        for($a=1; $a<=count($searchArray); $a++) {
+          $combiTest[]= sampling($searchArray, $a);
+        }
+
+        // print_r($combiTest);
+
+        //$combiTest[] & $catSearchArr[][]
+
+        $matchArr = array();
+
+        foreach($catSearchArr as $catSearchArrTemp) {
+          // print_r($catSearchArrTemp);
+          // for($a=0; $a<count($combiTest))
+          foreach($combiTest as $combiTestTemp) {
+            // print_r($combiTestTemp);
+            foreach($combiTestTemp as $combiTestTemp1) {
+              if(preg_match("/\b$combiTestTemp1\b/i",$catSearchArrTemp)) {
+                // $matchArr[] = $combiTestTemp1;
+                if(!in_array($combiTestTemp1, $matchArr)) {
+                  $matchArr[] = $combiTestTemp1;
+                }
+              }
+              // print_r($combiTestTemp1." ");
+            }
+          }
+        }
+
+
+        function lengthSort($a,$b) {
+          return strlen($b)-strlen($a);
+        }
+
+        usort($matchArr,'lengthSort');
+        // print_r($matchArr);
+        $catArrQuery = array();
+
+        foreach($matchArr as $matchArr0) {
+          $catArrQuery[] = "SELECT * FROM wp_prod0 WHERE m0 LIKE '%$matchArr0%' OR s1 LIKE '%$matchArr0%' OR jointcat LIKE '%$matchArr0%'";
+        }
+        // print_r($catArrQuery);
+          // print_r($catSearchArr);
 
           for ($i=0; $i < count($searchArray); $i++) {
 
@@ -79,7 +164,8 @@
             ";
             $prodqueryArr1[] = "
             WHERE
-            prodkeyword  LIKE '%$searchArray[$i]%'
+            item LIKE '%$searchArray[$i]%'
+            OR prodkeyword  LIKE '%$searchArray[$i]%'
             OR d1 LIKE '%$searchArray[$i]%'
             OR d2 LIKE '%$searchArray[$i]%'
             OR d3 LIKE '%$searchArray[$i]%'
@@ -100,8 +186,15 @@
 
           //Initial get data. group by m0s1s2s3jointcat first, then the rest of the attribute.
 
-          $prodquery = "(".implode(' UNION ', $prodqueryArrCont0).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
-          // $prodquery = "(".$prodqueryArrCont0.' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+          // $prodquery = "(".implode(' UNION ', $catArrQuery).' UNION '.implode(' UNION ', $prodqueryArrCont0).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+          if($catArrQuery) {
+            $prodquery = "(".implode(' UNION ', $catArrQuery).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+          } else {
+            // catArrQuery is empty
+            // $prodquery = "(".implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+            $prodquery = "(".implode(' UNION ', $prodqueryArrCont0).' UNION '.implode(' UNION ',$prodqueryArrCont1).") AS tempTable";
+          }
+
 
           // print_r($prodquery);
           //SEarch filter.
@@ -111,7 +204,7 @@
               if(count($searchArray) > 1) {
                 $prodquery = "(SELECT * from ".$prodquery.$prodqueryArrAll[$k].") AS tempTable$k";
               } else {
-                print_r("only one word in search");
+                // print_r("only one word in search");
                 $prodquery = "SELECT * from ".$prodquery.$prodqueryArrAll[$k];
               }
               break;

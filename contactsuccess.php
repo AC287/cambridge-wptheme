@@ -39,7 +39,7 @@ get_header();
         $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
 
         //php mailer variables
-        $to = "arthurchen@cambridgeresources.com, arthurchen287@gmail.com";
+        $to = "info@cambridgeresources.com";
         $subject = "Cambridge web contact from $name";
         $headers = array(
           'Reply-To: '.$email
