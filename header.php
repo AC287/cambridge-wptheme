@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title><?php bloginfo('name');?></title> -->
     <?php wp_head(); ?>
-
+    <?php include 'phpsnippet/serverlocation.php';?>
     <?php include 'phpsnippet/titletag.php';?>
   </head>
 
   <body>
-    <?php include 'phpsnippet/serverlocation.php';?>
     <div id="all-container">
       <div class="top-nav">
         <div class="container">
