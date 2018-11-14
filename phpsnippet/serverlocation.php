@@ -32,13 +32,13 @@
       $codaSite = "http://127.0.0.1/codadev/";
       $ldrSite = "http://127.0.0.1/ldr/";
     break;
-    case "test3.arthurchen.info":
+    case preg_match("/arthurchen/",$curServer,$tempMatch):
       //personal test server on HostGator.
       $cambridgeSite = "http://test1.arthurchen.info/";
       $codaSite = "http://test2.arthurchen.info/";
       $ldrSite = "http://test3.arthurchen.info/";
     break;
-    case "ldr.codacambridge.com":
+    case preg_match("/codacambridge/",$curServer,$tempMatch):
       //Final test server on Bluehost.
       $cambridgeSite = "http://cambridge.codacambridge.com/";
       $codaSite = "http://coda.codacambridge.com/";
