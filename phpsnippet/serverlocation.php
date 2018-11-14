@@ -38,11 +38,11 @@
       $codaSite = "http://test2.arthurchen.info/";
       $ldrSite = "http://test3.arthurchen.info/";
     break;
-    case ("cambridge.codacambridge.com" || "coda.codacambridge.com" || "ldr.codacambridge.com"):
+    case ("https://cambridge.codacambridge.com" || "https://coda.codacambridge.com" || "https://ldr.codacambridge.com"):
       //Final test server on Bluehost.
-      $cambridgeSite = "http://cambridge.codacambridge.com/";
-      $codaSite = "http://coda.codacambridge.com/";
-      $ldrSite = "http://ldr.codacambridge.com";
+      $cambridgeSite = "https://cambridge.codacambridge.com/";
+      $codaSite = "https://coda.codacambridge.com/";
+      $ldrSite = "https://ldr.codacambridge.com";
     break;
     default:
       //LIVE
