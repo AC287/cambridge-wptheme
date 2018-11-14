@@ -25,6 +25,7 @@
   $cambridgeSite = "";
   $codaSite = "";
   $ldrSite = "";
+  echo $curServer;
   switch($curServer) {
     case "127.0.0.1":
       //local server
