@@ -3281,12 +3281,17 @@ a.spec-sheet, a.usermanual {
   width: 100%;
 }
 
-.seci-title a {
+a.sec-item-num {
   text-decoration: none;
   font-family: 'bignoodletitlingregular', cursive;
   font-size: 24pt;
   line-height: 24pt;
   color: #000;
+}
+
+a.search-catlink {
+  text-decoration: none;
+  color: inherit;
 }
 
 .seci-spec {
