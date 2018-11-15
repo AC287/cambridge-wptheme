@@ -159,7 +159,7 @@
 					Cambridge dominates in the electrical industry providing many electrical accessories and electrical product support. In an effort to constantly improve the electrician’s/DIY’er’s experience, Cambridge is always looking to develop and offer better alternatives to the current standards out there.
 				</p>
 				<p class="about-cat-txt-tags">
-					Duct Straps, Support Webbing, Gas Connectors, Pipe Hanging, Chip Brushes, and more
+					Cable Ties, Terminals, Wire Connectors, Switches, Sockets, Conduit,Wire, and more
 				</p>
 			</div>
 		</div>
@@ -257,12 +257,11 @@
 				STRATEGIC<br/>DISTRIBUTION
 			</div>
 			<div class="about-4info-contents">
-				<p>5 Strategically located Distribution facilities:</p>
-				<p>Brooklyn, NY</p>
-				<p> Simi Valley, CA</p>
-				<p> Houston, TX</p>
+				<p>4 Strategically located Distribution facilities:</p>
+				<p>Simi Valley, CA</p>
+				<p>Houston, TX</p>
 				<p>Chicago, IL</p>
-				<p>Mississuaga, ONT</p>
+				<p>Mississauga, ONT</p>
 			</div>
 		</div>
 	</div>	<!--	end container	-->
@@ -284,7 +283,7 @@
 							<img src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
 						</div>
 						<div class="about-locations-type">
-							<p class="about-locations-type-title">MISSISSAUGA, ON</p>
+							<p class="about-locations-type-title">MISSISSAUGA, ONT</p>
 							<p>Distribution Center</p>
 						</div>
 					</div>
