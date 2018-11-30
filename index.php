@@ -33,7 +33,7 @@
       <img src="<?php bloginfo('template_directory')?>/images/banners/index-img1.jpg">
       <div class="index-banner-textbox ibt-img1">
         <div class="ibt-text">
-          <span>#1 MANUFACTURER OF DUCT STRAPS IN THE U.S.</span>
+          <span>Leading Supplier to the HVAC industry</span>
         </div>
         <div class="ibt-underline">
         </div>
@@ -103,7 +103,7 @@
           <span class="gc-block-title"><br/>HVAC</span>
         </div>
         <div class="hvac gc-desc-txt">
-          <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products for more than 15 years for over 250 HVAC industry distributors. </p>
+          <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products to over 1000 distributors for over 20 years. </p>
         </div>
         <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
@@ -112,8 +112,8 @@
           <img src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
           <span class="gc-block-title"><br/>PLUMBING</span>
         </div>
-        <div class="hvac gc-desc-txt">
-          <p class="plumbing-desc">Cambridge offers a full line of fittings, nipples, pipe, hose clamps, gas connectors, and pipe hanging products specially designed for the plumbing industry.</p>
+        <div class="plumbing gc-desc-txt">
+          <p class="plumbing-desc">Cambridge offers a full line of fittings, nipples, pipe, hose clamps, gas connectors, and pipe hanging products designed for the plumbing industry.</p>
         </div>
         <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
@@ -122,8 +122,8 @@
           <img src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
           <span class="gc-block-title"><br/>ELECTRICAL</span>
         </div>
-        <div class="hvac gc-desc-txt">
-          <p class="electrical-desc">Electrical contractors have trusted Cambridge branded cable ties, wire connectors, terminals, and other electrical products for many years. Cambridge has hundreds of SKUs available at over 10,000 electrical supply distributors and retail locations across the U.S.</p>
+        <div class="electrical gc-desc-txt">
+          <p class="electrical-desc">Electrical contractors have always trusted Cambridge branded cable ties, wire connectors, terminals, and other electrical products. Cambridge has thousands of SKUs available at over 10,000 electrical supply distributors and retail locations across the U.S.</p>
         </div>
         <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
@@ -132,8 +132,8 @@
           <img src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
           <span class="gc-block-title"><br/>AUTOMOTIVE</span>
         </div>
-        <div class="hvac gc-desc-txt">
-          <p class="automotive-desc">Cambridge is a trusted brand in the retail automotive market, supplying hose clamps, fuel injectors, wire connectors, terminals, switches and more.  </p>
+        <div class="automotive gc-desc-txt">
+          <p class="automotive-desc">Cambridge is a trusted brand in the automotive aftermarket, supplying hose clamps, fuel injectors, wire connectors, terminals, switches and more.</p>
         </div>
         <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
@@ -165,7 +165,7 @@
         <div class="collapse index-midcategory-contents" id="imc-distribution">
           <div class="mc-border">INDUSTRY DISTRIBUTORS <br/>CARRY CAMBRIDGE</div>
           <div class="mc-txt">
-            <p>Cambridge manufactures products and sells to a variety of industry wholesalers, distributors, and importers. Cambridge has a dedicated team of sales professionals who are extremely knowledgable in their respective industries.</p>
+            <p>Cambridge manufactures products and sells to a variety of industry wholesalers, distributors, and exporters. Cambridge has a dedicated team of sales professionals who are extremely knowledgeable in their respective industries.</p>
           </div>
         </div>
       </div>
@@ -178,7 +178,7 @@
         <div class="collapse index-midcategory-contents" id="imc-retail">
           <div class="mc-border">INTERNATIONAL RETAILERS <br/>SELL CAMBRIDGE</div>
           <div class="mc-txt">
-            <p>Retail consumers are drawn to our state-of-the-art branding, and find the entire shopping experience fast and easy since the pertinent product information is readily accessible. With over 1,000 SKUs in over 15,000 retail locations across the USA and Canada, Cambridge continues to pop up in many new locations.</p>
+            <p>Retail consumers are drawn to our state-of-the-art branding and find the entire shopping experience fast and easy. With over 1,000 SKUs in over 15,000 retail locations across the USA and Canada, Cambridge continues expanding their retail footprint.</p>
           </div>
         </div>
       </div>
@@ -191,7 +191,7 @@
         <div class="collapse index-midcategory-contents" id="imc-oem">
           <div class="mc-border">ORIGINAL EQUIPMENT <br/>MANUFACTURER</div>
           <div class="mc-txt">
-            <p>Cambridge supplies its premium industrial products to many OEMs across a variety of industries. OEMs use Cambridge products in their manufacturing process because they can trust its quality.</p>
+            <p>Cambridge supplies its premium industrial products to many OEMs across a variety of industries. OEMs use Cambridge products in their manufacturing due to their superior quality.</p>
           </div>
         </div>
       </div>
