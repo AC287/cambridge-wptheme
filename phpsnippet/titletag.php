@@ -10,26 +10,26 @@
   // print_r($curLocationArr);
   global $wp_query, $wpdb;
 
-  switch ($curLocationArr) {
+  // switch ($curLocationArr) {
+  switch (true) {
 
-    // case (count($curLocationArr) <= 1 || empty(array_filter($curLocationArr))):
     case (empty($curLocationArr)):
-      //GET HOME TITLE & META DESC TAG.
+      //GET HOME TITLE & META DESC TAG for live site.
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
       echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
-    case (in_array('products',$curLocationArr)):
+    case (in_array('products',$curLocationArr) || in_array('search',$curLocationArr)):
       //GET PRODUCTS TITLE & META DESC TAG.
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='products';");
       switch ($curLocationArr) {
 
-        case ((!empty($curLocationArr)) && (count($curLocationArr) <=2) && (in_array('products',$curLocationArr))):
+        case (((count($curLocationArr) <=2) && (in_array('products',$curLocationArr))) || (in_array('search',$curLocationArr))):
           echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
         break;
 
-        case (in_array('pm0', $curLocationArr) || in_array('ps1',$curLocationArr) || in_array('ps2',$curLocationArr)):
+        case (in_array('categories', $curLocationArr)):
           $m0 = $wp_query->query_vars['m0'];
           echo "<title>Cambridge | ".$m0."</title>";
         break;
@@ -82,11 +82,22 @@
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
-    case (in_array('tradeshows', $curLocationArr) || count($curLocationArr) >= 2):
+    case (in_array('tradeshows', $curLocationArr)):
       $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='tradeshows';");
       echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
       echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
     break;
 
+    case(count($curLocationArr)==3 && (gettype($curLocationArr[0])=='integer' && gettype($curLocationArr[1]=='integer'))):
+      $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='tradeshows';");
+      echo "<title>Cambridge | ".$metatitleDB[0]->title."</title>";
+      echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
+    break;
+
+    default:
+    $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='home';");
+    echo "<title>Cambridge Resources</title>";
+    echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
+    break;
   }
 ?>

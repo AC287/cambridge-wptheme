@@ -2,11 +2,8 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
-  // $('.top-nav').click(function(){
-  //   console.log('CLICKED HEHEHE');
-  // })
-  // console.log('Today is 9/11');
 
+  //Adding responsive class to header navigation.
   $('.header-navicon').click(function(){
     var x = $('#header-rnav').attr('class').split(' ');
     // console.log(x.length);
@@ -18,37 +15,6 @@ jQuery(document).ready(function($) {
     }
   })
 /*
-  $('.navi1-btn a').bind({
-    mouseenter: function(){
-      var currClass = '.'+$(this).attr('class')+' .header-navi-selector';
-      // console.log(currClass);
-      $(currClass).css({
-        // 'transform':'scale(1.5)',
-        'display':'block',
-      })
-    },
-    mouseleave: function(){
-      var currClass = $(this).attr('class');
-      // if (currClass != getCurrentLocation())
-      switch (currClass) {
-        case 'home':
-          if (getCurrentLocation() == ''){
-            break;
-          }
-        default:
-          // console.log(currClass);
-          if (currClass == getCurrentLocation()){
-            break;
-          } else {
-            $('.'+currClass+' .header-navi-selector').css ({
-              'display':'none',
-            })
-            break;
-          }
-      }
-    }
-  })
-  // });
 
   function getCurrentLocation() {
     var curLocation = $(location).attr('href').split('/');
@@ -96,56 +62,212 @@ jQuery(document).ready(function($) {
 // --- THIS IS FOR ACCORDION BUTTON SECTION ---
 
 // source: https://codepen.io/brenden/pen/Kwbpyj
-$('.custaccordion').click(function(e){
-  var $this = $(this);
+$('.custaccordion img').click(function(e){
+  var $this = $(this).parent();
+  console.log($this);
   if($this.next().hasClass('show')){
     $this.next().removeClass('show');
-    $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
+    $this.children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-right.png');
     $this.next();
   } else {
     // $this.parent().find('.panel').removeClass('show');
     // console.log('Else section. Find parent panel and removeClass show');
-    $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
+    $this.children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-right.png');
     // $this.parent().find('.panel').slideUp(350);
     // console.log('Else section. Find parent panel and slideup.');
     $this.next().toggleClass('show');
-    $this.children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
+    $this.children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
     $this.next();
   }
 });
 
-/*
-var acc = $('.accordion');
-var i;
-// console.log($('.cat-bar').attr('class'));
-var getTotalHeight = parseInt($('.cat-bar').attr('class').split(' ')[1].split('-')[1]);
-console.log(getTotalHeight);
-// console.log($('.accordion').length);
-var getEachCellHeight = $('.accordion').height();
-console.log(getEachCellHeight);
-var catBarHeight = (getTotalHeight * getEachCellHeight) + 'px';
-$('.cat-bar').css('height',catBarHeight);
-for (i = 0; i < acc.length; i++) {
-  acc[i].onclick = function() {
-    // console.log('clicked');
-    this.classList.toggle("active");
-    $(this).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-down.png');
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){ // this close.
-      panel.style.maxHeight = null;
-      // console.log('if activated');
-      $(this).children('img').attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev-right.png');
-    } else {  //this extend
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      // console.log('else activated');
-    }
+$('.productaccordion-mobilemenu').click(function(){
+  var x = $('.cat-bar').attr('class').split(' ');
+  // console.log(x.length);
+  if(x.length===1){
+    $('.cat-bar').addClass('responsive');
+    $('.productaccordion-mobilemenu span').removeClass('glyphicon-plus');
+    $('.productaccordion-mobilemenu span').addClass('glyphicon-minus');
+
   }
-}
+  else {
+    $('.cat-bar').removeClass('responsive');
+    $('.productaccordion-mobilemenu span').removeClass('glyphicon-minus');
+    $('.productaccordion-mobilemenu span').addClass('glyphicon-plus');
+  }
+})
+
+
+var paramCounter = 0;
+
+var m0param = getURLparam('m0');
+paramCountFunction(m0param);
+
+var s1param = getURLparam('s1');
+paramCountFunction(s1param);
+
+var s2param = getURLparam('s2');
+paramCountFunction(s2param);
+
+var s3param = getURLparam('s3');
+paramCountFunction(s3param);
+
+// console.log(s2param);
+// console.log(paramCounter);
+
+var m0paramInner = '.m0-'+m0param;
+var s1paramInner = '.s1-'+s1param;
+var s2paramInner = '.s2-'+s2param;
+var s3paramInner = '.s3-'+s3param;
+/*
+  This is for current active section.
 */
 
-// $('.display-extra').onclick = function () {
+if(m0param) {
+
+  // $(m0paramInner).next().toggleClass('show');
+  $('.m0i-'+m0param).toggleClass('show');
+
+
+  $(m0paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+}
+
+if(s1param) {
+
+  $('.s1i-'+s1param).toggleClass('show');
+
+  $(s1paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+}
+
+if(s2param) {
+
+  $('.s2i-'+s2param).toggleClass('show');
+
+  $(s2paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+}
+
+if(s3param) {
+
+  $('.s3i-'+s3param).toggleClass('show');
+
+  $(s3paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+}
+
+// if(s4param) {
 //
+//   $('.s4i-'+s4param).toggleClass('show');
+//
+//   $(s4paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 // }
+
+switch(paramCounter) {
+  //This will highlight current selection.
+  case 1:
+    $(m0paramInner).css({
+      'background-color':'#e5e5e5',
+    })
+  break;
+  case 2:
+    $('.m0i-'+m0param+' '+s1paramInner).css({
+      'background-color':'#e5e5e5',
+    })
+  break;
+  case 3:
+    $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
+      'background-color':'#e5e5e5',
+    })
+  break;
+  case 4:
+    $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+'.s2i-'+s2param+' '+ s3paramInner).css ({
+      'background-color':'#e5e5e5',
+    })
+  break;
+  default:
+  break;
+}
+
+
+function paramCountFunction(x){
+  if(x){
+    return paramCounter++;
+  } else {
+    return paramCounter;
+  }
+}
+
+function getURLparam(sParam) {
+  /*
+    source: http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
+    source: https://stackoverflow.com/questions/3431512/javascript-equivalent-to-phps-urldecode
+  */
+  // console.log(sParam);
+
+  var sPageURL = decodeURIComponent(window.location.search.substring(1));
+  // console.log(sPageURL.search("&s1="));
+  var m0, s1, s2, s3;
+
+  if(sPageURL) {
+
+    switch (sParam) {
+      case "m0":
+        //This is for m0. s1 exist in url param.
+        //Split s1, take array position 0, split array position 0 from m0 and take array position 1.
+        //Then regex replace special character and return value.
+        //If none exist, return 0.
+        if(sPageURL.search("&s1=") > -1) {
+          m0 = sPageURL.split("&s1=")[0].split("m0=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return m0;
+        } else if (sPageURL.search("m0=") > -1) {
+          m0 = sPageURL.split("m0=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return m0;
+        } else {
+          return;
+        }
+      break;
+      case "s1":
+        if(sPageURL.search("&s2=") > -1) {
+          s1 = sPageURL.split("&s2=")[0].split("&s1=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return s1;
+        } else if (sPageURL.search("&s1=") > -1){
+          s1 = sPageURL.split("s1=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return s1;
+        } else {
+          return;
+        }
+      break;
+      case "s2":
+        if(sPageURL.search("&s3=") > -1) {
+          s2 = sPageURL.split("&s3=")[0].split("&s2=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return s2;
+        } else if(sPageURL.search("&s2=") > -1){
+          s2 = sPageURL.split("s2=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return s2;
+        } else {
+          return;
+        }
+      break;
+      case "s3":
+        if(sPageURL.search("&s4=") > -1) {
+          s3 = sPageURL.split("&s4=")[0].split("&s3=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return s3;
+        } else if(sPageURL.search("&s3=") > -1){
+          s3 = sPageURL.split("&s3=")[1].replace(/[^a-zA-Z0-9]/g, '');
+          return s3;
+        } else {
+          return;
+        }
+      break;
+      default:
+      break;
+    }
+
+  } else {
+    return;
+  }
+
+
+}
+
 
 // - - - PRODUCT PS2 PAGE - - -
 // source: cssglobe.com/lab/tooltip/03/
@@ -153,7 +275,9 @@ $('a.ipt').hover(function(e) {
   //This function run when mouse hover.
   xOffset = 10;
   yOffset = 30;
-  var iptName = ".ipt-"+this.className.split(' ')[1];
+  var iptName = ".ipt-"+this.className.split('ipt ')[1];
+  // var iptName = this.className.split('ipt ')[1];
+  // var iptName = (iptName.split(/[^A-Za-z0-9]/)).join('');
   // console.log(iptName);
   $(iptName)
           .css("display","block")
@@ -162,11 +286,11 @@ $('a.ipt').hover(function(e) {
           .fadeIn("fast");
 }, function (){
   //This function run when mouse hover out.
-  var iptName2 = ".ipt-"+this.className.split(' ')[1];
+  var iptName2 = ".ipt-"+this.className.split('ipt ')[1];
   $(iptName2).css("display","none");
 });
 $('a.ipt').mousemove(function(e) {
-  var iptName3 = ".ipt-"+this.className.split(' ')[1];
+  var iptName3 = ".ipt-"+this.className.split('ipt ')[1];
   $(iptName3)
       .css("top",(e.pageY - xOffset) + "px")
       .css("left",(e.pageX + yOffset) + "px");
@@ -184,14 +308,14 @@ for (i=0; i< displayExtra.length; i++) {
       currentStatus.splice(1,1);
       this.innerHTML = currentStatus.join(' ');
       // This toggle chevron icon.
-      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_up_blue.png');
+      $(this).closest('div').children().children().attr('src','https://storage.codacambridge.com/files/icons/chev_up_blue.png');
     }
     else {
       currentStatus[0] = 'SHOW';
       currentStatus.splice(1,0,'ALL');
       this.innerHTML = currentStatus.join(' ');
       // This toggle chevron icon.
-      $(this).closest('div').children().children().attr('src','http://files.coda.com.s3.amazonaws.com/imgv2/icons/chev_down_blue.png');
+      $(this).closest('div').children().children().attr('src','https://storage.codacambridge.com/files/icons/chev_down_blue.png');
     }
     var displayAll = $('.'+this.classList[1]);
     displayAll.each(function(index,object){
@@ -228,7 +352,7 @@ imgThumb.click(function(){
     $(this).css('display','none');
   })
   var curThumbDisplay = '.img-content-box .main-' + getClickedClass;
-  $(curThumbDisplay).css('display','initial');
+  $(curThumbDisplay).css('display','block');
 })
 var ipClickedImg = $('.main-view-lg');
 ipClickedImg.click(function(){
@@ -444,14 +568,46 @@ function checkSize() {
 
 /* - - - slick plugin - - - */
 
-$('.img-thumbnail-section').slick({
-  dots: false,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 1
-});
-console.log('I am working on slick plugin... 2/21 @ 11:25');
+  $('.img-thumbnail-section').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1
+  });
+  // console.log(siteParameters.theme_directory);
+
+  // console.log(grecaptcha.getResponse());
+
+  // if(grecaptcha.getResponse()=='') {
+  //   $('.contact-submit-button').prop('disabled', true);
+  // } else {
+  //   $('.contact-submit-button').prop('disabled', false);
+  // }
+  // $('.recaptcha-checkbox').click(function(){
+  //   // console.log(grecaptcha.getResponse());
+  //   console.log('clicked');
+  // })
+  $('#contact_form').on("submit", function(e) {
+    e.preventDefault();
+
+    var captcharesponse = grecaptcha.getResponse();
+
+    if(captcharesponse == '') {
+      alert('Please check the captcha!');
+    }
+
+    if(captcharesponse != ''){
+      $('#contact_form')[0].submit();
+    }
+
+  })
+
+  // $.ajax({
+  //   type:"POST",
+  //   url: siteParameters.theme_directory + "/phpsnippet/google_captcha.php"
+  // })
+
 })
 
 // console.log('JS is fully functional.');

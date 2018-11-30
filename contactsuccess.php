@@ -1,53 +1,7 @@
 <!--  Template Name: Contact Success  -->
-
 <?php
-
-  // source: https://premium.wpmudev.org/blog/how-to-build-your-own-wordpress-contact-form-and-why/
-  //response generation function
-  $response = "";
-
-  //function to generate response
-  // function my_contact_form_generate_response($type, $message){
-  //
-  //   global $response;
-  //
-  //   if($type == "success") $response = "<div class='success'>{$message}</div>";
-  //   else $response = "<div class='error'>{$message}</div>";
-  //
-  // }
-  //response messages
-  // $not_human       = "Human verification incorrect.";
-  // $missing_content = "Please supply all information.";
-  // $email_invalid   = "Email Address Invalid.";
-  // $message_unsent  = "Message was not sent. Try Again.";
-  $message_sent    = "Thanks! Your message has been sent.";
-
-  //user posted variables
-  $name = $_POST['contact-name'];
-  $email = $_POST['contact-email'];
-  $message = $_POST['contact-message'];
-  $company = $_POST['contact-company'];
-  $phone = $_POST['contact-phone'];
-  // $human = $_POST['message_human'];
-  $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
-
-  //php mailer variables
-  $to = "arthurchen287@gmail.com";
-  $subject = "Someone sent a message from ".get_bloginfo('name');
-  $headers = 'From: no-reply@cambridgeresources.com'."\r\n" .'Reply-To: ' . $email . "\r\n";
-  if($message !=''){
-    $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
-    // unset($name, $email, $message, $company, $phone, $contents);
-  }
-
-  // if($sent) my_contact_form_generate_response('success',$message_sent);
-  // else my_contact_form_generate_response('error',$message_unsent);
+get_header();
 ?>
-<!-- <?php
-  // $homeurl = home_url();
-  // header('refresh:5; url='.home_url());
-?> -->
-<?php get_header();?>
 
 <div class='contact-banner'>
   <div class='cb-img'>
@@ -69,16 +23,46 @@
       <span>CONTACT</span>
     </div>
     <div class='contact-success-message'>
-      <?php while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID();?>"<?php post_class();?>>
-          <header class="entry-header">
-            <h1 class="entry-title"><?php the_title();?></h1>
-          </header>
-          <div class="entry-content">
-            <h4><?php the_content();?></h4>
-          </div>
-        </article>  <!-- end article post -->
-      <?php endwhile;?>
+
+      <?php
+        //response generation function
+        $response = "";
+        $message_sent    = "Thanks! Your message has been sent.";
+        $message_spam    = "Spam detected. Please send your inquiry to info@cambridgeresources.com";
+        include 'phpsnippet/google_captcha.php';
+        //user posted variables
+        $name = $_POST['contact-name'];
+        $email = $_POST['contact-email'];
+        $message = $_POST['contact-message'];
+        $company = $_POST['contact-company'];
+        $phone = $_POST['contact-phone'];
+        $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
+
+        //php mailer variables
+        $to = "info@cambridgeresources.com";
+        $subject = "Cambridge web contact from $name";
+        $headers = array(
+          'Reply-To: '.$email
+        );
+
+        /*
+        **  REQUIRED TO INSTALL WP_MAIL_SMTP PLUGINS FROM wpforms company.
+        */
+
+        $headers = implode("\r\n", $headers);
+
+        if($message !='' && $responseData->success){
+          $sent = wp_mail($to,$subject,strip_tags($contents),$headers);
+          echo $local;
+          echo "<h3>$message_sent</h3>";
+          echo "<p>We will respond to you within one to two business days.</p>";
+          // unset($name, $email, $message, $company, $phone, $contents);
+        } else {
+          echo "<h3>$message_spam</h3>";
+        }
+
+      ?>
+
     </div>
     <div class='contact-phaddress'>
       <div class='contact-phaddress-ph'>
@@ -102,7 +86,7 @@
     <div class='contact-salesmanager-container'>
       <?php
         global $wpdb;
-        $salesmanager = $wpdb->get_results("SELECT * FROM wp_salesmanager ORDER BY sort ASC;");
+        $salesmanager = $wpdb->get_results("SELECT * FROM wp_camsalesmanager ORDER BY sort ASC;");
         foreach ($salesmanager as $salesmanager1){
           echo "<div class='contact-salesmanager-each'>";
             echo "<div class='contact-salesmanager-img'>";

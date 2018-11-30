@@ -23,6 +23,11 @@
 			// echo 'Sub Category : ' . $wp_query->query_vars['s1'];
 
 			$item_id = $wp_query->query_vars['id'];	//assign query value
+			$item_m0 = $wp_query->query_vars['m0'];
+			$item_s1 = $wp_query->query_vars['s1'];
+			$item_s2 = $wp_query->query_vars['s2'];
+			$item_s3 = $wp_query->query_vars['s3'];
+			// echo $item_m0;
 			// print_r($p2m0);
 			// print_r($p2s1);
 			// print_r($p2s2);
@@ -41,20 +46,105 @@
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
-				$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id';");
+				if($item_m0!='Tools'){
+					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND m0='$item_m0';");
+					$item_main_cat = $get_item_data[0]->m0;
+				} else {
+					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND s1='$item_s1';");
+					$item_main_cat = $item_m0;
+				}
 				$get_cert_img = $wpdb->get_results("SELECT * FROM wp_cert;");
-				$item_main_cat = $get_item_data[0]->m0;
+
 				$item_sub1_cat = $get_item_data[0]->s1;
 				$item_sub2_cat = $get_item_data[0]->s2;
-				if($item_sub2_cat != ""){
-					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat' AND s2='$item_sub2_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps1/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a>  >>  ".$item_id."</div>";
-					// print_r("sub2 is not empty");
-				} else {
-					$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$item_main_cat' AND s1='$item_sub1_cat';");
-					echo "<div class='m-title'><a href='../pm0/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a>  >>  <a href='../ps2/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a>  >>  ".$item_id."</div>";	//Title
-					// print_r("sub2 is empty");
+				$item_sub3_cat = $get_item_data[0]->s3;
+
+				$qim0c = addslashes($item_main_cat);
+				$qis1c = addslashes($item_sub1_cat);
+				$qis2c = addslashes($item_sub2_cat);
+				$qis3c = addslashes($item_sub3_cat);
+
+				$totalquery = 0;
+				(!empty($qim0c)?$totalquery++:$totalquery);
+				(!empty($qis1c)?$totalquery++:$totalquery);
+				(!empty($qis2c)?$totalquery++:$totalquery);
+				(!empty($qis3c)?$totalquery++:$totalquery);
+
+
+				echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
+					switch($totalquery) {
+						case 1:
+							// echo $qim0c;
+							// echo "this is case 1.";
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
+							main0cat($item_main_cat);
+						break;
+						case 2:
+							// echo $qim0c;
+							// echo "this is case 2.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c';");
+							}
+							s1cat($item_main_cat,$item_sub1_cat);
+						break;
+						case 3:
+							// echo $qim0c;
+							// echo "this is case 3.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c' AND s2='$qis2c';");
+							}
+							s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
+						break;
+						case 4:
+							// echo $qim0c;
+							// echo "this is case 4.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							}
+							s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
+						break;
+						case 5:
+							// echo $qim0c;
+							// echo "this is case 5.";
+							if($item_main_cat!='Tools'){
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							} else {
+								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							}
+							s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat);
+						break;
+						default:
+						break;
+					}
+					echo $item_id;
+				echo "</div>";	// end m-title div.
+
+				function main0cat($item_main_cat) {
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a> >> ";
 				}
+				function s1cat($item_main_cat,$item_sub1_cat) {
+					main0cat($item_main_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a> >> ";
+				}
+				function s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat) {
+					s1cat($item_main_cat, $item_sub1_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a> >> ";
+				}
+				function s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat) {
+					s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."'>".$item_sub3_cat."</a> >> ";
+				}
+				function s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat) {
+					s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
+					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."&s4=".urlencode($item_sub4_cat)."'>".$item_sub4_cat."</a> >> ";
+				}
+
 				echo "<div class='s1-box-background'>";
 
 					echo "<div id='each-img-data-container'>";
@@ -73,7 +163,7 @@
 					      }	//Checking to see if image exist
 
 					      if ($imgExist == 0) {
-					        echo "<img class='main-view-lg main-imgnone' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+					        echo "<img class='main-view-lg main-imgnone' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 					      } else {
 					        $displayCounter = 0;
 					        for ($x=0; $x<=9; $x++) {
@@ -117,7 +207,7 @@
 										}
 									}
 									if ($thumbCounter == 0) {
-										echo "<img class='single-thumb' src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg'>";
+										echo "<img class='single-thumb' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
 									}
 								echo "</div>";	// end img-thumbnail-section;
 
@@ -128,9 +218,9 @@
 						echo "<div class='each-item-data'>";
 							echo "<div class='item-spec-container'>";
 								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
-								echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
+								// echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
 								echo "<table class='ip-each-data-table'>";
-								for ($x=1; $x <=8; $x++) {
+								for ($x=1; $x <=9; $x++) {
 									$d = "d".$x;
 									echo "<tr class='ip-each-data'>";
 									if ($get_item_data[0]->$d !=""){
@@ -150,7 +240,13 @@
 								}
 								echo "</table>";
 								echo "<br/>";
-								echo "<a class='spec-sheet' href='".$get_item_data[0]->d9."'>SPEC SHEET</a>";
+								if((($get_item_data[0]->spec)!='' || ($get_item_data[0]->spec)) && ($get_item_data[0]->spec)!=" "){
+									// echo "spec is not empty";
+									echo "<div class='ip-pdf'><a class='spec-sheet' href='".$get_item_data[0]->spec."' rel='noopener noreferrer' target='_blank'>SPEC SHEET</a></div>";
+								}
+								if(($get_item_data[0]->usermanual)!='' || ($get_item_data[0]->usermanual)) {
+									echo "<div class='ip-pdf'><a class='usermanual' href='".$get_item_data[0]->usermanual."' rel='noopener noreferrer' target='_blank'>USER MANUAL</a></div>";
+								}
 
 							echo "</div>";	// end item-spec-container div;
 						echo "</div>";	// end each-item-data;
@@ -158,10 +254,12 @@
 					echo "</div>";	// end each-img-data.
 					echo "</div>";	// end each-img-data-container.
 
+					if(($get_item_data[0]->cert0)!='' || ($get_item_data[0]->cert0)) {
+						// Display only when certification value exist.
 
-					echo "<div class='ip-certification'>";
-						echo "<div class='ip-certitle'>CERTIFIED:</div>";
-						echo "<div >";
+						echo "<div class='ip-certification'>";
+							echo "<div class='ip-certitle'>CERTIFIED:</div>";
+							echo "<div >";
 							// print_r(sizeof($get_cert_img));
 							for ($x=0; $x<=9; $x++) {	//this get total list of certified from item db.
 								$cert = "cert".$x;
@@ -176,12 +274,18 @@
 									}// end check loop for $get_cert_img;
 								}
 							}
-						echo "</div>";
-					echo "</div>";	// end ip-certification
-					echo "<div class='ip-description'>";
-						echo "<div class='ip-desctitle'>PRODUCT DESCRIPTION</div>";
-						echo "<p class='ip-detaildescription'>".$get_item_data[0]->d0."</p>";
-					echo "</div>";	// end ip-description;
+							echo "</div>";
+						echo "</div>";	// end ip-certification
+					}	// end if selection for certification.
+
+					if(($get_item_data[0]->d0)!='' || ($get_item_data[0]->d0)) {
+						// Display only when product description is available.
+						echo "<div class='ip-description'>";
+							echo "<div class='ip-desctitle'>PRODUCT DESCRIPTION</div>";
+							echo "<p class='ip-detaildescription'>".$get_item_data[0]->d0."</p>";
+						echo "</div>";	// end ip-description;
+					}	// end if selection for product description.
+
 				echo "</div>";	// end s1-box-background div;
 				// $mPos++;
 			echo "</div>";  //end group-container div;
@@ -194,7 +298,7 @@
 				echo "<div class='ip-modal-content'>";
 					if($imgExist == 0) {
 						echo "<div class='ip-slides modal-imgnone'>";
-							echo "<img src='http://files.coda.com.s3.amazonaws.com/imgv2/comingsoon.jpg' style='width: 100%'>";
+							echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg' style='width: 100%'>";
 						echo "</div>";
 					} else {
 						for($m=0; $m<=9; $m++){

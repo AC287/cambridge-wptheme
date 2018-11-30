@@ -33,7 +33,7 @@
       <img src="<?php bloginfo('template_directory')?>/images/banners/index-img1.jpg">
       <div class="index-banner-textbox ibt-img1">
         <div class="ibt-text">
-          <span>#1 DISTRIBUTOR OF DUCT STRAPS IN THE U.S.</span>
+          <span>#1 MANUFACTURER OF DUCT STRAPS IN THE U.S.</span>
         </div>
         <div class="ibt-underline">
         </div>

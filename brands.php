@@ -1,6 +1,7 @@
 <!--  Template Name: Brands -->
 
 <?php get_header(); ?>
+<?php include 'phpsnippet/serverlocation.php';?>
 
 <div class="brands-backcolor">
   <div class="container">
@@ -13,7 +14,7 @@
           </div>
           <div class="brandsoverlay-text">
             <p>Coda Resources has a proud tradition of innovation. Coda is constantly working together with their customers to come up with exciting new products that are on the cutting edge of their industries. Coda handles everything from research & development to manufacturing and quality assurance. </p>
-            <a href="http://www.codadevelops.com" target="_blank" rel="noopener noreferrer">Visit Site >></a>
+            <a href="<?php echo $codaSite; ?>" target="_blank" rel="noopener noreferrer">Visit Site >></a>
           </div>
         </div>
       </div> <!--  end brands-container  -->
@@ -40,7 +41,7 @@
           <div class="brandsoverlay-text">
             <p>LDR is a leading supplier of rough and fashion plumbing products to the home improvement industry.</p>
             <p>Products include fittings, nipples, pipe, valves, tubing, faucets, toilet seats, repair and much more.</p>
-            <a href="http://www.ldrind.com" target="_blank" rel="noopener noreferrer">Visit Site >> </a>
+            <a href="<?php echo $ldrSite; ?>" target="_blank" rel="noopener noreferrer">Visit Site >> </a>
           </div>
         </div>
       </div> <!--  end brands-container  -->
