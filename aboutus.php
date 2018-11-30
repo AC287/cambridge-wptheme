@@ -22,7 +22,7 @@
 		</div>
 		<div class="aboutus-inthebeginning-contents">
 			<p class="aboutus-content1">
-				In 1947, Abraham “The Chief” Tropper founded Coda Resources in New York City’s Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed the multi-national enterprise that, today, includes Cambridge, LDR, Coda Retail Supply Solutions, and Amram Brands.
+				In 1947, Abraham "The Chief" Tropper founded Coda Resources in New York City's Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed into a multi-national enterprise that, today, includes Cambridge, LDR, Coda Retail Supply Solutions, and Amram Brands.
 			</p>
 			<p class="aboutus-content1">
 				Abraham Tropper founded Coda Resources upon the simple principle of offering unparalleled service and high quality products. More than 70 years later, his family still operates the business with these values in mind.
@@ -42,7 +42,7 @@
     </div>
     <div class="about-tl-content">
       <!-- <h1>Lorem ipsum dolor sit</h1> -->
-      <p>Abraham Tropper opens Coda Resources (called Central Supply) and begins selling notion items in New York City.</p>
+      <p>Abraham Tropper opens Coda Resources (called Central Supply) and begins selling notions in New York City.</p>
     </div>
   </div>
   <div class="about-tl-item">
@@ -52,7 +52,7 @@
     </div>
     <div class="about-tl-content">
       <!-- <h1 class="about-f3 text-accent ttu">Vestibulum laoreet lorem</h1> -->
-      <p>Coda relocates to its current 100,000 sq. ft. Headquarters in Brooklyn.</p>
+      <p>Coda relocates to its current 100,000 sq. ft. Headquarters in Brooklyn, NY.</p>
     </div>
   </div>
   <div class="about-tl-item">
@@ -62,7 +62,7 @@
     </div>
     <div class="about-tl-content">
       <!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
-      <p>Cambridge is established.</p>
+      <p>Cambridge is established as a division of Coda Resources.</p>
     </div>
   </div>
   <div class="about-tl-item">
@@ -72,7 +72,9 @@
     </div>
     <div class="about-tl-content">
       <!-- <h1 class="about-f3 text-accent ttu">Mauris vitae nunc elem</h1> -->
-      <p>Cambridge Shenzhen offices are formed.</p>
+      <p>
+				Cambridge opens up its Shenzhen offices to help facilitate its overseas manufacturing.<br/>Cambridge opens up its first wholly owned manufacturing facility in Heze, China.
+			</p>
     </div>
   </div>
 	<div class="about-tl-item">
@@ -93,7 +95,7 @@
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text-accent ttu">Mauris vitae nunc elem</h1> -->
 
-			<p> Expands China &amp; Taiwan facilities.</p>
+			<p>Cambridge expands its Heze facility by adding an additional 100,000 square feet of manufacturing.</p>
 		</div>
 	</div>
 	<div class="about-tl-item">
@@ -103,7 +105,7 @@
 		</div>
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
-			<p>Cambridge introduces zipits&trade; Retail product line.</p>
+			<p>Cambridge introduces zipits&trade; retail product line.</p>
 		</div>
 	</div>
 	<div class="about-tl-item">
@@ -113,7 +115,8 @@
 		</div>
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text-accent ttu">Mauris vitae nunc elem</h1> -->
-			<p>Cambridge acquires LDR Global industries.</p>
+			<p>Cambridge acquires LDR Global Industries.<br/>Cambridge begins to cross sell the LDR plumbing product line to its current customer base.
+			</p>
 		</div>
 	</div>
 	<div class="about-tl-item">
@@ -123,7 +126,27 @@
 		</div>
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
-			<p>Cambridge relocates key operations to Chicago facility.</p>
+			<p>Cambridge relocates key operations to its Chicago facility.</p>
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" ></div>
+		<div class="about-tl-year">
+			<p>2017</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
+			<p>Cambridge adds an additional 500 SKU’s to its HVAC product line.</p>
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" ></div>
+		<div class="about-tl-year">
+			<p>2018</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
+			<p>Coda continues expansion of its Heze facility with additional manufacturing.</p>
 		</div>
 	</div>
 </section>
@@ -139,7 +162,7 @@
 			</div>
 			<div class="about-cat-txt">
 				<p class="about-cat-txt-main">
-					Cambridge has been a leading manufacturer of premium HVAC products for almost two decades. Duct and pipe sup- port straps conform to UL standards and have been found to be suitable for use in plenums .
+					Cambridge has been a leading manufacturer of premium HVAC products for two decades. Duct and pipe support straps conform to UL and other applicable standards.
 				</p>
 				<p class="about-cat-txt-tags">
 					Duct Straps, Support Webbing, Gas Connectors, Pipe Hanging, Chip Brushes, and more
@@ -156,10 +179,10 @@
 			</div>
 			<div class="about-cat-txt">
 				<p class="about-cat-txt-main">
-					Cambridge dominates in the electrical industry providing many electrical accessories and electrical product support. In an effort to constantly improve the electrician’s/DIY’er’s experience, Cambridge is always looking to develop and offer better alternatives to the current standards out there.
+					Cambridge is a leading industry provider with many electrical accessories and electrical product support. In an effort to constantly improve the electrician's/DIY'er's experience, Cambridge is always looking to develop and offer better alternatives to the current standards out there.
 				</p>
 				<p class="about-cat-txt-tags">
-					Cable Ties, Terminals, Wire Connectors, Switches, Sockets, Conduit,Wire, and more
+					Cable Ties, Terminals, Wire Connectors, Switches, Sockets, Conduit, Wire, and more
 				</p>
 			</div>
 		</div>
@@ -179,10 +202,10 @@
 			</div>
 			<div class="about-cat-txt">
 				<p class="about-cat-txt-main">
-					It may look pretty on the outside but Cambridge wants to make sure it’s running efficiently on the inside. Keep your pipes and air lines supported by using Cambridge’s broad offerings, many of which conform to UL standards.
+					It may look pretty on the outside but Cambridge wants to make sure it is running efficiently on the inside. Keep your pipes and air lines supported by using Cambridge’s broad offerings.
 				</p>
 				<p class="about-cat-txt-tags">
-					Hose clamps, Quick release clamps, Pipe hanging support, Gas connec- tors, Fittings, Nipples, Pipe, Valves.
+					Hose clamps, Quick release clamps, Pipe hanging support, Gas connetors, Fittings, Nipples, Pipe, Valves.
 				</p>
 			</div>
 		</div>
@@ -196,7 +219,7 @@
 			</div>
 			<div class="about-cat-txt">
 				<p class="about-cat-txt-main">
-					Cambridge is going at full speed to help organize and secure the hoses and pipes in all types of vehicles. Cars, trucks, boats, ATV’s, and more can benefit from the parts that Cambridge offers.
+					Cambridge products help organize and secure the hoses and pipes in all types of vehicles. Cars, trucks, boats, ATV's, and more can benefit from the parts that Cambridge offers.
 				</p>
 				<p class="about-cat-txt-tags">
 					Standard Hose Clamps, Fuel Injector clamps, Heavy duty t-bolt clamps, Wire connectors, Terminals, Switches, Wire management, Cable Ties, Electrical Tape, Tools, Support Kits.
