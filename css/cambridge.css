@@ -514,6 +514,12 @@ a.s-icon {
 }
 
 .gc-desc-txt p {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
   color: #003DA5;
   font-size: 12pt;
 }
@@ -659,6 +665,12 @@ a.s-icon {
   color: #003DA5;
 }
 .mc-border {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
   font-size: 20px;
   border: 2px solid white;
   border-radius: 20px;
@@ -668,6 +680,12 @@ a.s-icon {
   margin-right: 15px;
 }
 .mc-txt {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
   font-size: 18px;
   margin: 20px;
 }
@@ -1922,6 +1940,12 @@ a.spec-sheet, a.usermanual {
           filter: grayscale(0);
 }
 .about-tl-content {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
   font-family: 'Questrial', sans-serif;
   -webkit-transform: translate3d(0, 0, 0) translateY(25px);
           transform: translate3d(0, 0, 0) translateY(25px);
@@ -2958,6 +2982,12 @@ a.spec-sheet, a.usermanual {
   opacity: 0.9;
 }
 .brandsoverlay-text {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; 
   /*margin-top: 80px;*/
   color: #fff;
   background-color: #000000;
