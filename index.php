@@ -103,7 +103,7 @@
           <span class="gc-block-title"><br/>HVAC</span>
         </div>
         <div class="hvac gc-desc-txt">
-          <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products to over 1000 distributors for over 20 years. </p>
+          <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products to over 1,000 distributors for over 20 years. </p>
         </div>
         <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>

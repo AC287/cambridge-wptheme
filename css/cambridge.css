@@ -1973,21 +1973,21 @@ a.spec-sheet, a.usermanual {
           filter: grayscale(100%);
 }
 
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 1401px) {
   .about-tl-content {
-    top: 40%;
+    top: 30%;
     padding: 1.5em;
     font-size: 14pt;
   }
 }
-@media screen and (min-width: 1200px) and (max-width: 1300px) {
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
   .about-tl-content {
-    top: 50%;
+    top: 30%;
     padding: 1.5em;
     font-size: 12pt;
   }
 }
-@media screen and (max-width: 1199px) and (min-width: 750px){
+@media screen and (max-width: 1199px) and (min-width: 850px){
   .about-tl-content {
     top: 40%;
     padding: 25px;
@@ -1995,14 +1995,20 @@ a.spec-sheet, a.usermanual {
   }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 849px) and (min-width: 451px) {
   .about-tl-content {
     top: 38%;
     padding: 10px;
-    font-size: 8pt;
+    font-size: 9pt;
   }
 }
+
 @media screen and (max-width: 450px) {
+  .about-tl-content {
+    top: 38%;
+    padding: 10px;
+    font-size: 7pt;
+  }
   .about-tl-item {
     min-height: 350px;
   }
