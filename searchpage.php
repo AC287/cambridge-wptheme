@@ -137,6 +137,7 @@
             $prodqueryArrAll[] = "
             WHERE
             item LIKE '%$searchArray[$i]%'
+            OR SKU LIKE '%$searchArray[$i]%'
             OR m0 LIKE '%$searchArray[$i]%'
             OR s1 LIKE '%$searchArray[$i]%'
             OR s2 LIKE '%$searchArray[$i]%'
@@ -156,6 +157,7 @@
             $prodqueryArr0[] = "
             WHERE
             item LIKE '%$searchArray[$i]%'
+            OR SKU LIKE '%$searchArray[$i]%'
             OR m0 LIKE '%$searchArray[$i]%'
             OR s1 LIKE '%$searchArray[$i]%'
             OR s2 LIKE '%$searchArray[$i]%'
@@ -165,6 +167,7 @@
             $prodqueryArr1[] = "
             WHERE
             item LIKE '%$searchArray[$i]%'
+            OR SKU LIKE '%$searchArray[$i]%'
             OR prodkeyword  LIKE '%$searchArray[$i]%'
             OR d1 LIKE '%$searchArray[$i]%'
             OR d2 LIKE '%$searchArray[$i]%'
@@ -275,7 +278,15 @@
                 echo "</div>";
                 echo "<div class='sec-items'>";
                   echo "<div class='seci-title'>";
-                    echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."' target='_blank' rel='noopener noreferrer'>".$exactProd->item."</a>";
+                    echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."' target='_blank' rel='noopener noreferrer'>";
+                    // echo "<p class='seci-sku'>".$exactProd->SKU."</p>";
+                    // echo "<p class='seci-item'>".$exactProd->item."</p>";
+                    if($exactProd->SKU=='' || $exactProd->SKU=='N/A' || $exactProd->SKU==' ') {
+                      echo $exactProd->item;
+                    } else {
+                      echo $exactProd->SKU." | ".$exactProd->item;
+                    }
+                    echo "</a>";
 
                     echo "<p>";
                     echo "<a class='search-catlink' href='".home_url()."/products/categories/?m0=".urlencode($exactProd->m0)."'>";

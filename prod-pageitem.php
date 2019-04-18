@@ -217,7 +217,15 @@
 
 						echo "<div class='each-item-data'>";
 							echo "<div class='item-spec-container'>";
-								echo "<div class='ip-title'>".$get_item_data[0]->item."</div>";
+								echo "<div class='ip-title'>";
+								$ip_sku = $get_item_data[0]->SKU;
+								if($ip_sku == '' || $ip_sku == 'N/A' || $ip_sku == ' ') {
+									echo "<p class='ipt-item'>".$get_item_data[0]->item."</p>";
+								} else {
+									echo "<p class='ipt-sku'>".$ip_sku."</p>";
+									echo "<p class='ipt-item'>".$get_item_data[0]->item."</p>";
+								}
+								echo "</div>";
 								// echo "<div class='ip-type'>".$get_item_data[0]->s1." ".$get_item_data[0]->s2." ".$get_item_data[0]->m0."</div>";
 								echo "<table class='ip-each-data-table'>";
 								for ($x=1; $x <=9; $x++) {
@@ -315,17 +323,6 @@
 					// echo "<a class='ip-next'>&#10095;</a>";
 				echo "</div>";	// end ip-modal-content
 			echo "</div>";	// end #itemModal.
-
-			// while ( have_posts() ) : the_post();
-			//
-			// 	get_template_part( 'template-parts/page/content', 'page' );
-			//
-			// 	// If comments are open or we have at least one comment, load up the comment template.
-			// 	if ( comments_open() || get_comments_number() ) :
-			// 		comments_template();
-			// 	endif;
-			//
-			// endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->
