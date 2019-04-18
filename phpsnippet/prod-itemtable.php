@@ -66,6 +66,7 @@ echo "</div>";
 echo "<table class='item-data-sheet'>";
 echo "<tr >";
 // Labeling cells.
+echo "<th class='col-xs'>".$catlegend[0]->SKU."</th>";
 echo "<th class='col-xs'>".$catlegend[0]->item."</th>";
 $thcounter = 0;
 for ($x=1; $x <= 9; $x++) {
@@ -82,30 +83,39 @@ for ($x=1; $x <= 9; $x++) {
 echo "</tr>";
 foreach($catitems as $item_data) {
   echo "<tr>";
+  $ipt_class = preg_replace("/[^a-zA-Z0-9]/","",$item_data->item);
+  $imgCounter = 0;
+  for($i = 0; $i <= 9; $i++) {
+    $img = "img".$i;
+    if ($item_data->$img !="" && $imgCounter == 0 ) {
+      $preview_img = "<img src=".$item_data->$img.">";
+      $imgCounter++;
+      break;
+    }
+  }
+  if($imgCounter == 0) {
+      $preview_img = "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+  }
+  echo "<td class='prod-itemnum'>"; //this will display sku#.
+    $sku = $item_data->SKU;
+    if ($sku == '' || $sku == 'N/A') {
+      echo "N/A";
+    } else {
+      echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($cs2)."&s3=".urlencode($cs3)."'>";
+        echo $item_data->SKU;
+        echo "<p class='item-preview-thumb ipt-$ipt_class'>";
+          echo $preview_img;
+        echo "</p>";
+      echo "</a>";
+    }
+  echo "</td>";
   echo "<td class='prod-itemnum'>";
-    // $ipt_class = str_replace (' ','',$item_data->item);
-    // $ipt_class = str_replace ('/','',$ipt_class);
-    // $ipt_class = str_replace ('-','',$ipt_class);
-    // $ipt_class = str_replace ('*','',$ipt_class);
-    $ipt_class = preg_replace("/[^a-zA-Z0-9]/","",$item_data->item);
-    // echo $ipt_class;
-    // echo $cm0;
+    // $ipt_class = preg_replace("/[^a-zA-Z0-9]/","",$item_data->item);
     echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($cs2)."&s3=".urlencode($cs3)."'>";
       echo $item_data->item;
       // $ipt_img = $item_data->img0;
       echo "<p class='item-preview-thumb ipt-$ipt_class'>";
-        $imgCounter = 0;
-        for($i = 0; $i <= 9; $i++) {
-          $img = "img".$i;
-          if ($item_data->$img !="" && $imgCounter == 0 ) {
-            echo "<img src=".$item_data->$img.">";
-            $imgCounter++;
-            break;
-          }
-        }
-        if($imgCounter == 0) {
-            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
-        }
+        echo $preview_img;
       echo "</p>";
     echo "</a>";
   echo "</td>";

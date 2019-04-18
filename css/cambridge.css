@@ -1380,11 +1380,19 @@ td.prod-data {
 }
 .ip-title {
   font-family: 'bignoodletitlingregular';
-  line-height: 40pt;
+  line-height: 30pt;
   /*font-weight: bold;*/
-  font-size: 45pt;
+  /* font-size: 45pt; */
   /* padding-top: 5px; */
   /* padding-bottom: 5px; */
+}
+.ipt-sku {
+  font-size: 45pt;
+  /* list-style: 40pt; */
+}
+.ipt-item {
+  font-size: 35pt;
+  /* list-style: 30pt; */
 }
 .ip-type {
   font-family: 'bignoodletitlingregular';
@@ -2987,7 +2995,7 @@ a.spec-sheet, a.usermanual {
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; 
+  user-select: none;
   /*margin-top: 80px;*/
   color: #fff;
   background-color: #000000;
@@ -3321,9 +3329,16 @@ a.sec-item-num {
   text-decoration: none;
   font-family: 'bignoodletitlingregular', cursive;
   font-size: 24pt;
-  line-height: 24pt;
+  line-height: 20pt;
   color: #000;
 }
+
+/* p.seci-sku {
+  font-size: 24pt;
+}
+p.seci-item {
+  font-size: 20pt;
+} */
 
 a.search-catlink {
   text-decoration: none;
@@ -3408,6 +3423,7 @@ a.search-catlink {
     font-size: 12pt;
     line-height: 10pt;
   }
+
   .secis-legend {
     /* padding-top: 0px; */
     font-size: 6pt;
