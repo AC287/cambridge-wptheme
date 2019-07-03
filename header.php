@@ -163,9 +163,9 @@
                   <img src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" >
                 </a>
               </div>
-              <div class="nav2-logo nav2-ldr">
-                <a href="<?php echo $ldrSite; ?>" target="_blank" rel="noopener noreferrer">
-                  <img src="<?php bloginfo('template_directory')?>/images/brands/ldr_logo.png" >
+              <div class="nav2-logo nav2-stz">
+                <a href="<?php echo $stzSite; ?>" target="_blank" rel="noopener noreferrer">
+                  <img src="<?php bloginfo('template_directory')?>/images/brands/stz_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-pipedecor">

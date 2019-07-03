@@ -256,14 +256,14 @@ a.s-icon {
 .nav2-amram a img {
   height: 12px;
 }
-.nav2-ldr a img {
-  height: 20px;
+.nav2-stz a img {
+  height: 13px;
 }
 .nav2-pipedecor a img {
   height: 9px;
 }
 
-.nav2-coda, .nav2-amram, .nav2-ldr, .nav2-pipedecor {
+.nav2-coda, .nav2-amram, .nav2-stz, .nav2-pipedecor {
   padding-top: 8px;
 }
 
@@ -315,13 +315,13 @@ a.s-icon {
   .nav2-amram a img {
     height: 9.6px;
   }
-  .nav2-ldr a img {
-    height: 16px;
+  .nav2-stz a img {
+    height: 10px;
   }
   .nav2-pipedecor a img {
     height: 7.2px;
   }
-  .nav2-coda, .nav2-amram, .nav2-ldr, .nav2-pipedecor {
+  .nav2-coda, .nav2-amram, .nav2-stz, .nav2-pipedecor {
     padding-top: 5px;
   }
   .nav2-search-txt {

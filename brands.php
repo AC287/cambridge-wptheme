@@ -34,17 +34,17 @@
           </div>
         </div>
       </div> <!--  end brands-container  -->
-      <div class="brands-container">  <!--  LDR  -->
-        <img src="<?php bloginfo('template_directory')?>/images/brands/ldr.png">
+      <div class="brands-container">  <!--  STZ  -->
+        <img src="<?php bloginfo('template_directory')?>/images/brands/rough.png">
         <div class="brands-overlay">
           <div class="brandsoverlay-logo">
             <!-- <div class="brands-text">Hello World</div> -->
-            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/ldr_logo.png" style="height:50px; width:auto">
+            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/stz_logo.png" style="height:30px; width:auto">
           </div>
           <div class="brandsoverlay-text">
-            <p>LDR is a leading supplier of rough and fashion plumbing products to the home improvement industry.</p>
-            <p>Products include fittings, nipples, pipe, valves, tubing, faucets, toilet seats, repair and much more.</p>
-            <a href="<?php echo $ldrSite; ?>" target="_blank" rel="noopener noreferrer">Visit Site >> </a>
+            <p>STZ is a leading supplier of rough plumbing products to the home improvement industry.</p>
+            <p>Products include black and galvanized fittings, nipples and pipe.</p>
+            <a href="<?php echo $stzSite; ?>" target="_blank" rel="noopener noreferrer">Visit Site >> </a>
           </div>
         </div>
       </div> <!--  end brands-container  -->
