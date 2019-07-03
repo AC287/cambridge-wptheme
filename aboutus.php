@@ -22,7 +22,7 @@
 		</div>
 		<div class="aboutus-inthebeginning-contents">
 			<p class="aboutus-content1">
-				In 1947, Abraham "The Chief" Tropper founded Coda Resources in New York City's Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed into a multi-national enterprise that, today, includes Cambridge, LDR, Coda Retail Supply Solutions, and Amram Brands.
+				In 1947, Abraham "The Chief" Tropper founded Coda Resources in New York City's Garment District in the Lower East Side of Manhattan. With humble beginnings as a sewing notions supply company, Coda Resources developed into a multi-national enterprise that, today, includes Cambridge, STZ, Coda Retail Supply Solutions, and Amram Brands.
 			</p>
 			<p class="aboutus-content1">
 				Abraham Tropper founded Coda Resources upon the simple principle of offering unparalleled service and high quality products. More than 70 years later, his family still operates the business with these values in mind.
@@ -147,6 +147,16 @@
 		<div class="about-tl-content">
 			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
 			<p>Coda continues expansion of its Heze facility with additional manufacturing.</p>
+		</div>
+	</div>
+	<div class="about-tl-item">
+		<div class="about-tl-bg" ></div>
+		<div class="about-tl-year">
+			<p>2019</p>
+		</div>
+		<div class="about-tl-content">
+			<!-- <h1 class="about-f3 text-accent ttu">Phasellus mauris elit</h1> -->
+			<p>Cambridge sells LDR Fashion line. STZ entity is formed replacing LDR's rough plumbing offering.</p>
 		</div>
 	</div>
 </section>
@@ -299,7 +309,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-7">
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="about-locations-localimg">
@@ -348,6 +358,25 @@
 							<p class="about-locations-type-title">HOUSTON, TX</p>
 							<p>Distribution Center</p>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="about-locations-localimg">
+					<img src="<?php bloginfo('template_directory')?>/images/about/vietnam.png">
+				</div>
+				<div class="about-locations-type">
+					<div class="about-locations-type-multicities">
+						<p class="about-locations-type-title">HO CHI MINH, VIETNAM</p>
+						<p>Manufacturing Facility</p>
+						<p style="color:red;">
+							<?php
+								if(date("Y")<2020) {
+									if(date("m")!=01)
+									echo "&#42;Opening January 2020&#42;";
+								}
+							?>
+						</p>
 					</div>
 				</div>
 			</div>
