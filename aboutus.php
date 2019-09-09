@@ -332,10 +332,10 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="about-locations-localimg">
-							<img src="<?php bloginfo('template_directory')?>/images/about/newyork.png">
+							<img src="<?php bloginfo('template_directory')?>/images/about/newjersey.png">
 						</div>
 						<div class="about-locations-type">
-							<p class="about-locations-type-title">NEW YORK, NY</p>
+							<p class="about-locations-type-title">MATAWAN, NJ</p>
 							<p>Corporate Headquarters</p>
 						</div>
 					</div>
