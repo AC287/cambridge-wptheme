@@ -17,6 +17,23 @@ get_header();
   </div>
 </div>
 
+<div class="temp-notice">
+  <div class="container">
+    <div class="tn-img">
+      <img src="<?php bloginfo('template_directory')?>/images/about/IL60139.jpg">
+      <div class="tn-content">
+        <div class="tn-title">
+          <div>Moving in Q1 2020.</div>
+          <div class="tn-titlemini">Regional HQ &amp; Distribution Center.</div>
+        </div>
+        <div class="tn-txt">
+          <p>990 North Avenue<br/>Glendale Heights, IL 60139</p>
+        </div>
+      </div>
+    </div>
+  </div>  <!--  end container  -->
+</div>
+
 <div class='contact-form'>
   <div class='contact-container'>
     <div class='col-sm-12 contact-maintitle'>
@@ -69,8 +86,8 @@ get_header();
         <span>P.718.927.0009</span><span>P.877.922.2538</span><span>F.718.445.4403</span>
       </div>
       <div class='contact-phaddress-address'>
-        <p><strong>New Jersey Office:</strong> 100 Matawan Rd. Ste 300, Matawan, NJ 07747</p>
-        <p><strong>Chicago Office:</strong> 600 N. Kilbourn Chicago, IL 60624</p>
+        <p><strong>Corporate HQ:</strong> 100 Matawan Rd. Ste 300, Matawan, NJ 07747</p>
+        <p><strong>Regional HQ:</strong> 600 N. Kilbourn Chicago, IL 60624</p>
       </div>
     </div>
 
