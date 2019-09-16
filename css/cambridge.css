@@ -2388,6 +2388,48 @@ a.spec-sheet, a.usermanual {
     line-height: 15pt;
   }
 }
+
+.temp-notice {
+  background-color: #f2f2f2;
+  padding-top: 30px;
+  /* padding-bottom: 30px; */
+}
+.temp-notice .container {
+  width: 50%;
+  padding: 0;
+}
+/* .tn-img {
+  width: 50%;
+} */
+.tn-img {
+  position: relative;
+}
+.tn-img img {
+  margin: 0 auto;
+  width: 100%;
+}
+.tn-content {
+  position: absolute;
+  padding: 10px 20px 10px 20px;
+  /* padding-bottom: 20px; */
+  color: #000;
+  background-color: rgba(255,255,255,0.7);
+  text-align: left;
+  top: 10%;
+  left: 10%;
+}
+.tn-title {
+  font-size: 16pt;
+  color: #073DA5;
+}
+.tn-titlemini {
+  font-size: 12pt;
+}
+.tn-txt {
+  font-size: 12pt;
+  color: #000;
+}
+
 .contact-form {
   background-color: #f2f2f2;
 }
@@ -2470,6 +2512,9 @@ a.spec-sheet, a.usermanual {
 }
 @media screen and (max-width: 750px) {
   .contact-container {
+    width: 80%;
+  }
+  .temp-notice .container {
     width: 80%;
   }
 }
