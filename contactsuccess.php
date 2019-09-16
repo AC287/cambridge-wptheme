@@ -53,7 +53,7 @@ get_header();
         $message = $_POST['contact-message'];
         $company = $_POST['contact-company'];
         $phone = $_POST['contact-phone'];
-        $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: $message";
+        $contents = "Name: $name \nEmail: $email \nPhone: $phone \nCompany: $company \nMessage: \n$message";
 
         //php mailer variables
         $to = "info@cambridgeresources.com";
