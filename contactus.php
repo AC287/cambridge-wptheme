@@ -86,7 +86,7 @@ get_header();
         <span>P.718.927.0009</span><span>P.877.922.2538</span><span>F.718.485.4403</span>
       </div>
       <div class='contact-phaddress-address'>
-        <p><strong>Corporate HQ:</strong> 100 Matawan Rd. Ste 300, Matawan, NJ 07747</p>
+        <p><strong>Corporate HQ:</strong> 100 Matawan Rd. Suite 300, Matawan, NJ 07747</p>
         <p><strong>Regional HQ:</strong> 600 N. Kilbourn Chicago, IL 60624</p>
       </div>
     </div>
