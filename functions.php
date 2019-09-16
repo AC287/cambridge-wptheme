@@ -23,6 +23,7 @@ function custom_rewrite_tag() {
   add_rewrite_tag('%s2%', '([^&]+)');
   add_rewrite_tag('%s3%', '([^&]+)');
   add_rewrite_tag('%id%', '([^&]+)');
+  add_rewrite_tag('%jc%', '([^&]+)');
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 
