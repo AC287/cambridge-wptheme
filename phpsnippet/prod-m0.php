@@ -75,9 +75,9 @@
           $itemj_check = null;
         }
         if(count($itemj_check)==1){
-          echo "<a href='../item/?id=".urlencode($itemj_check[0]->item)."&m0=".urlencode($cm0)."&s1=".urlencode($prods1j->s1)."' class='s1-box'>";
+          echo "<a href='../item/?id=".urlencode($itemj_check[0]->item)."&m0=".urlencode($cm0)."&s1=".urlencode($prods1j->s1)."&jc=".urlencode($cm0)."' class='s1-box'>";
         } else {
-          echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1j->s1)."' class='s1-box'>";
+          echo "<a href='../categories/?m0=".urlencode($cm0)."&s1=".urlencode($prods1j->s1)."&jc=".urlencode($cm0)."' class='s1-box'>";
         }
         echo "<div class='item-img'>";
         if ($imgj[0]->cat1img=='' || $imgj[0]->cat1img==' ' ) {
