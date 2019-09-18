@@ -28,13 +28,6 @@
 			$item_s2 = $wp_query->query_vars['s2'];
 			$item_s3 = $wp_query->query_vars['s3'];
 			$item_jc = $wp_query->query_vars['jc'];
-			// echo $item_m0;
-			// print_r($p2m0);
-			// print_r($p2s1);
-			// print_r($p2s2);
-
-			// $sub_category2 = $wpdb->get_results("SELECT DISTINCT s2 FROM wp_prod0 WHERE m0='$p1m0' AND s1='$p1s1';");
-			// print_r($sub_category1);
 
 			echo "<div id='product-main-page'>";
 			echo "<div class='cat-bar'>";
@@ -47,10 +40,12 @@
 			// echo "<h1> HELLO </h1>";
 			// $mPos = 0;
 			echo "<div class='group-container'>";
-				if($item_jc!=''){
+				if($item_jc=='' || !$item_jc){
+					// echo "JC is empty.";
 					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND m0='$item_m0';");
 					$item_main_cat = $get_item_data[0]->m0;
 				} else {
+					// echo "Joint category is not empty.";
 					$get_item_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE item='$item_id' AND jointcat='$item_jc';");
 					$item_main_cat = $item_m0;
 				}
@@ -75,78 +70,128 @@
 
 
 				echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
-					switch($totalquery) {
-						case 1:
-							// echo $qim0c;
-							// echo "this is case 1.";
-							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
-							main0cat($item_main_cat);
-						break;
-						case 2:
-							// echo $qim0c;
-							// echo "this is case 2.";
-							if($item_jc!=''){
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
-							} else {	//jointcat exist.
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c';");
+
+					echo "<a href='../categories/?m0=".urlencode(stripslashes($item_m0))."&jc=".urlencode(stripslashes($item_jc))."'>".stripslashes($item_m0)."</a> >> ";
+					if($item_s1) {
+						echo "<a href='../categories/?m0=".urlencode(stripslashes($item_m0))."&s1=".urlencode(stripslashes($item_s1))."&jc=".urlencode(stripslashes($item_jc))."'>".stripslashes($item_s1)."</a> >> ";
+						if($item_s2) {
+							echo "<a href='../categories/?m0=".urlencode(stripslashes($item_m0))."&s1=".urlencode(stripslashes($item_s1))."&s2=".urlencode(stripslashes($item_s2))."&jc=".urlencode(stripslashes($item_jc))."'>".stripslashes($item_s2)."</a> >> ";
+							if($item_s3) {
+								echo "<a href='../categories/?m0=".urlencode(stripslashes($item_m0))."&s1=".urlencode(stripslashes($item_s1))."&s2=".urlencode(stripslashes($item_s2))."&s3=".urlencode(stripslashes($item_s3))."&jc=".urlencode(stripslashes($item_jc))."'>".stripslashes($item_s3)."</a> >> ";
 							}
-							s1cat($item_main_cat,$item_sub1_cat);
-						break;
-						case 3:
-							// echo $qim0c;
-							// echo "this is case 3.";
-							if($item_jc!=''){
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
-							} else {
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c' AND s2='$qis2c';");
-							}
-							s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
-						break;
-						case 4:
-							// echo $qim0c;
-							// echo "this is case 4.";
-							if($item_jc!=''){
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
-							} else {
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
-							}
-							s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
-						break;
-						case 5:
-							// echo $qim0c;
-							// echo "this is case 5.";
-							if($item_jc!=''){
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
-							} else {
-								$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
-							}
-							s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat);
-						break;
-						default:
-						break;
+						}
 					}
 					echo $item_id;
 				echo "</div>";	// end m-title div.
 
-				function main0cat($item_main_cat) {
-					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a> >> ";
+				switch($totalquery) {
+					case 1:
+						// echo $qim0c;
+						echo "this is case 1.";
+						$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
+						// main0cat($item_main_cat);
+					break;
+					case 2:
+						// echo $qim0c;
+						switch (true) {
+							case ($item_jc==$item_m0) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c';");
+							break;
+							case ($item_jc==$item_s1) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc';");
+							break;
+							default:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c';");
+							break;
+						}
+						// s1cat($item_main_cat,$item_sub1_cat);
+					break;
+					case 3:
+						// echo $qim0c;
+						switch(true) {
+							case ($item_jc==$item_m0) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c' AND s2='$qis2c';");
+							break;
+							case ($item_jc==$item_s1) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s2='$qis2c';");
+							break;
+							case ($item_jc==$item_s2) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc';");
+							break;
+							default:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c';");
+							break;
+						}
+						// s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
+					break;
+					case 4:
+						// echo $qim0c;
+						switch(true) {
+							case ($item_jc==$item_m0) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							break;
+							case ($item_jc==$item_s1) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s2='$qis2c' AND s3='$qis3c';");
+							break;
+							case ($item_jc==$item_s2) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s3='$qis3c';");
+							break;
+							case ($item_jc==$item_s3) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc';");
+							break;
+							default:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c';");
+							break;
+						}
+						// s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
+					break;
+					case 5:
+						// echo $qim0c;
+						switch(true) {
+							case ($item_jc==$item_m0) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							break;
+							case ($item_jc==$item_s1) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							break;
+							case ($item_jc==$item_s2) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s3='$qis3c' AND s4='$qis4c';");
+							break;
+							case ($item_jc==$item_s3) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc' AND s4='$qis4c';");
+							break;
+							case ($item_jc==$item_s4) :
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qijcc';");
+							break;
+							default:
+							$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c' AND s1='$qis1c' AND s2='$qis2c' AND s3='$qis3c' AND s4='$qis4c';");
+							break;
+						}
+						// s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat);
+					break;
+					default:
+					break;
 				}
-				function s1cat($item_main_cat,$item_sub1_cat) {
-					main0cat($item_main_cat);
-					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a> >> ";
-				}
-				function s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat) {
-					s1cat($item_main_cat, $item_sub1_cat);
-					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a> >> ";
-				}
-				function s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat) {
-					s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
-					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."'>".$item_sub3_cat."</a> >> ";
-				}
-				function s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat) {
-					s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
-					echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."&s4=".urlencode($item_sub4_cat)."'>".$item_sub4_cat."</a> >> ";
-				}
+
+				// function main0cat($item_main_cat) {
+				// 	echo "<a href='../categories/?m0=".urlencode($item_main_cat)."'>".$item_main_cat."</a> >> ";
+				// }
+				// function s1cat($item_main_cat,$item_sub1_cat) {
+				// 	main0cat($item_main_cat);
+				// 	echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."'>".$item_sub1_cat."</a> >> ";
+				// }
+				// function s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat) {
+				// 	s1cat($item_main_cat, $item_sub1_cat);
+				// 	echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."'>".$item_sub2_cat."</a> >> ";
+				// }
+				// function s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat) {
+				// 	s2cat($item_main_cat,$item_sub1_cat,$item_sub2_cat);
+				// 	echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."'>".$item_sub3_cat."</a> >> ";
+				// }
+				// function s4cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat,$item_sub4_cat) {
+				// 	s3cat($item_main_cat,$item_sub1_cat,$item_sub2_cat,$item_sub3_cat);
+				// 	echo "<a href='../categories/?m0=".urlencode($item_main_cat)."&s1=".urlencode($item_sub1_cat)."&s2=".urlencode($item_sub2_cat)."&s3=".urlencode($item_sub3_cat)."&s4=".urlencode($item_sub4_cat)."'>".$item_sub4_cat."</a> >> ";
+				// }
 
 				echo "<div class='s1-box-background'>";
 

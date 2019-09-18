@@ -101,7 +101,7 @@ foreach($catitems as $item_data) {
     if ($sku == '' || $sku == 'N/A') {
       echo "N/A";
     } else {
-      echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($cs2)."&s3=".urlencode($cs3)."'>";
+      echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode(stripslashes($item_data->item))."&m0=".urlencode(stripslashes($cm0))."&s1=".urlencode(stripslashes($cs1))."&s2=".urlencode(stripslashes($cs2))."&s3=".urlencode(stripslashes($cs3))."&jc=".urlencode(stripslashes($item_data->jointcat))."'>";
         echo $item_data->SKU;
         echo "<p class='item-preview-thumb ipt-$ipt_class'>";
           echo $preview_img;
@@ -111,7 +111,7 @@ foreach($catitems as $item_data) {
   echo "</td>";
   echo "<td class='prod-itemnum'>";
     // $ipt_class = preg_replace("/[^a-zA-Z0-9]/","",$item_data->item);
-    echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode($item_data->item)."&m0=".urlencode($cm0)."&s1=".urlencode($cs1)."&s2=".urlencode($cs2)."&s3=".urlencode($cs3)."'>";
+    echo "<a class='ipt $ipt_class' href='../item/?id=".urlencode(stripslashes($item_data->item))."&m0=".urlencode(stripslashes($cm0))."&s1=".urlencode(stripslashes($cs1))."&s2=".urlencode(stripslashes($cs2))."&s3=".urlencode(stripslashes($cs3))."&jc=".urlencode(stripslashes($item_data->jointcat))."'>";
       echo $item_data->item;
       // $ipt_img = $item_data->img0;
       echo "<p class='item-preview-thumb ipt-$ipt_class'>";

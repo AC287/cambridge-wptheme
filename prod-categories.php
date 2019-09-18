@@ -22,6 +22,7 @@
 			$cs1 = $wp_query->query_vars['s1'];
 			$cs2 = $wp_query->query_vars['s2'];
 			$cs3 = $wp_query->query_vars['s3'];
+			$cjc = $wp_query->query_vars['jc'];
 			$totalquery = 0;
 			(!empty($cm0)?$totalquery++:$totalquery);
 			(!empty($cs1)?$totalquery++:$totalquery);
