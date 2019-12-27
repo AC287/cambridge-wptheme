@@ -19,7 +19,9 @@
       // print_r(sizeof($team));
       foreach($team as $teaminner) {
         echo "<div class='team-individualimg'>";
-          echo "<div class='team-crop' id='".strtolower($teaminner->first).strtolower($teaminner->last)."'>";
+        $firstformat = preg_replace('/[^A-Za-z0-9\-]/','',$teaminner->first);
+        $lastformat = preg_replace('/[^A-Za-z0-9\-]/','',$teaminner->last);
+          echo "<div class='team-crop' id='".strtolower($firstformat).strtolower($lastformat)."'>";
           echo "<img src='".$teaminner->img."'>";
           echo "</div>";
           echo "<div class='team-individualname'>".$teaminner->first." ".$teaminner->last."</div>";
@@ -31,7 +33,9 @@
         echo "<div class='team-modal-container'>";
           echo "<span class='team-close glyphicon glyphicon-remove'></span>";
           foreach($team as $teammodal) {
-            echo "<div class='team-modal-content team-".strtolower($teammodal->first).strtolower($teammodal->last)."'>";
+            $firstformat = preg_replace('/[^A-Za-z0-9\-]/','',$teammodal->first);
+            $lastformat = preg_replace('/[^A-Za-z0-9\-]/','',$teammodal->last);
+            echo "<div class='team-modal-content team-".strtolower($firstformat).strtolower($lastformat)."'>";
               echo "<div class='team-modal-icontents'>";
                 echo "<div class='team-modal-iname'><span>".$teammodal->first." ".$teammodal->last."</span><div class='team-modal-iname-underline'></div></div>";
                 echo "<div class='team-modal-ititle'><span>".$teammodal->title."</span></div>";
