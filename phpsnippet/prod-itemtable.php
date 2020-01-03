@@ -20,10 +20,10 @@ echo "<div class='prod-tt-container'>";
   echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
 
-  echo "<div class='p2-divider'>";
-    if ($catlegend[0]->imgdivider != ""){
-      echo "<div class='p2-divider-img'><img src='".$catlegend[0]->imgdivider."'></div>";
-    }
+  // echo "<div class='p2-divider'>";
+  //   if ($catlegend[0]->imgdivider != ""){
+  //     echo "<div class='p2-divider-img'><img src='".$catlegend[0]->imgdivider."'></div>";
+  //   }
     // echo "<td>".$item_data."</td>";
     $certDisplay = $catitems;
     // print_r(count($certDisplay));
