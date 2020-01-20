@@ -87,7 +87,7 @@
 				switch($totalquery) {
 					case 1:
 						// echo $qim0c;
-						echo "this is case 1.";
+						// echo "this is case 1.";
 						$get_item_legend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$qim0c';");
 						// main0cat($item_main_cat);
 					break;

@@ -1180,16 +1180,18 @@ td.p2-data {
 /* .p2-divider tr {
   border: none;
 } */
+/*
 .p2-divider-img {
   width: 65%;
 }
 .p2-divider-img img {
-  /* width: 600px; */
   width: 100%;
-  /* padding-left: 20px; */
 }
+*/
 .p2-divider-cert {
-  width: 30%;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   /* text-align: center; */
 }
 .p2-cert-img {
