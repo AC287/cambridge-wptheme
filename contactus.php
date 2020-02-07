@@ -40,7 +40,7 @@ get_header();
           <div class="tn-titlemini">Regional HQ &amp; Distribution Center.</div>
         </div>
         <div class="tn-txt">
-          <p>990 North Avenue<br/>Glendale Heights, IL 60139</p>
+          <p>990 E North Avenue<br/>Glendale Heights, IL 60139</p>
         </div>
       </div>
     </div>
