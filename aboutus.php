@@ -293,7 +293,7 @@
 				<p>4 Strategically located Distribution facilities:</p>
 				<p>Simi Valley, CA</p>
 				<p>Houston, TX</p>
-				<p>Chicago, IL</p>
+				<p>Glendale Heights, IL</p>
 				<p>Mississauga, ONT</p>
 			</div>
 		</div>
@@ -325,7 +325,7 @@
 							<img src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
 						</div>
 						<div class="about-locations-type">
-							<p class="about-locations-type-title">CHICAGO, IL</p>
+							<p class="about-locations-type-title">Glendale Heights, IL</p>
 							<p>Regional Headquarters</p>
 							<p>Distribution Center</p>
 						</div>
