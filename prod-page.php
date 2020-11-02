@@ -68,7 +68,10 @@
 
 											if($counter < 4) {
 
-												if(sizeof($item_check) == 1){
+												// echo "<div>".sizeof($item_check)."</div>";
+												// print_r($item_check);
+
+												if(@sizeof($item_check) == 1){
 													//This will determine if link should take user to individual item page or table page.
 													echo "<a href='./item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
 												} else {
@@ -76,7 +79,7 @@
 												}
 
 												echo "<div class='item-img'>";
-												if (sizeof($img) >= 1) {
+												if (@sizeof($img) >= 1) {
 
 													echo "<img src='".$img[0]->cat1img."'>";
 
@@ -91,7 +94,7 @@
 												$counter4++;
 											} else {
 												// if sub category is more than 4, this add class to hide.
-												if(sizeof($item_check)==1){
+												if(@sizeof($item_check)==1){
 													//This will determine if link should take user to individual item page or table page.
 													echo "<a href='./item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
 												} else {
@@ -99,10 +102,10 @@
 												}
 
 												echo "<div class='item-img'>";
-												if (sizeof($img) > 1) {
+												if (@sizeof($img) > 1) {
 													echo "<img src='".$img[0]->cat1img."'>";
 												}
-												elseif (sizeof($img)===1) {
+												elseif (@sizeof($img)===1) {
 													// print_r($img->img0);
 													echo "<img src='".$img[0]->cat1img."'>";
 												}
@@ -134,7 +137,7 @@
 
 													// print_r($itemj_check);
 
-													if(sizeof($itemj_check) == 1){
+													if(@sizeof($itemj_check) == 1){
 														//This will determine if link should take user to individual item page or table page.
 														echo "<a href='./item/?id=".urlencode($itemj_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1j_category2->s1)."&jc=".urlencode($qm0)."' class='s1-box'>";
 													} else {
@@ -142,7 +145,7 @@
 													}
 
 													echo "<div class='item-img'>";
-													if (sizeof($jimg) >= 1) {
+													if (@sizeof($jimg) >= 1) {
 
 														echo "<img src='".$jimg[0]->cat1img."'>";
 
@@ -157,7 +160,7 @@
 													$counter4++;
 												} else {
 													// if sub category is more than 4, this add class to hide.
-													if(sizeof($itemj_check)==1){
+													if(@sizeof($itemj_check)==1){
 														//This will determine if link should take user to individual item page or table page.
 														echo "<a href='./item/?id=".urlencode($itemj_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1j_category2->s1)."&jc=".urlencode($qm0)."' class='s1-box extra-box pos".$mPos."'>";
 													} else {
@@ -165,10 +168,10 @@
 													}
 
 													echo "<div class='item-img'>";
-													if (sizeof($jimg) > 1) {
+													if (@sizeof($jimg) > 1) {
 														echo "<img src='".$jimg[0]->cat1img."'>";
 													}
-													elseif (sizeof($jimg)===1) {
+													elseif (@sizeof($jimg)===1) {
 														// print_r($img->img0);
 														echo "<img src='".$jimg[0]->cat1img."'>";
 													}
