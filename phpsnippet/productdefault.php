@@ -13,7 +13,7 @@
           echo "<a href='./".$main_category2->m0."'>".$main_category2->m0desc."</a>";
         echo "</div>";	//end class m-title.
 
-        // $qm0 = addslashes($main_category2->m0); //Slash escape is required for special character such as " , ' , \ to search in query.
+        $qm0 = $main_category2->m0;
         $s1_category2 = $wpdb->get_results("SELECT DISTINCT s1,s1desc FROM wp_prodlegend WHERE m0 = '$qm0';");
         $s1j_category2 = $wpdb->get_results("SELECT DISTINCT s1,s1desc FROM wp_prodlegend WHERE jointcat = '$qm0';");
 
@@ -27,14 +27,12 @@
 
           foreach($s1_category2 as $s1_category2) {	//loop through each s1 category.
 
-            // $qs1 = addslashes($s1_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
-
+            $qs1 = $s1_category2->s1;
             $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");	//Get s1 image.
-
             $s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");	//Check for s2.
 
             if(!$s2_check){
-              $item_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE m0='$qm0' AND s1='$qs1';");
+              $item_check = $wpdb->get_results("SELECT DISTINCT item0,item FROM wp_prod0 WHERE m0='$qm0' AND s1='$qs1';");
             } else {
               $item_check = null;
             }
@@ -44,15 +42,12 @@
               // echo "<div>".sizeof($item_check)."</div>";
               // print_r($item_check);
 
-              // if(@sizeof($item_check) == 1){
-                //This will determine if link should take user to individual item page or table page.
-              //   echo "<a href='./item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
-              // } else {
-              //   echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box'>";
-              // }
-
-              echo "<a href='./".$main_category2->m0."/".$main_category2->s1."/' class='s1-box'>";
-
+              if(@sizeof($item_check) == 1){
+                // This will determine if link should take user to individual item page or table page.
+                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."' class='s1-box'>";
+              } else {
+                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."' class='s1-box'>";
+              }
 
               echo "<div class='item-img'>";
               if (@sizeof($img) >= 1) {
@@ -64,21 +59,18 @@
               };
 
               echo "</div>";
-              echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
+              echo "<div class='s1-cat'>".$s1_category2->s1desc."</div>";
               echo "</a>";
               $counter++;
               $counter4++;
             } else {
               // if sub category is more than 4, this add class to hide.
-              // if(@sizeof($item_check)==1){
-              //   //This will determine if link should take user to individual item page or table page.
-              //   echo "<a href='./item/?id=".urlencode($item_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
-              // } else {
-              //   echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1_category2->s1)."' class='s1-box extra-box pos".$mPos."'>";
-              // }
-
-              echo "<a href='./".$main_category2->m0."/".$main_category2->s1."/' class='s1-box extra-box pos".$mPos."'>";
-
+              if(@sizeof($item_check)==1){
+                //This will determine if link should take user to individual item page or table page.
+                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."' class='s1-box extra-box pos".$mPos."'>";
+              } else {
+                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
+              }
 
               echo "<div class='item-img'>";
               if (@sizeof($img) > 1) {
@@ -93,7 +85,7 @@
               };
               // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
               echo "</div>";
-              echo "<div class='s1-cat'>".$s1_category2->s1."</div>";
+              echo "<div class='s1-cat'>".$s1_category2->s1desc."</div>";
               echo "</a>";
               $counter++;
               $counter4++;
@@ -102,12 +94,12 @@
 
           if(!empty($s1j_category2[0]->s1)){	//display joint category after displaying all s1 from m0.
             foreach($s1j_category2 as $s1j_category2){
-              $jqs1 = addslashes($s1j_category2->s1);	//Slash escape is required for special character such as " , ' , \ to search in query.
+              $jqs1 = $s1j_category2->s1;
               $jimg = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE jointcat = '$qm0' AND s1 = '$jqs1' AND cat1img IS NOT NULL");
               $s2j_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE jointcat='$qm0' AND s1='$jqs1';");
 
               if(!$s2j_check) {
-                $itemj_check = $wpdb->get_results("SELECT DISTINCT item FROM wp_prod0 WHERE jointcat='$qm0' AND s1='$jqs1';");
+                $itemj_check = $wpdb->get_results("SELECT DISTINCT item0,item FROM wp_prod0 WHERE jointcat='$qm0' AND s1='$jqs1';");
               } else {
                 $itemj_check = null;
               }
@@ -118,9 +110,11 @@
 
                 if(@sizeof($itemj_check) == 1){
                   //This will determine if link should take user to individual item page or table page.
-                  echo "<a href='./item/?id=".urlencode($itemj_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1j_category2->s1)."&jc=".urlencode($qm0)."' class='s1-box'>";
+                  echo "<a href='./".$qm0."/".$s1j_category2->s1."/".$itemj_check[0]->item."' class='s1-box'>";
+
                 } else {
-                  echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1j_category2->s1)."&jc=".urlencode($qm0)."' class='s1-box'>";
+                  echo "<a href='./".$qm0."/".$s1j_category2->s1."' class='s1-box'>";
+
                 }
 
                 echo "<div class='item-img'>";
@@ -133,7 +127,7 @@
                 };
 
                 echo "</div>";
-                echo "<div class='s1-cat'>".$s1j_category2->s1."</div>";
+                echo "<div class='s1-cat'>".$s1j_category2->s1desc."</div>";
                 echo "</a>";
                 $counter++;
                 $counter4++;
@@ -141,9 +135,9 @@
                 // if sub category is more than 4, this add class to hide.
                 if(@sizeof($itemj_check)==1){
                   //This will determine if link should take user to individual item page or table page.
-                  echo "<a href='./item/?id=".urlencode($itemj_check[0]->item)."&m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1j_category2->s1)."&jc=".urlencode($qm0)."' class='s1-box extra-box pos".$mPos."'>";
+                  echo "<a href='./".$qm0."/".$s1j_category2->s1."/".$itemj_check[0]->item."' class='s1-box extra-box pos".$mPos."'>";
                 } else {
-                  echo "<a href='./categories/?m0=".urlencode($main_category2->m0)."&s1=".urlencode($s1j_category2->s1)."&jc=".urlencode($qm0)."' class='s1-box extra-box pos".$mPos."'>";
+                  echo "<a href='./".$qm0."/".$s1j_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
                 }
 
                 echo "<div class='item-img'>";
@@ -159,7 +153,7 @@
                 };
                 // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
                 echo "</div>";
-                echo "<div class='s1-cat'>".$s1j_category2->s1."</div>";
+                echo "<div class='s1-cat'>".$s1j_category2->s1desc."</div>";
                 echo "</a>";
                 $counter++;
                 $counter4++;
@@ -205,7 +199,7 @@
               }
               $m0_imgarray = array_values(array_filter($m0_imgarray));
               // print_r($m0_imgarray);
-              echo "<a href='./categories/?m0=".urlencode($qm0)."' class='s1-box'>";
+              echo "<a href='./".$qm0."' class='s1-box'>";
                 echo "<div class='item-img'>";
                   if(in_array('',$m0_imgarray) || in_array(' ',$m0_imgarray)) {
                     echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
