@@ -22,14 +22,24 @@
         array_splice($urlarr, 0, $catIndex + 1);
         // print_r(count($urlarr));
 
-        //side accordion section
         echo "<div id='product-main-page'>";
+					//side accordion section
           echo "<div class='cat-bar'>";
             include 'phpsnippet/productaccordion2.php';
           echo "</div>";
+
+					//product display section
           echo "<div class='prod-display'>";
             // print_r($_SERVER['REQUEST_URI']);
-            include 'phpsnippet/productdefault.php';
+
+						switch(count($urlarr)) {
+							case 0:
+								include 'phpsnippet/productdefault.php';
+							break;
+							default:
+								include 'phpsnippet/productchain.php';
+							break;
+						}
           echo "</div>";
         echo "</div>";
 
