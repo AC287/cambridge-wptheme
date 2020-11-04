@@ -36,8 +36,8 @@
 							case 0:
 								include 'phpsnippet/productdefault.php';
 							break;
-							default:
-								include 'phpsnippet/productchain.php';
+							case 1:
+								include 'phpsnippet/productchain0.php';
 							break;
 						}
           echo "</div>";
