@@ -32,12 +32,27 @@
           echo "<div class='prod-display'>";
             // print_r($_SERVER['REQUEST_URI']);
 
+						$qurl0 = $urlarr[0];
+					  $qurl1 = $urlarr[1];
+					  $qurl2 = $urlarr[2];
+					  $qurl3 = $urlarr[3];
+					  $qurl4 = $urlarr[4];
+
 						switch(count($urlarr)) {
 							case 0:
 								include 'phpsnippet/productdefault.php';
 							break;
 							case 1:
 								include 'phpsnippet/productchain0.php';
+							break;
+							case 2:
+								include 'phpsnippet/productchain1.php';
+							break;
+							case 3:
+								include 'phpsnippet/productchain2.php';
+							break;
+							case 4:
+								include 'phpsnippet/productchain3.php';
 							break;
 						}
           echo "</div>";

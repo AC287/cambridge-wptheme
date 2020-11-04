@@ -177,7 +177,7 @@
           if($counter > 4) {
             echo "<div class='show-hide'>";
               echo "<span class='sh-chev'><img class='chev' src='https://storage.codacambridge.com/files/icons/chev_down_blue.png'></span>";
-              echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0)." CATEGORIES</span>";
+              echo "<span class='display-extra pos".$mPos." toggle-class'>SHOW ALL ".strtoupper($main_category2->m0desc)." CATEGORIES</span>";
             echo "</div>";
           }
 

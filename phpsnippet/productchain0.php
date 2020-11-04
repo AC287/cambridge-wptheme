@@ -1,10 +1,6 @@
 <?php
 
-  $qurl0 = $urlarr[0];
-  $qurl1 = $urlarr[1];
-  $qurl2 = $urlarr[2];
-  $qurl3 = $urlarr[3];
-  $qurl4 = $urlarr[4];
+  //This is the display php insert for m0 category.
 
   echo "<div class='group-container'>";
 
@@ -91,6 +87,18 @@
   } else {
     // There is no s1 category. This will get data from item database.
     // $prodchainitem = $wpdb->get_results("SELECT DISTINCT ");
+    $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$qurl0';");
+    $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$qurl0';");
+    $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
+    $itemcount = count($catitems);
+    echo "<div class='group-container'>";
+    echo "<div class='m-title'>";
+    echo "<a href='".home_url()."/products'>PRODUCT HOME </a> >> ".$catlegend[0]->m0desc;
+    echo "</div>";
+    echo "<div class='s1-box-background'>";
+    echo "<div class='s1-box-flex-container'>";
+    include 'productchain-table.php';
+    echo "</div>";
   }
 
 
