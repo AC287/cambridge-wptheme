@@ -85,10 +85,10 @@ for ($x=1; $x <= 9; $x++) {
 echo "</tr>";
 foreach($catitems as $item_data) {
 
-  $m0url = '/'.$item_data->m0;
-  (!empty($item_data->s1) ? $s1url = '/'.$item_data->s1 : $s1url);
-  (!empty($item_data->s2) ? $s2url = '/'.$item_data->s2 : $s2url);
-  (!empty($item_data->s3) ? $s3url = '/'.$item_data->s3 : $s3url);
+  $m0url = '/'.$qurl0;
+  (!empty($qurl1) ? $s1url = '/'.$qurl1 : $s1url);
+  (!empty($qurl2) ? $s2url = '/'.$qurl2 : $s2url);
+  (!empty($qurl3) ? $s3url = '/'.$qurl3 : $s3url);
   $itemurl = '/'.$item_data->item0;
 
   echo "<tr>";

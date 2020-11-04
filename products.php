@@ -54,6 +54,11 @@
 							case 4:
 								include 'phpsnippet/productchain3.php';
 							break;
+							case 5:
+								include 'phpsnippet/productchain-item.php';
+							break;
+							default:
+							break;
 						}
           echo "</div>";
         echo "</div>";
