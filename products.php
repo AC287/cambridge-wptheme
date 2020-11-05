@@ -39,9 +39,9 @@
 					  $qurl4 = $urlarr[4];
 
 						switch(count($urlarr)) {
-							case 0:
-								include 'phpsnippet/productdefault.php';
-							break;
+							// case 0:
+							// 	include 'phpsnippet/productdefault.php';
+							// break;
 							case 1:
 								include 'phpsnippet/productchain0.php';
 							break;
@@ -58,6 +58,7 @@
 								include 'phpsnippet/productchain-item.php';
 							break;
 							default:
+								include 'phpsnippet/productdefault.php';
 							break;
 						}
           echo "</div>";

@@ -10,8 +10,10 @@
     //assign value for joint category.
     $prods2 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc FROM wp_prodlegend WHERE jointcat = '$qurl0' AND s1 = '$qurl1';");
     $tempm0 = $wpdb->get_results("SELECT DISTINCT m0desc FROM wp_prodlegend WHERE m0='$qurl0';");
-    $prods2[0]->m0 = $qurl0;
-    $prods2[0]->m0desc = $tempm0[0]->m0desc;
+    if(!empty($prods2)){
+      $prods2[0]->m0 = $qurl0;
+      $prods2[0]->m0desc = $tempm0[0]->m0desc;
+    }
   }
 
   if(!empty($prods2)){
@@ -67,7 +69,8 @@
 
       // $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$cm0' AND s1 = '$cs1';");
       // $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$cm0' AND s1 = '$cs1';");
-      $jclv = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qurl0' OR jointcat='$qurl1';");
+      $jclv = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qurl0' OR jointcat='$qurl1';");  //general joint;
+      // print_r($jclv);
       // $jcls1 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$cs1';");
       $jclvm0 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qurl0' AND s1='$qurl1';"); //joint is m0.
       $jclvs1 = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qurl1';"); //joint is s1.
@@ -79,14 +82,12 @@
         $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$qurl0' AND s1='$qurl1';");
       }
       if(!empty($jclvs1)){
-        // echo "joint is equal s1 cat.";
         $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1';");
         $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$qurl0' AND s1='$qurl1';");
         $jcdv = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE jointcat='$qurl1';");
         $catitems = array_merge($catitems,$jcdv);
       }
       if(empty($jclvm0) AND empty($jclvs1)){
-        // echo "joint is empty.";
         $catlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1';");
         $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$qurl0' AND s1 = '$qurl1';");
       }

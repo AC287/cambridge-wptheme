@@ -14,8 +14,11 @@
   echo "<div class='productaccordion-content-container'>";
   for ($m0p = 0; $m0p < 3; $m0p++) {  //Grouping priority. Only 0, 1, 2.
     foreach ($main_category[$m0p] as $each_mc) {
+
       $s1_category = $wpdb->get_results("SELECT DISTINCT s1,s1desc FROM wp_prodlegend WHERE m0 = '$each_mc->m0';");
+
       $s1_jcategory= $wpdb->get_results("SELECT DISTINCT s1,s1desc FROM wp_prodlegend WHERE jointcat = '$each_mc->m0';");
+      
       $m0class = $each_mc->m0;
       // $m0class = preg_replace("/[^a-zA-Z0-9]/","",$m0class);
 

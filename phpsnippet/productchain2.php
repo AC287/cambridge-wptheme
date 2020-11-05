@@ -2,6 +2,7 @@
 
   //This is the display php insert for s2 category.
   //Product with only sub category3. m0, s1, and s2 are not empty. This will list all s3 inside given s2.
+  // echo "productchain2 triggered.";
 
   $prods3 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc,s3,s3desc FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1' AND s2 = '$qurl2';");
   $itemcat = null;
@@ -9,8 +10,10 @@
 
   if(empty($prods3)) {
     //assign value for joint category.
-    $prods3 = $wpdb->get_results("SELECT DISTINCT s2,s2desc FROM wp_prodlegend WHERE jointcat = '$qurl1';");
+    $prods3 = $wpdb->get_results("SELECT DISTINCT s2,s2desc FROM wp_prodlegend WHERE jointcat = '$qurl1' AND s2='$qurl2';");
+    
     if(!empty($prods3)){
+      // echo "not empty triggered.";
       $temp = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc FROM wp_prodlegend WHERE m0='$qurl0' AND s1='$qurl1';");
       $prods3[0]->m0 = $qurl0;
       $prods3[0]->m0desc = $temp[0]->m0desc;
