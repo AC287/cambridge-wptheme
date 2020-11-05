@@ -2,6 +2,8 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
+  // console.log('HELLO today is 11/5');
+
 
   //Adding responsive class to header navigation.
   $('.header-navicon').click(function(){
@@ -61,6 +63,7 @@ jQuery(document).ready(function($) {
 
 // --- THIS IS FOR ACCORDION BUTTON SECTION ---
 
+
 // source: https://codepen.io/brenden/pen/Kwbpyj
 $('.custaccordion img').click(function(e){
   var $this = $(this).parent();
@@ -96,6 +99,17 @@ $('.productaccordion-mobilemenu').click(function(){
     $('.productaccordion-mobilemenu span').addClass('glyphicon-plus');
   }
 })
+
+//This will get location of current url split by slash, remove empty entry.
+// console.log(window.location.href);
+var currentaddr = window.location.href;
+currentaddr = currentaddr.split("/");
+var prodloc = currentaddr.indexOf("products");
+if(prodloc > 0){
+  currentaddr.splice(0,prodloc+1);
+  currentaddr = currentaddr.filter(val=>val);
+  console.log(currentaddr);
+}
 
 
 var paramCounter = 0;
@@ -203,7 +217,6 @@ function getURLparam(sParam) {
   // console.log(sParam);
 
   var sPageURL = decodeURIComponent(window.location.search.substring(1));
-  // console.log(sPageURL.search("&s1="));
   var m0, s1, s2, s3;
 
   if(sPageURL) {
