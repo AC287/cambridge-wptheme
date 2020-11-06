@@ -2,8 +2,6 @@
 // console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
-  // console.log('HELLO today is 11/5');
-
 
   //Adding responsive class to header navigation.
   $('.header-navicon').click(function(){
@@ -108,26 +106,24 @@ var prodloc = currentaddr.indexOf("products");
 if(prodloc > 0){
   currentaddr.splice(0,prodloc+1);
   currentaddr = currentaddr.filter(val=>val);
-  console.log(currentaddr);
 }
 
 
 var paramCounter = 0;
 
-var m0param = getURLparam('m0');
+
+var m0param = currentaddr[0];
 paramCountFunction(m0param);
 
-var s1param = getURLparam('s1');
+var s1param = currentaddr[1];
 paramCountFunction(s1param);
 
-var s2param = getURLparam('s2');
+var s2param = currentaddr[2];
 paramCountFunction(s2param);
 
-var s3param = getURLparam('s3');
+var s3param = currentaddr[3];
 paramCountFunction(s3param);
 
-// console.log(s2param);
-// console.log(paramCounter);
 
 var m0paramInner = '.m0-'+m0param;
 var s1paramInner = '.s1-'+s1param;
@@ -167,13 +163,6 @@ if(s3param) {
   $(s3paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
 }
 
-// if(s4param) {
-//
-//   $('.s4i-'+s4param).toggleClass('show');
-//
-//   $(s4paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
-// }
-
 switch(paramCounter) {
   //This will highlight current selection.
   case 1:
@@ -182,19 +171,40 @@ switch(paramCounter) {
     })
   break;
   case 2:
-    $('.m0i-'+m0param+' '+s1paramInner).css({
-      'background-color':'#e5e5e5',
-    })
+    var tempclasscheck = $('.m0i-'+m0param).find(s1paramInner);
+    if (tempclasscheck.length > 0){
+      $('.m0i-'+m0param+' '+s1paramInner).css({
+        'background-color':'#e5e5e5',
+      })
+    } else {
+        $(m0paramInner).css({
+          'background-color':'#e5e5e5',
+        })
+    }
   break;
   case 3:
-    $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
-      'background-color':'#e5e5e5',
-    })
+    var tempclasscheck = $('.m0i-'+m0param).find(s2paramInner);
+    if(tempclasscheck.length > 0){
+      $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
+        'background-color':'#e5e5e5',
+      })
+    } else {
+      $('.m0i-'+m0param+' '+s1paramInner).css({
+        'background-color':'#e5e5e5',
+      })
+    }
   break;
   case 4:
-    $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+'.s2i-'+s2param+' '+ s3paramInner).css ({
-      'background-color':'#e5e5e5',
-    })
+    var tempclasscheck = $('.m0i-'+m0param).find(s3paramInner);
+    if(tempclasscheck.length > 0) {
+      $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+'.s2i-'+s2param+' '+ s3paramInner).css ({
+        'background-color':'#e5e5e5',
+      })
+    } else {
+      $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
+        'background-color':'#e5e5e5',
+      })
+    }
   break;
   default:
   break;
@@ -207,78 +217,6 @@ function paramCountFunction(x){
   } else {
     return paramCounter;
   }
-}
-
-function getURLparam(sParam) {
-  /*
-    source: http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
-    source: https://stackoverflow.com/questions/3431512/javascript-equivalent-to-phps-urldecode
-  */
-  // console.log(sParam);
-
-  var sPageURL = decodeURIComponent(window.location.search.substring(1));
-  var m0, s1, s2, s3;
-
-  if(sPageURL) {
-
-    switch (sParam) {
-      case "m0":
-        //This is for m0. s1 exist in url param.
-        //Split s1, take array position 0, split array position 0 from m0 and take array position 1.
-        //Then regex replace special character and return value.
-        //If none exist, return 0.
-        if(sPageURL.search("&s1=") > -1) {
-          m0 = sPageURL.split("&s1=")[0].split("m0=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return m0;
-        } else if (sPageURL.search("m0=") > -1) {
-          m0 = sPageURL.split("m0=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return m0;
-        } else {
-          return;
-        }
-      break;
-      case "s1":
-        if(sPageURL.search("&s2=") > -1) {
-          s1 = sPageURL.split("&s2=")[0].split("&s1=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return s1;
-        } else if (sPageURL.search("&s1=") > -1){
-          s1 = sPageURL.split("s1=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return s1;
-        } else {
-          return;
-        }
-      break;
-      case "s2":
-        if(sPageURL.search("&s3=") > -1) {
-          s2 = sPageURL.split("&s3=")[0].split("&s2=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return s2;
-        } else if(sPageURL.search("&s2=") > -1){
-          s2 = sPageURL.split("s2=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return s2;
-        } else {
-          return;
-        }
-      break;
-      case "s3":
-        if(sPageURL.search("&s4=") > -1) {
-          s3 = sPageURL.split("&s4=")[0].split("&s3=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return s3;
-        } else if(sPageURL.search("&s3=") > -1){
-          s3 = sPageURL.split("&s3=")[1].replace(/[^a-zA-Z0-9]/g, '');
-          return s3;
-        } else {
-          return;
-        }
-      break;
-      default:
-      break;
-    }
-
-  } else {
-    return;
-  }
-
-
 }
 
 
