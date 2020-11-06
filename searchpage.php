@@ -8,7 +8,7 @@
       <div id="product-main-page">
 
         <div class="cat-bar">
-          <?php include 'phpsnippet/productaccordion.php';?>
+          <?php include 'phpsnippet/productaccordion2.php';?>
         </div>
 
         <div class="search-display">
@@ -257,9 +257,31 @@
             echo "</div>";  // end if for ps-result-header.
 
             foreach ($prodSearch as $exactProd) {
+
+              $m0 = addslashes($exactProd->m0);
+              $s1 = addslashes($exactProd->s1);
+              $s2 = addslashes($exactProd->s2);
+              $s3 = addslashes($exactProd->s3);
+
+              if ($s1 != "" and $s2 !="" and $s3 !=""){
+                $get_item_legend = $wpdb->get_results("SELECT m0desc,s1desc,s2desc,s3desc,d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2' AND s3='$s3';");
+              }  elseif($s1 != "" and $s2 != ""){
+                $get_item_legend = $wpdb->get_results("SELECT m0desc,s1desc,s2desc,s3desc,d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2';");
+              } elseif ($s1 != "" and $s2 == ""){
+                $get_item_legend = $wpdb->get_results("SELECT m0desc,s1desc,s2desc,s3desc,d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1';");
+              } else {
+                $get_item_legend = $wpdb->get_results("SELECT m0desc,s1desc,s2desc,s3desc,d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0';");
+              }
+
+              $urlm0 = '/'.$exactProd->m0;
+              (!empty($exactProd->s1) ? $urls1 = '/'.$exactProd->s1 : $urls1);
+              (!empty($exactProd->s2) ? $urls2 = '/'.$exactProd->s2 : $urls2);
+              (!empty($exactProd->s3) ? $urls3 = '/'.$exactProd->s3 : $urls3);
+              $urlitem = '/'.$exactProd->item0;
+
               echo "<div class='search-each-container'>";
                 echo "<div class='sec-thumb'>";
-                  echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."' target='_blank' rel='noopener noreferrer'>";
+                  echo "<a class='sec-item-num' href='".home_url()."/products".$urlm0.$urls1.$urls2.$urls3.$urlitem."' target='_blank' rel='noopener noreferrer'>";
                   $thumbCounter = 0;
                   for($x=0; $x<=9; $x++) {
                     //This will loop through all 10 image slots and see if there are any images.
@@ -278,10 +300,10 @@
                 echo "</div>";
                 echo "<div class='sec-items'>";
                   echo "<div class='seci-title'>";
-                    echo "<a class='sec-item-num' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."' target='_blank' rel='noopener noreferrer'>";
+                    echo "<a class='sec-item-num' href='".home_url()."/products".$urlm0.$urls1.$urls2.$urls3.$urlitem."' target='_blank' rel='noopener noreferrer'>";
                     // echo "<p class='seci-sku'>".$exactProd->SKU."</p>";
                     // echo "<p class='seci-item'>".$exactProd->item."</p>";
-                    if($exactProd->SKU=='' || $exactProd->SKU=='N/A' || $exactProd->SKU==' ') {
+                    if($exactProd->SKU=='' || $exactProd->SKU=='N/A' || $exactProd->SKU==' ' || $exactProd->SKU==$exactProd->item) {
                       echo $exactProd->item;
                     } else {
                       echo $exactProd->SKU." | ".$exactProd->item;
@@ -289,44 +311,31 @@
                     echo "</a>";
 
                     echo "<p>";
-                    echo "<a class='search-catlink' href='".home_url()."/products/categories/?m0=".urlencode($exactProd->m0)."'>";
-                      echo $exactProd->m0;
+                    echo "<a class='search-catlink' href='".home_url()."/products".$urlm0."'>";
+                      echo $get_item_legend[0]->m0desc;
                       echo "</a>";
                       echo " > ";
                       if($exactProd->s1){
-                        echo "<a class='search-catlink' href='".home_url()."/products/categories/?m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."'>";
-                        echo $exactProd->s1;
+                        echo "<a class='search-catlink' href='".home_url()."/products".$urlm0.$urls1."'>";
+                        echo $get_item_legend[0]->s1desc;
                         echo "</a>";
                       }
                       if($exactProd->s2){
                         echo " > ";
-                        echo "<a class='search-catlink' href='".home_url()."/products/categories/?m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."'>";
-                        echo $exactProd->s2;
+                        echo "<a class='search-catlink' href='".home_url()."/products".$urlm0.$urls1.$urls2."'>";
+                        echo $get_item_legend[0]->s2desc;
                         echo "</a>";
                       }
                       if($exactProd->s3) {
                         echo " > ";
-                        echo "<a class='search-catlink' href='".home_url()."/products/categories/?m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."'>";
-                        echo $exactProd->s3;
+                        echo "<a class='search-catlink' href='".home_url()."/products".$urlm0.$urls1.$urls2.$urls3."'>";
+                        echo $get_item_legend[0]->s3desc;
                         echo "</a>";
                       }
                     echo "</p>";
                   echo "</div>";  // end seci-title
                   echo "<div class='seci-spec'>";
-                    $m0 = addslashes($exactProd->m0);
-                    $s1 = addslashes($exactProd->s1);
-                    $s2 = addslashes($exactProd->s2);
-                    $s3 = addslashes($exactProd->s3);
 
-                    if ($s1 != "" and $s2 !="" and $s3 !=""){
-                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2' AND s3='$s3';");
-                    }  elseif($s1 != "" and $s2 != ""){
-                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1' AND s2='$s2';");
-                    } elseif ($s1 != "" and $s2 == ""){
-                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0' AND s1='$s1';");
-                    } else {
-                      $get_item_legend = $wpdb->get_results("SELECT d1, d2, d3, d4, d5, d6, d7, d8 FROM wp_prodlegend WHERE m0='$m0';");
-                    }
 
                     // print_r($get_item_legend);
 
@@ -343,7 +352,7 @@
                     echo "<div class='secis-blur'></div>";
                   echo "</div>";  // end seci-spec;
                   echo "<div class='seci-button'>";
-                    echo "<a class='btn btn-secondary' href='".home_url()."/products/item/?id=".urlencode($exactProd->item)."&m0=".urlencode($exactProd->m0)."&s1=".urlencode($exactProd->s1)."&s2=".urlencode($exactProd->s2)."&s3=".urlencode($exactProd->s3)."' role='button' target='_blank' rel='noopener noreferrer'>View Details</a>";
+                    echo "<a class='btn btn-secondary' href='".home_url()."/products".$urlm0.$urls1.$urls2.$urls3.$urlitem."' role='button' target='_blank' rel='noopener noreferrer'>View Details</a>";
                   echo "</div>";
                 echo "</div>";  // end sec-items.
               echo "</div>";  // end search-each-container class.
