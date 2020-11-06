@@ -106,83 +106,82 @@ var prodloc = currentaddr.indexOf("products");
 if(prodloc > 0){
   currentaddr.splice(0,prodloc+1);
   currentaddr = currentaddr.filter(val=>val);
-}
+  
+
+  var paramCounter = 0;
 
 
-var paramCounter = 0;
+  var m0param = currentaddr[0];
+  paramCountFunction(m0param);
+
+  var s1param = currentaddr[1];
+  paramCountFunction(s1param);
+
+  var s2param = currentaddr[2];
+  paramCountFunction(s2param);
+
+  var s3param = currentaddr[3];
+  paramCountFunction(s3param);
 
 
-var m0param = currentaddr[0];
-paramCountFunction(m0param);
-
-var s1param = currentaddr[1];
-paramCountFunction(s1param);
-
-var s2param = currentaddr[2];
-paramCountFunction(s2param);
-
-var s3param = currentaddr[3];
-paramCountFunction(s3param);
-
-
-var m0paramInner = '.m0-'+m0param;
-var s1paramInner = '.s1-'+s1param;
-var s2paramInner = '.s2-'+s2param;
-var s3paramInner = '.s3-'+s3param;
-/*
+  var m0paramInner = '.m0-'+m0param;
+  var s1paramInner = '.s1-'+s1param;
+  var s2paramInner = '.s2-'+s2param;
+  var s3paramInner = '.s3-'+s3param;
+  /*
   This is for current active section.
-*/
+  */
 
-if(m0param) {
+  if(m0param) {
 
-  // $(m0paramInner).next().toggleClass('show');
-  $('.m0i-'+m0param).toggleClass('show');
+    // $(m0paramInner).next().toggleClass('show');
+    $('.m0i-'+m0param).toggleClass('show');
 
 
-  $(m0paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
-}
+    $(m0paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+  }
 
-if(s1param) {
+  if(s1param) {
 
-  $('.s1i-'+s1param).toggleClass('show');
+    $('.s1i-'+s1param).toggleClass('show');
 
-  $(s1paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
-}
+    $(s1paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+  }
 
-if(s2param) {
+  if(s2param) {
 
-  $('.s2i-'+s2param).toggleClass('show');
+    $('.s2i-'+s2param).toggleClass('show');
 
-  $(s2paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
-}
+    $(s2paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+  }
 
-if(s3param) {
+  if(s3param) {
 
-  $('.s3i-'+s3param).toggleClass('show');
+    $('.s3i-'+s3param).toggleClass('show');
 
-  $(s3paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
-}
+    $(s3paramInner).children('img').attr('src','https://storage.codacambridge.com/files/icons/chev-down.png');
+  }
 
-switch(paramCounter) {
-  //This will highlight current selection.
-  case 1:
+  switch(paramCounter) {
+    //This will highlight current selection.
+    case 1:
     $(m0paramInner).css({
       'background-color':'#e5e5e5',
     })
-  break;
-  case 2:
+    break;
+    case 2:
     var tempclasscheck = $('.m0i-'+m0param).find(s1paramInner);
     if (tempclasscheck.length > 0){
       $('.m0i-'+m0param+' '+s1paramInner).css({
         'background-color':'#e5e5e5',
       })
     } else {
-        $(m0paramInner).css({
-          'background-color':'#e5e5e5',
-        })
+      $(m0paramInner).css({
+        'background-color':'#e5e5e5',
+      })
     }
-  break;
-  case 3:
+    break;
+    case 3:
     var tempclasscheck = $('.m0i-'+m0param).find(s2paramInner);
     if(tempclasscheck.length > 0){
       $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+s2paramInner).css ({
@@ -193,8 +192,8 @@ switch(paramCounter) {
         'background-color':'#e5e5e5',
       })
     }
-  break;
-  case 4:
+    break;
+    case 4:
     var tempclasscheck = $('.m0i-'+m0param).find(s3paramInner);
     if(tempclasscheck.length > 0) {
       $('.m0i-'+m0param+' '+'.s1i-'+s1param+' '+'.s2i-'+s2param+' '+ s3paramInner).css ({
@@ -205,9 +204,11 @@ switch(paramCounter) {
         'background-color':'#e5e5e5',
       })
     }
-  break;
-  default:
-  break;
+    break;
+    default:
+    break;
+  }
+
 }
 
 
