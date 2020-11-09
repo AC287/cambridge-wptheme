@@ -11,7 +11,7 @@
   if(empty($prods3)) {
     //assign value for joint category.
     $prods3 = $wpdb->get_results("SELECT DISTINCT s2,s2desc FROM wp_prodlegend WHERE jointcat = '$qurl1' AND s2='$qurl2';");
-    
+
     if(!empty($prods3)){
       // echo "not empty triggered.";
       $temp = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc FROM wp_prodlegend WHERE m0='$qurl0' AND s1='$qurl1';");
@@ -40,10 +40,10 @@
       $counter = 0;
       foreach($prods3 as $prods3) {
 
-        $qs3 = addslashes($prods3->s3);
-        $img = $wpdb->get_results("SELECT DISTINCT cat3img FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1' AND s2 = '$qurl2' AND s3 = '$qurl3' AND cat3img IS NOT NULL;");
-        $item_check = $wpdb->get_results("SELECT DISTINCT item0,item FROM wp_prod0 WHERE m0='$qurl0' AND s1='$qurl1' AND s2 = '$qurl2' AND s3 = '$qurl3';");
-
+        $qs3 = $prods3->s3;
+        $img = $wpdb->get_results("SELECT DISTINCT cat3img FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1' AND s2 = '$qurl2' AND s3 = '$qs3' AND cat3img IS NOT NULL;");
+        $item_check = $wpdb->get_results("SELECT DISTINCT item0,item FROM wp_prod0 WHERE m0='$qurl0' AND s1='$qurl1' AND s2 = '$qurl2' AND s3 = '$qs3';");
+        
         if(count($item_check)==1) {
           echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/".$qs3."/".$item_check[0]->item0."' class='s1-box'>";
         } else {

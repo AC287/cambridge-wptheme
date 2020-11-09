@@ -45,6 +45,8 @@ function cambridge_script_enqueue() {
 
 }
 
+//Versioning for script and css.
+//See https://medium.com/@futuremediagr/easy-versioning-for-css-and-js-files-in-wordpress-e7dad756586c for guide.
 function set_custom_ver_css_js( $src ) {
 	// style.css URI
 	$style_file = get_stylesheet_directory().'/style.css';
@@ -61,13 +63,14 @@ function set_custom_ver_css_js( $src ) {
 
 	}
 }
-
 function css_js_versioning() {
 	add_filter( 'style_loader_src', 'set_custom_ver_css_js', 9999 ); 	// css files versioning
 	add_filter( 'script_loader_src', 'set_custom_ver_css_js', 9999 ); // js files versioning
 }
 
 add_action('init', 'css_js_versioning');
+// end versioning.
+
 
 //wp_register_script is necessary to call wp_localize_script.
 //This allow javascript to get theme directory template.
