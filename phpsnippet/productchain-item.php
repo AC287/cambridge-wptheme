@@ -180,7 +180,7 @@ echo "<div class='s1-box-background'>";
         $ip_sku = $getprod_data[0]->SKU;
         $ip_item = $getprod_data[0]->item;
         if($ip_sku == '' || $ip_sku == 'N/A' || $ip_sku == ' ' || $ip_sku == $ip_item) {
-          echo "<h1 class='ipt-item'>".$ip_item."</h1>";
+          echo "<h1 class='ipt-sku'>".$ip_item."</h1>";
         } else {
           echo "<h1 class='ipt-sku'>".$ip_sku."</h1>";
           echo "<h2 class='ipt-item'>".$ip_item."</h2>";
