@@ -1,5 +1,5 @@
 //javascript functions
-// console.log('Javascript is running');
+console.log('Javascript is running');
 
 jQuery(document).ready(function($) {
 
@@ -106,7 +106,7 @@ var prodloc = currentaddr.indexOf("products");
 if(prodloc > 0){
   currentaddr.splice(0,prodloc+1);
   currentaddr = currentaddr.filter(val=>val);
-  
+
 
   var paramCounter = 0;
 
