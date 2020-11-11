@@ -6,7 +6,7 @@
   $main_category[1] = $wpdb->get_results("SELECT DISTINCT m0,m0desc FROM wp_prodlegend WHERE m0priority = 1;");
   $main_category[2] = $wpdb->get_results("SELECT DISTINCT m0,m0desc FROM wp_prodlegend WHERE m0priority = 2;");
   echo "<h4 class='productaccordion-maintitle-container'>";
-    echo "<a class='productaccordion-maintitle' href='".home_url()."/products'>PRODUCT CATEGORIES</a>";
+    echo "<a class='productaccordion-maintitle' href='".home_url()."/products/'>PRODUCT CATEGORIES</a>";
     echo "<div class='productaccordion-mobilemenu'>";
       echo "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span>";
     echo "</div>";
@@ -18,7 +18,7 @@
       $s1_category = $wpdb->get_results("SELECT DISTINCT s1,s1desc FROM wp_prodlegend WHERE m0 = '$each_mc->m0';");
 
       $s1_jcategory= $wpdb->get_results("SELECT DISTINCT s1,s1desc FROM wp_prodlegend WHERE jointcat = '$each_mc->m0';");
-      
+
       $m0class = $each_mc->m0;
       // $m0class = preg_replace("/[^a-zA-Z0-9]/","",$m0class);
 

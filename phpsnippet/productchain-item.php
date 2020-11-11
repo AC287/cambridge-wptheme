@@ -70,7 +70,7 @@ switch (@count($urlarr)){
   default:
   break;
 }
-echo "<div class='m-title'><a href='".home_url()."/products'>PRODUCT HOME</a> >> ";
+echo "<div class='m-title'><a href='".home_url()."/products/'>PRODUCT HOME</a> >> ";
 switch(@count($urlarr)){
   case 2:
     echo "<a href='".home_url()."/products/".$m0val."'>".$getlegend[0]->m0desc."</a> >> ";

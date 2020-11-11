@@ -9,7 +9,7 @@
     //non-item page.
 
     echo "<div class='m-title'>";
-    echo "<a href='".home_url()."/products'>PRODUCT HOME </a> >> <a href='".home_url()."/products/".$qurl0."'>".$prods3[0]->m0desc."</a> >> ";
+    echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> <a href='".home_url()."/products/".$qurl0."'>".$prods3[0]->m0desc."</a> >> ";
     echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."'>".$prods3[0]->s1desc."</a> >> ";
     echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/'>".$prods3[0]->s2desc."</a> >> ".$prods3[0]->s3desc;
     echo "</div>";

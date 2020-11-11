@@ -15,7 +15,7 @@
     $prodchains1 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1, s1desc from wp_prodlegend WHERE m0='$qurl0';");
 
     echo "<div class='m-title'>";
-    echo "<a href='".home_url()."/products'>PRODUCT HOME </a> >> ".$prodchains1[0]->m0desc;
+    echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> ".$prodchains1[0]->m0desc;
     echo "</div>";
 
     echo "<div class='s1-box-background'>";
@@ -33,8 +33,11 @@
       } else {
         $item_check=null;
       }
-
-      echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."' class='s1-box'>";
+      if(@count($item_check) > 1) {
+        echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."' class='s1-box'>";
+      } else {
+          echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."/".$item_check[0]->item0."' class='s1-box'>";
+      }
         echo "<div class='item-img'>";
           if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
             echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
@@ -49,7 +52,7 @@
 
     } //end foreach loop.
 
-    if($s1jointcheck) {
+    if($s1jointcheck) { //joint category.
       $prodchains1j = $wpdb->get_results("SELECT DISTINCT s1,s1desc from wp_prodlegend WHERE jointcat='$qurl0';");
 
       //this start jointcat
@@ -91,9 +94,10 @@
     $catitems = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0 = '$qurl0';");
     $item_certdb = $wpdb->get_results("SELECT * FROM wp_cert;");
     $itemcount = count($catitems);
+    // echo $itemcount;
     echo "<div class='group-container'>";
     echo "<div class='m-title'>";
-    echo "<a href='".home_url()."/products'>PRODUCT HOME </a> >> ".$catlegend[0]->m0desc;
+    echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> ".$catlegend[0]->m0desc;
     echo "</div>";
     echo "<div class='s1-box-background'>";
     echo "<div class='s1-box-flex-container'>";

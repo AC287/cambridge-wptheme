@@ -10,7 +10,7 @@
       echo "<div class='group-container'>";
 
         echo "<div class='m-title'>";
-          echo "<a href='./".$main_category2->m0."'>".$main_category2->m0desc."</a>";
+          echo "<a href='".home_url()."/products/".$main_category2->m0."'>".$main_category2->m0desc."</a>";
         echo "</div>";	//end class m-title.
 
         $qm0 = $main_category2->m0;
@@ -44,9 +44,9 @@
 
               if(@sizeof($item_check) == 1){
                 // This will determine if link should take user to individual item page or table page.
-                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."' class='s1-box'>";
+                echo "<a href='".home_url()."/products/".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."' class='s1-box'>";
               } else {
-                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."' class='s1-box'>";
+                echo "<a href='".home_url()."/products/".$main_category2->m0."/".$s1_category2->s1."' class='s1-box'>";
               }
 
               echo "<div class='item-img'>";
@@ -67,9 +67,9 @@
               // if sub category is more than 4, this add class to hide.
               if(@sizeof($item_check)==1){
                 //This will determine if link should take user to individual item page or table page.
-                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."' class='s1-box extra-box pos".$mPos."'>";
+                echo "<a href='".home_url()."/products/".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."' class='s1-box extra-box pos".$mPos."'>";
               } else {
-                echo "<a href='./".$main_category2->m0."/".$s1_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
+                echo "<a href='".home_url()."/products/".$main_category2->m0."/".$s1_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
               }
 
               echo "<div class='item-img'>";
@@ -110,10 +110,10 @@
 
                 if(@sizeof($itemj_check) == 1){
                   //This will determine if link should take user to individual item page or table page.
-                  echo "<a href='./".$qm0."/".$s1j_category2->s1."/".$itemj_check[0]->item."' class='s1-box'>";
+                  echo "<a href='".home_url()."/products/".$qm0."/".$s1j_category2->s1."/".$itemj_check[0]->item."' class='s1-box'>";
 
                 } else {
-                  echo "<a href='./".$qm0."/".$s1j_category2->s1."' class='s1-box'>";
+                  echo "<a href='".home_url()."/products/".$qm0."/".$s1j_category2->s1."' class='s1-box'>";
 
                 }
 
@@ -135,9 +135,9 @@
                 // if sub category is more than 4, this add class to hide.
                 if(@sizeof($itemj_check)==1){
                   //This will determine if link should take user to individual item page or table page.
-                  echo "<a href='./".$qm0."/".$s1j_category2->s1."/".$itemj_check[0]->item."' class='s1-box extra-box pos".$mPos."'>";
+                  echo "<a href='".home_url()."/products/".$qm0."/".$s1j_category2->s1."/".$itemj_check[0]->item."' class='s1-box extra-box pos".$mPos."'>";
                 } else {
-                  echo "<a href='./".$qm0."/".$s1j_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
+                  echo "<a href='".home_url()."/products/".$qm0."/".$s1j_category2->s1."' class='s1-box extra-box pos".$mPos."'>";
                 }
 
                 echo "<div class='item-img'>";
@@ -199,7 +199,7 @@
               }
               $m0_imgarray = array_values(array_filter($m0_imgarray));
               // print_r($m0_imgarray);
-              echo "<a href='./".$qm0."' class='s1-box'>";
+              echo "<a href='".home_url()."/products/".$qm0."' class='s1-box'>";
                 echo "<div class='item-img'>";
                   if(in_array('',$m0_imgarray) || in_array(' ',$m0_imgarray)) {
                     echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
@@ -207,7 +207,7 @@
                     echo "<img src='".$m0_imgarray[array_rand($m0_imgarray,1)]."'>";
                   }
                 echo "</div>";	// end item-img class.
-                echo "<div class='s1-cat'>".$main_category2->m0."</div>";
+                echo "<div class='s1-cat'>".$main_category2->m0desc."</div>";
               echo "</a>";	// end a tag s1-box class.
               // print_r($m0_images);
               // print_r($m0_imgarray);
