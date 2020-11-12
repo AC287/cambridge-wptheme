@@ -26,6 +26,7 @@
         include 'productmetav1.php';
       }
       if(in_array('search',$curLocationArr)) {
+        $metatitleDB = $wpdb->get_results("SELECT * FROM wp_cammetadesc WHERE page='products';");
         echo "<title>".$metatitleDB[0]->title." | Cambridge Resources</title>";
         echo "<meta name='description' content='".htmlspecialchars($metatitleDB[0]->metadesc,ENT_QUOTES)."'>";
       }
