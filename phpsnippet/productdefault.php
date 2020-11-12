@@ -10,7 +10,7 @@
       echo "<div class='group-container'>";
 
         echo "<div class='m-title'>";
-          echo "<a href='".home_url()."/products/".$main_category2->m0."'>".$main_category2->m0desc."</a>";
+          echo "<h1><a href='".home_url()."/products/".$main_category2->m0."'>".$main_category2->m0desc."</a></h1>";
         echo "</div>";	//end class m-title.
 
         $qm0 = $main_category2->m0;

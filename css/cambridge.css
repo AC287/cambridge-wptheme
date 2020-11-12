@@ -919,7 +919,12 @@ a.s-icon {
   color: #003DA5;
   cursor: pointer;
 }
-
+.m-title h1 {
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
 .m-title a {
   text-decoration: none;
   color: inherit;
