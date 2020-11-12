@@ -3,22 +3,23 @@ echo "<div class='prod-tt-container'>";
   echo "<div class='p2-header'>";
   // print_r($catlegend);
   // print_r($urlarr);
-  switch (@count($urlarr)) {
-    case 1:
-    echo "<h1 class='p2-title'>".$catlegend[0]->m0desc."</h1>";
-    break;
-    case 2:
-      echo "<h1 class='p2-title'>".$catlegend[0]->s1desc."</h1>";
-    break;
-    case 3:
-      echo "<h1 class='p2-title'>".$catlegend[0]->s2desc."</h1>";
-    break;
-    case 4:
-      echo "<h1 class='p2-title'>".$catlegend[0]->s3desc."</h1>";
-    break;
-    default:
-    break;
-  }
+  // switch (@count($urlarr)) {
+  //   case 1:
+  //   echo "<h1 class='p2-title'>".$catlegend[0]->m0desc."</h1>";
+  //   break;
+  //   case 2:
+  //     echo "<h1 class='p2-title'>".$catlegend[0]->s1desc."</h1>";
+  //   break;
+  //   case 3:
+  //     echo "<h1 class='p2-title'>".$catlegend[0]->s2desc."</h1>";
+  //   break;
+  //   case 4:
+  //     echo "<h1 class='p2-title'>".$catlegend[0]->s3desc."</h1>";
+  //   break;
+  //   default:
+  //   break;
+  // }
+
   echo "<div class='p2-description-txt'>".$catitems[0]->d0."</div>";
   echo "</div>";	// end p2-header.
 

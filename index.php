@@ -100,7 +100,7 @@
       <div class="hvac gc-block">
         <div class="hvac gc-desc-img">
           <img src="<?php bloginfo('template_directory')?>/images/hvac02.png"></img>
-          <span class="gc-block-title"><br/>HVAC</span>
+          <h1 class="gc-block-title">HVAC PRODUCTS</h1>
         </div>
         <div class="hvac gc-desc-txt">
           <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products to over 1,000 distributors for over 20 years. </p>
@@ -110,7 +110,7 @@
       <div class="plumbing gc-block">
         <div class="plumbing gc-desc-img">
           <img src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
-          <span class="gc-block-title"><br/>PLUMBING</span>
+          <h1 class="gc-block-title">PLUMBING PRODUCTS</h1>
         </div>
         <div class="plumbing gc-desc-txt">
           <p class="plumbing-desc">Cambridge offers a full line of fittings, nipples, pipe, hose clamps, gas connectors, and pipe hanging products designed for the plumbing industry.</p>
@@ -120,7 +120,7 @@
       <div class="electrical gc-block">
         <div class="electrical gc-desc-img">
           <img src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
-          <span class="gc-block-title"><br/>ELECTRICAL</span>
+          <h1 class="gc-block-title">ELECTRICAL PRODUCTS</h1>
         </div>
         <div class="electrical gc-desc-txt">
           <p class="electrical-desc">Electrical contractors have always trusted Cambridge branded cable ties, wire connectors, terminals, and other electrical products. Cambridge has thousands of SKUs available at over 10,000 electrical supply distributors and retail locations across the U.S.</p>
@@ -130,7 +130,7 @@
       <div class="automotive gc-block">
         <div class="automotive gc-desc-img">
           <img src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
-          <span class="gc-block-title"><br/>AUTOMOTIVE</span>
+          <h1 class="gc-block-title">AUTOMOTIVE PRODUCTS</h1>
         </div>
         <div class="automotive gc-desc-txt">
           <p class="automotive-desc">Cambridge is a trusted brand in the automotive aftermarket, supplying hose clamps, fuel injectors, wire connectors, terminals, switches and more.</p>

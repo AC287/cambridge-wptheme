@@ -9,6 +9,7 @@ $s2val = null;
 $s3val = null;
 $jointm0 = null;
 $joints1 = null;
+$itemh1 = null;
 
 $get_cert_img = $wpdb->get_results("SELECT * FROM wp_cert;");
 
@@ -17,21 +18,34 @@ $get_cert_img = $wpdb->get_results("SELECT * FROM wp_cert;");
 
 switch (@count($urlarr)){
   case 2:
+    //[product, m0, item]
     $itemval = $urlarr[1];
     $getlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$m0val';");
     $getprod_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$m0val' AND item0='$itemval';");
+    $itemh1temp = $wpdb->get_results("SELECT m0h1 FROM wp_m0meta WHERE m0='$m0val';");
+    $itemh1 = $itemh1temp[0]->m0h1;
 
   break;
   case 3:
+    //[product,m0,s1,item]
     $s1val = $urlarr[1];
     $itemval = $urlarr[2];
     $getlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$m0val' AND s1='$s1val';");
     $getprod_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$m0val' AND s1='$s1val' AND item0='$itemval';");
+
+    $itemh1temp = $wpdb->get_results("SELECT s1h1 from wp_s1meta WHERE m0='$m0val' AND s1='$s1val';");
+    $itemh1 = $itemh1temp[0]->s1h1;
     // print_r($getprod_data);
     if(empty($getlegend)){
       //this trigger joint cat. Get joint cat data from legend. Joint cat is m0.
       $getlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$m0val' AND s1='$s1val';");
       $jointm0 = $wpdb->get_results("SELECT DISTINCT m0,m0desc FROM wp_prodlegend WHERE m0='$m0val';");
+      $itemh1tempm0 = $getlegend[0]->m0;  //joint cat is m0
+      $itemh1temp = $wpdb->get_results("SELECT s1h1 from wp_s1meta WHERE m0='$itemh1tempm0' AND s1='$s1val';");
+      // if(empty($itemh1temp)) {  //joint cat is s1
+      //   $itemh1temp = $wpdb->get_results("SELECT s1h1 from wp_s1meta WHERE s1='$'")
+      // }
+      $itemh1 = $itemh1temp[0]->s1h1;
       // echo "<div>Joint cat for m0 triggered</div>";
     }
     if(empty($getprod_data)){
@@ -43,13 +57,21 @@ switch (@count($urlarr)){
     }
   break;
   case 4:
+    //[product,m0,s1,s2,item]
     $s1val = $urlarr[1];
     $s2val = $urlarr[2];
     $itemval = $urlarr[3];
+
+    $itemh1temp = $wpdb->get_results("SELECT s2h1 from wp_s2meta WHERE m0='$m0val' AND s1='$s1val' AND s2='$s2val';");
+    $itemh1 = $itemh1temp[0]->s2h1;
+
     $getlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$m0val' AND s1='$s1val' AND s2='$s2val';");
     $getprod_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$m0val' AND s1='$s1val' AND s2='$s2val' AND item0='$itemval';");
-    if(empty($getlegend)){
+    if(empty($getlegend)){  //joint cat is s1
       $getlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE jointcat='$s1val' AND s2='$s2val';");
+      $itemtemps1 = $getlegend[0]->s1;
+      $itemh1temp = $wpdb->get_results("SELECT s2h1 from wp_s2meta WHERE s1='$itemtepms1' AND s2='$s2val';");
+      $itemh1 = $itemh1temp[0]->s2h1;
       // echo "<div>Jointcat for s1 triggered</div>";
     }
     if(empty($getprod_data)){
@@ -59,6 +81,7 @@ switch (@count($urlarr)){
 
   break;
   case 5:
+    //[product,m0,s1,s2,s3,item]
     $s1val = $urlarr[1];
     $s2val = $urlarr[2];
     $s3val = $urlarr[3];
@@ -66,6 +89,8 @@ switch (@count($urlarr)){
     $getlegend = $wpdb->get_results("SELECT * FROM wp_prodlegend WHERE m0='$m0val' AND s1='$s1val' AND s2='$s2val' AND s3='$s3val';");
     $getprod_data = $wpdb->get_results("SELECT * FROM wp_prod0 WHERE m0='$m0val' AND s1='$s1val' AND s2='$s2val' AND s3='$s3val' AND item0='$itemval';");
 
+    $itemh1temp = $wpdb->get_results("SELECT s3h1 from wp_s3meta WHERE m0='$m0val' AND s1='$s1val' AND s2='$s2val' AND s3='$s3val';");
+    $itemh1 = $itemh1temp[0]->s3h1;
   break;
   default:
   break;
@@ -105,6 +130,8 @@ echo "</div>";	// end m-title div.
 
 
 echo "<div class='s1-box-background'>";
+
+
 
   echo "<div id='each-img-data-container'>";
   echo "<div id='each-img-data'>";
@@ -177,13 +204,16 @@ echo "<div class='s1-box-background'>";
     echo "<div class='each-item-data'>";
       echo "<div class='item-spec-container'>";
         echo "<div class='ip-title'>";
+
+        echo "<div class='ipt-h1'><h1>".$itemh1."</h1></div>";
+
         $ip_sku = $getprod_data[0]->SKU;
         $ip_item = $getprod_data[0]->item;
         if($ip_sku == '' || $ip_sku == 'N/A' || $ip_sku == ' ' || $ip_sku == $ip_item) {
-          echo "<h1 class='ipt-sku'>".$ip_item."</h1>";
+          echo "<p class='ipt-sku'>".$ip_item."</p>";
         } else {
-          echo "<h1 class='ipt-sku'>".$ip_sku."</h1>";
-          echo "<h2 class='ipt-item'>".$ip_item."</h2>";
+          echo "<p class='ipt-sku'>".$ip_sku."</p>";
+          echo "<p class='ipt-item'>".$ip_item."</p>";
         }
         echo "</div>";
         // echo "<div class='ip-type'>".$getprod_data[0]->s1." ".$getprod_data[0]->s2." ".$getprod_data[0]->m0."</div>";

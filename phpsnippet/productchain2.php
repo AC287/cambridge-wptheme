@@ -24,6 +24,8 @@
 
   if(!empty($prods3)) {
 
+    $s2h1title = $wpdb->get_results("SELECT s2h1 from wp_s2meta WHERE m0='$qurl0' AND s1='$qurl1' AND s2='$qurl2';");
+
     //non-item page.
 
     echo "<div class='m-title'>";
@@ -34,6 +36,9 @@
 
 
     echo "<div class='s1-box-background'>";
+
+    echo "<div class='ph1tag'><h1>".$s2h1title[0]->s2h1."</h1></div>";
+
     echo "<div class='s1-box-flex-container'>";
 
     if(!empty($prods3[0]->s3)) {

@@ -2,6 +2,9 @@
   $curLocation = $_SERVER['REQUEST_URI'];
   $curServer = $_SERVER['SERVER_NAME'];
   $curLocationArr = array_values(array_filter(explode('/',$curLocation)));
+
+  // print_r($curLocationArr);
+
   //Split string at "/" and make the string into array. array_filter remove empty array element. array_values restructure array.
   // print_r($_SERVER);
   if($_SERVER["REMOTE_ADDR"]=="127.0.0.1"){   //Set whether this is dev or live.
@@ -9,17 +12,16 @@
     // array_splice($curLocationArr, 0, 1); // This removes local 1st folder path.
     unset($curLocationArr[0]);
     $curLocationArr = array_values($curLocationArr);
-
   } else {
     $local=False;
 
   }
-
-  for($x=0; $x < count($curLocationArr); $x++){
-    if((int)$curLocationArr[$x]!=0) {
-      $curLocationArr[$x] = (int)$curLocationArr[$x];
-    }
-  }
+  // 
+  // for($x=0; $x < count($curLocationArr); $x++){
+  //   if((int)$curLocationArr[$x]!=0) {
+  //     $curLocationArr[$x] = (int)$curLocationArr[$x];
+  //   }
+  // }
 
   //This determine which link to use for local/test/live sites...
   $cambridgeSite = "";

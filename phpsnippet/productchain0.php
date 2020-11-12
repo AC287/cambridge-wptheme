@@ -2,13 +2,16 @@
 
   //This is the display php insert for m0 category.
 
+
   echo "<div class='group-container'>";
 
+  // print_r($curLocationArr);
 
   $s1check = $wpdb->get_var("SELECT COUNT(DISTINCT s1) FROM wp_prodlegend WHERE m0 = '$qurl0';");
   $s1jointcheck = $wpdb->get_var("SELECT COUNT(DISTINCT s1) FROM wp_prodlegend WHERE jointcat = '$qurl0';");
   // print_r($s1check);
 
+  $m0h1title = $wpdb->get_results("SELECT m0h1 from wp_m0meta WHERE m0='$qurl0';");
 
   if($s1check) {
 
@@ -19,6 +22,9 @@
     echo "</div>";
 
     echo "<div class='s1-box-background'>";
+
+    echo "<div class='ph1tag'><h1>".$m0h1title[0]->m0h1."</h1></div>";
+
     echo "<div class='s1-box-flex-container'>";
 
     $counter = 0;
@@ -100,6 +106,7 @@
     echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> ".$catlegend[0]->m0desc;
     echo "</div>";
     echo "<div class='s1-box-background'>";
+    echo "<div class='ph1tag'><h1>".$m0h1title[0]->m0h1."</h1></div>";
     echo "<div class='s1-box-flex-container'>";
     include 'productchain-table.php';
     echo "</div>";

@@ -23,7 +23,7 @@
     case (in_array('products',$curLocationArr) || in_array('search',$curLocationArr)):
 
       if(in_array('products',$curLocationArr)) {
-        include 'productmetav0.php';
+        include 'productmetav1.php';
       }
       if(in_array('search',$curLocationArr)) {
         echo "<title>".$metatitleDB[0]->title." | Cambridge Resources</title>";

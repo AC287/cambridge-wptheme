@@ -2,7 +2,10 @@
   //This is the display php insert for s1 category.
   //Product with only sub category2. m0 and s1 are not empty. This will list all s2 inside given s1.
 
+
+
   $prods2 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1';");
+
   $itemcat = null;
   echo "<div class='group-container'>";
 
@@ -18,6 +21,13 @@
 
   if(!empty($prods2)){
 
+    $s1h1title = $wpdb->get_results("SELECT s1h1 from wp_s1meta WHERE m0='$qurl0' AND s1='$qurl1';");
+    if(empty($s1h1title)) {
+      //this is joint category. Where joint cat is m0.
+
+      $s1h1title = $wpdb->get_results("SELECT s1h1 from wp_s1meta WHERE s1='$qurl1';");
+    }
+
     //Non-item page.
 
     echo "<div class='m-title'>";
@@ -26,6 +36,9 @@
 
 
     echo "<div class='s1-box-background'>";
+
+    echo "<div class='ph1tag'><h1>".$s1h1title[0]->s1h1."</h1></div>";
+
     echo "<div class='s1-box-flex-container'>";
     if(!empty($prods2[0]->s2)) {
       $counter = 0;

@@ -33,23 +33,39 @@ add_action('init', 'custom_rewrite_tag', 10, 0);
 function cambridge_script_enqueue() {
   wp_enqueue_style('bootstrapcss',get_template_directory_uri().'/css/bootstrap.css',array(),null,'all');
 
-  wp_enqueue_style('customstyle',get_template_directory_uri().'/css/cambridge.css', array(), '1.1.3', 'all');
+  wp_enqueue_style('customstyle',get_template_directory_uri().'/css/cambridge.css', array(), '0.0.0', 'all');
   wp_enqueue_style('slickcss',get_template_directory_uri().'/css/slick.css', array(), '1.0.2', 'all');
   wp_enqueue_style('slickthemecss',get_template_directory_uri().'/css/slick-theme.css', array(), '1.0.3', 'all');
   wp_enqueue_style( 'wpb-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
   wp_enqueue_style( 'google-fonts-questrial', 'https://fonts.googleapis.com/css?family=Questrial', false);
 
   wp_enqueue_script('bootstrapjs',get_template_directory_uri().'/js/bootstrap.js',array('jquery'),'1.0.0',true);
-  wp_enqueue_script('customjs',get_template_directory_uri().'/js/cambridge.js', array('jquery'), date("h:i:s"),true);
+  wp_enqueue_script('customjs',get_template_directory_uri().'/js/cambridge.js', array('jquery'), '0.0.0',true);
   wp_enqueue_script('slickjs',get_template_directory_uri().'/js/slick.js', array('jquery'), '1.0.0',true);
 
 }
 
 //Versioning for script and css.
 //See https://medium.com/@futuremediagr/easy-versioning-for-css-and-js-files-in-wordpress-e7dad756586c for guide.
-function set_custom_ver_css_js( $src ) {
+function set_custom_ver_css( $src ) {
 	// style.css URI
-	$style_file = get_stylesheet_directory().'/style.css';
+	$style_file = get_stylesheet_directory().'/css/cambridge.css';
+
+	if ( $style_file ) {
+		// css file timestamp
+		$version = filemtime($style_file);
+
+		if ( strpos( $src, 'ver=' ) )
+			// use the WP function add_query_arg()
+			// to set the ver parameter in
+			$src = add_query_arg( 'ver', $version, $src );
+		return esc_url( $src );
+
+	}
+}
+function set_custom_ver_js( $src ) {
+	// style.css URI
+	$style_file = get_stylesheet_directory().'/js/cambridge.js';
 
 	if ( $style_file ) {
 		// css file timestamp
@@ -64,8 +80,8 @@ function set_custom_ver_css_js( $src ) {
 	}
 }
 function css_js_versioning() {
-	add_filter( 'style_loader_src', 'set_custom_ver_css_js', 9999 ); 	// css files versioning
-	add_filter( 'script_loader_src', 'set_custom_ver_css_js', 9999 ); // js files versioning
+	add_filter( 'style_loader_src', 'set_custom_ver_css', 9999 ); 	// css files versioning
+	add_filter( 'script_loader_src', 'set_custom_ver_js', 9999 ); // js files versioning
 }
 
 add_action('init', 'css_js_versioning');
