@@ -29,6 +29,14 @@ function custom_rewrite_tag() {
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 
+function plugin_rewrite_rule(){
+
+  add_rewrite_rule(
+    'products/([^/]*)/?',
+    'index.php?pagename=products&qurl=$matches[1]','top');
+
+}
+add_action('init', 'plugin_rewrite_rule',10,0);
 
 function cambridge_script_enqueue() {
   wp_enqueue_style('bootstrapcss',get_template_directory_uri().'/css/bootstrap.css',array(),null,'all');
