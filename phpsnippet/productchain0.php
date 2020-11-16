@@ -39,10 +39,10 @@
       } else {
         $item_check=null;
       }
-      if(@count($item_check) > 1) {
-        echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."' class='s1-box'>";
+      if(@count($item_check) == 1) {
+        echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."/".$item_check[0]->item0."/' class='s1-box'>";
       } else {
-          echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."/".$item_check[0]->item0."' class='s1-box'>";
+        echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."/' class='s1-box'>";
       }
         echo "<div class='item-img'>";
           if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
@@ -73,17 +73,29 @@
         } else {
           $item_check=null;
         }
-
-        echo "<a href='".home_url()."/products/".$qurl0."/".$s1jval."' class='s1-box'>";
+        if(@count($item_check)==1) {
+          echo "<a href='".home_url()."/products/".$qurl0."/".$s1jval."/".$item_check[0]->item0."/' class='s1-box'>";
           echo "<div class='item-img'>";
-            if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
-              echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
-            } else {
-              echo "<img src='".$img[0]->cat1img."'>";
-            };
+          if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
+            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+          } else {
+            echo "<img src='".$img[0]->cat1img."'>";
+          };
           echo "</div>";  // end item-img class.
           echo "<div class='s1-cat'>".$s1jdisplay->s1desc."</div>";
-        echo "</a>";
+          echo "</a>";
+        } else {
+          echo "<a href='".home_url()."/products/".$qurl0."/".$s1jval."/' class='s1-box'>";
+          echo "<div class='item-img'>";
+          if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
+            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+          } else {
+            echo "<img src='".$img[0]->cat1img."'>";
+          };
+          echo "</div>";  // end item-img class.
+          echo "<div class='s1-cat'>".$s1jdisplay->s1desc."</div>";
+          echo "</a>";
+        }
         $counter++;
         // print_r();
 

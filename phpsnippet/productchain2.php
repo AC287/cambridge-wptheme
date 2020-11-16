@@ -30,8 +30,8 @@
 
     echo "<div class='m-title'>";
     echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> ";
-    echo "<a href='".home_url()."/products/".$qurl0."'>".$prods3[0]->m0desc."</a> >> ";
-    echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."'>".$prods3[0]->s1desc."</a> >> ".$prods3[0]->s2desc;
+    echo "<a href='".home_url()."/products/".$qurl0."/'>".$prods3[0]->m0desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/'>".$prods3[0]->s1desc."</a> >> ".$prods3[0]->s2desc;
     echo "</div>";
 
 
@@ -50,9 +50,9 @@
         $item_check = $wpdb->get_results("SELECT DISTINCT item0,item FROM wp_prod0 WHERE m0='$qurl0' AND s1='$qurl1' AND s2 = '$qurl2' AND s3 = '$qs3';");
 
         if(@count($item_check)==1) {
-          echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/".$qs3."/".$item_check[0]->item0."' class='s1-box'>";
+          echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/".$qs3."/".$item_check[0]->item0."/' class='s1-box'>";
         } else {
-          echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/".$qs3."' class='s1-box'>";
+          echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/".$qs3."/' class='s1-box'>";
         }
         echo "<div class='item-img'>";
         if ($img[0]->cat3img==' ' || $img[0]->cat3img=='') {

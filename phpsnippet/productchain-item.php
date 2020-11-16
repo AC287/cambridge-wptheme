@@ -13,9 +13,6 @@ $itemh1 = null;
 
 $get_cert_img = $wpdb->get_results("SELECT * FROM wp_cert;");
 
-// print_r($urlarr);
-
-
 switch (@count($urlarr)){
   case 2:
     //[product, m0, item]
@@ -98,30 +95,30 @@ switch (@count($urlarr)){
 echo "<div class='m-title'><a href='".home_url()."/products/'>PRODUCT HOME</a> >> ";
 switch(@count($urlarr)){
   case 2:
-    echo "<a href='".home_url()."/products/".$m0val."'>".$getlegend[0]->m0desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/'>".$getlegend[0]->m0desc."</a> >> ";
   break;
   case 3:
     if(empty($jointm0)){
-      echo "<a href='".home_url()."/products/".$m0val."'>".$getlegend[0]->m0desc."</a> >> ";
+      echo "<a href='".home_url()."/products/".$m0val."/'>".$getlegend[0]->m0desc."</a> >> ";
     } else {
-      echo "<a href='".home_url()."/products/".$jointm0[0]->m0."'>".$jointm0[0]->m0desc."</a> >> ";
+      echo "<a href='".home_url()."/products/".$jointm0[0]->m0."/'>".$jointm0[0]->m0desc."</a> >> ";
     }
-    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."'>".$getlegend[0]->s1desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/'>".$getlegend[0]->s1desc."</a> >> ";
   break;
   case 4:
-    echo "<a href='".home_url()."/products/".$m0val."'>".$getlegend[0]->m0desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/'>".$getlegend[0]->m0desc."</a> >> ";
     if(empty($joints1)){
-      echo "<a href='".home_url()."/products/".$m0val."/".$s1val."'>".$getlegend[0]->s1desc."</a> >> ";
+      echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/'>".$getlegend[0]->s1desc."</a> >> ";
     } else {
-      echo "<a href='".home_url()."/products/".$m0val."/".$s1val."'>".$joints1[0]->s1desc."</a> >> ";
+      echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/'>".$joints1[0]->s1desc."</a> >> ";
     }
-    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/".$s2val."'>".$getlegend[0]->s2desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/".$s2val."/'>".$getlegend[0]->s2desc."</a> >> ";
   break;
   case 5:
-    echo "<a href='".home_url()."/products/".$m0val."'>".$getlegend[0]->m0desc."</a> >> ";
-    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."'>".$getlegend[0]->s1desc."</a> >> ";
-    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/".$s2val."'>".$getlegend[0]->s2desc."</a> >> ";
-    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/".$s2val."/".$s3val."'>".$getlegend[0]->s3desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/'>".$getlegend[0]->m0desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/'>".$getlegend[0]->s1desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/".$s2val."/'>".$getlegend[0]->s2desc."</a> >> ";
+    echo "<a href='".home_url()."/products/".$m0val."/".$s1val."/".$s2val."/".$s3val."/'>".$getlegend[0]->s3desc."</a> >> ";
   break;
 }
 echo $getprod_data[0]->item;
