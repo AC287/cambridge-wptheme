@@ -7,7 +7,7 @@
 
   // print_r($curLocationArr);
 
-  $s1check = $wpdb->get_var("SELECT COUNT(DISTINCT s1) FROM wp_prodlegend WHERE m0 = '$qurl0';");
+  $s1check = $wpdb->get_var("SELECT COUNT(DISTINCT s1) FROM wp_s1meta WHERE m0 = '$qurl0';");
   $s1jointcheck = $wpdb->get_var("SELECT COUNT(DISTINCT s1) FROM wp_prodlegend WHERE jointcat = '$qurl0';");
   // print_r($s1check);
 
@@ -16,6 +16,7 @@
   if($s1check) {
 
     $prodchains1 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1, s1desc from wp_prodlegend WHERE m0='$qurl0';");
+    
 
     echo "<div class='m-title'>";
     echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> ".$prodchains1[0]->m0desc;

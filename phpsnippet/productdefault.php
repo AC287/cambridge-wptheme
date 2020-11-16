@@ -28,6 +28,7 @@
           foreach($s1_category2 as $s1_category2) {	//loop through each s1 category.
 
             $qs1 = $s1_category2->s1;
+            $ps1h1 = $wpdb->get_results("SELECT DISTINCT s1h1 from wp_s1meta WHERE m0='$qm0' AND s1='$qs1';");
             $img = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE m0 = '$qm0' AND s1 = '$qs1' AND cat1img IS NOT NULL");	//Get s1 image.
             $s2_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE m0='$qm0' AND s1='$qs1';");	//Check for s2.
 
@@ -39,9 +40,6 @@
 
             if($counter < 4) {
 
-              // echo "<div>".sizeof($item_check)."</div>";
-              // print_r($item_check);
-
               if(@sizeof($item_check) == 1){
                 // This will determine if link should take user to individual item page or table page.
                 echo "<a href='".home_url()."/products/".$main_category2->m0."/".$s1_category2->s1."/".$item_check[0]->item0."/' class='s1-box'>";
@@ -52,14 +50,14 @@
               echo "<div class='item-img'>";
               if (@sizeof($img) >= 1) {
 
-                echo "<img src='".$img[0]->cat1img."'>";
+                echo "<img title='".$ps1h1[0]->s1h1."' src='".$img[0]->cat1img."'>";
 
               } else {
-                echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+                echo "<img title='".$ps1h1[0]->s1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
               };
 
               echo "</div>";
-              echo "<div class='s1-cat'>".$s1_category2->s1desc."</div>";
+              echo "<div class='s1-cat'>".$ps1h1[0]->s1h1."</div>";
               echo "</a>";
               $counter++;
               $counter4++;
@@ -74,18 +72,18 @@
 
               echo "<div class='item-img'>";
               if (@sizeof($img) > 1) {
-                echo "<img src='".$img[0]->cat1img."'>";
+                echo "<img title='".$ps1h1[0]->s1h1."' src='".$img[0]->cat1img."'>";
               }
               elseif (@sizeof($img)===1) {
                 // print_r($img->img0);
-                echo "<img src='".$img[0]->cat1img."'>";
+                echo "<img title='".$ps1h1[0]->s1h1."' src='".$img[0]->cat1img."'>";
               }
               else {
-                echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+                echo "<img title='".$ps1h1[0]->s1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
               };
               // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
               echo "</div>";
-              echo "<div class='s1-cat'>".$s1_category2->s1desc."</div>";
+              echo "<div class='s1-cat'>".$ps1h1[0]->s1h1."</div>";
               echo "</a>";
               $counter++;
               $counter4++;
@@ -97,6 +95,8 @@
               $jqs1 = $s1j_category2->s1;
               $jimg = $wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE jointcat = '$qm0' AND s1 = '$jqs1' AND cat1img IS NOT NULL");
               $s2j_check = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE jointcat='$qm0' AND s1='$jqs1';");
+              $jointcatentry = $wpdb->get_results("SELECT DISTINCT s1h1 from wp_s1meta WHERE s1='$jqs1';");
+              // print_r($jointcatentry);
 
               if(!$s2j_check) {
                 $itemj_check = $wpdb->get_results("SELECT DISTINCT item0,item FROM wp_prod0 WHERE jointcat='$qm0' AND s1='$jqs1';");
@@ -120,14 +120,14 @@
                 echo "<div class='item-img'>";
                 if (@sizeof($jimg) >= 1) {
 
-                  echo "<img src='".$jimg[0]->cat1img."'>";
+                  echo "<img title='".$jointcatentry[0]->s1h1."' src='".$jimg[0]->cat1img."'>";
 
                 } else {
-                  echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+                  echo "<img title='".$jointcatentry[0]->s1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
                 };
 
                 echo "</div>";
-                echo "<div class='s1-cat'>".$s1j_category2->s1desc."</div>";
+                echo "<div class='s1-cat'>".$jointcatentry[0]->s1h1."</div>";
                 echo "</a>";
                 $counter++;
                 $counter4++;
@@ -142,18 +142,18 @@
 
                 echo "<div class='item-img'>";
                 if (@sizeof($jimg) > 1) {
-                  echo "<img src='".$jimg[0]->cat1img."'>";
+                  echo "<img title='".$jointcatentry[0]->s1h1."' src='".$jimg[0]->cat1img."'>";
                 }
                 elseif (@sizeof($jimg)===1) {
                   // print_r($img->img0);
-                  echo "<img src='".$jimg[0]->cat1img."'>";
+                  echo "<img title='".$jointcatentry[0]->s1h1."' src='".$jimg[0]->cat1img."'>";
                 }
                 else {
-                  echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+                  echo "<img title='".$jointcatentry[0]->s1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
                 };
                 // echo "<img src='https://s3.amazonaws.com/files.coda.com/content/prod/categories/193-brandedcableties.jpg' height='100' widht='100'>";
                 echo "</div>";
-                echo "<div class='s1-cat'>".$s1j_category2->s1desc."</div>";
+                echo "<div class='s1-cat'>".$jointcatentry[0]->s1h1."</div>";
                 echo "</a>";
                 $counter++;
                 $counter4++;
@@ -188,6 +188,8 @@
           // echo "THERE IS NO CATEGORY IN HERE!";
           // discussion with miriam: if there is no sub category, web should display main category, clicking on main category should take user to table, then to item page.
 
+          $pm0h1 = $wpdb->get_results("SELECT m0h1 from wp_m0meta WHERE m0 = '$qm0';");
+
           $m0_images = $wpdb->get_results("SELECT img0 FROM wp_prod0 WHERE m0 = '$qm0';");
           $m0_imgarray = array();
           echo "<div class='s1-box-background'>";
@@ -202,12 +204,12 @@
               echo "<a href='".home_url()."/products/".$qm0."/' class='s1-box'>";
                 echo "<div class='item-img'>";
                   if(in_array('',$m0_imgarray) || in_array(' ',$m0_imgarray)) {
-                    echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+                    echo "<img title='".$pm0h1[0]->m0h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
                   } else {
-                    echo "<img src='".$m0_imgarray[array_rand($m0_imgarray,1)]."'>";
+                    echo "<img title='".$pm0h1[0]->m0h1."' src='".$m0_imgarray[array_rand($m0_imgarray,1)]."'>";
                   }
                 echo "</div>";	// end item-img class.
-                echo "<div class='s1-cat'>".$main_category2->m0desc."</div>";
+                echo "<div class='s1-cat'>".$pm0h1[0]->m0h1."</div>";
               echo "</a>";	// end a tag s1-box class.
               // print_r($m0_images);
               // print_r($m0_imgarray);
