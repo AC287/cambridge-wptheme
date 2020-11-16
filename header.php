@@ -15,13 +15,13 @@
         <div class="container">
           <div class="tnc-inner">
             <div class="cambridge-white-logo">
-              <a href="<?php echo home_url();?>"><img src="<?php bloginfo('template_directory')?>/images/Logo_White.png" height="40px"></a>
+              <a href="<?php echo home_url();?>/"><img src="<?php bloginfo('template_directory')?>/images/Logo_White.png" height="40px"></a>
             </div>  <!-- end cambridge-logo-white -->
             <div class="header-socialmedia">
               <a class="s-icon" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cambridgeresources/">
                 <span class="fa fa-facebook-official"></span>
               </a>
-              <a class="s-icon" target="_blank" rel="noopener noreferrer" href="https://twitter.com/CambridgeRes">
+              <a class="s-icon" target="_blank" rel="noopener noreferrer" href="https://twitter.com/CambridgeRes/">
                 <span class="fa fa-twitter-square"></span>
               </a>
               <a class="s-icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/cambridgeresources/">
@@ -34,7 +34,7 @@
                   <a class="header-navicon">&#9776;</a>
                 </div>
                 <div class="hmn-container">
-                  <a class="home" href="<?php echo home_url();?>">
+                  <a class="home" href="<?php echo home_url();?>/">
                     <div class="header-navi-title">HOME</div>
                     <div class="hnt-selector-container">
                       <?php

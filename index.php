@@ -77,9 +77,6 @@
       </div>
     </div>
 
-    <!-- <div class="item"> -->
-      <!-- <img src="images/image001.jpg"> -->
-    <!-- </div> -->
 
   </div>
 
@@ -105,7 +102,6 @@
         <div class="hvac gc-desc-txt">
           <p class="hvac-desc">Cambridge is one of the leading manufacturers of premium HVAC products in the United States. Cambridge has been manufacturing HVAC products to over 1,000 distributors for over 20 years. </p>
         </div>
-        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
       <div class="plumbing gc-block">
         <div class="plumbing gc-desc-img">
@@ -115,7 +111,6 @@
         <div class="plumbing gc-desc-txt">
           <p class="plumbing-desc">Cambridge offers a full line of fittings, nipples, pipe, hose clamps, gas connectors, and pipe hanging products designed for the plumbing industry.</p>
         </div>
-        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
       <div class="electrical gc-block">
         <div class="electrical gc-desc-img">
@@ -125,7 +120,6 @@
         <div class="electrical gc-desc-txt">
           <p class="electrical-desc">Electrical contractors have always trusted Cambridge branded cable ties, wire connectors, terminals, and other electrical products. Cambridge has thousands of SKUs available at over 10,000 electrical supply distributors and retail locations across the U.S.</p>
         </div>
-        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
       <div class="automotive gc-block">
         <div class="automotive gc-desc-img">
@@ -135,7 +129,6 @@
         <div class="automotive gc-desc-txt">
           <p class="automotive-desc">Cambridge is a trusted brand in the automotive aftermarket, supplying hose clamps, fuel injectors, wire connectors, terminals, switches and more.</p>
         </div>
-        <!-- <a href=""><i>CATALOG DOWNLOAD</i></a> -->
       </div>
     </div> <!-- end gc-block-container -->
   </div> <!-- end container -->
@@ -144,11 +137,7 @@
 <div class="mid-menu">
   <div class="container">
     <span id="mid-menu-menu">
-      <!-- <a href="">NEW PRODUCTS</a>
-      <span class="mm-divider">|</span> -->
       <a href="<?php echo home_url();?>/tradeshows/">TRADESHOWS</a>
-      <!-- <span class="mm-divider">|</span>
-      <a href="<?php //echo home_url();?>/news/">NEWS</a> -->
     </span>
   </div> <!-- end container -->
 </div> <!-- end mid-menu -->
@@ -158,7 +147,6 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="index-midcategory" data-toggle="collapse" data-target="#imc-distribution">
-          <!-- <img src="<?php bloginfo('template_directory')?>/images/distribution01.png"></img> -->
           <div class="index-midcategory-imgholder index-distribution"></div>
           <div class="mc-header" >DISTRIBUTION</div>
         </div>
@@ -171,7 +159,6 @@
       </div>
       <div class="col-sm-4">
         <div class="index-midcategory" data-toggle="collapse" data-target="#imc-retail">
-          <!-- <img src="<?php bloginfo('template_directory')?>/images/retail01.png"></img> -->
           <div class="index-midcategory-imgholder index-retail"></div>
           <div class="mc-header" >RETAIL</div>
         </div>
@@ -184,7 +171,6 @@
       </div>
       <div class="col-sm-4">
         <div class="index-midcategory" data-toggle="collapse" data-target="#imc-oem">
-          <!-- <img src="<?php bloginfo('template_directory')?>/images/oem01.png"></img> -->
           <div class="index-midcategory-imgholder index-oem"></div>
           <div class="mc-header" >O.E.M.</div>
         </div>
