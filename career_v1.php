@@ -4,7 +4,7 @@
 
 <div class="career-banner">
   <div class="cb-img">
-    <img src="<?php bloginfo('template_directory')?>/images/banners/career-banner.jpg">
+    <img title="Join Cambridge team and grow your career" src="<?php bloginfo('template_directory')?>/images/banners/career-banner.jpg">
   </div>
   <div class="cb-textbox">
     <div class="cb-textbox1">
@@ -33,7 +33,7 @@
 
 <div class="container career-content-container">
   <div class="career-mainheader">
-    <span>CURRENT CAREER OPENINGS</span>
+    <h1>CURRENT CAREER OPENINGS</h1>
     <div class="career-mainheader-underline"></div>
   </div>
   <div class="career-open">

@@ -22,7 +22,7 @@
         $firstformat = preg_replace('/[^A-Za-z0-9\-]/','',$teaminner->first);
         $lastformat = preg_replace('/[^A-Za-z0-9\-]/','',$teaminner->last);
           echo "<div class='team-crop' id='".strtolower($firstformat).strtolower($lastformat)."'>";
-          echo "<img src='".$teaminner->img."'>";
+          echo "<img title='".$teaminner->first." ".$teaminner->last."' src='".$teaminner->img."'>";
           echo "</div>";
           echo "<div class='team-individualname'>".$teaminner->first." ".$teaminner->last."</div>";
           echo "<hr class='team-breakline'/>";
@@ -79,7 +79,7 @@
         foreach ($salesmanager as $salesmanager1){
           echo "<div class='team-salesmanager-each'>";
             echo "<div class='team-salesmanager-img'>";
-              echo "<img class='team-state-".$salesmanager1->si."' src='".$salesmanager1->img."'>";
+              echo "<img title='".$salesmanager1->first." ".$salesmanager1->last."' class='team-state-".$salesmanager1->si."' src='".$salesmanager1->img."'>";
             echo "</div>";
             echo "<div class='team-salesmanager-name'><span>".ucfirst($salesmanager1->first)." ".ucfirst($salesmanager1->last)."</span></div>";
             echo "<div class='team-salesmanager-title'><span>".ucfirst($salesmanager1->title)."</span></div>";

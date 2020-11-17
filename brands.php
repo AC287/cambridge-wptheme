@@ -7,10 +7,10 @@
   <div class="container">
     <div class="overall-brands-container">
       <div class="brands-container">  <!--   CODA   -->
-        <img src="<?php bloginfo('template_directory')?>/images/brands/codadev.png">
+        <img title="CODA Development" src="<?php bloginfo('template_directory')?>/images/brands/codadev.png">
         <div class="brands-overlay">
           <div class="brandsoverlay-logo">
-            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" style="height:80px; width:auto">
+            <img title="CODA Resources" class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" style="height:80px; width:auto">
           </div>
           <div class="brandsoverlay-text">
             <p>
@@ -21,11 +21,11 @@
         </div>
       </div> <!--  end brands-container  -->
       <div class="brands-container">  <!--  AMRAM  -->
-        <img src="<?php bloginfo('template_directory')?>/images/brands/amram.png">
+        <img title="CODA Resources Retail Supply Solutions" src="<?php bloginfo('template_directory')?>/images/brands/amram.png">
         <div class="brands-overlay">
           <div class="brandsoverlay-logo">
             <!-- <div class="brands-text">Hello World</div> -->
-            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" style="height: 40px; width:auto">
+            <img title="Amram" class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" style="height: 40px; width:auto">
           </div>
           <div class="brandsoverlay-text">
             <p>Amram is the preferred brand by leading retailers, manufacturers and distributors of retail supplies</p>
@@ -35,11 +35,11 @@
         </div>
       </div> <!--  end brands-container  -->
       <div class="brands-container">  <!--  STZ  -->
-        <img src="<?php bloginfo('template_directory')?>/images/brands/rough.png">
+        <img title="STZ Industries - Rough Plumbing" src="<?php bloginfo('template_directory')?>/images/brands/rough.png">
         <div class="brands-overlay">
           <div class="brandsoverlay-logo">
             <!-- <div class="brands-text">Hello World</div> -->
-            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/stz_logo.png" style="height:30px; width:auto">
+            <img title="STZ Industries" class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/stz_logo.png" style="height:30px; width:auto">
           </div>
           <div class="brandsoverlay-text">
             <p>STZ is a leading supplier of rough plumbing products to the home improvement industry.</p>
@@ -49,11 +49,11 @@
         </div>
       </div> <!--  end brands-container  -->
       <div class="brands-container">  <!--  PIPEDECOR  -->
-        <img src="<?php bloginfo('template_directory')?>/images/brands/pipedecor.png">
+        <img title="PIPEDECOR" src="<?php bloginfo('template_directory')?>/images/brands/pipedecor.png">
         <div class="brands-overlay">
           <div class="brandsoverlay-logo">
             <!-- <div class="brands-text">Hello World</div> -->
-            <img class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" style="height:24px; width: auto">
+            <img title="PIPEDECOR" class="brands-img" src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" style="height:24px; width: auto">
           </div>
           <div class="brandsoverlay-text">
             <p>With an incredible selection of fittings, nipples, pipe, and exclusively patented specialty items, build whatever you can imagine.</p>
