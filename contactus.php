@@ -18,7 +18,7 @@ get_header();
 
 <div class='contact-banner'>
   <div class='cb-img'>
-    <img src="<?php bloginfo('template_directory')?>/images/banners/contact-banner.jpg">
+    <img title="Contact us at Cambridge" src="<?php bloginfo('template_directory')?>/images/banners/contact-banner.jpg">
   </div>
   <div class='cb-textbox'>
     <div class='cb-textbox3'>
@@ -33,7 +33,7 @@ get_header();
 <div class="temp-notice">
   <div class="container">
     <div class="tn-img">
-      <img src="<?php bloginfo('template_directory')?>/images/about/IL60139.jpg">
+      <img title="Cambridge Regional HQ and Distribution Center - Glendale Heights, IL" src="<?php bloginfo('template_directory')?>/images/about/IL60139.jpg">
     </div>
   </div>  <!--  end container  -->
 </div>
@@ -98,7 +98,7 @@ get_header();
         foreach ($salesmanager as $salesmanager1){
           echo "<div class='contact-salesmanager-each'>";
             echo "<div class='contact-salesmanager-img'>";
-              echo "<a href='mailto:".$salesmanager1->email."'><img class='contact-state-".$salesmanager1->si."' src='".$salesmanager1->img."'></a>";
+              echo "<a href='mailto:".$salesmanager1->email."'><img title='".ucfirst($salesmanager1->first)." ".ucfirst($salesmanager1->last)."' class='contact-state-".$salesmanager1->si."' src='".$salesmanager1->img."'></a>";
             echo "</div>";
             echo "<div class='contact-salesmanager-name'><span>".ucfirst($salesmanager1->first)." ".ucfirst($salesmanager1->last)."</span></div>";
             echo "<div class='contact-salesmanager-title'><span>".ucfirst($salesmanager1->title)."</span></div>";

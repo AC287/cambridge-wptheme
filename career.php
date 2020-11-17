@@ -4,7 +4,7 @@
 
 <div class="career-banner">
   <div class="cb-img">
-    <img src="<?php bloginfo('template_directory')?>/images/banners/career-banner.jpg">
+    <img title="Join Cambridge team and grow your career" src="<?php bloginfo('template_directory')?>/images/banners/career-banner.jpg">
   </div>
   <div class="cb-textbox">
     <div class="cb-textbox1">
