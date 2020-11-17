@@ -28,7 +28,7 @@
         </div>
         <div class="footer1-inner-right">
           <div class="certifications-txt">CERTIFICATIONS</div>
-          <img src="<?php bloginfo('template_directory')?>/images/certifications3.png"></img>
+          <img title="Cambridge's products certification marks" src="<?php bloginfo('template_directory')?>/images/certifications3.png"></img>
         </div>
       </div>
     </div>

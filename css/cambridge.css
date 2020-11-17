@@ -1257,7 +1257,7 @@ a.spec-sheet, a.usermanual {
 .index-title1 {
   text-align: center;
 }
-.index-title1 span {
+.index-title1 h1 {
   line-height: 100px;
   font-family: 'bignoodletitlingregular',cursive;
   font-size: 75pt;
@@ -1298,13 +1298,13 @@ a.spec-sheet, a.usermanual {
 @media screen and (max-width: 995px) and (min-width: 401px) {
   .about-beginning-title {
   }
-  .index-title1 span {
+  .index-title1 h1 {
     font-size: 45pt;
     line-height: 50px;
   }
 }
 @media screen and (max-width: 400px) {
-  .index-title1 span {
+  .index-title1 h1 {
     font-size: 25pt;
     line-height: 30px;
   }

@@ -3,12 +3,12 @@
 <?php get_header(); ?>
 <div class="about-overall-cover">
 	<div class="about-imgcover-container">
-		<img src="<?php bloginfo('template_directory')?>/images/banners/about-banner-nyc.jpg">
+		<img title="Cambridge Resources New York City" src="<?php bloginfo('template_directory')?>/images/banners/about-banner-nyc.jpg">
 	</div>
 	<div class="about-beginning-title">
 		<div class="abt-container">
 			<div class="index-title1">
-				<span>IN THE BEGINNING</span>
+				<h1>IN THE BEGINNING</h1>
 			</div>
 			<div class="index-title1-underline">
 			</div>
@@ -18,7 +18,7 @@
 <div class="container">
 	<div class="aboutus-inthebeginning">
 		<div class="aboutus-inthebeginning-img">
-			<img src="<?php bloginfo('template_directory')?>/images/personnel/chief_v1.jpg">
+			<img title="Abraham Tropper" src="<?php bloginfo('template_directory')?>/images/personnel/chief_v1.jpg">
 		</div>
 		<div class="aboutus-inthebeginning-contents">
 			<p class="aboutus-content1">
@@ -164,7 +164,7 @@
 <div class="about-cat about-hvac">
 	<div class="container">
 		<div class="about-cat-img">
-			<img src="<?php bloginfo('template_directory')?>/images/about/about-hvac.jpg">
+			<img title="HVAC industry" src="<?php bloginfo('template_directory')?>/images/about/about-hvac.jpg">
 		</div>
 		<div class="about-cat-desc">
 			<div class="about-cat-title">
@@ -197,14 +197,14 @@
 			</div>
 		</div>
 		<div class="about-cat-img">
-			<img src="<?php bloginfo('template_directory')?>/images/about/about-electrical.jpg">
+			<img title="Electrical industry" src="<?php bloginfo('template_directory')?>/images/about/about-electrical.jpg">
 		</div>
 	</div>
 </div>
 <div class="about-cat about-plumbing">
 	<div class="container">
 		<div class="about-cat-img">
-			<img src="<?php bloginfo('template_directory')?>/images/about/about-plumbing.jpg">
+			<img title="Plumbing industry" src="<?php bloginfo('template_directory')?>/images/about/about-plumbing.jpg">
 		</div>
 		<div class="about-cat-desc">
 			<div class="about-cat-title">
@@ -237,7 +237,7 @@
 			</div>
 		</div>
 		<div class="about-cat-img">
-			<img src="<?php bloginfo('template_directory')?>/images/about/about-automotive.jpg">
+			<img title="Automotive industry" src="<?php bloginfo('template_directory')?>/images/about/about-automotive.jpg">
 		</div>
 	</div>
 </div>
@@ -245,7 +245,7 @@
 	<div class="container">
 		<div class="about-4info-block">
 			<div class="about-4info-img">
-				<img src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
+				<img title="Development & Production" src="<?php bloginfo('template_directory')?>/images/about/about-devprod.png">
 			</div>
 			<div class="about-4info-title">
 				DEVELOPMENT <br/>&amp; PRODUCTION:
@@ -262,7 +262,7 @@
 		</div>
 		<div class="about-4info-block">
 			<div class="about-4info-img">
-				<img src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
+				<img title="Customer Service & Sales Support" src="<?php bloginfo('template_directory')?>/images/about/about-custsales.png">
 			</div>
 			<div class="about-4info-title">
 				CUSTOMER SERVICE <br/>&amp; SALES SUPPORT
@@ -273,7 +273,7 @@
 		</div>
 		<div class="about-4info-block">
 			<div class="about-4info-img">
-				<img src="<?php bloginfo('template_directory')?>/images/about/about-supplymngt.png">
+				<img title="Supply Chain Management" src="<?php bloginfo('template_directory')?>/images/about/about-supplymngt.png">
 			</div>
 			<div class="about-4info-title">
 				SUPPLY CHAIN <br/>MANAGEMENT
@@ -284,7 +284,7 @@
 		</div>
 		<div class="about-4info-block">
 			<div class="about-4info-img">
-				<img src="<?php bloginfo('template_directory')?>/images/about/about-distribution.png">
+				<img title="Strategic Distribution" src="<?php bloginfo('template_directory')?>/images/about/about-distribution.png">
 			</div>
 			<div class="about-4info-title">
 				STRATEGIC<br/>DISTRIBUTION
@@ -313,7 +313,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="about-locations-localimg">
-							<img src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
+							<img title="Cambridge's Distribution Center - Mississauga, ONT" src="<?php bloginfo('template_directory')?>/images/about/ontario.png">
 						</div>
 						<div class="about-locations-type">
 							<p class="about-locations-type-title">MISSISSAUGA, ONT</p>
@@ -322,7 +322,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="about-locations-localimg">
-							<img src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
+							<img title="Cambridge's Regional HQ & Distribution Center - Glendale Heights, IL" src="<?php bloginfo('template_directory')?>/images/about/illinois.png">
 						</div>
 						<div class="about-locations-type">
 							<p class="about-locations-type-title">GLENDALE HEIGHTS, IL</p>
@@ -332,7 +332,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="about-locations-localimg">
-							<img src="<?php bloginfo('template_directory')?>/images/about/newjersey.png">
+							<img title="Cambridge's Corporate HQ - Matawan, NJ" src="<?php bloginfo('template_directory')?>/images/about/newjersey.png">
 						</div>
 						<div class="about-locations-type">
 							<p class="about-locations-type-title">MATAWAN, NJ</p>
@@ -343,7 +343,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="about-locations-localimg">
-							<img src="<?php bloginfo('template_directory')?>/images/about/california.png">
+							<img title="Cambridge's Distribution Center - Simi Valley, CA" src="<?php bloginfo('template_directory')?>/images/about/california.png">
 						</div>
 						<div class="about-locations-type">
 							<p class="about-locations-type-title">SIMI VALLEY, CA</p>
@@ -352,7 +352,7 @@
 					</div>
 					<div class="col-sm-6">
 						<div class="about-locations-localimg">
-							<img src="<?php bloginfo('template_directory')?>/images/about/texas.png">
+							<img title="Cambridge's Distribution Center - Houston, TX" src="<?php bloginfo('template_directory')?>/images/about/texas.png">
 						</div>
 						<div class="about-locations-type">
 							<p class="about-locations-type-title">HOUSTON, TX</p>
@@ -363,7 +363,7 @@
 			</div>
 			<div class="col-sm-2">
 				<div class="about-locations-localimg">
-					<img src="<?php bloginfo('template_directory')?>/images/about/vietnam.png">
+					<img title="Cambridge's Manufacturing Facility - Ho Chi Minh, Vietnam" src="<?php bloginfo('template_directory')?>/images/about/vietnam.png">
 				</div>
 				<div class="about-locations-type">
 					<div class="about-locations-type-multicities">
@@ -382,7 +382,7 @@
 			</div>
 			<div class="col-sm-3">
 				<div class="about-locations-localimg">
-					<img src="<?php bloginfo('template_directory')?>/images/about/china.png">
+					<img title="Cambridge's Manufacturing Facility, Logistics & Sourcing Offices - China" src="<?php bloginfo('template_directory')?>/images/about/china.png">
 				</div>
 				<div class="about-locations-type">
 					<div class="about-locations-type-multicities">

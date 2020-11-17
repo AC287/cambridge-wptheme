@@ -15,7 +15,7 @@
         <div class="container">
           <div class="tnc-inner">
             <div class="cambridge-white-logo">
-              <a href="<?php echo home_url();?>/"><img src="<?php bloginfo('template_directory')?>/images/Logo_White.png" height="40px"></a>
+              <a href="<?php echo home_url();?>/"><img title="Cambridge Resources" src="<?php bloginfo('template_directory')?>/images/Logo_White.png" height="40px"></a>
             </div>  <!-- end cambridge-logo-white -->
             <div class="header-socialmedia">
               <a class="s-icon" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cambridgeresources/">
@@ -155,22 +155,22 @@
               </div>
               <div class="nav2-logo nav2-coda">
                 <a href="<?php echo $codaSite;?>" target="_blank" rel="noopener noreferrer">
-                  <img src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" >
+                  <img title="Coda Resources" src="<?php bloginfo('template_directory')?>/images/brands/codadev_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-amram">
                 <a href="http://www.codarss.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" >
+                  <img title="CODA Resources - Retail Supply Solutions" src="<?php bloginfo('template_directory')?>/images/brands/amram_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-stz">
                 <a href="<?php echo $stzSite; ?>" target="_blank" rel="noopener noreferrer">
-                  <img src="<?php bloginfo('template_directory')?>/images/brands/stz_logo.png" >
+                  <img title="STZ Industries" src="<?php bloginfo('template_directory')?>/images/brands/stz_logo.png" >
                 </a>
               </div>
               <div class="nav2-logo nav2-pipedecor">
                 <a href="http://pipe-decor.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" >
+                  <img title="Pipe Decor" src="<?php bloginfo('template_directory')?>/images/brands/pipedecor_logo.png" >
                 </a>
               </div>
             </div>
