@@ -4,7 +4,17 @@
   //Product with only sub category3. m0, s1, and s2 are not empty. This will list all s3 inside given s2.
   // echo "productchain2 triggered.";
 
+  function s3h1display($array,$s1val) {
+    foreach($array as $key=>$val) {
+      if($val->s2 === $s1val){
+        return $key;
+      }
+    }
+    return null;
+  }
+
   $prods3 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc,s3,s3desc FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1' AND s2 = '$qurl2';");
+
   $itemcat = null;
   echo "<div class='group-container'>";
 
@@ -25,7 +35,7 @@
   if(!empty($prods3)) {
 
     $s2h1title = $wpdb->get_results("SELECT s2h1 from wp_s2meta WHERE m0='$qurl0' AND s1='$qurl1' AND s2='$qurl2';");
-
+    $s3h1title = $wpdb->get_results("SELECT s3,s3h1 from wp_s3meta WHERE m0='$qurl0' AND s1='$qurl1' AND s2='$qurl2';");
     //non-item page.
 
     echo "<div class='m-title'>";
@@ -54,14 +64,20 @@
         } else {
           echo "<a href='".home_url()."/products/".$qurl0."/".$qurl1."/".$qurl2."/".$qs3."/' class='s1-box'>";
         }
+
+        $gets3h1 = $s3h1title[s3h1display($s3h1title,$qs3)]->s3h1;
+        if(empty($gets3h1)) {
+          $gets3h1 = $prods3->s3desc;
+        }
+
         echo "<div class='item-img'>";
         if ($img[0]->cat3img==' ' || $img[0]->cat3img=='') {
-          echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+          echo "<img title='".$gets3h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
         } else {
-          echo "<img src='".$img[0]->cat3img."'>";
+          echo "<img title='".$gets3h1."' src='".$img[0]->cat3img."'>";
         };
         echo "</div>";
-        echo "<div class='s1-cat'>".$prods3->s3desc."</div>";
+        echo "<div class='s1-cat'>".$gets3h1."</div>";
         echo "</a>";
         $counter++;
       }

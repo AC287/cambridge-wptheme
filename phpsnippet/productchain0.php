@@ -13,10 +13,22 @@
 
   $m0h1title = $wpdb->get_results("SELECT m0h1 from wp_m0meta WHERE m0='$qurl0';");
 
+  function s1h1display($array,$s1val) {
+    foreach($array as $key=>$val) {
+      if($val->s1 === $s1val){
+        return $key;
+      }
+    }
+    return null;
+  }
+
+
   if($s1check) {
 
     $prodchains1 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1, s1desc from wp_prodlegend WHERE m0='$qurl0';");
-    
+
+    $s1h1title = $wpdb->get_results("SELECT s1,s1h1 from wp_s1meta WHERE m0='$qurl0';");
+
 
     echo "<div class='m-title'>";
     echo "<a href='".home_url()."/products/'>PRODUCT HOME </a> >> ".$prodchains1[0]->m0desc;
@@ -45,14 +57,22 @@
       } else {
         echo "<a href='".home_url()."/products/".$qurl0."/".$s1val."/' class='s1-box'>";
       }
+
+        $gets1h1 = $s1h1title[s1h1display($s1h1title,$s1val)]->s1h1;
+        if(empty($gets1h1)){
+          $gets1h1 = $s1display->s1desc;
+        }
+
         echo "<div class='item-img'>";
           if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
-            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+            echo "<img title='".$gets1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
           } else {
-            echo "<img src='".$img[0]->cat1img."'>";
+            echo "<img title='".$gets1h1."' src='".$img[0]->cat1img."'>";
           };
         echo "</div>";  // end item-img class.
-        echo "<div class='s1-cat'>".$s1display->s1desc."</div>";
+
+
+        echo "<div class='s1-cat'>".$gets1h1."</div>";
       echo "</a>";
       $counter++;
       // print_r();
@@ -60,11 +80,22 @@
     } //end foreach loop.
 
     if($s1jointcheck) { //joint category.
-      $prodchains1j = $wpdb->get_results("SELECT DISTINCT s1,s1desc from wp_prodlegend WHERE jointcat='$qurl0';");
+      $prodchains1j = $wpdb->get_results("SELECT DISTINCT s1,s1desc from wp_prodlegend WHERE jointcat='$qurl0';");  //m0 is joint.
+      // print_r($gets1h1);
 
       //this start jointcat
       foreach($prodchains1j as $s1jdisplay) {
         $s1jval = $s1jdisplay->s1;
+
+        $s1h1title = $wpdb->get_results("SELECT DISTINCT s1h1 from wp_s1meta WHERE s1='$s1jval';");
+
+        $gets1h1 = $s1h1title[0]->s1h1;
+
+        if(empty($gets1h1)) {
+          $gets1h1 = $s1jdisplay->s1desc;
+        }
+
+        // print_r($s1h1title);
 
         $img=$wpdb->get_results("SELECT DISTINCT cat1img FROM wp_prodlegend WHERE jointcat='$qurl0' AND s1='$s1jval' AND cat1img IS NOT NULL;");
         $s2jcount = $wpdb->get_var("SELECT COUNT(DISTINCT s2) FROM wp_prodlegend WHERE jointcat='$qurl0' AND s1 = '$s1jval';");
@@ -78,23 +109,23 @@
           echo "<a href='".home_url()."/products/".$qurl0."/".$s1jval."/".$item_check[0]->item0."/' class='s1-box'>";
           echo "<div class='item-img'>";
           if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
-            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+            echo "<img title='".$gets1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
           } else {
-            echo "<img src='".$img[0]->cat1img."'>";
+            echo "<img title='".$gets1h1."' src='".$img[0]->cat1img."'>";
           };
           echo "</div>";  // end item-img class.
-          echo "<div class='s1-cat'>".$s1jdisplay->s1desc."</div>";
+          echo "<div class='s1-cat'>".$gets1h1."</div>";
           echo "</a>";
         } else {
           echo "<a href='".home_url()."/products/".$qurl0."/".$s1jval."/' class='s1-box'>";
           echo "<div class='item-img'>";
           if ($img[0]->cat1img=='' || $img[0]->cat1img==' ' ) {
-            echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+            echo "<img title='".$gets1h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
           } else {
-            echo "<img src='".$img[0]->cat1img."'>";
+            echo "<img title='".$gets1h1."' src='".$img[0]->cat1img."'>";
           };
           echo "</div>";  // end item-img class.
-          echo "<div class='s1-cat'>".$s1jdisplay->s1desc."</div>";
+          echo "<div class='s1-cat'>".$gets1h1."</div>";
           echo "</a>";
         }
         $counter++;

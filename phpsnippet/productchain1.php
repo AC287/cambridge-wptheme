@@ -2,16 +2,25 @@
   //This is the display php insert for s1 category.
   //Product with only sub category2. m0 and s1 are not empty. This will list all s2 inside given s1.
 
-
+  function s2h1display($array,$s1val) {
+    foreach($array as $key=>$val) {
+      if($val->s2 === $s1val){
+        return $key;
+      }
+    }
+    return null;
+  }
 
   $prods2 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc FROM wp_prodlegend WHERE m0 = '$qurl0' AND s1 = '$qurl1';");
-
+  $s2h1title = $wpdb->get_results("SELECT s2,s2h1 FROM wp_s2meta WHERE m0='$qurl0' AND s1='$qurl1';");
+  // print_r($s2title);
   $itemcat = null;
   echo "<div class='group-container'>";
 
   if(empty($prods2)) {
     //assign value for joint category.
-    $prods2 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc FROM wp_prodlegend WHERE jointcat = '$qurl0' AND s1 = '$qurl1';");
+    $prods2 = $wpdb->get_results("SELECT DISTINCT m0,m0desc,s1,s1desc,s2,s2desc FROM wp_prodlegend WHERE jointcat = '$qurl0' AND s1 = '$qurl1';");  //joint is m0.
+    $s2h1title = $wpdb->get_results("SELECT s2,s2h1 FROM wp_s2meta WHERE s1='$qurl1';");
     $tempm0 = $wpdb->get_results("SELECT DISTINCT m0desc FROM wp_prodlegend WHERE m0='$qurl0';");
     if(!empty($prods2)){
       $prods2[0]->m0 = $qurl0;
@@ -57,16 +66,20 @@
 
         }
 
+        $gets2h1 = $s2h1title[s2h1display($s2h1title,$qs2)]->s2h1;
+        if(empty($gets2h1)) {
+          $gets2h1 = $prods2->s2desc;
+        }
 
         echo "<div class='item-img'>";
         if ($img[0]->cat2img==' ' || $img[0]->cat2img=='') {
-          echo "<img src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
+          echo "<img title='".$gets2h1."' src='https://storage.codacambridge.com/files/comingsoon.jpg'>";
         } else {
-          echo "<img src='".$img[0]->cat2img."'>";
+          echo "<img title='".$gets2h1."' src='".$img[0]->cat2img."'>";
         };
 
         echo "</div>";
-        echo "<div class='s1-cat'>".$prods2->s2desc."</div>";
+        echo "<div class='s1-cat'>".$gets2h1."</div>";
         echo "</a>";
         $counter++;
       }
