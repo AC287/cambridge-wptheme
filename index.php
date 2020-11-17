@@ -30,7 +30,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img1.jpg">
+      <img title="Leading Supplier to the HVAC Industry" src="<?php bloginfo('template_directory')?>/images/banners/index-img1.jpg">
       <div class="index-banner-textbox ibt-img1">
         <div class="ibt-text">
           <span>Leading Supplier to the HVAC industry</span>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img2.jpg">
+      <img title="Found in Retail Locations Globally" src="<?php bloginfo('template_directory')?>/images/banners/index-img2.jpg">
       <div class="index-banner-textbox ibt-img2">
         <div class="ibt-text">
           <span>FOUND IN RETAIL LOCATIONS GLOBALLY</span>
@@ -52,11 +52,11 @@
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img3.jpg">
+      <img title="Label Design for Enhanced Shopping Experience" src="<?php bloginfo('template_directory')?>/images/banners/index-img3.jpg">
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img4.jpg">
+      <img title="SUPPLYING OEM'S ACROSS A VARIETY OF INDUSTRIES" src="<?php bloginfo('template_directory')?>/images/banners/index-img4.jpg">
       <div class="index-banner-textbox ibt-img4">
         <div class="ibt-text">
           <span>SUPPLYING OEM'S ACROSS A VARIETY OF INDUSTRIES</span>
@@ -67,7 +67,7 @@
     </div>
 
     <div class="item">
-      <img src="<?php bloginfo('template_directory')?>/images/banners/index-img5.jpg">
+      <img title="QUALITY PRODUCTS PROFESSIONALS RELY ON" src="<?php bloginfo('template_directory')?>/images/banners/index-img5.jpg">
       <div class="index-banner-textbox ibt-img5">
         <div class="ibt-text">
           <span>QUALITY PRODUCTS PROFESSIONALS RELY ON</span>
@@ -96,7 +96,7 @@
     <div class="gc-block-container">
       <div class="hvac gc-block">
         <div class="hvac gc-desc-img">
-          <img src="<?php bloginfo('template_directory')?>/images/hvac02.png"></img>
+          <img title="HVAC Products" src="<?php bloginfo('template_directory')?>/images/hvac02.png"></img>
           <h1 class="gc-block-title">HVAC PRODUCTS</h1>
         </div>
         <div class="hvac gc-desc-txt">
@@ -105,7 +105,7 @@
       </div>
       <div class="plumbing gc-block">
         <div class="plumbing gc-desc-img">
-          <img src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
+          <img title="Plumbing Products" src="<?php bloginfo('template_directory')?>/images/plumbing02.png"></img>
           <h1 class="gc-block-title">PLUMBING PRODUCTS</h1>
         </div>
         <div class="plumbing gc-desc-txt">
@@ -114,7 +114,7 @@
       </div>
       <div class="electrical gc-block">
         <div class="electrical gc-desc-img">
-          <img src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
+          <img title="Electrical Products" src="<?php bloginfo('template_directory')?>/images/electrical02.png"></img>
           <h1 class="gc-block-title">ELECTRICAL PRODUCTS</h1>
         </div>
         <div class="electrical gc-desc-txt">
@@ -123,7 +123,7 @@
       </div>
       <div class="automotive gc-block">
         <div class="automotive gc-desc-img">
-          <img src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
+          <img title="Automotive Products" src="<?php bloginfo('template_directory')?>/images/automotive02.png"></img>
           <h1 class="gc-block-title">AUTOMOTIVE PRODUCTS</h1>
         </div>
         <div class="automotive gc-desc-txt">
