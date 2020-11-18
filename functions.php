@@ -87,9 +87,26 @@ function set_custom_ver_js( $src ) {
 
 	}
 }
+function set_custom_ver_maincss( $src ) {
+	// style.css URI
+	$style_file = get_stylesheet_directory().'/style.css';
+
+	if ( $style_file ) {
+		// css file timestamp
+		$version = filemtime($style_file);
+
+		if ( strpos( $src, 'ver=' ) )
+			// use the WP function add_query_arg()
+			// to set the ver parameter in
+			$src = add_query_arg( 'ver', $version, $src );
+		return esc_url( $src );
+
+	}
+}
 function css_js_versioning() {
 	add_filter( 'style_loader_src', 'set_custom_ver_css', 9999 ); 	// css files versioning
 	add_filter( 'script_loader_src', 'set_custom_ver_js', 9999 ); // js files versioning
+  add_filter( 'script_loader_src', 'set_custom_ver_maincss', 9999); // main theme css versioning
 }
 
 add_action('init', 'css_js_versioning');
