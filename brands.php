@@ -35,7 +35,7 @@
         </div>
       </div> <!--  end brands-container  -->
       <div class="brands-container">  <!--  STZ  -->
-        <img src="<?php bloginfo('template_directory')?>/images/brands/rough.png">
+        <img src="<?php bloginfo('template_directory')?>/images/brands/rough02.png">
         <div class="brands-overlay">
           <div class="brandsoverlay-logo">
             <!-- <div class="brands-text">Hello World</div> -->
